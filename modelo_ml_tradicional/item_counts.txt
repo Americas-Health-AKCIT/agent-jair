@@ -1,0 +1,2053 @@
+DS_ITEM	count
+Ecodopplercardiograma transtorácico	906
+DIÁRIA DE  ENFERMARIA DE 3 LEITOS COM BANHEIRO PRIVATIVO	596
+Sessão de psicoterapia individual por psicólogo	572
+US - Abdome total (abdome superior, rins, bexiga, aorta, veia cava inferior e adrenais)	550
+BUNDLE ENDOSCOPIA DIGESTIVA ALTA C/ OU SEM BIOPSIA	484
+Consulta ambulatorial por nutricionista	482
+US - Articular (por articulação)	478
+Doppler colorido de vasos cervicais arteriais bilateral (carótidas e vertebrais)	457
+Anestesia para endoscopia diagnóstica	442
+RM - Coluna cervical ou dorsal ou lombar	373
+Consulta em psicologia	362
+Anestesia para endoscopia intervencionista	324
+Teste ergométrico convencional - 3 ou mais derivações simultâneas (inclui ECG basal convencional)	314
+BUNDLE COLONOSCOPIA COM BIÓPSIA E/OU CITOLOGIA	307
+RM - Articular (por articulação)	306
+Visita hospitalar (paciente internado)	293
+Tomografia de coerência óptica - monocular	260
+Doppler colorido venoso de membro inferior - unilateral	256
+US - Transvaginal (útero, ovário, anexos e vagina)	239
+RM - Crânio (encéfalo)	237
+TC - Tórax	227
+US - Estruturas superficiais (cervical ou axila ou músculo ou tendão)	222
+TC - Crânio ou sela túrcica ou órbitas	204
+TERAPIA ABA (APPLIED BEHAVIOR ANALYSIS)- SESSÃO	194
+TC - Abdome total (abdome superior, pelve e retroperitônio)	191
+Tireoestimulante, hormônio (TSH) - pesquisa e/ou dosagem	178
+Atendimento médico do intensivista em UTI geral ou pediátrica (plantão de 12 horas - por paciente)	171
+DIÁRIA DE  HOSPITAL DIA ENFERMARIA	162
+Doppler colorido de órgão ou estrutura isolada	150
+EEGQ quantitativo (mapeamento cerebral)	148
+Teste ergométrico computadorizado (inclui ECG basal convencional)	145
+Sessão individual ambulatorial de fonoaudiologia	144
+"Vitamina ""D"" 25 HIDROXI, pesquisa e/ou dosagem (Vitamina D3)"	138
+RX - Joelho	137
+Consulta em consultório (no horário normal ou preestabelecido)	136
+TERAPIA OCUPACIONAL SENSORIAL	134
+Monitorização ambulatorial da pressão arterial - MAPA (24 horas)	127
+Consulta individual ambulatorial de fonoaudiologia	125
+SESSOES DE QUIMIOTERAPIA - AMBULATORIAL - 7 SESSÕES	116
+RM - Pelve (não inclui articulações coxofemorais)	116
+T4 livre - pesquisa e/ou dosagem	115
+Sessão individual ambulatorial, em terapia ocupacional	113
+Terapia antineoplásica oral para tratamento do câncer	112
+TC - Coluna cervical ou dorsal ou lombo-sacra (até 3 segmentos)	112
+Facectomia com lente intra-ocular com facoemulsificação	112
+Cintilografia do miocárdio perfusão - repouso	110
+Ferritina - pesquisa e/ou dosagem	109
+Vitamina B12 - pesquisa e/ou dosagem	107
+Mamografia convencional bilateral	106
+US - Mamas	104
+Cintilografia do miocárdio perfusão - estresse físico	100
+TC - Face ou seios da face	98
+Radioscopia para acompanhamento de procedimento cirúrgico (por hora ou fração)	93
+Implante de dispositivo intra-uterino (DIU) hormonal - inserção	93
+ECG convencional de até 12 derivações	90
+Acupuntura por sessão	89
+Holter de 24 horas - 2 ou mais canais - analógico	89
+ADICIONAL - AVALIAÇÃO INICIAL TERAPÊUTICA	83
+DIÁRIA DE  UTI ADULTO GERAL	80
+RX - Pé ou pododáctilo	78
+PCT HEMODERIVADOS - TIPAGEM SANGUÍNEA	74
+BUNDLE POLIPECTOMIA DE CÓLON (INDEPENDENTE DO NÚMERO DE PÓLIPOS) E/OU HEMOSTASIAS	71
+Doppler colorido arterial de membro inferior - unilateral	70
+RM - Abdome superior (fígado, pâncreas, baço, rins, supra-renais, retroperitônio)	69
+Atendimento do intensivista diarista (por dia e por paciente)	68
+Exérese de lesão / tumor de pele e mucosas	68
+Terapia imunobiológica subcutânea (por sessão) ambulatorial	67
+Hemograma com contagem de plaquetas ou frações (eritrograma, leucograma, plaquetas)	65
+MEDICAÇÃO PARA O CONTROLE DE EFEITOS ADVERSOS E ADJUVANTES RELACIONADOS A TRATAMENTOS ANTINEOPLÁSICOS	64
+BUNDLE POLIPECTOMIA E OU HEMOSTASIA DO ESÔFAGO, ESTÔMAGO OU DUODENO (INDEPENDENTE DO NÚMERO DE PÓLIPOS)	63
+RX - Tórax - 2 incidências	62
+MIRENA - 52 MG SIU CT BL X 1 + INSERTOR (BL PETG) - BAYER S.A.	61
+RX - Coluna total para escoliose (telespondilografia)	61
+Angio-RM arterial de crânio	58
+Vídeo-laringo-estroboscopia com endoscópio rígido	57
+Anestesia para exames de ressonância magnética 	57
+Punção biópsia/aspirativa de órgão ou estrutura superficial orientada por US (não inclui o exame de base)	57
+Polissonograma com EEG de noite inteira	56
+Cesariana	56
+TRATAMENTO OCULAR QUIMIOTERAPICO COM ANTIANGIOGENICO	56
+AVALIAÇÃO NEUROPSICOLÓGICA	55
+Exérese e sutura de lesões (circulares ou não) com rotação de retalhos cutâneos	55
+US - Obstétrica com Doppler colorido	54
+Testosterona total - pesquisa e/ou dosagem	53
+SESSÃO INDIVIDUAL AMBULATORIAL EM FONOAUDIOLOGIA PARA AUTISMO	53
+RX - Bacia	52
+RM - Bacia (articulações sacroilíacas)	51
+Exérese e sutura de hemangioma, linfangioma ou nevus (por grupo de até 5 lesões)	51
+Implante de cateter venoso central por punção, para NPP, QT, Hemodepuração ou para infusão de soros/drogas	50
+US - Órgãos superficiais (tireóide ou escroto ou pênis ou crânio)	50
+Creatinina - pesquisa e/ou dosagem	50
+SESSAO DE PSICOPEDAGOGIA	50
+Eletrocoagulação de lesões de pele e mucosas - com ou sem curetagem (por grupo de até 5 lesões)	50
+Turbinectomia ou turbinoplastia - unilateral	50
+PCT - Atendimento em Pronto Socorro	49
+Glicose - pesquisa e/ou dosagem	49
+US - Obstétrica com translucência nucal	48
+TESTES CUTANEOS-ALERGICOS - PRICK TEST (PACOTE)	47
+Colesterol total - pesquisa e/ou dosagem	47
+PCT HEMODERIVADOS - CGL	47
+LENTE INTRAOCULAR IOFLEX FAIXA ESPEC.+5D A +9.50D/+31D A +35D REF.IOFLEX	46
+CATETERISMO DE CAMARAS CARDIACAS DIREITAS E ESQUERDAS E CINEANGIOGRAFIA POR TONICA TRANSEPTAL	45
+Atendimento ao recém-nascido em sala de parto (parto normal ou operatório de baixo risco)	44
+Folículo estimulante, hormônio (FSH) - pesquisa e/ou dosagem	44
+Triglicerídeos - pesquisa e/ou dosagem	44
+DIÁRIA DE  QUARTO COLETIVO DE 2 LEITOS COM BANHEIRO PRIVATIVO	43
+Colesterol (HDL) - pesquisa e/ou dosagem	43
+Atendimento ao recém-nascido em berçário	43
+Chikungunya, anticorpos	42
+BUNDLE ENDOSCOPIA DIGESTIVA ALTA C/ OU SEM BIÓPSIA	41
+Patologia osteomioarticular em dois ou mais membros	41
+LENTE INTRA-OCULAR DOBRAVEL ALCON-ACRYSOF - REF. SA60AT	41
+RX - Incidência adicional de membro inferior	40
+Colocação ureteroscópica de duplo J unilateral	40
+Procedimento diagnóstico em reação imunoistoquímica isolada	40
+US - Obstétrica morfológica	38
+Insulina - pesquisa e/ou dosagem	38
+Doppler colorido de vasos cervicais venosos bilateral (subclávias e jugulares)	38
+Cintilografia óssea (corpo total)	37
+Procalcitonina - pesquisa e/ou dosagem	37
+Angiotomografia arterial de crânio	37
+RX - Articulação coxofemoral (quadril)	37
+Opme - Codificação genérica	37
+Holter de 24 horas - 3 canais - digital	36
+Hemodiálise crônica (por sessão)	36
+Endoscopia digestiva alta	36
+Retirada endoscópica de duplo J	35
+Mamografia digital bilateral	34
+Transaminase oxalacética (amino transferase aspartato) - pesquisa e/ou dosagem	34
+Estradiol - pesquisa e/ou dosagem	33
+Coleta de material cérvico-vaginal	33
+Testosterona livre - pesquisa e/ou dosagem	33
+Transaminase pirúvica (amino transferase de alanina) - pesquisa e/ou dosagem	33
+TC - Abdome superior	33
+Eletroneuromiografia de MMSS	33
+"Procedimento diagnóstico em biópsia simples ""imprint"" e ""cell block"""	32
+Anticorpos antiendomisio - IgG, IgM, IgA (cada) - pesquisa e/ou dosagem	32
+SARS-CoV-2 (CORONAVÍRUS COVID-19) - PESQUISA POR RT - PCR	32
+US - Aparelho urinário (rins, ureteres e bexiga)	32
+TC - Pelve ou bacia	32
+SONDA DE FIBRA ÓPTICA PARA HOLMIUM LASER MAXIFLEX - EIC BRASIL EXPORTADORA DE PRODUTOS INDUSTRIALIZADOS LTDA	31
+Hepatite B - HBSAG (AU, antígeno austrália) - pesquisa e/ou dosagem	31
+TC - Articulação (esternoclavicular ou ombro ou cotovelo ou punho ou sacroilíacas ou coxofemoral ou joelho ou tornozelo) - unilateral	30
+Ecodopplercardiograma fetal com mapeamento de fluxo em cores - por feto	30
+Curetagem simples de lesões de pele (por grupo de até 5 lesões)	30
+Rotina de urina (caracteres físicos, elementos anormais e sedimentoscopia)	30
+Selênio, dosagem	29
+Septoplastia (qualquer técnica sem vídeo)	29
+RX - Articulação tibiotársica (tornozelo)	29
+Eletroneuromiografia de MMII	29
+TERAPIA ABA (APPLIED BEHAVIOR ANALYSIS) - AVALIAÇÃO	29
+Colposcopia (cérvice uterina e vagina)	29
+TROCATER ENDOPATH 11MM REF: D11LT	29
+Hormônio luteinizante (LH) - pesquisa e/ou dosagem	28
+Exame a fresco do conteúdo vaginal e cervical	28
+Anestesia para exames de tomografia computadorizada 	28
+HIV1+ HIV2, (determinação conjunta), pesquisa de anticorpos	28
+Ácido úrico - pesquisa e/ou dosagem	28
+Consulta individual ambulatorial, em terapia ocupacional	28
+Capsulotomia YAG ou cirúrgica	28
+ROCAMED ROCAWIRE PLATINUM - ALLENT COMÉRCIO, IMPORTAÇÃO E DISTRIBUIÇÃO DE MATERIAIS MÉDICOS LTDA. ? ME	27
+TC - Angiotomografia coronariana	27
+Consulta domiciliar de enfermagem	27
+Prova de compatibilidade pré-transfusional completa - gel teste	27
+Mapeamento de retina (oftalmoscopia indireta) - monocular	27
+Cateterismo da artéria radial - para PAM	27
+US - Obstétrica	26
+ANASTROZOL - 1 MG COM REV CT BL AL PLAS INC X 30 - EUROFARMA LABORATÓRIOS S.A.	26
+DIÁRIA DE  BERÇÁRIO NORMAL	26
+Hemoglobina glicada (Fração A1c) - pesquisa e/ou dosagem	26
+RM - Pé (antepé) - não inclui tornozelo	26
+Consulta em domicílio	26
+Sessão de psicomotricidade individual	26
+Colecistectomia sem colangiografia por videolaparoscopia	26
+Prolactina - pesquisa e/ou dosagem	26
+Varizes - tratamento cirúrgico de dois membros	26
+CATETER URETERAL DUPLO J SOFT - ALLENT COMÉRCIO, IMPORTAÇÃO E DISTRIBUIÇÃO DE MATERIAIS MÉDICOS LTDA. ? ME	26
+BUNDLE MUCOSECTOMIA BAIXA	25
+Colesterol (LDL) - pesquisa e/ou dosagem	25
+US - Abdome superior (fígado, vias biliares, vesícula, pâncreas e baço)	24
+Anestesia para procedimentos clínicos ambulatoriais e hospitalares	24
+Sessão individual domiciliar de fonoaudiologia	24
+Zinco - pesquisa e/ou dosagem	24
+Tonometria - binocular	24
+CLIP LT300 MEDIO / LARGO HORIZON VERDE - REF: 3200	24
+Crioterapia (grupo de até 5 lesões)	23
+SESSÃO INDIVIDUAL AMBULATORIAL DE FONOAUDIOLOGIA - MÉTODO PROMPT	23
+Densitometria óssea - rotina: coluna e fêmur (ou dois segmentos)	23
+Plástica em Z ou W	23
+Antígeno específico prostático total (PSA) - pesquisa e/ou dosagem	23
+RM - Mama (bilateral)	23
+Vídeo-laringo-estroboscopia com endoscópio flexível	23
+Herniorrafia umbilical	22
+Dímero D - pesquisa e/ou dosagem	22
+TESTES CUTÂNEOS DE CONTATO - PATCH TEST (PACOTE)	22
+FIO GUIA HIDROFÍLICO ALLWIN - EIC BRASIL EXPORTADORA DE PRODUTOS INDUSTRIALIZADOS LTDA	22
+LENTE INTRA-OCULAR - IOFLEX - MEDIPHACOS INDÚSTRIAS MÉDICAS S/A	22
+Ureterorrenolitotripsia flexível a laser unilateral	21
+ANGIOPLASTIA CARDÍACA	21
+Potássio - pesquisa e/ou dosagem	21
+Consulta em pronto socorro	21
+CIMZIA - 200 MG/ML SOL INJ CT 2 SER VD INC PREENC X 1 ML + 2 LENÇOS UMEDECIDOS - UCB BIOPHARMA LTDA.	20
+Cistoscopia e/ou uretroscopia	20
+EXTRATOR DE CÁLCULOS ROCAMED ROCASTONE - ALLENT COMÉRCIO, IMPORTAÇÃO E DISTRIBUIÇÃO DE MATERIAIS MÉDICOS LTDA. ? ME	20
+Exérese e sutura simples de pequenas lesões (por grupo de até 5 lesões)	20
+RX - Patela	20
+Cauterização química (por grupo de até 5 lesões)	20
+IRRIGOPLAS 4 VIAS (SISTEMA DE FLUXO) REF: 27012	20
+Histerossalpingografia	19
+SPLIT NASAL ESTERIL REF. 5 X 10 CM	19
+Postectomia	19
+Cultura, urina com contagem de colônias	19
+Criocirurgia (nitrogênio líquido) de neoplasias cutâneas	19
+Adeno-amigdalectomia	19
+Eletrencefalograma especial: terapia intensiva, morte encefálica, EEG prolongado (até 2 horas)	18
+RX - Omoplata ou escápula	18
+TESTES INTRADERMICOS (PACOTE)	18
+Eletroneuromiografia de MMSS e MMII	18
+Patologia osteomioarticular em diferentes segmentos da coluna	17
+Alumínio, pesquisa e/ou dosagem no soro	17
+Cortisol - pesquisa e/ou dosagem	17
+Laringoscopia/traqueoscopia para diagnóstico e biópsia (tubo rígido)	17
+Fotocoagulação (laser) - por sessão  - monocular	17
+Desbridamento cirúrgico de feridas ou extremidades	17
+Proteína C reativa, quantitativa - pesquisa e/ou dosagem	17
+FAULDFLUOR - 50 MG/ML SOL INJ CT FA VD INC X 50 ML  - LIBBS FARMACÊUTICA LTDA	17
+FAULDLEUCO - 10 MG/ML SOL INJ CT FA VD AMB X 30 ML - LIBBS FARMACÊUTICA LTDA	17
+DIÁRIA DE ISOLAMENTO DE APARTAMENTO SIMPLES	17
+DIÁRIA DE  ENFERMARIA COM ALOJAMENTO CONJUNTO COM BANHEIRO PRIVATIVO	17
+Uréia - pesquisa e/ou dosagem	17
+Ureterorrenolitotripsia rígida unilateral	17
+Hemodepuração de casos agudos (sessão hemodiálise, hemofiltração, hemodiafiltração isolada, plasmaferese ou hemoperfusão) - até 4 horas ou fração	16
+RM - Sela túrcica (hipófise)	16
+ZOMETA - 4 MG SOL INJ 1 FR AMP PLAS INC X 5 ML + 9 MG/ML SOL INJ IV BOLS PVC INC SIST FECH X 100 ML - NOVARTIS BIOCIENCIAS S.A	16
+Histeroscopia diagnóstica com biópsia	16
+Consulta ambulatorial em fisioterapia	16
+Gama-glutamil transferase - pesquisa e/ou dosagem	16
+Sódio - pesquisa e/ou dosagem	16
+Bloqueio de nervo periférico - bloqueios anestésicos de nervos e estímulos neurovasculares	16
+CATETER VENOSO CENTRAL 3VIAS 7FR X 20CM - REF: CV-15703-E	16
+KEYTRUDA - 100 MG/ 4 ML SOL INJ CT FA VD INC X 4 ML - MERCK SHARP & DOHME FARMACEUTICA LTDA	16
+SESSÃO DE HEMODIÁLISE AMBULATORIAL POR CATETER	16
+CITRATO DE TAMOXIFENO - 20 MG COM REV CT BL AL AL X 30 - EMS S/A	16
+KIT DE LINHAS DE SANGUE PARA HEMODIALISE ARTERIAL SEM CATABOLHA + VENOSA (SEM REUSO) REF.	16
+KYLEENA - 19,5 MG DIU CT EST PLAS PETG TRANS + APLIC - BAYER S.A.	16
+Terapia imunobiológica intravenosa (por sessão) - ambulatorial	15
+HIV - carga viral PCR - pesquisa	15
+Eletroneuromiografia de segmento complementar	15
+Vitamina B1, pesquisa e/ou dosagem	15
+Doppler colorido de aorta e ilíacas	15
+COTONOIDE 13 X 38MM REF. 801404	15
+SURGICEL 10 X 20 CM - REF: 1952	15
+LETROZOL - 2,5 MG COM REV CT BL AL PLAS INC X 30 - EUROFARMA LABORATÓRIOS S.A.	15
+Elastografia hepática ultrassônica	15
+Descompressão medular e/ou cauda equina	14
+Colonoscopia (inclui a retossigmoidoscopia)	14
+Prova de função pulmonar completa (ou espirometria)	14
+Urodinâmica completa	14
+Consulta Ambulatorial em psicologia	14
+DIÁRIA DE ENFERMARIA DE PSIQUIATRIA	14
+Amigdalectomia das palatinas	14
+TC - Mastóides ou orelhas	14
+RX - Articulação escapuloumeral (ombro)	14
+Prova de compatibilidade pré-transfusional completa - em tubo	14
+Vitamina B6, pesquisa e/ou dosagem	14
+Artroplastia total de joelho com implantes - tratamento cirúrgico	14
+ARTERIOGRAFIA CAROTIDA BILATERAL + SELETIVA VERTEBRAL BILATERAL (4 VASOS)	13
+Biópsia percutânea de fragmento mamário por agulha grossa (core biopsy) orientada por US (não inclui o exame de imagem)	13
+Angio-RM arterial de pescoço	13
+Serotonina (sangue)	13
+Angiografia transoperatória de posicionamento	13
+Potencial de acuidade visual - monocular	13
+Broncoscopia com ou sem aspirado ou lavado brônquico bilateral	13
+DIÁRIA DE  APARTAMENTO SIMPLES	13
+CAPILAR (DIALISADOR) ALTO FLUXO FX 80 CLASSIX	13
+Hemorroidectomia aberta ou fechada, com ou sem esfincterotomia, sem grampeador	13
+Coluna vertebral: infiltração foraminal ou facetária ou articular	12
+Angiografia pós-operatória de controle	12
+US - Obstétrica gestação múltipla com Doppler colorido: cada feto	12
+TC - Segmento apendicular (braço ou antebraço ou mão ou coxa ou perna ou pé) - unilateral	12
+PCR em tempo real para vírus influenza A e B	12
+Angiotomografia arterial de tórax	12
+Patologia osteomioarticular em um membro	12
+Hepatite C - anti-HCV - pesquisa e/ou dosagem	12
+Herniorrafia inguinal - unilateral	12
+PCT - PET-CT (PET SCAN DEDICADO ONCOLOGICO) HOSP BASE	12
+TROCA DE SONDA DE GASTROSTOSMIA	12
+Tratamento microcirúrgico do canal vertebral estreito por segmento	12
+Implante cirúrgico de cateter de longa permanência para NPP, QT ou para Hemodepuração	12
+PCR em tempo real para vírus respiratório sincicial	12
+Biópsia de pele, tumores superficiais, tecido celular subcutâneo, linfonodo superficial, etc	12
+Endoscopia digestiva alta com biópsia e/ou citologia	12
+RX - Mão ou quirodáctilo	12
+US - Abdome inferior feminino (bexiga, útero, ovário e anexos)	11
+Sangria terapêutica	11
+Cálcio - pesquisa e/ou dosagem	11
+Hidro-RM (colângio-RM ou uro-RM ou mielo-RM ou sialo-RM ou cistografia por RM)	11
+PCT - TURBI + ADENO-AMIGDA	11
+Ferro sérico - pesquisa e/ou dosagem	11
+Fator V de Leiden por PCR - pesquisa	11
+Vitamina E - pesquisa e/ou dosagem	11
+Bloqueio de nervo periférico - nervos periféricos	11
+Angiografia por cateterismo seletivo de ramo primário - por vaso	11
+TELA DE POLIPROPILENO ABDOTEX 7,5 X 15CM	11
+LIGASURE MARYLAND JAW DIVISOR /SELADOR LAPAROSCOPICO NANO REVESTIDO 5 MM X 37 CM - REF. LF1937	11
+DRENO DE SUCÇÃO 3,2 (ZAMMI) - REF. ZAMMIVAC 3.2MM ¿ 10 FR ¿ 1/8¿	11
+Angiotomografia arterial de abdome superior	11
+Procedimento diagnóstico em citopatologia cérvico-vaginal oncótica	11
+HLA B27, fenotipagem	11
+Ensaio para dosagem da liberação de interferon gama	11
+SESSÃO DE HEMODIÁLISE AMBULATORIAL POR FAV	10
+Creatino fosfoquinase total (CK) - pesquisa e/ou dosagem	10
+Gastroplastia para obesidade mórbida por videolaparoscopia	10
+US - Próstata transretal com biópsia - mais de 8 fragmentos	10
+Hemossedimentação, (VHS) - pesquisa e/ou dosagem	10
+Flebografia retrógrada por cateterismo - unilateral	10
+Oximetria não invasiva	10
+RX - Panorâmica dos membros inferiores	10
+RM - Mão (não inclui punho)	10
+Densitometria óssea - corpo inteiro (avaliação de massa óssea ou de composição corporal)	10
+Marcação pré-cirúrgica por nódulo - máximo de 3 nódulos por mama, por US (não inclui exame de imagem)	10
+Procedimento diagnóstico em peça anatômica ou cirúrgica simples	10
+Cintilografia do miocárdio perfusão - estresse farmacológico	10
+Unidade de concentrado de hemácias	10
+RX - Coxa	10
+Triiodotironina (T3) - pesquisa e/ou dosagem	10
+US - Obstétrica: perfil biofísico fetal	10
+US - Transvaginal para controle de ovulação (3 ou mais exames)	9
+Ressecção de tumores palpebrais	9
+FIO GUIA RADIFOCUS M - TERUMO MEDICAL DO BRASIL LTDA.	9
+Antibiograma (teste de sensibilidade e antibióticos e quimioterápicos), por bactéria - não automatizado	9
+Processamento auditivo central (a partir dos 7 anos e adulto)	9
+Otoemissões evocadas transientes	9
+Angiotomografia arterial de pelve	9
+CIMENTO ORTOPEDICO C-MAXX 40GR 20ML - REF: 10100104020	9
+Infiltração de ponto gatilho (por músculo) ou agulhamento seco (por músculo)	9
+RX - Antebraço	9
+CAMPO CIRURGICO OPSITE 55 X 45CM - REF: 4989	9
+Angiografia por cateterismo não seletivo de grande vaso	9
+Retirada cirúrgica de cateter de longa permanência para NPP, QT ou para Hemodepuração	9
+Hemorróidas - ligadura elástica (por sessão)	9
+Globulina de ligação de hormônios sexuais (SHBG) - pesquisa e/ou dosagem	9
+KIT CATETER ARTERIAL RADIAL 20GAX05CM - REF: SAC-00520	9
+CLORIDRATO DE DOXORRUBICINA - 50 MG PO LIOF SOL INJ CT 10 FA VD INC X 50 ML - EUROFARMA LABORATÓRIOS S.A.	9
+Imunofixação - cada fração	9
+Retirada de fios, pinos, parafusos ou hastes metálicas intra-ósseas	9
+Histeroscopia com ressectoscópio para polipectomia, metroplastia, endometrectomia e ressecção de sinéquias	9
+Angiotomografia arterial de pescoço	9
+SAC CATETER ARTERIAL TIPO SELDINGER 3 - EMERGO BRAZIL IMPORT IMPORTACAO E DISTRIBUICAO DE PRODUTOS MEDICOS HOSPITALARES LTDA	9
+TROCARTES CIRÚRGICOS ENDOPATH XCEL - D11LT - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	9
+HIV1 ou HIV2, pesquisa de anticorpos	9
+DIÁRIA COMPACTA DE APARTAMENTO SIMPLES	9
+CAPECITABINA - 500 MG COM REV CT BL AL PVC OPC X 30 - SUN FARMACÊUTICA DO BRASIL LTDA	9
+DIÁRIA DE  APARTAMENTO STANDARD	9
+Sífilis - VDRL	9
+KIT PULSE LAVAGEM SYSTEM OSRON IMP. REF: 2500D-DPL-ST01Z-CT02Z	9
+HERCEPTIN - 440 MG PO LIOF CT FA VD INC + DIL FA VD INC X 20 ML  - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	8
+SISTEMA DE TERAPIA V.A.C. - K.C.I. BRASIL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS PARA A SAÚDE LTDA	8
+SESSÃO DE HEMODIÁLISE AMBULATORIAL, PACIENTE SOROLOGIA POSITIVA, POR FAV OU CATETER	8
+Hérnia de disco tóraco-lombar - tratamento cirúrgico	8
+RM - Ossos temporais bilateral	8
+Polissonografia de noite inteira (PSG) (inclui polissonogramas)	8
+Exérese tangencial (shaving) - (por grupo de até 5 lesões)	8
+RX - Punho	8
+Deleucotização de unidade de concentrado de hemácias - por unidade	8
+Audiometria vocal - pesquisa de limiar de discriminação	8
+TAXA FIBRA LASER DESCARTAVEL 200 - REF:MEDILAS H UROPULSE	8
+Frenotomia lingual	8
+ALÇA RESSECÇAO EM U 24 FR (2 POLOS) REF: 27040G	8
+CONECTOR Y PARA ACTP SCW - EPTCA MEDICAL DEVICES LTDA.	8
+Colonoscopia com biópsia e/ou citologia	8
+Ptose palpebral - correção cirúrgica - unilateral	8
+CLIPS DE TITANIO HORIZON - 3200 - EMERGO BRAZIL IMPORT IMPORTACAO E DISTRIBUICAO DE PRODUTOS MEDICOS HOSPITALARES LTDA	8
+ROCASTONE KOBOT TIPLESS-EXTRATOR DE CALCULOS - REF. ROSZ1940ST	8
+Calprotectina, detecção nas fezes	8
+NEO DECAPEPTYL LP - 11,25 MG PÓ LIOF SUS INJ LIB PROL CT FA VD TRANS + SOL DIL X 2 ML - ACHÉ LABORATÓRIOS FARMACÊUTICOS S.A	8
+Linfocintilografia	8
+Cirurgia esterilizadora masculina	8
+CATETER URETERAL ROCAJJ DUPLO J CURTA PERMANENCIA 6 FR X 26 CM - REF. ROJS 9626 STB	8
+Extensos ferimentos, cicatrizes ou tumores - exérese e rotação de retalhos miocutâneos	8
+BUNDLE GASTROSTOMIA ENDOSCÓPICA	8
+Tiroxina (T4) - pesquisa e/ou dosagem	8
+Timpanotomia exploradora - unilateral	8
+TC - Pescoço (partes moles, laringe, tireóide, faringe e glândulas salivares)	8
+Doppler colorido de veia cava superior ou inferior	7
+Fosfatase alcalina - pesquisa e/ou dosagem	7
+Adenoidectomia	7
+Angiografia por cateterismo superseletivo de ramo secundário ou distal - por vaso	7
+Teste SARS-COV-2 (Coronavírus COVID-19), teste rápido para detecção de antígeno	7
+Fratura e/ou luxações (incluindo descolamento epifisário cotovelo-punho) - tratamento cirúrgico	7
+Coagulograma (TS, TC, prova do laço, retração do coágulo, contagem de plaquetas, tempo de protombina, tempo de tromboplastina, parcial ativado) - pesquisa e/ou dosagem	7
+Assistência fisiátrica respiratória em doente clínico internado	7
+RX - Coluna lombo-sacra - 5 incidências	7
+AVASTIN - 25 MG/ML SOL INJ P/ INF IV CT FA VD INC X 16 ML  - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	7
+INTRODUTOR RADIFOCUS INTRODUCER II COM GUIA METÁLICA E AGULHA - RS*R60N10MQ - TERUMO MEDICAL DO BRASIL LTDA.	7
+Histerectomia total - via abdominal	7
+MONITORIZAÇÃO ELETROFISIOLÓGICA DOS NERVOS DO CRANIO (INSTUTO MANIGLIA)	7
+Ácido fólico, pesquisa e/ou dosagem nos eritrócitos	7
+BKS III ¿ COMPONENTE TIBIAL CIMENTADO GRANDE 74 X 46 MM - REF. 2361-03-000	7
+BKS III - COMPONENTE PATELAR - 3 PEGAS - DIAMETRO 26MM REF. 2360-26-000	7
+EQUICEL - EQ10-020 - ASSUT EUROPE LATINO AMERICA IMPORTAÇÃO E EXPORTAÇÃO LTDA	7
+BKS III - INSERTO TIBIAL EXTRA GRANDE - ESPESSURA 8,0MM - REF. 2345-10-000	7
+Sinusectomia maxilar - via endonasal	7
+Timpanotomia para tubo de ventilação - unilateral	7
+CLIPS DE LAQUEACAO DE TITANIO - LT400 - LIGACLIP EXTRA - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	7
+PCT - TURBI + ADENO-AMIGDA + TIMPANO	7
+T3 livre - pesquisa e/ou dosagem	7
+TROCARTES CIRÚRGICOS ENDOPATH XCEL - D12LT - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	7
+RX - Cotovelo	7
+PCT - TIMPANOTOMIA PARA TUBO (BONEBRIGDE)	7
+RX - Escanometria	7
+TC - Mandíbula	7
+Homocisteína - pesquisa e/ou dosagem	7
+ROCAMED ROCAWIRE PLATINUM-FIO GUIA - REF. ROWP3502ST	7
+Otoemissões acústicas produto de distorção	7
+Doppler colorido venoso de membro superior - unilateral	7
+Doppler colorido de aorta e artérias renais	7
+Punção liquórica	7
+RX - Coluna lombo-sacra - 3 incidências	7
+Uvulopalatofaringoplastia (qualquer técnica)	7
+Sessão de psicoterapia individual	7
+CURATIVO VAC GRANUFOAM SILVER COM TECNOLOGIA SENSA TRAC. - K.C.I. BRASIL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS PARA A SAÚDE LTDA	7
+CARBOPLATINA - 10 MG/ML SOL INJ IV CT FA VD AMB X 15 ML  - ACCORD FARMACÊUTICA LTDA	7
+TESTE RÁPIDO QUALITATIVO SARS-COV-2 ANTÍGENOS	7
+ADAPTIC TOUCH® MALHA NÃO ADERENTE DE SILICONE - K.C.I. BRASIL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS PARA A SAÚDE LTDA	7
+GENUXAL - 1000 MG PO SOL INJ IV CX 1 FA VD TRANS X 75 ML (REST HOSP) - BAXTER HOSPITALAR LTDA	7
+Retinografia (só honorário) monocular	7
+FILGRASTINE - 300 MCG/ML SOL INJ CT 01 FA VD INC X 1 ML  - BLAU FARMACÊUTICA S.A.	6
+Angiotomografia venosa de pelve	6
+Pterígio - exérese	6
+Angiotomografia venosa de abdome superior	6
+CANULA DE ACESSO URETERAL BI-FLEX EVO REF.ROUS1045ST	6
+Desbridamento cirúrgico - por unidade topográfica (UT)	6
+PCT - SINUSOTOMIA + ETMOIDECTOMIA + ANTROSTOMIA + TURBI + SEPTO + SINUSECTOMIA	6
+US - Obstétrica 1º trimestre (endovaginal)	6
+OXALIPLATINA - 100 MG PO LIOF SOL INJ IV CT FA VD TRANS - EUROFARMA LABORATÓRIOS S.A.	6
+PACLITAXEL - 6 MG/ ML SOL INJ IV CT FA VD INC X 16,7 ML - FRESENIUS KABI BRASIL LTDA	6
+Teste de Coombs direto - em tubo	6
+Ácido ascórbico (vitamina C) - pesquisa e/ou dosagem	6
+Reconstrução, retencionamento ou reforço do ligamento cruzado anterior ou posterior #  - procedimento videoartroscópico de joelho	6
+Estimulação elétrica transcutânea	6
+Antígeno específico prostático livre (PSA livre) - pesquisa e/ou dosagem	6
+Sessão de oxigenoterapia hiperbárica (por sessão de 2 horas)	6
+Cirurgias fistulizantes antiglaucomatosas	6
+Anti transglutaminase tecidual - IgG	6
+Pesquisa rápida para influenza A e B	6
+Monitorização neurofisiológica intra-operatória	6
+SIMPONI - 50 MG SOL INJ CT 1 SER PREENC X 0,5 ML ACOP CAN APLIC C/ MANGA SEG - JANSSEN-CILAG FARMACÊUTICA LTDA	6
+Cadeias leves livres Kappa/Lambda, dosagem, sangue	6
+CATETER VENOSO CENTRAL TRIPLO LUMEN ALTIUS REF. K2CS120703	6
+ANEL PARA LIGADURA HEMORROIDARIA - FRADEL-MED IND E COM DE APARELHOS MEDICOS LTDA-ME	6
+Autotransplante conjuntival	6
+Herniorrafia epigástrica	6
+Hormônio gonodotrofico corionico quantitativo (HCG-Beta-HCG) - dosagem	6
+Consulta Especializada em Oftalmologia	6
+AVITENE PO - HEMOSTATICO CIRURGICO - REF. 1010010/0.5 G	6
+BUNDLE MUCOSECTOMIA ALTA	6
+Anestesia para exames específicos, teste para diagnóstico e outros procedimentos diagnósticos	6
+Audiometria tonal limiar com testes de discriminação	6
+DIÁRIA COMPACTA DE QUARTO COLETIVO DE 2 LEITOS COM BANHEIRO PRIVATIVO	6
+Ácido metil malônico - pesquisa e/ou dosagem	6
+RM - Perna (unilateral)	6
+Pesquisa de pares cranianos relacionados com o VIII PAR	6
+Fator antinúcleo, (FAN) - pesquisa e/ou dosagem	6
+Antimicrossomal - pesquisa e/ou dosagem	6
+Vídeo-endoscopia naso-sinusal com ótica flexível	6
+Neurólise das síndromes compressivas	6
+PULSE LAVAGE CIRÚRGICO - ORTOCIR ORTOPEDIA CIRURGIA LTDA	6
+BUNDLE ECOENDOSCOPIA ALTA OU BAIXA C/S PUNÇÃO	6
+BUNDLE CPRE	6
+EXTRATORES DE CÁLCULOS ROCAMED ROCASTONE - INOVAMÉDICA COMÉRCIO DE PRODUTOS MÉDICOS LTDA - EPP	6
+PRODUTO PARA CATETERIZAÇÃO VENOSA CENTRAL DE LÚMEN DUPLO - EMERGO BRAZIL IMPORT IMPORTACAO E DISTRIBUICAO DE PRODUTOS MEDICOS HOSPITALARES LTDA	6
+BORTEZOMIBE - 3,5 MG PO LIOF INJ CT FA VC INC - ACCORD FARMACÊUTICA LTDA	6
+Doppler colorido de artérias viscerais (mesentéricas superior e inferior e tronco celíaco)	6
+Colocação de sonda enteral	6
+CANISTER INFO V.A.C. COM GEL - K.C.I. BRASIL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS PARA A SAÚDE LTDA	6
+Curativo especial sob anestesia - por unidade topográfica (UT)	6
+DIÁRIA DE  UTI INFANTIL/PEDIÁTRICA	6
+RM - Pescoço (nasofaringe, orofaringe, laringe, traquéia, tireóide, paratireóide)	6
+Magnésio - pesquisa e/ou dosagem	6
+Processos inflamatórios pélvicos	6
+DYSPORT - 300 U PO LIOF INJ CT FA VD INC  - BEAUFOUR IPSEN FARMACÊUTICA LTDA	6
+TRANSAMINASE PIRÚVICA - TGP OU ALT POR UNIDADE DE SANGUE TOTAL	6
+CÂNULA DE ACESSO URETERAL BI-FLEX EVO - ROUS1035ST - ALLENT COMÉRCIO, IMPORTAÇÃO E DISTRIBUIÇÃO DE MATERIAIS MÉDICOS LTDA. ? ME	5
+Recuperação funcional pós-operatória ou pós-imobilização gessada de  patologia  osteomioarticular  com complicações neurovasculares afetando um membro	5
+Gonadotrófico coriônico, hormônio (HCG) - pesquisa e/ou dosagem	5
+STENT FARMACOLOGICO PARA ARTERIAS CORONARIAS 3,50 X 180MM - REF: 1120350-18	5
+Endolaser/Endodiatermia	5
+Marcadores tumorais (CA 19.9, CA 125, CA 72-4, CA 15-3, etc.) cada - pesquisa e/ou dosagem	5
+PCT + TURBI + SEPTO	5
+Anestesia para exames de ultrassonografia	5
+Retinopexia com introflexão escleral	5
+Punção biópsia/aspirativa de órgão ou estrutura superficial orientada por TC (não inclui o exame de base)	5
+PARAFUSO DE INTERFERENCIA 9 X 30MM - REF: 0042050-930	5
+TC para planejamento oncológico	5
+Sessão em psicologia individual	5
+CATETER URETERAL ROCAJJ ROCAMED - INOVAMÉDICA COMÉRCIO DE PRODUTOS MÉDICOS LTDA - EPP	5
+RX - Seios da face	5
+Protrombina, pesquisa de mutação	5
+ADESIVO CIRURGICO BIOLOGICO - REF: AB1000	5
+TREINAMENTO AUDITIVO EM CABINE	5
+SPLINT NASAL VOLMED REF. ASPL01	5
+Fator reumatóide, teste do látex (qualitativo) - pesquisa	5
+RM - Tórax (mediastino, pulmão, parede torácica)	5
+Vitrectomia vias pars plana	5
+Linfadenectomia retroperitoneal laparoscópica	5
+Doppler colorido arterial de membro superior - unilateral	5
+Mycobactéria PCR - pesquisa	5
+GENUXAL - 1000 MG PO SOL INJ IV CX 10 FA VD INC X 75 ML (REST HOSP) - BAXTER HOSPITALAR LTDA	5
+RM - Coração - morfológico e funcional	5
+PACOTE SESSÃO DE HEMODIALISE HOSPITALAR	5
+XOLAIR - 150 MG PO LIOF INJ CT FA VD INC + AMP VD INC DIL X 2 ML - NOVARTIS BIOCIENCIAS S.A	5
+CANULA DE DEBRIDAÇÃO R3A PRIME REF.031.1167	5
+Meniscectomia - um menisco - procedimento videoartroscópico de joelho	5
+Cintilografia da tireóide e/ou captação (tecnécio - 99m TC)	5
+Instilação vesical ou uretral	5
+RX - Calcâneo	5
+ZOLADEX - 3,6 MG DEPOT + SER CT ENV AL POLIET X 1 - ASTRAZENECA DO BRASIL LTDA	5
+Artrodese da coluna com instrumentação por segmento	5
+CARGA P/ GRAMPEADOR ENDO GIA UNIVERSAL TRI-STAPLE 45MM ROXA IMP. REF: EGIA45AMT	5
+Incisão e drenagem de abscesso, hematoma ou panarício	5
+Paratormônio - PTH ou fração (cada) - pesquisa e/ou dosagem	5
+Fenotipagem do sistema RH-HR (D, C, E, C E C) gel teste	5
+RESERVATORIO J-VAC 300ML - REF: 2163	5
+RX - Tórax - 1 incidência	5
+DILATADOR PARA CATETER - ANGIOMED IMPORTAÇÃO E EXPORTAÇÃO LTDA	5
+FILTRO ASPIRADOR VIA ASPIRATE MEDIUM - REF. VM-03-02-01	5
+TROCATER OTICO VERSAPORT BLADELESS 12MM SEM LAMINA - REF: ONB12STF	5
+Sutura de pequenos ferimentos com ou sem desbridamento	5
+Enxerto ósseo	5
+Fototerapia com UVA (PUVA) (por sessão)	5
+Embolização de aneurisma cerebral por oclusão sacular - por vaso	5
+Colocação de stent em ramo intracraniano	5
+ULTIMASTER STENT CORONARIO ELUIDOR DE SIROLIMUS REF. DE-RD3028KSM	5
+COTONOIDE	5
+Etmoidectomia intranasal	5
+Tenólise no túnel osteofibroso	5
+CONSULTA INDIVIDUAL AMBULATORIAL EM FONOAUDIOLOGIA PARA AUTISMO	5
+Cirurgia de coluna por via endoscópica	5
+TC - Maxilar	5
+PCT HEMODERIVADOS - PFC	5
+Histerectomia total com anexectomia uni ou bilateral - qualquer via	5
+TAXA DE AUXILIAR/TÉCNICO DE ENFERMAGEM NO DOMICÍLIO ATÉ 24 HORAS	5
+IMUNO BCG - 40 MG PÓ LIOFILIZADO CX CT 02 AMP AMB - FUNDAÇÃO ATAULPHO DE PAIVA	5
+GRAMPEADOR ENDO GIA ULTRA UNIVERSAL 12MM 16CM - REF: EGIAUSTND (STANDART)	5
+Audiometria vocal - pesquisa de limiar de inteligibilidade	5
+RX - Coluna cervical - 3 incidências	5
+Imobilização de membro superior	5
+Eletroferese de proteínas	5
+Dehidroepiandrosterona (DHEA) - pesquisa e/ou dosagem	4
+CITRATO DE TAMOXIFENO - 20 MG COM REV CT BL AL AL X 30  - BLAU FARMACÊUTICA S.A.	4
+FAMÍLIA DE CATETERES VENOSOS CENTRAIS - LABORATÓRIOS B. BRAUN S/A	4
+Ecodopplercardiograma transesofágico (inclui transtorácico)	4
+FIOS E PINOS RIGIDOS IMPLANTAVEIS ORTOBIO - 5401-200-300 - ORTOBIO - IND E COM. DE PRODUTOS ORTOPEDICOS LTDA-EPP	4
+DOCETAXEL - 20 MG/ML SOL INJ IV CT FA VD TRANS X 1 ML - GLENMARK FARMACÊUTICA LTDA	4
+RADIOTERAPIA CONFORMADA TRIDIMENSIONAL (RCT-3D) COM ACELERADOR LINEAR - POR TRATAMENTO	4
+RX - Videodeglutograma	4
+TROCATER BLADELESS B11LT 11MM	4
+"Procedimento diagnóstico em painel de hibridização ""in situ"""	4
+Fenotipagem de outros sistemas eritrocitários - por fenótipo - gel teste	4
+PCT - MAPEAMENTO E AJUSTES PÓS IMPLANTE DE BONEBRIDGE E/OU PONTO - PACOTE HIORP	4
+TU partes moles - exérese	4
+MABTHERA - 10 MG/ML SOL DIL INFUS IV CT 1 FR VD TRANS X 50 ML - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	4
+DOCETAXEL - 40MG/ML SOL INJ IV CT FA VD AMB X 2,0 ML + DIL FA VD INC X 6,0 ML - GLENMARK FARMACÊUTICA LTDA	4
+Progesterona - pesquisa e/ou dosagem	4
+Angioplastia transluminal transoperatória - por artéria	4
+Cintilografia para pesquisa de refluxo gastro-esofágico	4
+FIOS E PINOS RIGIDOS IMPLANTAVEIS ORTOBIO - 5401-150-300 - ORTOBIO - IND E COM. DE PRODUTOS ORTOPEDICOS LTDA-EPP	4
+SPONGOSTAN ESPONJA HEMOSTATICA ABSORVIVEL STANDARD 7CM X 5CM X 1CM - REF: MS0002	4
+BUNDLE COLONOSCOPIA COM TATUAGEM E/OU DESCOMPRESSÃO	4
+GENUXAL - 50 MG COM REV LIB RETARD CT BL AL/AL X 50 - BAXTER HOSPITALAR LTDA	4
+CATETER TRIPLO LUMEN P/ HEMODIALISE 12FRX20CM - REF. CV 15123 F	4
+DRENO BLAKE S/ TROCATHER 15FR REF. 2228	4
+Orquidopexia unilateral	4
+TUBO VENTILACAO 1011CH TEFLON C/ HASTE AÇO (SHEPARD)- REF: 94139	4
+BUNDLE EDA RETIRADA CORPO ESTRANHO	4
+TAXA DE AUXILIAR/TÉCNICO DE ENFERMAGEM NO DOMICÍLIO ATÉ 12 HORAS	4
+CARGA PARA GRAMPEADOR ENDO GIA UNIVERSAL COM TECNOLOGIA TRI-STAPLE REEF. EGIA45AVM	4
+Citomegalovírus - quantitativo, por PCR - pesquisa	4
+Nasofibrolaringoscopia para dignóstico e/ou biópsia	4
+Apendicectomia por videolaparoscopia	4
+HUMIRA - 40 MG SOL INJ CT 2 BL X SER X 0,8 ML + SIST APLIC PLAST (PEN) + ENV LENÇO COM ÁLCOOL. - ABBVIE FARMACÊUTICA LTDA.	4
+COMPONENTE FEMORAL GRANDE BKS III ESQUERDO - REF: 2340-06-000	4
+Imobilizações não-gessadas (qualquer segmento)	4
+EQUISTREAM - BARD BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA A SAÚDE LTDA.	4
+RM - Membro superior unilateral (não inclui mão e articulações)	4
+ACTEMRA - 20 MG/ML SOL DIL INFUS IV CT FA VD TRANS X 10 ML - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	4
+CLORIDRATO DE IRINOTECANO - 20 MG/ML SOL DIL INFUS IV CT FA VD AMB X 5 ML - EUROFARMA LABORATÓRIOS S.A.	4
+Anticorpos anti peptídeo cíclico citrulinado - IgG	4
+PERJETA - 420 MG SOL DIL INFUS IV CT FA VD TRANS X 14 ML - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	4
+Epistaxe - cauterização (qualquer técnica)	4
+Embolectomia ou tromboembolectomia arterial	4
+Extensos ferimentos, cicatrizes ou tumores - excisão e retalhos cutâneos da região	4
+Impedanciometria - timpanometria	4
+Consulta com enfermeiro obstetra ou obstetriz	4
+Cálcio iônico - pesquisa e/ou dosagem	4
+BAINHA LONGA AXS INFINITY LS - STRYKER DO BRASIL LTDA	4
+HUMIRA - 40MG SOL INJ CT 2 BL X SER X 0,8 ML + ENV LENÇO COM ALCOOL  - ABBVIE FARMACÊUTICA LTDA.	4
+Alérgenos - perfil antigênico (painel C/36 antígenos) - pesquisa e/ou dosagem	4
+Metodo Bobath - Sessão de Fisioterapia	4
+Hepatite C - anti-HCV - IgM - pesquisa e/ou dosagem	4
+Herniorrafia incisional	4
+Lipoproteína (a) - Lp (a) - pesquisa e/ou dosagem	4
+Abscesso anorretal - drenagem	4
+DIÁRIA COMPACTA DE ENFERMARIA DE 2 LEITOS COM BANHEIRO PRIVATIVO	4
+BRCA1 E BRCA2 ¿ SEQUENCIAMENTO GENICO COMPLETO	4
+ZOLADEX - 10,8 MG DEPOT + SER PLAS BS CT ENV AL POLIET X 1 - ASTRAZENECA DO BRASIL LTDA	4
+Estudo ultrassonográfico intravascular	4
+Angio-RM venosa de crânio	4
+INTRODUTOR PARA ALIVIO DA DOR RADIMED PRO RERF. 10003S	4
+Punção articular diagnóstica ou terapêutica (infiltração) - orientada ou não por método de imagem	4
+VERSAONE CANULA UNIVERSAL 12MM PADRÃO - REF: UNVCA12STF	4
+Manipulação articular sob anestesia geral	4
+17-alfa-hidroxiprogesterona - pesquisa e/ou dosagem	4
+Gastroplastia para obesidade mórbida - qualquer técnica	4
+Bloqueio fenólico, alcoólico ou com toxina botulínica por segmento corporal	4
+Biópsia do colo uterino	4
+Laminectomia ou laminotomia	4
+KIT BARIMARLEX - Ref.: Kb2300rj0012	4
+Punção traqueal	4
+Curva de HGH com clonidina (cada dosagem)	4
+"FIO GUIA HIDROFILICO ALLWIN 0.035"" ¿ RETO - REF. SHSG 150-35"	4
+Angiotomografia de aorta abdominal	4
+DRENO DE SUCCAO COM AGULHA 3.2MM	4
+Dehidrotestosterona (DHT) - pesquisa e/ou dosagem	4
+BROCA CONICA CORTANTE P/ MIDAS LEGEND (FRESA) - REF: 10BA60	4
+CÂNULA ECOGÊNICA PROBLOCK - ATLÂNTICO MEDICINA ESPECIALIZADA LTDA	4
+DYSPORT - 500 U PO LIOF INJ CT FA VD INC - BEAUFOUR IPSEN FARMACÊUTICA LTDA	4
+Ressecção endoscópica da próstata	4
+CIMENTO ORTOPEDICO OSTEO-CLASS REF. 1099	4
+Hepatite C (quantitativo) por PCR - pesquisa	4
+Colesterol (VLDL) - pesquisa e/ou dosagem	4
+NAT/HBV - por componente hemoterápico - pesquisa e/ou dosagem	3
+KIT PARA GASTRECTOMIA VERTICAL REF. BRKPW05	3
+Crescimento, hormônio do (HGH) - pesquisa e/ou dosagem	3
+Fistulectomia anal em um tempo	3
+Punção biópsia/aspirativa de órgão ou estrutura profunda orientada por TC (não inclui o exame de base)	3
+Diálise peritoneal ambulatorial contínua (CAPD) por mês/paciente	3
+Curetagem pós-abortamento	3
+Excisão de lesão maligna com reconstrução à custa de retalhos locais	3
+TROCATER BLADELESS B12LT 12MM	3
+Doppler convencional órgão/estrutura isolada	3
+TYSABRI - 20 MG/ML SOL INJ CT FA VD INC X 15 ML - BIOGEN BRASIL PRODUTOS FARMACÊUTICOS LTDA	3
+KIT OBESIDADE VIDEO - REF: BRKPW09	3
+BUNDLE PH-METRIA ESOFAGICA COMPUTADORIZADA COM DOIS CANAIS	3
+Eletrencefalograma em vigília, e sono espontâneo ou induzido	3
+Cintilografia renal estática (quantitativa ou qualitativa)	3
+NAT/HCV por componente hemoterápico - pesquisa e/ou dosagem	3
+Artroplastia (qualquer técnica ou versão de quadril) - tratamento cirúrgico	3
+Albumina - pesquisa e/ou dosagem	3
+IMPLANTE DE MARCAPASSO BICAMERAL - PACOTE DE CIRURGIA CARDÍACA	3
+CATETER ANGIOGRÁFICO CARDIOLÓGICO PERFORMA BRAIDED - 7521-21 - JUDKINS LEFT - MERIT MEDICAL COMERCIALIZAÇÃO, DISTRIBUIÇÃO, IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS HOSPITALARES LTDA	3
+Curativos em geral sem anestesia, exceto queimados	3
+Laserterapia para o tratamento da mucosite oral / orofaringe, por sessão	3
+Provas de função hepática (bilirrubinas, eletroforese de proteínas, FA, TGO, TGP e Gama-PGT)	3
+MESNA - 100 MG/ML SOL INJ IV CT 50 AMP VD INC X 4 ML (EMB HOSP) - BLAU FARMACÊUTICA S.A.	3
+Parto (via vaginal)	3
+S. HEPATITE B ANTI-HBC POR UNIDADE DE SANGUE TOTAL	3
+DISPOSITIVO PARA SELAMENTO DE PUNÇÃO HEMOSTÁTICA ANGIO-SEAL VIP (8F) - TERUMO MEDICAL DO BRASIL LTDA.	3
+DIÁRIA DE  ENFERMARIA DE 4 OU MAIS LEITOS COM BANHEIRO PRIVATIVO	3
+Paraparesia/tetraparesia	3
+PCR em tempo real para os vírus parainfluenza e influenza	3
+Troca de prótese tráqueo-esofágica	3
+CAPILAR (DIALISADOR) ALTO FLUXO FX60 CLASSIX	3
+PCT - ABLAÇÃO CONVENCIONAL (ESTUDO ELETROFISIOLOGICO)	3
+FIOS E PINOS RIGIDOS IMPLANTAVEIS ORTOBIO - 5402-250-300 - ORTOBIO - IND E COM. DE PRODUTOS ORTOPEDICOS LTDA-EPP	3
+EQUOTERAPIA	3
+DISPOSITIVO PARA SELAMENTO DE PUNÇÃO HEMOSTÁTICA ANGIO-SEAL VIP (6F) - 610132 (COMPONENTES: 01 DISPOSITIVO ANGIO-SEAL VIP (6F); 01 BAINHA INTRODUTORA; 01 LOCALIZADOR DE ARTERIOTOMIA; 01 FIO GUIA COM ALINHADOR DA PONTA J (70CM X 0.035?).) - TERUMO MEDICAL	3
+Artrotomia de cotovelo - tratamento cirúrgico	3
+ELETRODO BIPOLAR DESCARTÁVEL - 4622.1333 - RICHARD WOLF BRASIL EQUIPAMENTOS MEDICINAIS LTDA	3
+CATETER ARTERIAL RADIAL 6 CM X 0.9 MM X 20 G REF. 3843 09	3
+TROCARTES CIRÚRGICOS ENDOPATH XCEL - B12LT - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	3
+GELFOAM - WYETH INDÚSTRIA FARMACÊUTICA LTDA	3
+Microneurólise única	3
+Reconstrução craniana ou craniofacial	3
+DIÁRIA DE ISOLAMENTO DE UTI ADULTO GERAL	3
+Pesquisa de anticorpos séricos irregulares antieritrocitários - gel teste	3
+Teste de Coombs direto - gel teste	3
+CURATIVO RENASYS FOAM PEQUENO 10 X 8 X 3CM - REF: 66800794	3
+PCT HEMODERIVADOS - CRIO	3
+Tratamento cirúrgico de fraturas de tíbia com fixador externo	3
+TERAPIA MÉTODO TEACCH (TREATMENTAND OF AUTISTICAND RELATED COMMUNICATION HANDICAPPED CHILDREN) - SESSÃO	3
+FIO GUIA RADIOFOCUS GLIDEWIRE TERUMO - GUIDEWIRE M PONTA ANGULAR RÍGIDA RFPA35263M - TERUMO MEDICAL DO BRASIL LTDA.	3
+INTRODUTOR RADIFOCUS INTRODUCER II COM GUIA METÁLICA E AGULHA - RS*R80N10MQ - TERUMO MEDICAL DO BRASIL LTDA.	3
+RECARGA ENDOMARLEX TRISIZE ARTICULADA ROXA 60MM - MODELO 3 REF CEAR36035	3
+Corpos estranhos, pólipos ou biópsia - em hospital sob anestesia geral	3
+PCT - CORPOS ESTRANHOS, PÓLIPOS OU BIÓPSIA &#x2013; EM HOSPITAL (ANESTESIA GERAL)	3
+EXEMESTANO - 25 MG DRG CT BL AL PLAS OPC X 30 - WYETH INDÚSTRIA FARMACÊUTICA LTDA	3
+VECTIBIX - 20 MG/ML SOL DIL INFUS CT FA VD TRANS X 20 ML - AMGEN BIOTECNOLOGIA DO BRASIL LTDA.	3
+PCT - TURBI + UVULO + AMIGDALA + SEPTO	3
+CISPLATINA - 1 MG/ML SOL INJ IV CT FA VD AMB X 10 ML   - ACCORD FARMACÊUTICA LTDA	3
+HIDROXIUREIA - 500 MG CAP DURA CT FR VD AMB X 150 - EMS S/A	3
+Estenose de conduto auditivo externo - correção	3
+Patologia osteomioarticular em um segmento da coluna	3
+Broncoscopia com biópsia transbrônquica	3
+CUTANPLAST - ESPONJA DE GELATINA HEMOSTATICA REF. 05170502	3
+Sequenciamento de Nova geração de todas as regiões codificadoras (éxons) de todo os genes do genoma  - Sequenciamento do Exoma (inclui Captura, Amplificação e Sequenciamento)	3
+PCT - PESQUISA DE POTENCIAIS AUDITIVOS DE TRONCO CEREBRAL (BERA) - PACOTE HIORP	3
+Dacriocistografia	3
+TROCARTE PORTMARLEX DESCARTAVEL SEM LAMINA REF TOMS212100	3
+"FIO GUIA HIDROFILICO RADIFOCUS STANDARD ANGULADO 0,035"" X 260CM REF. RF*GA35263M"	3
+IgE, total - pesquisa e/ou dosagem	3
+Proteína S total + livre, dosagem	3
+CLIP HEM-O-LOK ROXO - REF: 544240	3
+Dissecção muscular	3
+Ultrassonografia diagnóstica - monocular	3
+Estrogênios totais (fenolesteróides) - pesquisa e/ou dosagem	3
+Sulfato de dehidroepiandrosterona (S-DHEA) - pesquisa e/ou dosagem	3
+FIO GUIA TRAXCESS 14 - GW1420040 - ENDOTEC PRODUTOS MÉDICOS LTDA	3
+Tenoplastia / enxerto de tendão - tratamento cirúrgico	3
+Reposição de fármaco(s) em bombas implantadas	3
+STENT FRED - DISPOSITIVO ENDOLUMINAL DE REDIRECIONAMENTO DE FLUXO - FRED4012 - ENDOTEC PRODUTOS MÉDICOS LTDA	3
+Patologia neurológica com dependência de atividades da vida diária	3
+SOFIA - CATETER DE ACESSO DISTAL - ENDOTEC PRODUTOS MÉDICOS LTDA	3
+Denervação percutânea de faceta articular - por segmento	3
+Audiometria de tronco cerebral (PEA) BERA	3
+NAT/HIV por componente hemoterápico - pesquisa e/ou dosagem	3
+Iodo, dosagem na urina	3
+PROLENE 15 X 15 - XYPMH1	3
+Transferências musculares ao nível do ombro - tratamento cirúrgico	3
+Correção cirúrgica de ectrópio ou entrópio	3
+Ressecção parcial ou total de clavícula - tratamento cirúrgico	3
+ANCORA COM FIO FIBER E APLICADOR DESCARTAVEL REF.5907-050-260	3
+Hemoglobina (eletroforese) - pesquisa e/ou dosagem	3
+Anticorpos antitireóide (tireoglobulina) - pesquisa e/ou dosagem	3
+Tímpano-mastoidectomia	3
+TAXA DE APLICAÇÃO DE INJEÇÃO EV, FORA DA UTI/SEMI-UTI E DO CENTRO CIRÚRGICO, POR USO/SESSÃO	3
+Coombs indireto	3
+Cauterização química, ou eletrocauterização, ou criocauterização de lesões de colo uterino (por sessão)	3
+Cauterização química, ou eletrocauterização, ou criocauterização de lesões da vulva (por grupo de até 5 lesões)	3
+PCT - ADENOIDECTOMIA	3
+Processamento auditivo central infantil (de 3 a 7 anos)	3
+REVLIMID - 25 MG CAP CT BL AL PLAS TRANS X 21 - CELGENE BRASIL PRODUTOS FARMACÊUTICOS LTDA.	3
+IMBRUVICA - 420 MG COM REV CT BL AL PLAS PVC/PCTFE TRANS X 30 - JANSSEN-CILAG FARMACÊUTICA LTDA	3
+ADCETRIS - 50 MG PO LIOF INJ CX 1 FA VD TRANS - TAKEDA PHARMA LTDA.	3
+Hallux valgus (um pé) - tratamento cirúrgico	3
+HUMIRA - 20 MG SOL INJ CT 2 BL X SER PREENCH X 0,2 ML + ENV LEN ÁLCOOL - ABBVIE FARMACÊUTICA LTDA.	3
+FIO METALICO LISO - 32015E - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	3
+CARGA PARA GRAMPEADOR LINEAR CORTANTE - TCR75	3
+TC - Articulações temporomandibulares	3
+Calázio - exérese	3
+Dedo em gatilho, capsulotomia / fasciotomia - tratamento cirúrgico	3
+FIO TIPO KIRSCHNNER LISO PONTA TRIANGULAR 2,0MM X 300MM (ORTOBIO)	3
+Angiotensina II	3
+ACTEMRA SC - 162 MG SOL INJ SC CT 1 SER PREENC VD TRANS X 0,9 ML - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	3
+TALTZ - 80MG/ML SOL INJ CT 1 SER PREENC VD INC X 1ML + 1 CAN APLIC - ELI LILLY DO BRASIL LTDA	3
+EVENITY - 90 MG/ML SOL INJ CT 2 SER PREENC VD TRANS X 1,17ML - AMGEN BIOTECNOLOGIA DO BRASIL LTDA.	3
+TC - Coração - para avaliação do escore de cálcio coronariano	3
+Biofeedback com EMG	3
+Hepatite B - HBSAC (anti-antígeno de superfície) - pesquisa e/ou dosagem	3
+Antígeno Austrália (HBSAG) - pesquisa e/ou dosagem	3
+Angiotomografia de aorta torácica	3
+STENT FARMACOLÓGICO PARA ARTÉRIAS CORONÁRIAS - REF: 1120275-38	3
+DUPIXENT - 150 MG/ML SOL INJ CT 2 SER PREENC VD TRANS X 2,0 ML - SANOFI MEDLEY FARMACÊUTICA LTDA.	3
+Fraturas e/ou luxações ao nível do tornozelo - tratamento cirúrgico	3
+Vitamina K,- pesquisa e/ou dosagem	3
+SARS-CoV-2 (Coronavírus COVID-19), pesquisa de anticorpos IgA, IgG ou IgM, isolada por classe de imunoglobulina	3
+US - Crânio para criança	3
+FILTRO ASPIRADOR VIA ASPIRATE MEDIUM -VM-03-02-01	3
+CLORIDRATO DE IRINOTECANO - 20 MG/ML SOL INJ CT FA VD AMB X 2 ML  - ACCORD FARMACÊUTICA LTDA	3
+DIÁRIA COMPACTA DE ENFERMARIA DE 3 LEITOS COM BANHEIRO PRIVATIVO	3
+Cisto sacro-coccígeo - tratamento cirúrgico	3
+COMPONENTE TIBIAL 3 REF:0313200-300	3
+PONTA DE ASPIRAÇÃO ASPLASS F. - REF. 80201	3
+Frenotomia labial	3
+REMICADE - 10 MG/ML PO LIOF CT FA VD INC X 10 ML - JANSSEN-CILAG FARMACÊUTICA LTDA	3
+Proteína S livre, dosagem	3
+Reconstrução mamária com retalhos cutâneos regionais	3
+Tempo de tromboplastina parcial ativada - determinação	3
+Fraturas e/ou luxações do punho - tratamento cirúrgico	3
+Quadrantectomia e linfadenectomia axilar - em mama	3
+RM - Articulação temporomandibular (bilateral)	3
+SINUS - VENOUS - PASSROD IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS PARA SAÚDE LTDA - ME	3
+Assistência fisiátrica respiratória em pré e pós-operatório de condições cirúrgicas	3
+Varicocele unilateral - correção cirúrgica	3
+Colpoplastia posterior com perineorrafia	3
+CATETER IVUS DIGITAL VISIONS PV.035 - 88901 - PHILIPS MEDICAL SYSTEMS LTDA	3
+Cistolitotripsia a laser	3
+Angiotomografia arterial de membro inferior	3
+Exérese de nódulo - em mama	3
+DENSIS - 5MG/100ML SOL INJ CT BOLS PLAS TRANS SIST FECH X 100ML - EUROFARMA LABORATÓRIOS S.A.	2
+Eletrocoagulação de lesões cutâneas	2
+Rinoplastia reparadora	2
+Tumores retro-peritoneais  malignos unilaterais - exérese	2
+Cariótipo de sangue (técnicas com bandas)	2
+Angiotomografia venosa de pescoço	2
+Fraturas de fêmur - tratamento cirúrgico	2
+MAXBRAID SUTURA NÃO ABSORVIVEL, BRANCA/AZUL CO- TRANÇADA, TAMANHO 5, 38'''' ¿ AGULHA K-60, 1N - EMB. C/ 12 REF:900312	2
+Musicoterapia - por sessão	2
+EVACUADOR TUR-VAC ALLWIN REF. TV	2
+Tumor de conjuntiva - exérese	2
+BARDPORT TOTALMENTE IMPLANTÁVEL EM PLÁSTICO E SILICONE - 0603880 (PORTS MRI DE BAIXO PERFIL) - BARD BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA A SAÚDE LTDA.	2
+MICRO PLACA RETA PONTE 6MM X 4F - REF: PA.01.03.0577	2
+Paquimetria ultrassônica - monocular	2
+Reconstrução  de orelha - retoques	2
+Xantelasma palpebral - exérese - unilateral	2
+Correção de lipodistrofia braquial, crural ou trocanteriana de membros superiores e inferiores	2
+Correção de bolsas palpebrais - unilateral	2
+Dermatocalaze ou blefarocalaze exérese - unilateral	2
+CATETER ANGIOGRÁFICO CARDIOLÓGICO PERFORMA BRAIDED - 7531-13 - INTERNAL MAMMARY - MERIT MEDICAL COMERCIALIZAÇÃO, DISTRIBUIÇÃO, IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS HOSPITALARES LTDA	2
+Hepatite B (quantitativo) PCR - pesquisa	2
+Mucoproteínas - pesquisa e/ou dosagem	2
+Colocação cistoscópica de duplo J unilateral	2
+Somatomedina C (IGF1) - pesquisa e/ou dosagem	2
+Renograma	2
+Fator alfa necrose tumoral	2
+HTLV1 ou HTLV2 pesquisa de anticorpo (cada)	2
+COSENTYX - 150 MG/ML SOL INJ CT 2 SER PREENC VD TRANS X 1 ML - NOVARTIS BIOCIENCIAS S.A	2
+RX - Clavícula	2
+Acetilcolina, anticorpos ligador receptor	2
+Osteomielite dos ossos do antebraço - tratamento cirúrgico	2
+Potencial evocado auditivo de média latência (PEA-ML) bilateral	2
+Potencial evocado - P300	2
+Fraturas de falanges ou metacarpianos - tratamento cirúrgico com fixação	2
+Anticardiolipina - IgM - pesquisa e/ou dosagem	2
+Antigliadina (glúten) - IgM - pesquisa e/ou dosagem	2
+Tempo de protrombina - determinação	2
+Glicose-6-fosfato deidrogenase (G6FD) - pesquisa e/ou dosagem	2
+Tratamento cirúrgico da fístula liquórica	2
+Corpos estranhos, pólipos ou biópsia - em consultório	2
+SISTEMA DE FIXAÇÃO RÍGIDA DE MEMBROS INFERIORES - BM - 3480-35-022 PARAFUSO BLOQUEADO Ø 3,5 MM X 22 MM ? HEXALOBULAR ATRIA SP - BIOMECÂNICA INDÚSTRIA E COMÉRCIO DE PRODUTOS ORTOPÉDICOS LTDA	2
+PARAFUSO CORTICAL NEURO AP 1,5 X 5MM-TI-CROSS-DRIVE - REF. PA.01.03.2513	2
+OPDIVO - 100 MG SOL INJ CT 1 FA VD INC X 10 ML - BRISTOL-MYERS SQUIBB FARMACÊUTICA LTDA	2
+Fistulectomia anal em dois tempos	2
+Diástase dos retos-abdominais - tratamento cirúrgico	2
+FIO DE KIRSCHNER STEINMAN IOL - PONTA DIAMANTE, COM COMPRIMENTO ATÉ 300 MM - 1.50 MM - IOL IMPLANTES LTDA	2
+Western Blot (anticorpos anti-HIV) - pesquisa e/ou dosagem	2
+NORIPURUM 100 MG/5 ML AMP	2
+Hormônio gonodotrofico corionico qualitativo (HCG-Beta-HCG) - pesquisa	2
+FIO METALICO LISO - 31020E - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	2
+Rizotomia percutânea por segmento - qualquer método	2
+INTRODUTOR PARA RADIOFREQUENCIA - ABLATON REF.RN22100-05	2
+TAXA DE SALA PARA APLICAÇÃO DE MEDICAÇÃO	2
+Ceratoscopia computadorizada - monocular	2
+Bloqueio anestésico de plexos nervosos (lombossacro, braquial, cervical) para tratamento de dor	2
+Instabilidade de microssatélites (MSI), detecção por PCR, bloco de parafina	2
+Teste do pezinho ampliado (TSH neonatal + 17 OH progesterona + fenilalanina + Tripsina imuno-reativa + eletroforese de Hb para triagem de hemopatias)	2
+CATETER DIAGNOSTICO SIMMONS 2 5FR 100CM REF. 5576-23	2
+MICROCATETER HEADWAY REF. MC272156S	2
+Incisão e drenagem da glândula de Bartholin ou Skene	2
+CATETER DIAGNOSTICO ANGIOGRAFICO RADIOLOGICO - BERENSTEIN PERFORMA REF. 5592-13	2
+CLIPE HEMOSTÁTICO EM TITÂNIO MÉDIO-GRANDE SLS VERDE REF.V3120-1	2
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120275-15 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	2
+Ooforectomia uni ou bilateral ou ooforoplastia uni ou bilateral	2
+Toracostomia com drenagem pleural fechada	2
+CONECTOR Y SCW - REF: 832901	2
+Irradiação de componentes hemoterápicos	2
+RX - Perna	2
+KIT REFIL P/ BOMBA INF. PROGRAMAVEL - REF: 8551	2
+Exploração cirúrgica de nervo (neurólise externa)	2
+Isoenzimas de CPK	2
+Fístula arteriovenosa - com enxerto	2
+Angiotomografia venosa de tórax	2
+Aconselhamento genético	2
+RX - Articulação acromioclavicular	2
+KIT CANULA DE DISCECTOMIA PERCUTANEA L - REF. 921080100	2
+CUSTODIOL 1000 ML SOLUÇÃO	2
+IgE, grupo específico, cada - pesquisa e/ou dosagem	2
+Colocação de stent para tratamento de obstrução arterial ou venosa	2
+KIT INTRODUTOR DE CATETER ANNTOM - ZAREK DISTRIBUIDORA DE PRODUTOS HOSPITALARES EIRELI	2
+Amplificação do material genético (por PCR, PCR em tempo Real, LCR, RT-PCR ou outras técnicas), por primer utilizado, por amostra	2
+Terapia de pressão negativa - ambulatorial	2
+Procedimento diagnóstico em citologia hormonal isolada	2
+Angioplastia transluminal da aorta ou ramos ou da artéria pulmonar e ramos (por vaso)	2
+Implante de prótese intravascular na aorta/pulmonar ou ramos com ou sem angioplastia	2
+Dengue, anticorpos IgM, soro (teste rápido)	2
+TENOTOMIA OU TENODES DO BÍCEPS E ACROMIOPLASTIA COM RESSECÇÃO PARCIAL DA CLAVÍCULA	2
+ANCORA ANCHORFIX 5,0 SD-TI 2 SUTURAS USP 2 N/ ABS - REF: 0112115-025	2
+CATETER DE DILATAÇÃO PTA REVESTIDO COM PACLITAXEL FREEWAY - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA	2
+RADIFOCUS OPTITORQUE CATETER ANGIOGRAFICO - TERUMO - RH*BH15110M - TERUMO MEDICAL DO BRASIL LTDA.	2
+FAMÍLIA DE PARAFUSOS PARA PEQUENOS E GRANDES FRAGMENTOS - BM - 3489-35-014 - PARAFUSO CORTICAL Ø 3.5 MM X 14 MM ? HEXALOBULAR - BIOMECÂNICA INDÚSTRIA E COMÉRCIO DE PRODUTOS ORTOPÉDICOS LTDA	2
+RM - Face (inclui seios da face)	2
+Exérese de lesão da mama por marcação estereotáxica ou roll	2
+Dengue, anticorpos IgG, soro (teste rápido)	2
+CATETER DE DILATAÇÃO ZENFLOW TIGERTM LD PTA - ZWL1440110 - GF MEDIKA IMPORTAÇÃO E EXPORTAÇÃO LTDA	2
+Osteocondroplastia - estabilização, ressecção e/ou plastia #  - procedimento videoartroscópico de joelho	2
+DIÁRIA COMPACTA DE HOSPITAL DIA ENFERMARIA	2
+Iodo protéico (PBI) - pesquisa e/ou dosagem	2
+Laparotomia exploradora, ou para biópsia, ou para drenagem de abscesso, ou para liberação de bridas em vigência de oclusão por videolaparoscopia	2
+Hipospadia proximal - tratamento em 1 tempo - tratamento cirúrgico	2
+SISTEMA PARA OSTEOSSÍNTESE NEOFIX - PEQUENOS E GRANDES FRAGMENTOS - 901.034 - PARAFUSO LOCKING STAR HEAD D3.5X24MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+Tumor vesical - ressecção endoscópica	2
+CALQUENCE - 100 MG CAP DURA CT BL AL AL X 60 - ASTRAZENECA DO BRASIL LTDA	2
+Lesões ligamentares agudas ao nível do tornozelo - tratamento cirúrgico	2
+SISTEMA DE FIXAÇÃO DE PLACAS ESPECIAIS E PARAFUSOS BLOQUEADOS PARA MINI E MICRO FRAGMENTOS NEOORTHO - 901.350 - PARAFUSO MINI LOCKING D2.7X26 MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+Lobectomia pulmonar por videotoracoscopia	2
+Descorticação pulmonar por videotoracoscopia	2
+SISTEMA PARA OSTEOSSÍNTESE NEOFIX - PEQUENOS E GRANDES FRAGMENTOS - 903.037 - PARAFUSO CORTICAL STANDARD STAR HEAD D3.5X26MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+Terapia medicamentosa injetável ambulatorial	2
+ELETRODO ENDOCÁRDICO DE FIXAÇÃO ATIVA CONDICIONAL PARA RESSONÂNCIA MAGNÉTICA (PROMRI) - SOLIA S 60 - BIOTRONIK COMERCIAL MÉDICA LTDA.	2
+SISTEMA DE PLACAS ESPECIAIS PARA MEMBROS SUPERIORES NEOFIX - 900.101 - PLACA LS DISTAL DE ÚMERO PÓSTERO LATERAL 3 FUROS DIREITA - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+ELETRODO ENDOCÁRDICO DE FIXAÇÃO ATIVA CONDICIONAL PARA RESSONÂNCIA MAGNÉTICA (PROMRI) - SOLIA S 53 - BIOTRONIK COMERCIAL MÉDICA LTDA.	2
+EDORA/EVITY - MARCAPASSO CARDÍACO IMPLANTÁVEL DE CÂMARA DUPLA CONDICIONAL PARA RESSONÂNCIA MAGNÉTICA (FULLBODY) - EVITY 6 DR-T (407149) - BIOTRONIK COMERCIAL MÉDICA LTDA.	2
+INTRODUTOR LI PLUS G - BIOTRONIK COMERCIAL MÉDICA LTDA.	2
+Imunofenotipagem para leucemias agudas ou sindrome mielodisplásica (*)	2
+PET dedicado oncológico	2
+SISTEMA DE FIXAÇÃO DE PLACAS ESPECIAIS E PARAFUSOS BLOQUEADOS PARA MINI E MICRO FRAGMENTOS NEOORTHO - 901.347 - PARAFUSO MINI LOCKING D2.7X20 MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+SISTEMA DE FIXAÇÃO DE PLACAS ESPECIAIS E PARAFUSOS BLOQUEADOS PARA MINI E MICRO FRAGMENTOS NEOORTHO - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+SULFATO DE VINCRISTINA - 1 MG/ML SOL INJ CT 20 FA VD AMB X 1 ML - LABORATÓRIO QUÍMICO FARMACÊUTICO BERGAMO LTDA	2
+Análise de DNA com enzimas de restrição por enzima utilizada, por amostra	2
+Correção da hipertrofia mamária - unilateral	2
+Colectomia parcial sem colostomia	2
+PCT HEMODERIVADOS - BOLSA DE PLAQUETAS AFERESE	2
+SISTEMA DE PLACAS ESPECIAIS PARA MEMBROS SUPERIORES NEOFIX - 900.113 - PLACA LS DISTAL DE ÚMERO MEDIAL 5 FUROS DIREITA - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+SISTEMA DE PLACAS ESPECIAIS PARA PEQUENOS E GRANDES FRAGMENTOS NEOFIX - 903.044 - PARAFUSO CORTICAL STANDARD STAR HEAD D3.5X40 MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+Nefrectomia parcial laparoscópica unilateral	2
+Herniorrafia inguinal - unilateral por videolaparoscopia	2
+ELETRODO BIPOLAR DESCARTÁVEL - 46300223 - RICHARD WOLF BRASIL EQUIPAMENTOS MEDICINAIS LTDA	2
+GRAMPEADOR ENDOSCOPIO HERNIA SECURESTRAP 12 REF. STRAP12	2
+SISTEMA DE DRENAGEM MEDIASTINAL/PLEURAL LAC MEDICAL - CIRURGICA BRASIL COMERCIAL E IMPORTADORA LTDA	2
+CATETER DE LONGA PERMANÊNCIA PARA HEMODIÁLISE E AFÉRESE - HFS24E - MEDCORP HOSPITALAR LTDA	2
+PLACA DISTAL DE CLAVICULA BLOQUEADA 3X3 ESQUERDA - REF: 271624	2
+Biópsia hepática por videolaparoscopia	2
+CIMENTO ÓSSEO HI-FATIGUE - 00-1120-140-01: CIMENTO ÓSSEO HI-FATIGUE 1X40G - BIOMET 3I DO BRASIL COMERCIO DE APARELHOS MEDICOS LTDA	2
+CÂNULA DE ACESSO URETERAL BI-FLEX - ROUS1045ST - INMED COMERCIO DE MATERIAIS HOSPITALARES LTDA	2
+Microneurólise múltiplas	2
+IRRIGOPLASS 4 VIAS	2
+Doppler colorido intra-operatório	2
+ANGIOJET? ZELANTEDVT? - BOSTON SCIENTIFIC DO BRASIL LTDA	2
+GRAMPEADOR LINEAR CORTANTE - REF: TLC75	2
+CATETER ANGIOGRÁFICO CARDIOLÓGICO PERFORMA BRAIDED - 7527-13 - AMPLATZ LEFT - MERIT MEDICAL COMERCIALIZAÇÃO, DISTRIBUIÇÃO, IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS HOSPITALARES LTDA	2
+PCT - EPISTAXE (CAUTERIZAÇÃO +TAMPONAMENTO)	2
+OLIMEL - (14,2 + 27,5 + 20) G/L EMUL INJ IV BOLS PLAS INC FLEX X 1000 ML   - BAXTER HOSPITALAR LTDA	2
+INTRODUTOR PARA ALÍVIO DA DOR RADIMED PRÓ - SET FREE SOLUÇÕES COMERCIAIS EIRELI	2
+SISTEMA PARA OSTEOSSÍNTESE NEOFIX - PEQUENOS E GRANDES FRAGMENTOS - 901.035 - PARAFUSO LOCKING STAR HEAD D3.5X26MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+SISTEMA PARA OSTEOSSÍNTESE NEOFIX - PEQUENOS E GRANDES FRAGMENTOS - 901.041 - PARAFUSO LOCKING STAR HEAD D3.5X36MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+Visita de assistente social	2
+Traqueostomia com colocação de órtese traqueal ou traqueobrônquica por via cervical	2
+DRENO DE SUCCAO COM AGULHA 4.8MM	2
+TELA INORGANICA DE POLIPROPILENO ABDOTEX 30 X 30 CM	2
+HER2 FISH para amplificação gênica em tumor de mama	2
+EQUIPO DE IRRIGAÇÃO RZ PUMP ATX - REF. 742470400	2
+US - Próstata (via abdominal)	2
+AVITENE PÓ - 1010010/0.5 G (PRODUTO ESTERILIZADO POR CALOR SECO) - BARD BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA A SAÚDE LTDA.	2
+Mastectomia simples	2
+Broncoplastia e/ou arterioplastia	2
+Histerectomia total - via vaginal	2
+PATCH DE PERICARDIO BOVINO - BRAILE BIOMEDICA INDUSTRIA COMERCIO E REPRESENTACOES LTDA	2
+RX - Costelas - por hemitórax	2
+Retirada de dreno tubular torácico (colocado em outro serviço)	2
+CANULA DE MICRODEBRIDAÇÃO RAZEK ¿ AMC 2,4/4,5 L REF.891650000	2
+SISTEMA PARA OSTEOSSÍNTESE NEOFIX - PEQUENOS E GRANDES FRAGMENTOS - 901.033 - PARAFUSO LOCKING STAR HEAD D3.5X22MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	2
+CÂNULA DE ACESSO URETERAL BI-FLEX - ROUS1035ST - INMED COMERCIO DE MATERIAIS HOSPITALARES LTDA	2
+BUNDLE MANOMETRIA ESOFÁGICA SEM TESTE PROVOCATIVO	2
+Campimetria manual - monocular	2
+TROCATER ENDOPATH D12LT 12MM	2
+Ooforectomia laparoscópica uni ou bilateral ou ooforoplastia uni ou bilateral	2
+BASE TIBIAL Nº02 - REF: 04.14.08.00002	2
+Avidez de IgG para toxoplasmose, citomegalia, rubéloa, EB e outros, cada - pesquisa e/ou dosagem	2
+Fístula orofacial - tratamento cirúrgico	2
+Ureterólise laparoscópica unilateral	2
+TRATAMENTO FISIOTERAPÊUTICO PELO PROTOCOLO PEDIASUIT - MÓDULO I (SESSÃO DE 4H)	2
+CATETER DRENAGEM MEDIASTINAL INFANTIL 1000ML - REF: 101994	2
+Catecolaminas - pesquisa e/ou dosagem	2
+Vitamina B3, pesquisa e/ou dosagem	2
+RX - Coluna dorsal - 2 incidências	2
+Paracentese abdominal	2
+MESILATO DE IMATINIBE - 400 MG COM REV CT BL AL PLAS INC X 30 - EUROFARMA LABORATÓRIOS S.A.	2
+Consulta individual domiciliar de fonoaudiologia	2
+Punção ou biópsia mamária percutânea por agulha fina orientada por US (não inclui o exame de base)	2
+Hipertrofia dos pequenos lábios - correção cirúrgica	2
+Coombs direto	2
+Excisão de pólipo cervical	2
+TROCARTES CIRÚRGICOS ENDOPATH XCEL - D5LT - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	2
+Antígenos de aspergillus galactomannan	2
+KIT DE DISPOSITIVO DE INFLAÇÃO ANGIOPOWER - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA	2
+FORNECIMENTO DE MATERIAIS E MEDICAMENTOS PARA PACIENTES ASSISTIDOS PELO SAD (SUPORTE DE ASSISTENCIA DOMICILIAR)	2
+NAVELBINE 50MG FRC	2
+RX - Abdome simples	2
+Histerectomia total laparoscópica	2
+CONECTOR EM Y - TOTAL LIFE COMERCIO DE PRODUTOS MEDICO-HOSPITALAR LTDA-EPP	2
+SYNAGIS - 100 MG/ML SOL INJ CT FA VD INC X 1,0 ML - ABBVIE FARMACÊUTICA LTDA.	2
+SISTEMA DE PLACAS ESPECIAIS DE GRANDES E PEQUENOS FRAGMENTOS FIXAÇÃO RÍGIDA ORTOSINTESE - 1403 - PARAFUSO CORT CABEÇA ROSQ Ø 3,5X16MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	2
+DIÁRIA DE ISOLAMENTO DE APARTAMENTO STANDARD	2
+US - Torácico extracardíaco	2
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 1365 PARAFUSO CORTICAL AUTO ROSQUEANTE 3,5 X 18 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	2
+TROCATER VERSAONE COM LÂMINA 11 MM - REF: B11STF	2
+Angiotomografia venosa de crânio	2
+CATETER DRENAGEM MEDIASTINAL ADULTO 2000ML - REF: 62567	2
+RX - Braço	2
+Cintilografia das paratireóides	2
+ENXERTO OSSEO BAUMER - INTEGRAL-ORTHOGEN MEDICAL - REF. 947.B1.082030	2
+Doppler colorido peniano com fármaco-indução	2
+RX - Coluna cervical - 5 incidências	2
+Lactose, teste de tolerância	2
+SISTEMA CIRURGICO ULTRASSONICO BISTURI TIPO TESOURA REF.SS9	2
+Cateterismo cardíaco E e/ou D com cineangiocoronariografia e ventriculografia	2
+Linfadenectomia pélvica laparoscópica	2
+Retirada endoscópica de cálculo de ureter unilateral	2
+Dilatação uretral (sessão)	2
+MANIPULADOR UTERNO DESCARTAVEL L 38 X 323MM - REF: MA05003	2
+Material descartável (kit) e soluções para utilização de processadora automática de sangue / auto transfusão intra-operatória	2
+CATETER DUPLO J COM FIO GUIA HIDROFÍLICO - USI-626-RPC - HANDLE COMERCIO DE EQUIPAMENTOS MEDICOS S.A.	2
+Osteotomia ou pseudartrose do tarso e médio pé - tratamento cirúrgico	2
+Antígeno carcinoembriogênico (CEA) - pesquisa e/ou dosagem	2
+Quadrantectomia - ressecção segmentar - em mama	2
+PCT - CORPOS ESTRANHOS, POLIPOS OU BIOPSIAS (EM CONSULTORIO)	2
+CATETER TIPO DORMIA NITINOL - NTSE-022115-UDH - HANDLE COMERCIO DE EQUIPAMENTOS MEDICOS S.A.	2
+Tenodese	2
+COMPONENTE FEMORAL EP 4 ESQUERDO REF. 0313010-401	2
+Cirurgia de restauração venosa com pontes em cavidades	2
+Transposição de mais de 1 tendão - tratamento cirúrgico	2
+FIO-GUIA HI-WIRE E BI-WIRE COM NÚCLEO NITINOL E REVESTIMENTO HIDROFILICO - HW-035150 (FIO-GUIA HIWIRE) - HANDLE COMERCIO DE EQUIPAMENTOS MEDICOS S.A.	2
+Laparotomia exploradora, ou para biópsia, ou para drenagem de abscesso, ou para liberação de bridas em vigência de oclusão	2
+Entero-anastomose  (qualquer segmento)	2
+NINLARO - 4 MG CAP DURA CT BL AL AL X 3 - TAKEDA PHARMA LTDA.	2
+Implante intravítreo de polímero farmacológico de liberação controlada	2
+Hidrocele unilateral - correção cirúrgica	2
+Histerectomia total laparoscópica ampliada	2
+TUBO DE VENTILACAO MEDICONE 1011 SHEPARD - MEDICONE PROJETOS E SOLUÇÕES PARA A INDÚSTRIA E A SAÚDE LTDA	2
+PLACA T OSTEOTOMIA TIBIA BLOQUEAVEL REF 33934	2
+ALKERAN - 2 MG COM REV CT FR VD AMB X 25 - ASPEN PHARMA INDÚSTRIA FARMACÊUTICA LTDA	2
+Detecção intraoperatória radioguiada de lesões tumorais	2
+Tireoidectomia total	2
+CAPECITABINA - 150 MG COM REV CT BL AL PVC OPC X 30 - SUN FARMACÊUTICA DO BRASIL LTDA	2
+RM - Coxa (unilateral)	2
+Consulta hospitalar em fisioterapia	2
+Vasectomia unilateral	2
+Cirurgia de esterilização feminina (laqueadura tubárica convencional)	2
+RM - Multiparamétrica transretal da próstata	2
+Hepatite B - HBCAC - IgM (anti-core IgM ou Acorem) - pesquisa e/ou dosagem	2
+Implante de dispositivo intra-uterino (DIU) não hormonal - inserção	2
+CIRURGIA BARIÁTRICA (QUALQUER TÉCNICA)  - PACOTE HM	2
+Fungos, pesquisa de (a fresco lactofenol, tinta da China)	2
+RECARGA ENDOMARLEX PARA GRAMPEADOR ENDOMARLEX LINEAR CORTANTE ENDOSCÓPICO - MB INDUSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	2
+Renina - pesquisa e/ou dosagem	2
+RX - Panorâmica de mandíbula (ortopantomografia)	2
+Aldosterona - pesquisa e/ou dosagem	2
+Capacidade de ligação da vitamina B12	2
+Doenças pulmonares atendidas em ambulatório	2
+Sinusotomia esfenoidal	2
+Glicoproteína Beta 2, anticorpos, IgG	2
+Timpanoplastia com reconstrução da cadeia ossicular	2
+Expansão tissular (por sessão)	2
+Sinusotomia frontal intranasal	2
+Testes vestibulares, com vecto-eletronistagmografia	2
+Retração de aponevrose palmar (Dupuytren) - tratamento cirúrgico	2
+TROCATER OTICO VERSAPORT BLADELESS 11MM - REF: ONB11STF	2
+Chlamydia por biologia molecular - pesquisa	2
+PCT - AMIGDALECTOMIA	2
+Epilação	2
+CATETER DIAGNOSTICO ANGIOGRAFICO RADIOLOGICO - SIMM0NS PERFORMA - 5576-23 - BIOMEDICAL PRODUTOS CIENTIFICOS MEDICOS E HOSPITALARES S A	2
+COSENTYX - 300 MG SOL INJ CT 1 SER PREENC VD TRANS X 2 ML + 1 CAN APLIC - NOVARTIS BIOCIENCIAS S.A	2
+Genotipagem do sistema HLA	2
+KADCYLA - 160 MG PO LIOF SOL INJ IV CT FA VD TRANS - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	2
+Acromioplastia - procedimento videoartroscópico de ombro	2
+Simpatectomia por videotoracoscopia	2
+CATETER DIAGNOSTICO ANGIOGRAFICO RADIOLOGICO - BERENSTEIN PERFORMA - 5592-13 - BIOMEDICAL PRODUTOS CIENTIFICOS MEDICOS E HOSPITALARES S A	2
+MICROCATETER HEADWAY - ENDOTEC PRODUTOS MÉDICOS LTDA	2
+Iridectomia (laser ou cirúrgica)	2
+Plástica do freio bálano-prepucial	2
+STENT CORONARIO FARMACOLOGICO 3,0X28MM- REF: 1120300-28	2
+CUTANPLAST - ESPONJA DE GELATINA HEMOSTATICA - FILM - MEDICALTEC LTDA	2
+Fratura de metacarpiano - tratamento conservador	2
+Peptídeo natriurético BNP/PROBNP - pesquisa e/ou dosagem	2
+TAXA FIBRA A LASER DESCARTAVEL HANDLE - REF: HLF-S273-CNV	2
+Exame de motilidade ocular (teste ortóptico) - binocular	2
+Endoscopia digestiva alta com biópsia e teste de urease (pesquisa Helicobacter pylori)	2
+Tenólise/tendonese - tratamento cirúrgico	2
+ENDOBOTON 12,5 X 4,5 X 1MM C/ FIO 20MM - REF: 306.00.000020	2
+RADIFOCUS OPTITORQUE CATETER ANGIOGRAFICO - TERUMO - RH*5MP2520M - TERUMO MEDICAL DO BRASIL LTDA.	2
+BROCA REDONDA DIAMANTADA P/ MIDAS LEGEND (FRESA) REF. 10BA20D	2
+SESSÃO INDIVIDUAL AMBULATORIAL DE FONOAUDIOLOGIA - MÉTODO PECS	2
+LAMINAS CIRURGICAS - ACF - LAS - LATIM AMERICAN SOLUTIONS IMPORTACAO E EXPORTACAO LTDA.	2
+DISPOSITIVO INTERSOMATICO CERVICAL DICOM PEEK C/FLAP 6,0 MM REF. 30.029.10060	2
+MATRIZ REGENERADORA DURAMATER 5 X 5 (DURADRY ESPONJAS) - REF. 5 X 5 X 0,4CM	2
+FIO TIPO KIRSCHNNER LISO PONTA TRIANGULAR 1,5MM X 300MM - REF: 5401-150-300	2
+Hérnia de disco cervical - tratamento cirúrgico	2
+PESQUISA DE EXPRESSÃO DE PD-L1 POR IMUNOHISTOQUIMICA	2
+Gordura fecal, pesquisa de	2
+PCT - ADENO	2
+Linfadenectomia axilar	2
+Dermatoscopia (por lesão)	2
+Determinação da filtração glomerular	2
+Prostatavesiculectomia radical laparoscópica	2
+INTRODUTOR RADIFOCUS INTRODUCER II COM GUIA METÁLICA E AGULHA - RS*R70N10MQ - TERUMO MEDICAL DO BRASIL LTDA.	2
+BOLSA COLETORA DE ESPÉCIME DESCARTAVEL ENDO CATH II 10MM IMP.- REF: 173050G	2
+IT EURO EXTRACT CANULA DE DESCOMPRESSÃO INTRADISCAL TORACOLOMBAR REF.005	2
+PCT - TURBINECTOMIA TURBINOPLASTIA UNILATERAL	2
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO REF.0314110-312	2
+PATELA 03 PINOS DIAM.35 REF 0314300-035	2
+Angioplastia transluminal percutânea	2
+CLORIDRATO DE GENCITABINA - 1000 MG PO LIOF INJ CT FA VD INC X 50 ML - ACCORD FARMACÊUTICA LTDA	2
+PCT - Antrostomia + Uvulo + Turbi + AMIGDALA + SEPTO	2
+Anticorpos antipneumococos	2
+DIÁRIA DE  QUARTO COLETIVO DE 2 LEITOS DA MATERNIDADE COM BANHEIRO PRIVATIVO	2
+INTRODUTOR RADIFOCUS INTRODUCER II COM GUIA PLÁSTICA, CATETER DE ACESSO E AGULHA - RS*A11K10SQ - TERUMO MEDICAL DO BRASIL LTDA.	2
+Imunofenotipagem de subpopulações linfocitárias - Citômetro de Fluxo	2
+Bilirrubinas (direta, indireta e total) - pesquisa e/ou dosagem	2
+HALLUFIX PG RAZEK - 500130400 - PARAFUSO HALLUFIX PG RAZEK - D3,0 X 34 - RAZEK EQUIPAMENTOS LTDA ME	2
+Enxerto composto	2
+FRESA CIRURGICA RAZEK - REF. 730080005 BRD70H (1,8)	2
+CATETER ANGIOGRÁFICO CARDIOLÓGICO PERFORMA BRAIDED - 7533-23 - MULTIPURPOSE - MERIT MEDICAL COMERCIALIZAÇÃO, DISTRIBUIÇÃO, IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS HOSPITALARES LTDA	2
+Endarterectomia ilíaco-femoral	2
+Avaliação endoscópica da deglutição (FEES)	1
+PCT - FRENOTOMIA LINGUAL	1
+Terapia oncológica com aplicação de medicamentos por via intracavitária ou intratecal  - por procedimento	1
+FAULDMETRO - 25 MG/ML SOL INJ CT 5 FA VD INC X 2 ML - LIBBS FARMACÊUTICA LTDA	1
+Abscesso faríngeo - qualquer área	1
+DIÁRIA DE  APARTAMENTO LUXO	1
+Consulta ambulatorial de enfermagem	1
+PCT - ABSCESSO FARÍNGEO (QUALQUER AREA)	1
+Drenagem percutânea de coleção infectada abdominal	1
+DECADRON - 4MG/ML SOL INJ CT 1 FA X 2,5 ML - ACHÉ LABORATÓRIOS FARMACÊUTICOS S.A	1
+PO HEMOSTATICO ABSORVIVEL BLEED STP 1GR	1
+CATETER GUIA PARA ANGIOPLASTIA MEDTRONIC - LA5AL10 - MEDTRONIC COMERCIAL LTDA	1
+DIÁRIA DE  HOSPITAL DIA APARTAMENTO	1
+PCT - AVALIAÇÃO FONOAUDIOLÓGICA PRÉ OPERATÓRIA - IMPLANTE COCLEAR, BONEBRIDGE E/OU PONTO - PACOTE HIORP	1
+TRATAMENTO FISIOTERAPÊUTICO PELO PROTOCOLO PEDIASUIT - MÓDULO II (SESSÃO DE 2H)	1
+EMPRO-SISTEMA DE PROTEÇÃO EMBÓLICA - ENDOTEC PRODUTOS MÉDICOS LTDA	1
+Exérese de cisto tireoglosso	1
+BIO-OSS - BIO-OSS 2G (TAMANHO DO GRÂNULO: 1MM ? 2MM) - GEISTLICH PHARMA DO BRASIL COMERCIO E SERVIÇOS DE PRODUTOS PARA SAUDE LTDA	1
+CÂNULAS AMIU IPAS ENGATE RÁPIDO - SR6 CÂNULA IPAS ENGATE RÁPIDO - DKT DO BRASIL PRODUTOS DE USO PESSOAL LTDA	1
+KIT CANULA SIMPLE BLOCK - SBK2115 - BRAMSYS INDÚSTRIA E COMÉRCIO LTDA	1
+COMPONENTE TIBIAL MODULAR DE JOELHO - 177.34.12 - AKS MODULAR BLOQUEADO - BAUMER S.A.	1
+COMPONENTE TIBIAL MODULAR CIMENTADO DE JOELHO - 154.3 - AKS MODULAR - BAUMER S.A.	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 6123/03 PLACA ALCP PEQ FRAGMENTOS BLOQUEADA 6 FUROS X 3,3 X 98,4 MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+PCT - EXERESE DE RANULA OU MUCOCELE	1
+BROCA DE DESBASTE CONICA CARBIDE S Ø1.6X55 REF. PA.02.03.3242	1
+Exérese de rânula ou mucocele	1
+SISTEMA DE PLACAS ESPECIAIS DE GRANDES E PEQUENOS FRAGMENTOS FIXAÇÃO RÍGIDA ORTOSINTESE - 1404 - PARAFUSO CORT CABEÇA ROSQ Ø 3,5X18MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 1364 PARAFUSO CORTICAL AUTO ROSQUEANTE 3,5 X 16 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+TUBO DE VENTILACAO MEDICONE 1026 PAPARELLA - MEDICONE PROJETOS E SOLUÇÕES PARA A INDÚSTRIA E A SAÚDE LTDA	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 6123/02 PLACA ALCP PEQ FRAGMENTOS BLOQUEADA 5 FUROS X 3,3 X 82,2 MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA DE PLACAS ESPECIAIS DE GRANDES E PEQUENOS FRAGMENTOS FIXAÇÃO RÍGIDA ORTOSINTESE - 1405 - PARAFUSO CORT CABEÇA ROSQ Ø 3,5X20MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA BUCO MAXILO FACIAL - TRAUMEC - PA.01.03.0016 MINI PLACA RETA 6F - TRAUMEC TECNOLOGIA E IMPLANTES ORTOPÉDICOS IMP. E EXP. LTDA - EPP	1
+BIO-GIDE - BIO-GIDE 30 MM X 40 MM - GEISTLICH PHARMA DO BRASIL COMERCIO E SERVIÇOS DE PRODUTOS PARA SAUDE LTDA	1
+PARAFUSO CORTICAL 2,4X6 MM - TI-CROSS - REF: PA.01.03.0110	1
+PLACA RETA 6F (2.4) - REF: PA.01.03.0029	1
+LOCAÇAO DE EQUIPAMENTO SMARTXIDE2 LASER DE CO2 IMP.	1
+Microcirurgia com uso de laser para ressecção de lesões benignas	1
+PARAFUSO CORTICAL AP 2,0 X 6MM TI-CROSS-DRIVE - REF: PA.01.03.0258	1
+ASPIRADOR UTERINO IPAS MVA AMIU - REF: PLUS	1
+Aspiração manual intra-uterina (AMIU)	1
+INTRODUTOR PARA ELETRODO - 6207-S1 - MEDTRONIC COMERCIAL LTDA	1
+DAKOTA DISPOSITIVO DE EXTRAÇÃO DE CÁLCULOS EM NITINOL 1.9F-120X11MM REF: M0063905010	1
+Biópsia de glândula salivar	1
+PCT - BIÓPSIA (GLÂNDULA SALIVAR)	1
+Coloração especial por coloração	1
+17-cetogênicos (17-CGS) - pesquisa e/ou dosagem	1
+Cintilografia para determinação do tempo de esvaziamento gástrico	1
+Glossectomia subtotal ou total, com ou sem mandibulectomia	1
+Espermograma (caracteres físicos, pH, fludificação, motilidade, vitalidade, contagem e morfologia)	1
+SURGICEL FIBRILAR 5,1 X 10,2 MM - REF: 411962	1
+Tireoidectomia parcial	1
+SELANTE DURASEAL® EXACT INTEGRA® - PROMEDON DO BRASIL PRODUTOS MEDICO HOSPITALARES LTDA	1
+RX - Adenóides ou cavum	1
+COTONOIDE 13 X 51MM - REF. 860003	1
+TAXA DE DESLOCAMENTO FORA DE  S. J. RIO PRETO	1
+BAINHA DE ACESSO URETERAL - FLEXOR - FUS-095045 - HANDLE COMERCIO DE EQUIPAMENTOS MEDICOS S.A.	1
+CANULA P/ BIOPSIA MEDULA OSSEA 08G X 10CM - REF: 0BL0810	1
+BROCA DE DESGASTE CONICA CARBIDE S DIAM. 1,0X45 REF.PA.02.03.1217	1
+SENSOR FIO GUIA - M0066703081 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+STENT CONTOUR PERCUFLEX - MO061801550 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+DILATADOR PARA IMPLANTE DE CATETER URETERAL ENDOMASTER - ENDO-MASTER COMÉRCIO DE EQUIPAMENTOS OPTICOS E CIENTÍFICOS LTDA - EPP	1
+Sangue oculto, pesquisa nas fezes	1
+Analgesia por dia subsequente. Acompanhamento de analgesia por cateter peridural	1
+FAULDCITA - 100 MG/ML SOL INJ CT 5 FA VD INC X 5 ML - LIBBS FARMACÊUTICA LTDA	1
+HASTES FEMORAIS INTRAMEDULARES - 47-2494-420-10 - HASTE FEMORAL RETROGRADA, LONGA 10 MM X 42 CM TI6AL4V ZNN - BIOMET 3I DO BRASIL COMERCIO DE APARELHOS MEDICOS LTDA	1
+FIXADOR EXTERNO II - I38 4 400 - SUPORTE DE MONTAGEM COM BLOQUEIO 01 FURO - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIXADOR EXTERNO II - I27 1 423 - HASTE ROSQUEADA 120 MM - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+WOLVERINE CORONARY CUTTING BALLOON - H74939403153000 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+ENDOBOTON 25MM - REF: 223410	1
+FIO DE KIRSCHINER C/ PONTA TROCAR ENGATE LISO 2,0 X 300 - REF: 0131202-030	1
+PATELA 03 PINOS DIAM.28 REF:0314300-028	1
+EQUIPO VIA PUMP PARA BOMBA DE IRRIGAÇÃO REF. VM-04-01-01	1
+COMPONENTE FEMORAL REVISAO 3 DIREITO REF 0313030-302	1
+Determinação do fator RH (D), incluindo prova para D-fraco no sangue do receptor	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0314131-312 - INSERTO ARTICULAR TIBIAL CCB 3/4 - 12MM - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+CANULA DE DEBRIDAÇÃO AT REF.161 12 10 05	1
+COMPONENTE FEMORAL EXTRA GRANDE BKS III DIREITO - REF: 2340-07-000	1
+ALUGUEL / TAXA DE MONITOR DE VÍDEO CIRÚRGICO, POR USO	1
+PARAFUSO DE INTERFERENCIA TI 9 X 30 MM 2E REF 0042020-930	1
+ÂNCORA COM SUTURA E APLICADOR DESCARTÁVEL - 0112115-025 - ANCHORFIX 5,0 SD-TI, 2 SUTURAS USP#2 N/ ABS. C/ AGULHAS - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+HASTES FEMORAIS INTRAMEDULARES - 47-2484-050-50 - PARAFUSO CORTICAL DE BLOQUEIO, ÂNGULO FIXO , 5.0X50MM TI6AL4V ZNN - BIOMET 3I DO BRASIL COMERCIO DE APARELHOS MEDICOS LTDA	1
+MARCAPASSO IMPLANTAVEL COM TECNOLOGIA MRI SURESCAN ¿ CAMARA DUPLA REF.ATDR01	1
+HASTES FEMORAIS INTRAMEDULARES - 47-2483-075-60 - PARAFUSO ESPONJOSO BLOQUEIO, ROSCA PARCIAL, 6.0X75MM TI6AL4V ZNN - BIOMET 3I DO BRASIL COMERCIO DE APARELHOS MEDICOS LTDA	1
+HASTES FEMORAIS INTRAMEDULARES - 47-2483-095-60 - PARAFUSO ESPONJOSO BLOQUEIO, ROSCA PARCIAL, 6.0X95MM TI6AL4V ZNN - BIOMET 3I DO BRASIL COMERCIO DE APARELHOS MEDICOS LTDA	1
+BROCAS CORTANTES, FRESAS E LÂMINAS ESTÉREIS - BIOMETAL INDÚSTRIA E COMÉRCIO EIRELI - EPP	1
+CIMENTO ÓSSEO HI-FATIGUE 1X40G - REF. 00-1120-140-01	1
+BAINHA INTRODUTORA DIVISIVEL PRELUDE SNAP REF. PLSS-1007	1
+SONDA P/NUTRICAO ENTERAL GASTROTOMIA SILIC.20FR FLAT CREATE-CIRURGICA FERNANDES REF. 800-000-1985	1
+HASTE INTRAMEDULAR BLOQUEADA UMERAL TI - 0072515-250 - HASTE INTRAMEDULAR BLOQUEADA UMERAL TI Ø8X250 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO SEM RESTRIÇÃO - 0313230-300 - COMPONENTE TIBIAL REVISÃO 3 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIXADOR EXTERNO II - I35 5 315 - PLACA BASE 100 MM AL - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+PROGREAT MICRO CATETER TERUMO - TERUMO MEDICAL DO BRASIL LTDA.	1
+SISTEMA DE FIXAÇÃO EXTERNO ILIZAROV I01 -I20 1 300 - ARRUELA CÔNCAVA M6 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+Osteomielite de fêmur - tratamento cirúrgico	1
+CIMENTO ÓSSEO HI-FATIGUE COM GENTAMICINA - 00-1121-140-01: CIMENTO ÓSSEO HI-FATIGUE COM GENTAMICINA 1X40G - BIOMET 3I DO BRASIL COMERCIO DE APARELHOS MEDICOS LTDA	1
+Cortisol livre - pesquisa e/ou dosagem	1
+Fratura de osso da perna - tratamento conservador	1
+Retirada de fixadores externos	1
+ELEMENTO DE FIXAÇÃO ÓSSEA ESTÉRIL COM HIDROXIAPATITA - 0018660-750 - PINO ÓSSEO Ø6,0X200 RHA, ROSCA Ø6,0-5,0X50 T, ESTÉRIL - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+ALUGUEL / TAXA DE MONITOR DE VÍDEO, POR USO	1
+ELEMENTO DE FIXAÇÃO ÓSSEA ESTÉRIL COM HIDROXIAPATITA - 0018660-880 - PINO ÓSSEO Ø6,0X220 RHA, ROSCA Ø6,0-5,0X80 T, ESTÉRIL - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+Fratura de falanges - tratamento conservador	1
+FIXADOR EXTERNO II - I20 0 451 - ANEL 160 MM AL - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIXADOR EXTERNO II - I27 1 453 - HASTE ROSQUEADA 50 MM - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+Reparo ou sutura de um menisco - procedimento videoartroscópico de joelho	1
+CARGA PARA ECHELON ENDOSCOPIC LINEAR - REF: GST45W	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0313510-040 - PINO ALONGADOR RÍGIDO DIAM.10X40MM - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA DE FIXAÇÃO EXTERNO ILIZAROV I01 -I20 2 310 - ARRUELA CONVEXA M6 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA DE FIXAÇÃO EXTERNO ILIZAROV I01 -I20 4 330 - ARRUELA LISA M6 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+CATETER DJ + FIO GUIA HIDROFOLICO 4,7X26CM REF 2347	1
+ELEMENTO DE FIXAÇÃO ÓSSEA ESTÉRIL COM HIDROXIAPATITA - 0018660-735 - PINO ÓSSEO Ø6,0X200 RHA, ROSCA Ø6,0-5,0X35 T, ESTÉRIL - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA DE FIXAÇÃO EXTERNO ILIZAROV I01 -I35 7 300 - PORCA SEXTAVADA M6 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIXADOR EXTERNO II - I35 7 330 - PORCA M6 TRAVANTE - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA DE FIXAÇÃO EXTERNO ILIZAROV I01 -I35 1 330 - PARAFUSO C/ CABEÇA SEXTAVADA M6X25 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIXADOR EXTERNO II - I38 2 415 - SEMI ANEL 140 MM I2 AL - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIOS E PINOS IMPLANTÁVEIS - 0131431-840 - FIO IMPLANTÁVEL COM PONTA BAIONETA, ENGATE LISO Ø1,8X400 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA DE FIXAÇÃO EXTERNO ILIZAROV I01 -I35 1 320 - PARAFUSO C/ CABEÇA SEXTAVADA M6X20 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120250-28 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	1
+PLACA E-BUTTON DIRECT PLUS 10MM REF. 0302040-010	1
+PONTEIRA DESCARTAVEL CONNECT PEN REF. 45-03-05-00 SHELL 90°	1
+ROCASTONE KOBOT TIPLESS - ALLENT COMÉRCIO, IMPORTAÇÃO E DISTRIBUIÇÃO DE MATERIAIS MÉDICOS LTDA. ? ME	1
+Autotransplante de dois retalhos  musculares combinados, isolados e associados entre si, ligados por um único pedículo	1
+Atresia de esôfago com fístula traqueal - tratamento cirúrgico	1
+ENDOPRÓTESE ABDOMINAL MINOS - MICROPORT SCIENTIFIC VASCULAR BRASIL LTDA	1
+CÂNULA DE ACESSO URETERAL BI-FLEX EVO - ROUS1045ST - ALLENT COMÉRCIO, IMPORTAÇÃO E DISTRIBUIÇÃO DE MATERIAIS MÉDICOS LTDA. ? ME	1
+GRAMPEADOR CURVO CORTANTE CONTOUR 40 MM - CS40G	1
+PARAFUSO CORTICAL ROSQUEÁVEL 2.7X16 - REF: 122.2.16	1
+CANULA VENOSA ARAMADA DUPLO ESTAGIO OVAL 32/40 FR REF.242565	1
+PARAFUSO CORTICAL ROSQUEAVEL 2,7 X 14 - REF: 122.2.14	1
+PARAFUSO CORTICAL ROSQUEÁVEL 2.7X18 - REF: 122.2.18	1
+PARAFUSO CORTICAL ROSQUEAVEL 3,5 - REF: 105.2.14	1
+PARAFUSO CORTICAL ROSQUEAVEL T15 3,5 X 16MM - REF: 105.2.16	1
+CANULA ARTERIAL ARAMADA PONTA CURVA 45° - REF: 196981	1
+Fraturas de fêmur - redução incruenta	1
+Angiotomografia arterial pulmonar	1
+CATETER BALÃO EUPHORA NC - NCEUP5012X - AUTO SUTURE DO BRASIL LTDA.	1
+FIO GUIA CHOICE - 12132-01 J - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+FIO GUIA HIDROFÍLICO ULTRASKIN - SD-A35260 - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA	1
+INDEFLAT INSUFLADOR E MEDIDOR DE PRESSAO DE BALOES REF BM-BID-II30A	1
+CANULA VENOSA ARAMADA DUPLO ESTAGIO 28/36 FR 1/2 REF:242617	1
+CATETER DIAGNOSTICO ANGIOGRAFICO RADIOLOGICO - COBRA PERFORMA - 5584-E3 - BIOMEDICAL PRODUTOS CIENTIFICOS MEDICOS E HOSPITALARES S A	1
+CATETER GUIA PARA ANGIOPLASTIA MEDTRONIC - LAUNCHER 6F - AUTO SUTURE DO BRASIL LTDA.	1
+INTRODUTOR RADIFOCUS INTRODUCER II COM GUIA METÁLICA E AGULHA - RS*R50N10MQ - TERUMO MEDICAL DO BRASIL LTDA.	1
+PRÓTESE VALVULAR BIOLÓGICA DE PERICÁRDIO BOVINO VIVERE - BRAILE BIOMEDICA INDUSTRIA COMERCIO E REPRESENTACOES LTDA	1
+INTRODUTOR SCW - EPTCA MEDICAL DEVICES LTDA.	1
+Artrite séptica - tratamento cirúrgico - joelho	1
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120350-23 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	1
+CATETER TRIPLO LUMEN TRIO-CT - MEDCORP HOSPITALAR LTDA	1
+PATCH PERICARDIO BOVINO 11 X 09CM	1
+ELETRODO TRANSVENOSO IMPLANTAVEL - CAPSURE FIX NOVUS SURESCAN - REF. 5076 -52	1
+Procedimento diagnóstico em peça cirúrgica ou anatômica complexa	1
+Procedimento diagnóstico em grupos de linfonodos, estruturas vizinhas e margens de peças anatômicas simples ou complexas (por margem) - máximo de três margens	1
+ELETRODO TRANSVENOSO IMPLANTAVEL - CAPSURE FIX NOVUS SURESCAN - REF. 5076 -58	1
+TROCA VALVAR - PACOTE CIRURGIA CARDÍACA	1
+KIT CANULA ADULTO - REF: 3829	1
+RESERVATORIO COM AGENTE GELIFICANTE DE 300 ML RENASYS TOUCH REF.66801273	1
+Tratamento cirúrgico do mal perfurante plantar	1
+HEMOCONCENTRADOR CIRC. EXTRACORPOREA H-500 REF.237792	1
+CLIP TITANIUM PEQUENO HORIZON VERMELHO - REF: 1201	1
+FILTRO DE LINHA ARTERIAL ADULTO - REF: 56016	1
+Implante de marca-passo temporário à beira do leito	1
+ELETRODO E INTRODUTOR 5FR PARA MARCAPASSO TEMPORARIO - REF: 24.TPLS15-1	1
+RESERVATORIO DE CARDIOTOMIA 4000 - REF: 124690	1
+DRENO DE SUCCAO 3,2 MM ( PORTO VAC )	1
+DIÁRIA DE  UTI NEONATAL	1
+Estudo hemodinâmico das cardiopatias congênitas  estruturalmente  complexas (menos: CIA, CIV, PCA, Co, AO, estenose aórtica e pulmonar isoladas)	1
+RESERVATORIO DE CARDIOPLEGIA REF. 209649	1
+CATETER VENOSO CENTRAL MONO LÚMEN NOVOCENT PRÓ - CIRURGICA FERNANDES - COMERCIO DE MATERIAIS CIRURGICOS E HOSPITALARES - SOCIEDADE LIMITADA	1
+OXIGENADOR MEMBRANA ADULTO - REF: 167774	1
+CLIP TITANIUM MEDIO HORIZON AZUL - REF: 2200	1
+TRANSDUTOR DE PRESSAO - MODELO MX960	1
+BUNDLE BRONCOSCOPIA COM OU SEM ASPIRADO OU LAVADO BRONQUICO BILATERAL + ANESTESIA	1
+PARAFUSO NAO CANULADO PARA USO EM PEQUENOS FRAGMENTOS HEXAGON - PARAFUSO CORTICAL 3.5MM, COMPRIMENTO DE 10 A 50MM - 10416 - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+CONJUNTO DE CATETER ARTERIAL SELDICATH® PU - JBD PRODUTOS MÉDICOS LTDA - EPP	1
+FAMILIA DE PLACAS ESPECIAIS DIAFISO-EPIFISARIAS SEM FIXACAO RIGIDA PARA USO EM PEQUENOS E GRANDES FRAGMENTOS - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+Implante de anel intra-estromal	1
+Uretroplastia posterior	1
+Quantiferon tb gold test	1
+CATETER FOGARTY PARA EMBOLECTOMIA ARTERIAL EDWARDS - 120804F - EDWARDS LIFESCIENCES COMÉRCIO DE PRODUTOS MÉDICO-CIRÚRGICOS LTDA	1
+CATETER FOGARTY PARA EMBOLECTOMIA ARTERIAL EDWARDS - 120602F - EDWARDS LIFESCIENCES COMÉRCIO DE PRODUTOS MÉDICO-CIRÚRGICOS LTDA	1
+MANIPULADOR UTERINO VCARE 34MM DESCARTAVEL IMP.	1
+EVACUADOR DE ELLIK REF. 730-125	1
+XTANDI - 40MG CAP MOLE BOLS AL BL AL PLAS TRANS X 120 - ASTELLAS FARMA BRASIL IMPORTAÇÃO E DISTRIBUIÇÃO DE MEDICAMENTOS LTDA.	1
+Retirada de corpo estranho do esôfago, estômago ou duodeno	1
+Bartonella, anticorpos IgM	1
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120300-23 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	1
+Pulsoterapia intravenosa (por sessão) - hospitalar	1
+ROCAMED ROCAWIRE PLATINUM - INOVAMÉDICA COMÉRCIO DE PRODUTOS MÉDICOS LTDA - EPP	1
+PEMETREXEDE - 500 MG PO LIOF INJ IV CT 1 FA VD INC X 30 ML  - GLENMARK FARMACÊUTICA LTDA	1
+Creatino fosfoquinase - fração MB - massa - pesquisa e/ou dosagem	1
+Grupo sanguíneo ABO e RH - gel teste - pesquisa	1
+Exames imunohematológicos em recém-nascidos: tipificação ABO e RH, pesquisa de D fraco RH(D) e prova da antiglobulina direta	1
+PARAFUSO FENDA CRUZ EM TITANIO 1,5 X 10MM - REF: 1.36.15.03.06.010	1
+Teste de Coombs direto - mono específico (IgG, IgA, C3, C3D, Poliv. - AGH) - gel teste	1
+CIMENTO ÓSSEO COM ANTIBIÓTICO GT-MAXX - 101.007.04020 - CIMENTO GT-MAXX - CIMTECH INDÚSTRIA, COMÉRCIO, IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS ORTOPÉDICOS LTDA.	1
+Pesquisa de anticorpos séricos irregulares antieritrocitários - em tubo	1
+Pesquisa de anticorpos séricos irregulares antieritrocitários - método de eluição - em tubo	1
+Identificação de anticorpos séricos irregulares antieritrocitários com painel de hemácias - gel liss	1
+Identificação de anticorpos séricos irregulares antieritrocitários - painel de hemácias enzimático	1
+Identificação de anticorpos séricos irregulares antieritrocitários - método de eluição	1
+Assistência ao trabalho de parto, por hora (até o limite de 6 horas). Não deverá ser considerado se o parto ocorrer na primeira hora após o início da assistência. Após a primeira hora, além da assistência, remunera-se o parto (via baixa ou cesariana).	1
+Uretrotomia interna	1
+OXALIPLATINA - 100 MG PÓ LIOF P/ SOL INJ CT 10 FA VD INC - EUROFARMA LABORATÓRIOS S.A.	1
+ZELBORAF - 240 MG COM REV CT BL AL AL X 56 - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+Fasciotomia	1
+BLEED STP+ - 460050000 - DMC IMPORTACAO E EXPORTACAO DE EQUIPAMENTOS LTDA.	1
+CÂMARA HIPERBÁRICA, POR USO/SESSÃO	1
+Elastase pancreática fecal	1
+HASTE INTRAM. BLOQUEADATROCANTERICA CE130 DIAM.10X240 REF. 0071640-240	1
+Medula óssea, aspiração para mielograma ou microbiológico	1
+Imobilização de membro inferior	1
+Fratura e/ou luxações do pé (exceto antepé) - tratamento cirúrgico	1
+Tenorrafia múltipla em outras regiões	1
+VERZENIOS - 50 MG COM REV CT BL AL AL X 30 - ELI LILLY DO BRASIL LTDA	1
+Cintilografia pulmonar (perfusão)	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 1379 PARAFUSO CORTICAL AUTO ROSQUEANTE 3,5 X 55 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+Uretroplastia anterior	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 1363 PARAFUSO CORTICAL AUTO ROSQUEANTE 3,5 X 14 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+PARAFUSO CORTICAL AUTO ROSQUEANTE DE BLOQUEIO 3,5 X 14MM TITANIO - REF: 1402	1
+SISTEMA DE PLACAS ESPECIAIS DE GRANDES E PEQUENOS FRAGMENTOS FIXAÇÃO RÍGIDA ORTOSINTESE - 1401 - PARAFUSO CORT CABEÇA ROSQ Ø 3,5X12MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+Procedimento diagnóstico em revisão de lâminas ou cortes histológicos seriados	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 1345 PARAFUSO CORTICAL 2,7 X 20 MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+PARAFUSO CANULADO - 1.36.40.20.19.030 PARAFUSO CANULADO CÔNICO Ø 4.0 MM ? 30.0 MM - TORIDE INDÚSTRIA E COMÉRCIO LTDA - EPP	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 6133/11 PLACA TUBULAR 12 FUROS X 1,6 X 143 MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+FIOS E PINOS RIGIDOS NÃO ABSORVÍVEIS METÁLICOS - MINAS MED - 2.13.15/300-FIO TIPO KIRSCHENNER Ø 1.5 X 300 MM - MINASMED INDÚSTRIA E COMÉRCIO DE FIXADORES ORTOPÉDICOS E IMPLANTES LTDA EPP	1
+Lesões vasculares de membro inferior ou superior - unilateral	1
+JAK2 (gene), detecção das mutações por PCR	1
+CATETER FOGARTY PARA EMBOLECTOMIA ARTERIAL EDWARDS - 120803F - EDWARDS LIFESCIENCES COMÉRCIO DE PRODUTOS MÉDICO-CIRÚRGICOS LTDA	1
+Hemorragia da loja prostática - evacuação e irrigação	1
+DIÁRIA COMPACTA DE UTI ADULTO GERAL	1
+Laceração anorretal - tratamento cirúrgico por via perineal	1
+INTRODUTOR RADIFOCUS INTRODUCER II COM GUIA METALICA E AGULHA REF. RS*R80N10MQ	1
+BARRA LISA P/ PARAFUSO PEDICOL PLUS 5,5 X 50MM REF: 04.03.06.55050	1
+MATRIZ HEMOSTATICA SURGIFLO REF. MS0010 IMP.	1
+PARAFUSO PEDICOL PLUS MONOAXIAL 6,5 X 45MM - REF: 04.24.60.65045	1
+SELANTE DURAL ADHERUS AUTOSPRAY - REF: NUS-206	1
+Densitometria óssea (um segmento)	1
+TAGRISSO - 80 MG COM REV CT BL AL AL X 30 - ASTRAZENECA DO BRASIL LTDA	1
+FIO GUIA TRAXCESS 14 - GW1420040X - ENDOTEC PRODUTOS MÉDICOS LTDA	1
+LONSURF - (15,0 + 6,14) MG COM REV CT BL AL AL X 60 - LABORATÓRIOS SERVIER DO BRASIL LTDA	1
+INTRODUTOR - TERUMO - RSR80N10MQ - TERUMO MEDICAL DO BRASIL LTDA.	1
+DISPOSITIVO PARA SELAMENTO DE PUNÇÃO HEMOSTÁTICA ANGIO-SEAL¿ VIP (8F) - REF. 610133	1
+LONSURF - (20,0 + 8,19) MG COM REV CT BL AL AL X 20 - LABORATÓRIOS SERVIER DO BRASIL LTDA	1
+MICROGUIA HIDROFILICO TRAXCESS 0,14 X 200CM REF. GW1420040	1
+VERZENIOS - 150 MG COM REV CT BL AL AL X 30 - ELI LILLY DO BRASIL LTDA	1
+SOFIA - CATETER DE ACESSO DISTAL - REF. DA6115ST	1
+DISPOSITIVO PARA SELAMENTO DE PUNÇÃO HEMOSTÁTICA ANGIO-SEAL STS PLUS (8F) - TERUMO MEDICAL DO BRASIL LTDA.	1
+STENT FRED REDIRECIONAMENTO DE FLUXO 4,0 X 12MM - REF: FRED4012	1
+IFOSFAMIDA - 1 G PO P/ PRE EXT INJ CT 10 FA VD INC  - EUROFARMA LABORATÓRIOS S.A.	1
+VERZENIOS - 100 MG COM REV CT BL AL AL X 30 - ELI LILLY DO BRASIL LTDA	1
+Alfa-fetoproteína - pesquisa e/ou dosagem	1
+ENXERTO OSSEO HAP-91 10 MESH 5 GRAMAS REF:9150CC	1
+EPÓSIDO - 20 MG/ML SOL INJ CT 10 FA VD INC X 5 ML - BLAU FARMACÊUTICA S.A.	1
+Colocação de stent em tronco supra-aórtico	1
+CATETER GUIA CHAPERON - ENDOTEC PRODUTOS MÉDICOS LTDA	1
+STENT CASPER - STENT PARA ARTÉRIA CARÓTIDA - ENDOTEC PRODUTOS MÉDICOS LTDA	1
+CAGE INTERSOMATICO TRANSFORAMINAL 10MM PEEK OPTIMA FUSIMAX TLP REF: 04.36.27.00010	1
+FRESA CRANIOTOMO 1,60 X 16,0 ER - 07 - REF. 12.5.0716.016E	1
+Instalação de cateter para monitorização hemodinâmica à beira do leito (Swan-Ganz)	1
+BETA-PRO REF. 03-00307/08	1
+MICRO PLACA REDONDA 22 MM ESPESSURA 0.6 MM REF: 167152806027	1
+Dosagem fecal de calprotectina	1
+REVLIMID - 10 MG CAP DURA CT BL AL PLAS TRANS X 28 - CELGENE BRASIL PRODUTOS FARMACÊUTICOS LTDA.	1
+ELETRODO M. PASSO EXTERNO P/ DESFIBRILADOR DESCARTAVEL - REF: M3713A	1
+Coleta de biópsia de medula óssea por agulha	1
+CANULA P/ BIOPSIA MEDULA OSSEA 13G X 10CM - REF: 0BL1310	1
+Transposição única de tendão	1
+DEXAMETASONA - 4 MG COM CT BL AL PLAS AMB X 10 - LABORATÓRIO TEUTO BRASILEIRO S/A	1
+Artrodese de coluna via anterior ou póstero lateral - tratamento cirúrgico	1
+CAGE INTERSOMATICO - PARAFUSO PARA CAGE INTERSOMATICO ANTERIOR FUSIMAX Ø 4,5 X 30 MM - REF. 04.43.05.45030	1
+CAGE INTERSOMATICO - CAGE INTERSOMATICO ANTERIOR FUSIMAX TI 10° ¿ 14X20 MM - REF. 04.36.11.14020	1
+Craniotomia para tumores ósseos	1
+DALINVI - 1800 MG SOL INJ CT FA VD TRANS X 15 ML - JANSSEN-CILAG FARMACÊUTICA LTDA	1
+TEMODAL 180MG C/ 5 CAPSULAS	1
+TEMODAL - 100 MG CAP EST FR VD AMB X 5 - SCHERING-PLOUGH INDÚSTRIA FARMACÊUTICA LTDA	1
+Microcirurgia para tumores intracranianos	1
+Reconstrução com rotação do músculo temporal	1
+ZEJULA - 100 MG CAP DURA CT BL AL PLAS PVC/PCTFE OPC X 28 - GLAXOSMITHKLINE BRASIL LTDA	1
+Ressecção do osso temporal	1
+Exérese de tumor benigno, cisto ou fístula	1
+BROCA CORTANTE 6,00 X 110,0 MM ER-07 - REF. 14.5.0760.110E	1
+MONITORIZAÇÃO DE POTENCIAL EVOCADO (DR. RODRIGO/DR. TIAGO)	1
+Teste de latências múltiplas de sono (TLMS) diurno pós PSG	1
+ASPIRADOR ULTRA-SONICO - SONOCA REF 610K0113	1
+DOXOPEG - 2 MG/ML SUS INJ CT FA VD INC X 10 ML - ZODIAC PRODUTOS FARMACÊUTICOS S/A	1
+ENDURITY MRI - PM1172 - ST. JUDE MEDICAL BRASIL LTDA.	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 1366 PARAFUSO CORTICAL AUTO ROSQUEANTE 3,5 X 20 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+CABO ELETRODO BIPOLAR MYOPORE - 511212 - ST. JUDE MEDICAL BRASIL LTDA.	1
+Trombectomia venosa	1
+BROCAS DE PERFURACAO OSSEA - PONTEIRA ULTRASSONICA REF. OT12	1
+Reconstrução parcial da mandíbula com enxerto ósseo	1
+SISTEMA DE GRAMPEAMENTO SIGNIA - SIGPSHELL - AUTO SUTURE DO BRASIL LTDA.	1
+ESFERAS MARCADORAS REFLEXIVAS DESCARTAVEIS PARA NAVEGACAO CIRURGICA - BRAINLAB LTDA	1
+Osteoplastias de mandíbula	1
+SPONGOSTAN ESPONJA GELATINOSA ABSORVIVEL - FILME - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+Retirada de corpo estranho - tratamento cirúrgico	1
+Abscesso hepático - drenagem cirúrgica por videolaparoscopia	1
+BROCA DIAMANTADA RAZEK BHC70R (1,8) - REF: 973000000	1
+Detecção/tipagem herpes vírus 1/2 líquor	1
+SPONGOSTAN ESPONJA GELATINOSA ABSORVIVEL - ANAL - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+BAINHA DE ACESSO URETERAL - FLEXOR - FUS-095035 - HANDLE COMERCIO DE EQUIPAMENTOS MEDICOS S.A.	1
+FIO-GUIA SUPERSTIFF PRÉ CURVADO ANGELGUIDE - PS-35-275XS - MICROPORT SCIENTIFIC VASCULAR BRASIL LTDA	1
+MANIFOLD TOTAL LIFE - TOTAL LIFE COMERCIO DE PRODUTOS MEDICO-HOSPITALAR LTDA-EPP	1
+PONTA PIEZO - TRAUMEC - TRAUMEC TECNOLOGIA E IMPLANTES ORTOPÉDICOS IMP. E EXP. LTDA - EPP	1
+EXTENSORES PARA INJEÇÃO DE CONTRASTE LISO OU ESPIRALADO DE 200PSI A 1200PSI - BIO-DATA DO BRASIL INDUSTRIA, COMERCIO IMPORTAÇAO E EXPORTAÇAO LTDA - EPP	1
+ANCORA MEMOFIX 2 MM, FIO .35 REF MN2	1
+KIT CANULA SDN NERVOS FACIAIS 4 PARES MONOPOLAR - REF: SDN-75-4-M	1
+1,25-dihidroxi vitamina D - pesquisa e/ou dosagem	1
+EQUIPO SAMTRONIC PARA BOMBA DE INFUSÃO (PVC CRISTAL) - SAMTRONIC INDUSTRIA E COMERCIO LTDA	1
+MATERIAL SUBSTITUTO DE TECIDO CONJUNTIVO AESCULAP - PREMILENE MESH - LABORATÓRIOS B. BRAUN S/A	1
+HEMAX ERITRON - 4.000 UI PO LIOF INJ CT FA VD INC + AMP DIL X 2 ML - ACHÉ LABORATÓRIOS FARMACÊUTICOS S.A	1
+CATETER BALAO PARA ANGIOPLASTIA PERIFERICA REF ATG120184	1
+RADIFOCUS OPTITORQUE CATETER ANGIOGRAFICO - TERUMO - RH*5BPIN00M - TERUMO MEDICAL DO BRASIL LTDA.	1
+EQUIPO EXTENSOR IRRIGADOR E ASPIRAÇÃO EMBRAMED - EMBRAMED INDÚSTRIA E COMÉRCIO DE PRODUTOS HOSPITALARES LTDA	1
+SISTEMA BUCO MAXILO FACIAL - TRAUMEC - PA.01.03.2512 - PARAFUSO CORTICAL NEURO AP 1,5 X 4MM-TI-CROSS-DRIVE - TRAUMEC TECNOLOGIA E IMPLANTES ORTOPÉDICOS IMP. E EXP. LTDA - EPP	1
+BROCA REDONDA CORTANTE P/ MIDAS LEGEND (FRESA) REF. 7BA60	1
+Fraturas complexas de mandíbula - redução cirúrgica com fixação óssea e eventual bloqueio intermaxilar	1
+88-888800 - KIT DE CIMENTAÇÃO ICONACY PLUS - ICONACY ORTHOPEDIC IMPLANTS INDUSTRIA E COMERCIO DE PRODUTOS MEDICO HOSPITALARES LTDA	1
+IMPLANTE DE MARCAPASSO MONOCAMERAL - PACOTE CIRURGIA CARDÍACA	1
+Toracotomia exploradora (excluídos os procedimentos intratorácicos)	1
+CABO ELETRODO MIOCARDICO MEDTRONIC MOD.4951M/5071 - 5071-53 - AUTO SUTURE DO BRASIL LTDA.	1
+Helicobacter pylori - IgG - pesquisa e/ou dosagem	1
+PLACA DE AUTO COMPRESSAO - 18806 - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+INTRODUTOR LI PLUS G - REF. LI 6PLUS G (367568)	1
+Apendicectomia	1
+MARCAPASSO IMPLANTÁVEL COM TECNOLOGIA MRI SURESCAN ? CÂMARA ÚNICA - ATTESTA SR MRI SURESCAN ATSR01 - AUTO SUTURE DO BRASIL LTDA.	1
+FIO METALICO LISO - 32010E - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+Revisão de artroplastias de quadril com retirada de componentes e implante de prótese	1
+Material descartável (kit) e soluções para utilização de processadora automática de sangue/aférese	1
+PRODUTO PARA CATETERIZAÇÃO VENOSA CENTRAL DE LÚMEN TRIPLO - EMERGO BRAZIL IMPORT IMPORTACAO E DISTRIBUICAO DE PRODUTOS MEDICOS HOSPITALARES LTDA	1
+Unidade de concentrado de plaquetas por aférese	1
+PCT - EXTENSOS FERIMENTOS, CICATRIZES OU TUMORES &#x2013; EXCISÃO E RETALHOS (CUTÂNEOS DA REGIÃO)	1
+PARAFUSO PARA USO EM MINI OU MICRO FRAGMENTOS HEXAGON - 122.2.16 (PARAFUSO CORTICAL Ø2,7) - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+PLACAS RETAS COM FIXAÇÃO RÍGIDA PARA PEQUENOS E GRANDES E FRAGMENTOS - 105.2.14E (PARAFUSO CORTICAL ROSQUEAVEL Ø3,5MM) - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+PLACAS RETAS COM FIXAÇÃO RÍGIDA PARA PEQUENOS E GRANDES E FRAGMENTOS - 105.2.16E (PARAFUSO CORTICAL ROSQUEAVEL Ø3,5MM) - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+PARAFUSO PARA USO EM MINI OU MICRO FRAGMENTOS HEXAGON - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+PARAFUSO PARA USO EM MINI OU MICRO FRAGMENTOS HEXAGON - 122.2.18 (PARAFUSO CORTICAL Ø2,7) - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+Fraturas e/ou luxações do anel pélvico (com uma ou mais abordagens) - tratamento cirúrgico	1
+PARAFUSO CANULADO EM AÇO INOXIDÁVEL - PARAFUSO CANULADO 7,0 MM - 5117-070-105 - ORTOBIO - IND E COM. DE PRODUTOS ORTOPEDICOS LTDA-EPP	1
+Tratamento microcirúrgico das lesões intramedulares (tumor, malformações arteriovenosas, siringomielia, parasitoses)	1
+SIMPASS ENDO 14 RX - CATETER BALÃO PARA PTA - SPE 60020-145 - ANGIOMED IMPORTAÇÃO E EXPORTAÇÃO LTDA	1
+CATETER BALÃO DE DILATAÇÃO CONQUEST REF. CQ12084	1
+FIO GUIA RADIFOCUS M-STANDARD PONTA ANGULADA - REF. RF*GA35303M	1
+INTRODUTOR - TERUMO - RSA10K10SQ - TERUMO MEDICAL DO BRASIL LTDA.	1
+SISTEMA PARA FIXAÇÃO POSTERIOR DE COLUNA NEOSPINE - 940.104 - BARRA D6.0X90 MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	1
+SELANTE DURAL DURASEAL? INTEGRA® - PROMEDON DO BRASIL PRODUTOS MEDICO HOSPITALARES LTDA	1
+Sequenciamento de Nova Geração (NGS) - genes isolados, painéis e grandes regiões genômicas (inclui Captura, Amplificação e Sequenciamento)	1
+SISTEMA PARA FIXAÇÃO POSTERIOR DE COLUNA NEOSPINE - 940.415 - PARAFUSO PEDICULAR POLIAXIAL G2 D6.5X40 MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	1
+GLIVEC - 400 MG COM REV CT BL AL/AL X 30 - NOVARTIS BIOCIENCIAS S.A	1
+VOTRIENT - 200 MG COM REV CT FR PLAS OPC X 30  - NOVARTIS BIOCIENCIAS S.A	1
+SISTEMA PARA FIXAÇÃO POSTERIOR DE COLUNA NEOSPINE - 940.416 - PARAFUSO PEDICULAR POLIAXIAL G2 D6.5X45 MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	1
+SISTEMA PARA FIXAÇÃO POSTERIOR DE COLUNA NEOSPINE - 940.103 - BARRA D6.0X80 MM - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	1
+SISTEMA PARA FIXAÇÃO POSTERIOR DE COLUNA NEOSPINE - 940.660 - CONECTOR DE BARRA 6.0/6.0 - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	1
+IBRANCE - 125 MG CAP DURA CT FR PLAS OPC X 21 - WYETH INDÚSTRIA FARMACÊUTICA LTDA	1
+SISTEMA PARA FIXAÇÃO POSTERIOR DE COLUNA NEOSPINE - 940.002 - PARAFUSO BLOQUEADOR - NEOORTHO PRODUTOS ORTOPÉDICOS S/A	1
+RM - Avaliação de ferro (coração ou fígado)	1
+Ecocardiograma transtorácico tridimensional	1
+EEG de rotina	1
+pH-metria esofágica computadorizada com dois canais	1
+PET - SCAN CT NEUROLOGICO COM FDG - LIMINAR	1
+VALVULA AHMED PARA GLAUCOMA - FP7: AHMED GLAUCOMA VALVE IMPLANT - VISIONMED EQUIPAMENTOS MEDICOS LTDA	1
+Avaliação do processamento auditivo central por fonoaudiólogo	1
+Fraturas e/ou luxações ao nível do joelho - tratamento cirúrgico	1
+PARAFUSO CANULADO PARA PEQUENOS E GRANDES FRAGMENTOS - 0142015-060 - PARAFUSO CANULADO TI Ø7,0MM X 60/16MM AP - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+PARAFUSO CANULADO PARA PEQUENOS E GRANDES FRAGMENTOS - 0142015-065 - PARAFUSO CANULADO TI Ø7,0MM X 65/16MM AP - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FULVESTRANTO - 50 MG/ML SOL INJ CT SER PREENC VD TRANS DESCART X 5ML + AGULHA - EUROFARMA LABORATÓRIOS S.A.	1
+PARAFUSO CANULADO PARA PEQUENOS E GRANDES FRAGMENTOS - 0142015-055 - PARAFUSO CANULADO TI Ø7,0MM X 55/16MM AP - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+Audiometria vocal com mensagem competitiva (SSI, SSW)	1
+CIRURGIA ANTIGLAUCOMATOSA VIA ANGULAR, COM IMPLANTE DE DRENAGEM, POR TÉCNICA MINIMAMENTE INVASIVA	1
+COTONOIDE 13 X 76MM - CODMAN	1
+KEYTRUDA - 100 MG/ 4 ML SOL INJ CT FA VD INC X 4 ML - MERCK SHARP & DOHME FARMACEUTICA LTDA.	1
+ANESTESIA COLONOSCOPIA/ENDOSCOPIA	1
+FIOS E PINOS RIGIDOS NÃO ABSORVÍVEIS METÁLICOS - MINAS MED - 2.1240.50/150 PINO SCHANZ Ø 4.0 X 50 X 150 MM ROSCA CÔNICA - MINASMED INDÚSTRIA E COMÉRCIO DE FIXADORES ORTOPÉDICOS E IMPLANTES LTDA EPP	1
+CURACEL - CC-540 - CANADA CENTRAL DE NEGOCIOS DO BRASIL LTDA	1
+COMPRESSA CIRÚRGICA HEALTH QUALITY - HEALTH QUALITY INDÚSTRIA E COMÉRCIO LTDA ME	1
+SISTEMA DRENAGEM MEDIASTINAL REF. INFANTIL 1000/26	1
+SISTEMA DE PARAFUSOS PEDICULARES PARA COLUNA VERTEBRAL TLS - CÓDIGO: TLS9001 - OSSEA TECHNOLOGY INDÚSTRIA E COMÉRCIO LTDA	1
+DURADRY - 5 X 5 X 0,4CM ESPONJAS - FIBRILAR ?DURADRY ( CAIXA COM UM BLISTER CADA) - TECHNODRY LIOFILIZADOS MÉDICOS LTDA	1
+Ressecção de neuroma	1
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120300-38 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	1
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120350-38 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	1
+STIVARGA - 40 MG COM REV CT FR PLAS OPC X 28 - BAYER S.A.	1
+NEO DECAPEPTYL - 3,75 MG PÓ LIOF INJ CT FA VD TRANS + SOL DIL X 2 ML - ACHÉ LABORATÓRIOS FARMACÊUTICOS S.A	1
+CÂNULAS GUIA - SSC-1810005 - CÂNULA GUIA RETA AFIADA 18 GA 100-5 - BRAMSYS INDÚSTRIA E COMÉRCIO LTDA	1
+HASTES E BARRAS PARA FIXADORES EXTERNOS SS - WORLD FIX INDUSTRIA E COMERCIO DE PRODUTOS ORTOPEDICOS LTDA	1
+CLORIDRATO DE DOXORRUBICINA - 50 MG PO LIOF P/ SOL INJ CT FA VD INC - GLENMARK FARMACÊUTICA LTDA	1
+KIT CÂNULA DE DISCECTOMIA PERCUTÂNEA L - RAZEK EQUIPAMENTOS LTDA ME	1
+TAXA POR UNIDADE DE CURATIVO GRANDE	1
+PROLENE* MESH - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+Vitamina D2, pesquisa e/ou dosagem	1
+Recolocação de eletrodo / gerador com ou sem troca de unidades	1
+TAXOFEN - 20 MG COM REV CT 25 BL AL PLAS AMB X 10 (EMB HOSP) - BLAU FARMACÊUTICA S.A.	1
+CÂNULA DE TRAQUEOSTOMIA PORTEX - 100/800/080 - SMITHS MEDICAL DO BRASIL PRODUTOS HOSPITALARES LTDA	1
+Procedimento diagnóstico em lâminas de PAAF até 5	1
+Herniorrafia recidivante	1
+PCT - SEPTOPLASTIA	1
+Tilt teste	1
+PLACA E PARAFUSO ALCP DE FIXAÇÃO RÍGIDA - 1344 PARAFUSO CORTICAL 2,7 X 18 MM - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+CATETER DIAGNOSTICO ANGIOGRAFICO RADIOFOCUS OPTITORQUE VERTEBRAL 5FR 100CM REF. RH*BH15110M	1
+Colostomia ou enterostomia	1
+AMPLATZER - FIO GUIA II - 9-GW-002 - ST. JUDE MEDICAL BRASIL LTDA.	1
+Avaliação fisiológica da gravidade de obstruções (cateter ou guia)	1
+Avaliação hemodinâmica por cateterismo (aferimento de pressão ou fluxo arterial ou venoso)	1
+LAÇO DE CAPTURA SCITECH - SCITECH PRODUTOS MEDICOS LTDA	1
+AMPLATZER TREVISIO INTRAVASCULAR DELIVERY SYSTEM - ST. JUDE MEDICAL BRASIL LTDA.	1
+TUBOS DE DISTRIBUIÇÃO - LATIN HEALTH IMPORTADORA E DISTRIBUIDORA LTDA.	1
+GUIA PARA ANGIOGRAFIA SCW - EPTCA MEDICAL DEVICES LTDA.	1
+AMPLATZER TALISMAN PFO OCCLUDER - 9-PFO-2518 - ST. JUDE MEDICAL BRASIL LTDA.	1
+Tacrolimus - pesquisa e/ou dosagem	1
+"Oclusão percutânea de ""shunts"" intracardíacos"	1
+Estudo hemodinâmico de cardiopatias congênitas e/ou valvopatias  com  ou  sem  cinecoronariografia  ou oximetria	1
+TELA DE PROLENE 7,6X15CM - REF: XYPMII1	1
+Cintilografia de corpo inteiro para pesquisa de metástases (PCI)	1
+Cultura para mycobacterium	1
+B.A.A.R. (Ziehl ou fluorescência, pesquisa direta e após homogeneização) - pesquisa	1
+Teste cutâneo de puntura ou intradérmico com medicamentos (até 3 drogas)	1
+Histerectomia total ampliada - qualquer via - (não inclui a linfadenectomia pélvica)	1
+Esvaziamento cervical seletivo (especificar o lado)	1
+Linfadenectomia retroperitoneal	1
+Detecção intraoperatória radioguiada de linfonodo sentinela	1
+Fisioterapia aquatica individual (Hidroterapia)	1
+Curva insulínica e glicêmica (4 dosagens)	1
+VOTRIENT - 400 MG COM REV CT FR PLAS OPC X 30  - NOVARTIS BIOCIENCIAS S.A	1
+MITEXAN - 100 MG/ML SOL INJ CT 10 AMP VD INC X 4 ML - BAXTER HOSPITALAR LTDA	1
+HOLOXANE - 1 G PO PREP EXTEMP INJ CX 10 FA VD INC X 30 ML - BAXTER HOSPITALAR LTDA	1
+BICALUTAMIDA - 50 MG COM REV CT BL AL PLAS INC X 30 - EUROFARMA LABORATÓRIOS S.A.	1
+ACETATO DE ABIRATERONA - 250 MG COM REV CT FR PLAS OPC X 30 - DR. REDDYS FARMACÊUTICA DO BRASIL LTDA	1
+CABOMETYX - 40 MG COM REV CT FR PLAS OPC X 30 - BEAUFOUR IPSEN FARMACÊUTICA LTDA	1
+IgG - pesquisa e/ou dosagem	1
+IgM - pesquisa e/ou dosagem	1
+IgA - pesquisa e/ou dosagem	1
+Eletroforese de proteínas urinárias, com concentração	1
+Bacterioscopia (Gram, Ziehl, Albert  etc), por lâmina	1
+Salpingectomia uni ou bilateral	1
+AFINITOR - 10 MG COM CT BL AL/AL X 30 - NOVARTIS BIOCIENCIAS S.A	1
+Rubéola - IgM - pesquisa e/ou dosagem	1
+ZILVER STENT DE DESENHO VASCULAR REF. ZFV6-125-8-10.0	1
+Reconstrução parcial da mama pós-quadrantectomia	1
+Ressecção do linfonodo sentinela / torácica lateral - em mama	1
+ENSEAL® X1 TISSUE SEALER REF:NSLX137C	1
+Transferrina - pesquisa e/ou dosagem	1
+Androstenediona - pesquisa e/ou dosagem	1
+Glicoproteína Beta 2, anticorpos, IgM	1
+Cauterização química, ou eletrocauterização, ou criocauterização de lesões da vagina (por grupo de até 5 lesões)	1
+Fosfatidilserina, anticorpos IgG	1
+Fosfatidilserina, anticorpos IgM	1
+Glicoproteína Beta 2, anticorpos, IgA	1
+Fosfatidilserina, anticorpos IgA	1
+SISTEMA SUSPENSAO SLING SAFYRE T PLUS (PROMEDON) REF. PR-KITTP-01	1
+Incontinência urinária com colpoplastia anterior - tratamento cirúrgico (com ou sem uso de prótese)	1
+TARGET ESPIRAL DESTACAVEL REF. M0036121450	1
+IVASCULAR SERGEANT - SAUDE IMPORT - COMÉRCIO DE PRODUTOS MÉDICOS HOSPITALARES LTDA	1
+FIO GUIA AMPLATZ SUPER STIFF - M001465021 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+Cultura, fezes: salmonella, shigella e escherichia coli enteropatogênicas (sorologia incluída)	1
+AGENTE EMBOLIZANTE ONYX 18 REF. 105-7000-060	1
+CATETER GUIA PARA ANGIOPLASTIA MEDTRONIC REF. LAUNCHER 6F	1
+DESTACADOR INSTANTANEO DE BOBINAS PARA TERAPIA DE ANEURISMAS - REF. ID-1-5	1
+FIO GUIA CARDIOVASCULAR 0,14 X 182CM - REF: 12132-01 J	1
+MICROMOLA AXIUM HELIX 2MM X 3CM REF. QC-2-3-HELIX	1
+INTRODUTOR RADIAL RADIFOCUS INTRODUCER II COM REVESTIMENTO HIDROFILICO, GUIA METALICA E AGULHA. - REF. RM*RF5F10PQ	1
+MICRO CATETER ECHELON 10 REF.145-5091-150	1
+MICROGUIA HIDROFILICO AVIGO 0,014 REF: 103-0606-200	1
+Diverticulotomia - aparelho digestivo	1
+Antigliadina (glúten) - IgA - pesquisa e/ou dosagem	1
+Antigliadina (glúten) - IgG - pesquisa e/ou dosagem	1
+Anti transglutaminase tecidual - IgA	1
+RNA Polimerase III, anticorpos	1
+Pesquisa ou dosagem de um componente urinário	1
+FASLODEX - 50 MG/ML SOL INJ CT SER VD INC PREENCH DESCART X 5 ML + AGULHA  - ASTRAZENECA DO BRASIL LTDA	1
+TUBO HIPOSPADIA MEDICONE REF. TH06	1
+Infiltração  intralesional, cicatricial / hemangiomas - por sessão	1
+Sutura de pálpebra	1
+Pepsinogenio 2	1
+Excisão de plicoma	1
+Cirurgia de acesso posterior	1
+Fistulectomia perineal	1
+Amilase - pesquisa e/ou dosagem	1
+Aneurismas torácicos ou tóraco-abdominais	1
+KYLEENA 19,5 MG(ESTOQUE)	1
+Artéria mesentérica superior - qualquer técnica	1
+DIÁRIA DE  ENFERMARIA DE 3 LEITOS DA MATERNIDADE COM BANHEIRO PRIVATIVO	1
+Cauterização de alta frequência em sistema genital e reprodutor feminino	1
+BAINHA DE ACESSO URETERAL U-FLEX ALLWIN 9.5FR X 45CM - REF: UF11.5/9.5-45	1
+TESOURA ULTRASSONICA HARMONIC - REF: HARH36	1
+Traquelectomia - amputação, conização - (com ou sem cirurgia de alta frequência / CAF)	1
+Biometria ultrassônica - monocular	1
+Anticorpos anti-HMG-CoA redutase (anti-hmgcoar), dosagem	1
+US - Abdome inferior masculino (bexiga, próstata e vesículas seminais)	1
+Parasitológico - nas fezes	1
+Adrenocorticotrófico, hormônio (ACTH) - pesquisa e/ou dosagem	1
+TC - Coluna - segmento adicional	1
+Tratamento  de necrose  avascular  por foragem de estaqueamento associada à necrose microcirúrgica  da cabeça femoral - tratamento cirúrgico	1
+Osteotomias / artrodeses - tratamento cirúrgico	1
+SISTEMA PLACA BLOQUEADA FEMUR PROXIMAL - 00-0907-4524-PARAFUSO CORTICAL 4,5 X 24 AUTOPERFURANTE, HEXALOBE T15 - MEDSTAR IMPORTAÇÃO E EXPORTAÇÃO EIRELI	1
+LÂMINAS PARA SERRA DESCARTÁVEIS - IMPLANFIX - IMPLANFIX MATERIAIS CIRÚRGICOS LTDA. - ME	1
+FIOS E PINOS IMPLANTÁVEIS - 0131201-515 - FIO DE KIRSCHNER COM PONTA TROCAR, ENGATE LISO Ø1,5X150 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIO GUIA PARA TRAUMATOLOGIA - IMPLANFIX - FC2,5150 FIO GUIA CALIBRADO Ø 2,5 X 150MM 2,5 150 - IMPLANFIX MATERIAIS CIRÚRGICOS LTDA. - ME	1
+SISTEMA PLACA LAMINA CANULADA FEMUR PROXIMAL - 00-1200-4500-PLACA CANULADA 90 OSTEOTOMIA ADOLESCENTE 40 X 6 MM RECUO X 6,5 MM, 4 ORIFÍCIOS - MEDSTAR IMPORTAÇÃO E EXPORTAÇÃO EIRELI	1
+SISTEMA PLACA BLOQUEADA FEMUR PROXIMAL - 00-0907-4620-PARAFUSO CORTICAL DE BLOQUEIO 4,5 X 20 , HEXALOBE T15 - MEDSTAR IMPORTAÇÃO E EXPORTAÇÃO EIRELI	1
+Alongamento de tendões - tratamento cruento	1
+Alongamento	1
+Artrotomia - tratamento cirúrgico - joelho	1
+STELARA - 45 MG SOL INJ CT 1 FA VD INC X 0,5 ML  - JANSSEN-CILAG FARMACÊUTICA LTDA	1
+RM - Fetal	1
+Cadeia Kappa-Lambda leve livre	1
+FAULDPAMI - 9 MG/ML SOL INJ CT FA VD INC X 10 ML  - LIBBS FARMACÊUTICA LTDA	1
+IgE, por alérgeno (cada) - pesquisa e/ou dosagem	1
+EQUIPO PARA IRRIGAÇÃO PARA ARTROSCOPIA SETORMED - SETORMED INDÚSTRIA E COMERCIO DE EQUIPAMENTOS MÉDICOS E ODONTOLÓGICOS LTDA- EPP	1
+CÂNULAS PARA MICRODEBRIDAÇÃO VOLMED - VOLMED BRASIL EQUIPAMENTOS LTDA - ME	1
+Lesões agudas e/ou luxações de meniscos (1 ou ambos) - tratamento cirúrgico	1
+BIOVISC ORTHO - BIOTECH VISION CARE OFTALMOLOGIA BRASIL LTDA	1
+Herpes vírus 7 - IgG/IgM	1
+REVLIMID - 10 MG CAP DURA CT BL AL PLAS TRANS X 28 - BRISTOL-MYERS SQUIBB FARMACÊUTICA LTDA	1
+Curva glicêmica (4 dosagens) via oral ou endovenosa	1
+Rearranjo gênico quantitativo BCR/ABL por PCR	1
+RIXIMYO - 10 MG/ML SOL DIL INFUS CT 2 FR VD TRANS X 10 ML - SANDOZ DO BRASIL INDÚSTRIA FARMACÊUTICA LTDA	1
+ALFAEPOETINA - 40000 UI/ML SOL INJ CT 12 SER PREENCHIDAS X 1ML + SISTEMA DE SEGURANÇA - BLAU FARMACÊUTICA S.A.	1
+Quantificação de CD4 da coleta de células tronco periféricas para TCTH alogênico	1
+Vírus Zika ? IgM	1
+Corpo estranho da córnea - retirada	1
+Dengue - IgG e IgM (cada) - pesquisa e/ou dosagem	1
+ACTEMRA - 20 MG/ML SOL DIL INFUS IV CT FA VD TRANS X 4 ML - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	1
+Imunoglobulina (IGE) - pesquisa e/ou dosagem	1
+Corpo estranho de faringe - retirada em consultório	1
+Corpos estranhos - retirada em consultório (nariz)	1
+COMPONENTE FEMORAL COM RESTRIÇÃO - BM - 2340-05-000 BKS III ? COMPONENTE FEMORAL GRANDE ? DIREITO - BIOMECÂNICA INDÚSTRIA E COMÉRCIO DE PRODUTOS ORTOPÉDICOS LTDA	1
+COMPONENTE FEMORAL COM RESTRIÇÃO - BM - 2340-06-000 BKS III ? COMPONENTE FEMORAL GRANDE ? ESQUERDO - BIOMECÂNICA INDÚSTRIA E COMÉRCIO DE PRODUTOS ORTOPÉDICOS LTDA	1
+Cultura bacteriana (em diversos materiais biológicos)	1
+Hemoglobina glicada (A1 total) - pesquisa e/ou dosagem	1
+Proteínas totais albumina e globulina - pesquisa e/ou dosagem	1
+CÉLULAS LE	1
+Colecistostomia por videolaparoscopia	1
+TROCARTE PORTMARLEX DESCARTAVEL SEM LAMINA REF. TOMS112100	1
+TROCARTE PORTMARLEX DESCARTAVEL SEM LÂMINA - MB INDUSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+Teste de caminhada de 6 minutos	1
+Paciente com D.P.O.C. em atendimento ambulatorial necessitando reeducação e reabilitação respiratória	1
+Exérese de lesão da vulva e/ou do períneo (por grupo de até 5 lesões)	1
+Tratamento cirúrgico de retocele (colpoperineoplastia posterior)	1
+Pênis curvo congênito - tratamento cirúrgico	1
+Retossigmoidectomia abdominal	1
+Tarsorrafia	1
+COMPONENTE FEMORAL CIMENTADO - 04.15.05.00002 (COMPONENTE FÉMORAL MODULAR III ? PRIMÁRIO) - VINCULA INDUSTRIA, COMERCIO, IMPORTACAO E EXPORTACAO DE IMPLANTES S.A.	1
+COMPONENTE FEMORAL DIREITO Nº02 -REF: 04.15.10.00002	1
+PATELA ANATOMICA Ø 30 MM REF. 04.16.04.00030	1
+PLATO TIBIAL Nº02 ESPESSURA 09MM - REF: 04.17.08.02009	1
+Curva tensional diária - binocular	1
+Iridociclectomia	1
+TROCATER VERSAONE COM LÂMINA 5MM - REF: (B5STF)	1
+Histeroscopia cirúrgica para a retirada de DIU	1
+GRAMPEADOR EEA28 DST 48 VERDE - REF: EEA28	1
+Endometriose peritoneal - tratamento cirúrgico via laparoscópica	1
+Retossigmoidectomia abdominal por videolaparoscopia	1
+Colectomia total com ileostomia por videolaparoscopia	1
+Ressecção de tumor do septo reto-vaginal	1
+MANIPULADOR UTERINO TAIMIN - CIENLABOR INDUSTRIA E COMÉRCIO LTDA	1
+PATELA DE TRIPLA FIXAÇÃO Ø 30 MM REF. 04.16.03.00030	1
+PLATO TIBIAL MODULAR III REF. 04.17.02.01009	1
+BASE TIBIAL MODULAR III MEDIA PRIMARIA ¿ CRCO REF. 04.14.06.00002	1
+Cisto sinovial - tratamento cirúrgico	1
+Fratura de tornozelo - tratamento conservador	1
+DISPOSITIVO REPARO DE MENISCO AGULHA ANGULADA 15º C/ 4 IMPLANTES - REF: MR004C	1
+PARAFUSO CORTICAL AUTO ROSQUEANTE DE BLOQUEIO 3,5 X 16MM - REF: 4994	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - 4207/05 ? PLACA 1/3 DE CANA ROSQUEADA 6 FUROS - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+Vídeo-faringo-laringoscopia com endoscópio rígido	1
+Sinéquia nasal - ressecção unilateral - qualquer técnica	1
+Furúnculo - drenagem (ouvido)	1
+Retossigmoidoscopia rígida	1
+Colotomia e colorrafia	1
+Lesão anal - eletrocauterização	1
+Clostridium Difficile Toxigênico, pesquisa DNA, fezes	1
+Fístula reto-vaginal e fístula anal em ferradura - tratamento cirúrgico via perineal	1
+Ecodopplercardiograma com estresse farmacológico	1
+US - Obstétrica gestação múltipla: cada feto	1
+Toxoplasmose IgM - pesquisa e/ou dosagem	1
+Cantoplastia ungueal	1
+SISTEMA PARA ARTROPLASTIA DE QUADRIL - HÍBRIDO - 04.43.19.65020 ? PARAFUSO ACETABULAR BAIXO PERFIL TI Ø 6,5X20 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+TELA ULTRA PRO 15 X 15 IMP. REF: UMM1	1
+Reconstrução da mama com prótese e/ou expansor	1
+Retirada de prótese de mama - unilateral	1
+Hepatite C - genotipagem - pesquisa	1
+SONDA PARA ALIMENTACAO ENTERALSONDA PARA GASTROSTOMIA AO NIVEL PELE MIC KEY - 0120-24-2,5 (24 FR / 2,5 CM) - CEI COMÉRCIO EXPORTAÇÃO IMPORTAÇÃO DE MATERIAL MÉDICO LTDA	1
+SISTEMA PARA ARTROPLASTIA DE QUADRIL - HÍBRIDO - 04.43.19.65025 ? PARAFUSO ACETABULAR BAIXO PERFIL TI Ø 6,5X25 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+Gastrostomia endoscópica	1
+Toxoplasmose IgG - pesquisa e/ou dosagem	1
+SISTEMA DE FIXAÇÃO RÍGIDA DE MEMBROS SUPERIORES ? BM - BIOMECÂNICA INDÚSTRIA E COMÉRCIO DE PRODUTOS ORTOPÉDICOS LTDA	1
+SISTEMA PARA ARTROPLASTIA DE QUADRIL - HÍBRIDO - 04.04.10.32002 ? CABEÇA FEMORAL INTERCAMBIÁVEL Ø 32 MM COLO STANDARD CERÂMICA DELTA - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+SISTEMA PARA ARTROPLASTIA DE QUADRIL - HÍBRIDO - 04.43.19.65030 ? PARAFUSO ACETABULAR BAIXO PERFIL TI Ø 6,5X30 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+SISTEMA PARA ARTROPLASTIA DE QUADRIL ? MD ACETABULAR - 04.13.08.48036 ? INSERTO ACETABULAR MD DELTA Ø 48X36 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+HASTE SEM CIMENTO EM TITANIO - 04.30.96.46016 (PRÓTESE FEMORAL TAPER PS TI) - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+SISTEMA PARA ARTROPLASTIA DE QUADRIL ? MD ACETABULAR - 04.01.26.52037 ? CALOTA MD ACETABULAR TI Ø 52X37 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+PROTESE MAMARIA MOTIVA IMPLANT MATRIX 315CC - REF: RSF-315+Q	1
+ELETRODO BIPOLAR DESCARTAVEL REF:4622.1333	1
+EVACUADOR DE ELLIK- REF. UNICO	1
+CIRCULAR STAPLERS - CDH33B - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+CATETER PARA LIV CORONÁRIA SHOCKWAVE C2 - 3.5 X 12 MM - PASSROD IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS PARA SAÚDE LTDA - ME	1
+Esfincteroplastia anal (qualquer técnica)	1
+Cirurgia de abaixamento (qualquer técnica)	1
+GRAMPEADOR LINEAR TLC55	1
+RECARGA PARA GRAMPEADOR CIRURGICO LINEARES - TCR55 - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+MESILATO DE IMATINIBE - 400 MG COM REV CT BL AL AL DESSEC X 30 - SUN FARMACÊUTICA DO BRASIL LTDA	1
+ERITROPOIETINA - 4000 UI/ML INJ CT 20 FA VD INC X 1 ML - CHRON EPIGEN INDÚSTRIA E COMÉRCIO LTDA	1
+Pesquisa de mutação de alelo específico por PCR	1
+Desidrogenase láctica - pesquisa e/ou dosagem	1
+Reticulócitos, contagem	1
+PAMIDRONATO DISSÓDICO - 90 MG PO LIOF SOL INJ CT 10 FA VD TRANS - EUROFARMA LABORATÓRIOS S.A.	1
+REVLIMID - 10 MG CAP DURA CT BL AL PLAS TRANS X 21 - BRISTOL-MYERS SQUIBB FARMACÊUTICA LTDA	1
+FORNECIMENTO DE MEDICAMENTO ORAL PARA TRATAMENTO AMBULATORIAL	1
+Atendimento ambulatorial em puericultura	1
+Anticorpos anti neuronal nuclear 1 e 2 LCR	1
+FRESA SHANNON 43 Ø2,2 X 70MM ENCAIXE H REF.PA35.20.22.70.H	1
+Osteotomias e/ou pseudartroses - tratamento cirúrgico	1
+BROCAS CORTANTES, FRESAS E LAMINAS ESTEREIS REF. 14.5.0131.070E	1
+MONITORIZAÇÃO ELETROFISIOLÓGICA DOS NERVOS DO CRANIO (E.N.T COMERCIAL)	1
+Fratura de osso do pé - tratamento conservador	1
+Fratura de punho - tratamento conservador	1
+PARAFUSO NAO CANULADO PARA USO EM GRANDES FRAGMENTOS-CORTICAL -DIAMETRO 4,5MM - 40MM - REF. 102.3.40	1
+Enxertos em outras pseudartroses	1
+PATELA 03 PINOS DIAM.32 REF 0314300-032	1
+Ressecção de tumor benigno	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0313010-302 - COMPONENTE FEMORAL EP 3 DIREITO - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+INSERTO ARTICULAR TIBIAL EP 3/4 - 14MM REF 0314110-314	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO - ROTAFLEX - 04.15.10.00002 ? COMPONENTE FEMORAL DIREITO Nº 02 - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+PATELA ANATOMICA 27MM - REF: 04.16.04.00027	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO - ROTAFLEX - 04.17.08.02009 ? PLATÔ TIBIAL Nº 02 ESPESSURA 09 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+Fratura de osso da mão - tratamento conservador	1
+BROCAS CORTANTES, FRESAS E LAMINAS ESTEREIS REF. 14.5.0123.070E	1
+HEMOSTATICO CIRURGICO SPONGOSTAN - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+BROCA CORTANTE 1,00X 70,0 ER-01 REF. 14.5.0140.070E	1
+Mastoidectomia simples ou radical modificada	1
+Neurotelemetria transoperatória do implante coclear unilateral	1
+Teste de integridade do implante coclear unilateral	1
+Implante coclear (exceto a prótese)	1
+RONDO 3	1
+SISTEMA DE IMPLANTE COCLEAR SYNCHRONY - MED-EL DO BRASIL ELETROMEDICOS LTDA	1
+FRESAS CIRÚRGICAS RAZEK - RAZEK EQUIPAMENTOS LTDA ME	1
+PCT - BALANCEAMENTO E MAPEAMENTO DE ELETRODOS DE IMPLANTE COCLEAR - PACOTE HIORP	1
+CUTANPLAST - ESPONJA DE GELATINA HEMOSTATICA - MEDICALTEC LTDA	1
+Metanefrinas urinárias, dosagem	1
+Metanefrinas plasmáticas	1
+Microalbuminúria	1
+PARAFUSO CANULADO PARA PEQUENOS E GRANDES FRAGMENTOS - 0142030-014 - PARAFUSO CANULADO AUTOCOMPRESSIVO MINI TI 14MM RT - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+PARAFUSO CANULADO 4,5 X 30MM	1
+Luva	1
+PARAFUSO DE INTERFERÊNCIA DE TITÂNIO 7X25 -REF: 5807-005-025	1
+Angiotomografia venosa de membro inferior	1
+Exérese de cisto vaginal	1
+Teste de absorção de vitamina B12 com cobalto - 57 (teste de Schilling)	1
+FIO GUIA PERIFÉRICO ASAHI ? HIDROFÍLICO + SILICONE - SAUDE IMPORT - COMÉRCIO DE PRODUTOS MÉDICOS HOSPITALARES LTDA	1
+MICROCATETER- MAMBA E MAMBA FLEX REF. H7493928713560	1
+FIOS-GUIA SENTAI FIGHTER - FIGHTER - H749393031902 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+Aterectomia percutânea orientada por RX	1
+KYLEENA 19,5 MG	1
+COSENTYX - 150 MG PO LIOF SOL INJ CT 1 FA VD TRANS  - NOVARTIS BIOCIENCIAS S.A	1
+Dedo em martelo - tratamento cirúrgico	1
+ACTEMRA 20 MG/ML SOL DIL INFUS IV X 20 ML	1
+Hepatite B - HBCAC - IgG (anti-core IgG ou Acoreg) - pesquisa e/ou dosagem	1
+COSENTYX - 150 MG/ML SOL INJ CT 1 SER PREENC VD TRANS X 1 ML + 1 CAN APLIC - NOVARTIS BIOCIENCIAS S.A	1
+ERELZI - 50 MG SOL INJ CT 4 CAN PREENC X 1 ML + SIST APLIC PLAS - SANDOZ DO BRASIL INDÚSTRIA FARMACÊUTICA LTDA	1
+Aquaporina 4 (AQP4)	1
+TREMFYA - 100 MG SOL INJ CT 1 SER PREENC VD TRANS DISP SEGURANÇA X 1 ML - JANSSEN-CILAG FARMACÊUTICA LTDA	1
+CATETER URETERAL DUPLO J SOFT REF. ROJS9526STB	1
+CANULA DE ACESSO URETERAL BI-FLEX EVO REF. ROUS1035ST	1
+ELÉTRODO DE RESSECÇÃO DE ALTA FREQUÊNCIA - OLYMPUS OPTICAL DO BRASIL LTDA	1
+TC - Tomossíntese digital mamária	1
+DRENO DE SUCÇÃO 3P MEDICAL - 3P MEDICAL LTDA - ME	1
+Revisões de artroplastia total - tratamento cirúrgico	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0313400-405 - CALÇO FEMORAL DISTAL 4 - 05MM - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0313410-310 - CALÇO TIBIAL PARCIAL PARALELO 3 - 10MM - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+CIMENTO ACRILICO ESTERIL RADIOPACO COM ANTIBIOTICO GUN G - REF: 880400	1
+PINO ALONGADOR FLEX DIAM.13X100MM REF 0312513-100	1
+PINO ALONGADOR FLEX DIAM.15X100MM REF 0312515-100	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0313030-301 - COMPONENTE FEMORAL REVISÃO 3 ESQUERDO - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0313230-300 - COMPONENTE TIBIAL REVISÃO 3 - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+SISTEMA PARA ARTROPLASTIA DE JOELHO COM RESTRIÇÃO - 0314131-314 - INSERTO ARTICULAR TIBIAL CCB 3/4 - 14MM - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+BIOVISC ORTHO - BIOVISC ORTHO PLUS - BIOTECH VISION CARE OFTALMOLOGIA BRASIL LTDA	1
+PARAFUSO DE INTERFERENCIA TITANIO ROSCA ROMBA 9 X 30 NCR	1
+EQUIPO DE IRRIGAÇÃO GRAVITACIONAL VIA GRAVITY REF. (VM-01-04-01)	1
+Fratura do antebraço - tratamento conservador	1
+Colpoplastia anterior	1
+"Incontinência urinária - ""sling"" vaginal ou abdominal"	1
+Sinovectomia de punho - tratamento cirúrgico	1
+ULTIMASTER STENT CORONÁRIO ELUIDOR DE SIROLIMUS - DE-RD2518KSM - TERUMO MEDICAL DO BRASIL LTDA.	1
+Punção transeptal com introdução de cateter multipolar nas camaras esquerdas e/ou veias pulmonares	1
+STENT CASPER - STENT PARA ARTÉRIA CARÓTIDA - CPR-0830-143RX - ENDOTEC PRODUTOS MÉDICOS LTDA	1
+DISPOSITIVO DE PROTEÇÃO EMBÓLICA SPIDERFX - SPD2-060-320 - AUTO SUTURE DO BRASIL LTDA.	1
+Ergoespirometria ou teste cardiopulmonar de exercício completo (espirometria forçada, consumo de O2, produção de CO2 e derivados, ECG, oximetria)	1
+PCT - ABLAÇÃO COMPLEXA COM MAPEAMENTO (ESTUDO ELETRO FISIOLÓGICO)	1
+STENT DE SILICONE FLEXIVEL PARA MOLDAGEM LARINGEA - LP - VASTTORE IMPORTAÇÃO COMERCIO E DISTRIBUIÇÃO DE MATERIAIS MEDICOS HOSPITALARES LTDA ME	1
+BRIDION - 100 MG/ML SOL INJ CT 10 FA VD INC X 2 ML - SCHERING-PLOUGH INDÚSTRIA FARMACÊUTICA LTDA	1
+CÂNULA DE TRAQUEOSTOMIA SEM CUFF COM FENESTRA SHILEY - AUTO SUTURE DO BRASIL LTDA.	1
+FIO E PINO PARA SINTESE - BIOMECÂNICA INDÚSTRIA E COMÉRCIO DE PRODUTOS ORTOPÉDICOS LTDA	1
+PLACA FORMATO ESPECIFICO - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+PARAFUSO PARA USO EM MINI OU MICRO FRAGMENTOS HEXAGON - 11110 (PARAFUSO CORTICAL Ø2.6) - HEXAGON INDUSTRIA E COMÉRCIO DE IMPLANTES ORTOPÉDICOS LTDA	1
+TORGENA - 2000 MG + 500 MG PO SOL INFUS CT FA VD TRANS X 10 - WYETH INDÚSTRIA FARMACÊUTICA LTDA	1
+TARGOCID 400 MG FA	1
+ULTIMASTER STENT CORONÁRIO ELUIDOR DE SIROLIMUS - DE-RD2738KSM - TERUMO MEDICAL DO BRASIL LTDA.	1
+CÂNULA DE TRAQUEOSTOMIA AJUSTÁVEL PORTEX COM CUFF - 100/523/090 - SMITHS MEDICAL DO BRASIL PRODUTOS HOSPITALARES LTDA	1
+CATETER DE PUNÇAO ARTERIAL FEMURAL PEBAX 4FR X 11CM - REF: 305114	1
+Angioplastia de artéria visceral - por vaso	1
+GRAMPEADORES CURVOS CONTOUR - GRAMPEADOR CURVO COM CORTE CONTOUR - TECIDO NORMAL 40MM - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+CATETER DRENAGEM MEDIASTINAL NEO-NATAL 200ML - REF: 110529	1
+Células, pesquisa de células neoplásicas (citologia oncótica) - pesquisa e/ou dosagem em líquidos orgânicos	1
+SISTEMA SIGNUS DE HASTE PROXIMAL DE FÊMUR COM BLOQUEIO - 4830/05 - PARAFUSO DESLIZANTE Ø 11 X 100 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+PARAFUSO PARA FIXAÇÃO LIGAMENTAR - 0042050-825 - PARAFUSO DE INTERFERÊNCIA TI Ø8 X 25 MM PR - LUIZ GUILHERME SARTORI & CIA LTDA EPP	1
+FIO PARA CERCLAGEM IOL - 40011000104 FIO PARA CERCLAGEM 1,00 MM - IOL IMPLANTES LTDA	1
+FIOS E PINOS RIGIDOS NÃO ABSORVÍVEIS METÁLICOS - MINAS MED - 2.13.25/300-FIO TIPO STEINMANN Ø 2.5 X 300 MM - MINASMED INDÚSTRIA E COMÉRCIO DE FIXADORES ORTOPÉDICOS E IMPLANTES LTDA EPP	1
+SUTURA MAXBRAID - 900334: MAXBRAID SUTURA NÃO ABSORVÍVEL, BRANCA/AZUL CO-TRANÇADA, TAMANHO 2, 38'''' - AGULHA HC-5, 1N - EMB. C/ 12 - BIOMET 3I DO BRASIL COMERCIO DE APARELHOS MEDICOS LTDA	1
+RM - Base do crânio	1
+CATETER ANGIOGRÁFICO CARDIOLÓGICO PERFORMA BRAIDED - 7528-23 - AMPLATZ RIGHT - MERIT MEDICAL COMERCIALIZAÇÃO, DISTRIBUIÇÃO, IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS HOSPITALARES LTDA	1
+KIT INTRODUTOR TOTAL LIFE - TOTAL LIFE COMERCIO DE PRODUTOS MEDICO-HOSPITALAR LTDA-EPP	1
+CATETER BALÃO PERIFÉRICO DE ALTA PRESSÃO CRONUS HP - NIPRO MEDICAL CORPORATION PRODUTOS MÉDICOS LTDA	1
+"CATETER BALÃO DE PRÉ-DILATAÇÃO PERIFÉRICO PARA FIO-GUIA DE 0.035"" - OCEANUS 35 - 140 CM - COM BALÃO DE 12.0 X 60 MM - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA"	1
+ZYVOX 600 MG/300ML BOLSA	1
+MERONEM - 1000 MG PO INJ CT 10 FA VD TRANS - WYETH INDÚSTRIA FARMACÊUTICA LTDA	1
+STENT PERIFERICO PALMAZ GENESIS - CARDINAL HEALTH DO BRASIL LTDA.	1
+Anticardiolipina - IgG - pesquisa e/ou dosagem	1
+CATETER DUPLO LUMEN 7FR X 20CM -REF: CV-17702-E	1
+Amputação/desarticulação de pododáctilos (por segmento) - tratamento cirúrgico	1
+CLIP DE TITANIO - REF: LT300	1
+Eletro-retinografia - monocular	1
+Delaminação corneana com fotoablação estromal - LASIK	1
+Antitrombina III, dosagem	1
+Anticoagulante lúpico, pesquisa	1
+FIRST PICC STANDALONE KIT - CM HOSPITALAR S.A.	1
+Proteína C - pesquisa e/ou dosagem	1
+Quantificação de carga viral HIV-1 (HIV RNA) no líquido cefalorraquidiano (LCR)	1
+Herpes vírus humano 1,2 por PCR	1
+Herpes vírus zoster, (Varicella) por PCR	1
+"Hepatite B - HBeAG (antígeno ""E"") - pesquisa e/ou dosagem"	1
+Hepatite B - HBeAC (anti HBE) - pesquisa e/ou dosagem	1
+Estrona - pesquisa e/ou dosagem	1
+Dosagem de receptor de progesterona ou de estrogênio	1
+Biópsia percutânea de fragmento mamário por agulha grossa (core biopsy) orientada por estereotaxia (não inclui o exame de imagem)	1
+Enteroscopia (push enteroscopia)	1
+PCT - RADIOCIRURGIA (RTC) - NIVEL 3, TRES LESOES E/OU MAIS DE QUATRO ISOCENTROS - POR TRATAMENTO	1
+Beta-2-microglobulina - pesquisa e/ou dosagem	1
+Gastrina - pesquisa e/ou dosagem	1
+Sinovectomia da mão (1 articulação)	1
+SYNAGIS - 100 MG/ML SOL INJ CT FA VD INC X 0,5 ML - ASTRAZENECA DO BRASIL LTDA	1
+Terapia imunoprofilática com palivizumabe para o vírus sincicial respiratório (por sessão) ? hospitalar	1
+Hérnia diafragmática - tratamento cirúrgico (qualquer técnica)	1
+Taxa de Unidade Radiofármaco para Tratamento de câncer da tireóide( 400 mCi ) - 40710041	1
+ADAPTIC® MALHA NÃO ADERENTE - K.C.I. BRASIL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS PARA A SAÚDE LTDA	1
+POWERPICC 3CG MONO LÚMEN - BARD BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA A SAÚDE LTDA.	1
+TARGOCID - 133,33 MG/ML PO LIOF INJ CX FA VD TRANS + AMP DIL X 3 ML - SANOFI MEDLEY FARMACÊUTICA LTDA.	1
+CURATEC COMPRESSA COM EMULSÃO DE PETROLATUM - L.M. FARMA INDUSTRIA E COMERCIO LTDA	1
+Retalho muscular ou miocutâneo	1
+"CATETER BALÃO DE PRÉ-DILATAÇÃO PERIFÉRICO PARA FIO-GUIA DE 0.035"" - OCEANUS 35 - 140 CM - COM BALÃO DE 5.0 X 60 MM - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA"	1
+MUSTANG CATETER DE DILATAÇÃO POR BALÃO PARA PTA - H74939171100610 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+REDE POLIMÉRICA SLING INTERLIFT - SLING-IUFA - DR IMPORTAÇÃO, EXPORTAÇÃO E DISTRIBUIÇÃO LTDA	1
+CÂNULA DE MICRODEBRIDAÇÃO RAZEK - RAZEK EQUIPAMENTOS LTDA ME	1
+Ferimentos infectados e mordidas de animais (desbridamento)	1
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120350-18 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	1
+SISTEMA FECHADO ASP. TRAQ. TRACH CARE - REF: Z150-12	1
+Fecaloma - remoção manual	1
+VERSAONE TROCARTE COM LÂMINA - AUTO SUTURE DO BRASIL LTDA.	1
+TELA INORGANICA DE POLIPROPILENO ABDOTEX - 7,5X15CM - INDUSTRIAS H. A. BARONE LTDA- ME	1
+CÂNULA PARA ARTROSCOPIA RAZEK - 740120000 - CÂNULA 8,5 MM X 70 MM - RAZEK EQUIPAMENTOS LTDA ME	1
+COMPRESSAS NEUROCIRÚRGICAS CODMAN REF.801404	1
+Epistaxe - cauterização das artérias etmoidais com microscopia - unilateral	1
+FRESA P/ MIDAS LEGEND REF. F2/8TA23	1
+Reconstrução com retalhos de gálea aponeurótica	1
+Craniotomia descompressiva	1
+Tratamento cirúrgico do hematoma intracraniano	1
+Reconstrução, retencionamento ou reforço de ligamento ou reparo de cartilagem triangular # - procedimento videoartroscópico de punho e túnel do carpo	1
+Fratura (incluindo descolamento epifisário) - tratamento cirúrgico	1
+Ponte fêmoro poplítea proximal	1
+Aneurismas rotos ou trombosados de aorta abdominal acima da artéria renal	1
+Fasciotomia - por compartimento	1
+Arterioplastia da femoral profunda (profundoplastia)	1
+XIENCE ALPINE EVEROLIMUS ELUTING CORONARY STENT - 1120300-15 - ABBOTT LABORATÓRIOS DO BRASIL LTDA	1
+CATETER BALÃO PTCA COM LIBERAÇÃO DE PACLITAXEL - 365122 - BIOTRONIK COMERCIAL MÉDICA LTDA.	1
+KIT PARA BIÓPSIA OSTEOMED - 200 MM - OSTEOMED INDUSTRIA E COMERCIO DE IMPLANTES LTDA ME	1
+SISTEMA DE STENT CORONÁRIO COM ELUIÇÃO DE SIROLIMUS - ORSIRO 3.5/30 - BIOTRONIK COMERCIAL MÉDICA LTDA.	1
+PRODUTO PARA CATETERIZAÇÃO VENOSA CENTRAL DE LUMEN DUPLO - REF. CV-17702-E	1
+ULTIMASTER STENT CORONÁRIO ELUIDOR DE SIROLIMUS - DE-RD3028KSM - TERUMO MEDICAL DO BRASIL LTDA.	1
+Drenagem percutânea orientada por TC (acrescentar o exame de base)	1
+Gravidez  ectópica - cirurgia	1
+PCT HEMODERIVADOS - PLAQUETAS RANDOMICAS	1
+Deleucotização de unidade de concentrado de plaquetas - entre 7 e 12 unidades	1
+REDE CIRURGICA SEMI-ABSORVIVEL - ULTRAPRO 15 CM X 15 CM - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+GORE PROPATEN ENXERTOS VASCULARES - H060040 - W.L. GORE & ASSOCIATES DO BRASIL LTDA.	1
+Sutura de extensos ferimentos com ou sem desbridamento	1
+BLEED STP - 460020000 - DMC IMPORTACAO E EXPORTACAO DE EQUIPAMENTOS LTDA.	1
+ZIPWIRE FIO GUIA HIDROFILICO - M00146316B0 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+HASTE CIMENTADA - 04.06.02.00001 / 09.06.02.00001 ? CENTRALIZADOR DISTAL PRÓTESE FEMORAL MÁXIMA ? PMMA - VINCULA INDUSTRIA, COMERCIO, IMPORTACAO E EXPORTACAO DE IMPLANTES S.A.	1
+SISTEMA PULSE DE LAVAGEM - REF: AND-I	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - 6333 - PARAFUSO CORTICAL AUTO-ROSQUEANTE COM BLOQUEIO Ø 5 MM X 50 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA DE PLACAS ESPECIAIS ALCP E PARAFUSOS PARA FIXAÇÃO RÍGIDA - 6329 PARAFUSO CORTICAL AUTO ROSQUEANTE DE BLOQUEIO Ø 4,5 X 42 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - 6318 - PARAFUSO CORTICAL AUTO-ROSQUEANTE COM BLOQUEIO Ø 5 MM X 20 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+RX - Pielografia ascendente	1
+CONJUNTO DE CIMENTAÇÃO POR PRESSURIZAÇÃO - EXXOMED EQUIPAMENTOS LTDA-EPP	1
+CABECA INTERCAMBIAVEL DE INOX - 04.04.07.28002 - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+Biópsia de corpo vertebral com agulha	1
+ACETABULO BIPOLAR - 04.01.01.28046 / 09.01.01.28046 ? ACETÁBULO BIPOLAR COM TRAVA Ø28X46 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+HASTE CIMENTADA - 04.32.01.00018 / 09.32.01.00018 ? RESTRITOR PARA CIMENTO 18 MM - VINCULA INDUSTRIA, COMERCIO, IMPORTACAO E EXPORTACAO DE IMPLANTES S.A.	1
+HASTE CIMENTADA - 04.30.02.37002 - PRÓTESE FEMORAL MÁXIMA 37,5 MM CONE 12/14 PRIMARIA N° 02 - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+KIT ADVANTAGE ENCORE - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+ZIPWIRE FIO GUIA HIDROFILICO - M00146154B0 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+MUSTANG CATETER DE DILATAÇÃO POR BALÃO PARA PTA - H74939171120810 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - 6317 ? PARAFUSO CORTICAL AUTO-ROSQUEANTE COM BLOQUEIO Ø 5 MM X 18 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - 6335 - PARAFUSO CORTICAL AUTO-ROSQUEANTE COM BLOQUEIO Ø 5 MM X 60 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - 6377/08 - PLACA LARGA BLOQUEADA 16 FUROS - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+SISTEMA DE PLACAS E PARAFUSOS PARA FIXACAO RIGIDA - 6319 - PARAFUSO CORTICAL AUTO-ROSQUEANTE COM BLOQUEIO Ø 5 MM X 22 - ORTOSINTESE INDUSTRIA E COMERCIO LTDA	1
+FIO PARA CERCLAGEM IOL - 40011000155 FIO PARA CERCLAGEM 1,50 MM - IOL IMPLANTES LTDA	1
+PARAFUSO CORTICAL AUTO ROSQUEANTE DE BLOQUEIO 5,0 X 26	1
+EVACUADOR DE BEXIGA UROVAC - 730-125 - BOSTON SCIENTIFIC DO BRASIL LTDA	1
+CATETER PARA DRENAGEM BILIAR - E TAMUSSINO E CIA LTDA	1
+Enterectomia segmentar por videolaparoscopia	1
+Colectomia parcial sem colostomia por videolaparoscopia	1
+Entero-anastomose (qualque segmento) por videolaparoscopia	1
+Omentectomia laparoscópica	1
+CLIPS HEM-O-LOK - 544240 - EMERGO BRAZIL IMPORT IMPORTACAO E DISTRIBUICAO DE PRODUTOS MEDICOS HOSPITALARES LTDA	1
+GRAMPEADOR CIRURGICO LINEAR - PROXIMATE TECIDO NORMAL - 76 GRAMPOS - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+RECARGA PARA GRAMPEADOR CIRURGICO LINEARES - TCR75 - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+Colangiopancreatografia retrógrada	1
+Epstein BARR antígeno nuclear - IgM	1
+CIRCULAR STAPLERS - CDH29B - JOHNSON & JOHNSON DO BRASIL INDÚSTRIA E COMÉRCIO DE PRODUTOS PARA SAÚDE LTDA	1
+Colecistectomia sem colangiografia	1
+CATETER BALÃO PARA DILATAÇÃO HERCULES - MICROPORT SCIENTIFIC VASCULAR BRASIL LTDA	1
+GUIDE WIRE PTFE-COATED - PASSROD IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS PARA SAÚDE LTDA - ME	1
+Angioplastia de tronco venoso	1
+INTRODUTOR FEMORAL RADIFOCUS INTRODUCER II 5F X 10CM - REF: RS*R50N10MQ	1
+BEGRAFT PERIPHERAL STENT GRAFT SYSTEM - ENDOTEC PRODUTOS MÉDICOS LTDA	1
+FIO GUIA HIDROFÍLICO TOTAL LIFE - TOTAL LIFE COMERCIO DE PRODUTOS MEDICO-HOSPITALAR LTDA-EPP	1
+KIT INTRODUTOR DE CATETER - ZAREK DISTRIBUIDORA DE PRODUTOS HOSPITALARES EIRELI	1
+ENDOPRÓTESE AÓRTICA RAMIFICADA CASTOR - MICROPORT SCIENTIFIC VASCULAR BRASIL LTDA	1
+INTRODUTOR ARAMADO - KCFW-12.0-35-45-RB-HFANL0-HC - E TAMUSSINO E CIA LTDA	1
+CATETER BIOTEQ - BT-AC4-3DRC - LINE LIFE CARDIOVASCULAR COM DE PROD MED E HOSP LTDA	1
+CATETER PIG TAIL CENTIMETRADO	1
+CATETER ANGIOGRAFICO TOTAL LIFE - TOTAL LIFE COMERCIO DE PRODUTOS MEDICO-HOSPITALAR LTDA-EPP	1
+FIO GUIA HIDROFILICO APT - ZAREK DISTRIBUIDORA DE PRODUTOS HOSPITALARES EIRELI	1
+FIO GUIA LUNDERQUIST - E TAMUSSINO E CIA LTDA	1
+MEMOPART SNARE - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA	1
+Cerumen - remoção - unilateral	1
+Colesterol LDL peroxidada	1
+Leptina - pesquisa e/ou dosagem	1
+Dermolipectomia para correção de abdome em avental	1
+Mamoplastia	1
+Substituição de prótese - em mama	1
+PROTESE MAMARIA MOTIVA IMPLANT MATRIX 300CC - REF: RSD-300+Q	1
+Supercílio - reconstrução total	1
+ALUGUEL/TAXA CAIXA / INSTRUMENTAL DE CIRURGIA MÉDIA, POR USO	1
+ADESIVO CIRURGICO DERMABOND PRINEO - REF: CLR602	1
+Ginecomastia - unilateral - correção cirúrgica	1
+Microscopia especular de córnea - monocular	1
+Sinovectomia parcial ou subtotal - procedimento videoartroscópico de joelho	1
+CANULA DE MICRODEBRIDAÇÃO RAZEK AMC 2,4/4,5 F - REF: 891630000	1
+PONTEIRA DESCARTÁVEL SHELL 90º	1
+CANULA DE MICRODEBRIDAÇÃO RAZEK - REF 892350000	1
+EQUIPO VOLMED PARA BOMBA DE IRRIGAÇÃO REF. AEQU 10	1
+CATETER BIOTEQ - BT-AC5-C2 - LINE LIFE CARDIOVASCULAR COM DE PROD MED E HOSP LTDA	1
+FIO GUIA INQWIRE AMPLATZ - MERIT MEDICAL COMERCIALIZAÇÃO, DISTRIBUIÇÃO, IMPORTAÇÃO E EXPORTAÇÃO DE PRODUTOS HOSPITALARES LTDA	1
+Colecistectomia com colangiografia	1
+Fundoscopia sob medríases - binocular	1
+Citológico anatomia patológica, qualquer material	1
+FRESAS PARA CIRURGIA PERCUTÂNEA DE PÉ - RAZEK EQUIPAMENTOS LTDA ME	1
+PARAFUSO CANULADO - 1.36.35.20.19.026 PARAFUSO CANULADO CÔNICO Ø 3.5 X 26.0 MM - TORIDE INDÚSTRIA E COMÉRCIO LTDA - EPP	1
+Deformidade dos dedos - tratamento cirúrgico	1
+Tenotomia	1
+Osteotomia ou pseudartrose dos metatarsos/falanges - tratamento cirúrgico	1
+Sondagem das vias lacrimais - com ou sem lavagem	1
+BEGRAFT PERIPHERAL STENT GRAFT SYSTEM - BGP3710_2 - ENDOTEC PRODUTOS MÉDICOS LTDA	1
+Antígeno NS1 do vírus da dengue, pesquisa	1
+Creatino fosfoquinase - fração MB - atividade - pesquisa e/ou dosagem	1
+Reconstrução da câmara anterior	1
+Infusão intravítrea de medicação anti-inflamatória	1
+Sutura de córnea (com ou sem hérnia de íris)	1
+Extensos ferimentos, cicatrizes ou tumores - exérese e rotação de retalho fasciocutâneo ou axial	1
+Angioplastia transluminal percutânea por balão (1 vaso)	1
+FIO GUIA RADIFOCUS M - REF. RF*PA35263M	1
+"CATETER BALÃO DE PRE-DILATAÇÃO PERIFERICO PARA FIO-GUIA DE 0.035"" DE 140 CM DE COMPRIMENTO COM BALÃO DE 6.0 X 60MM REF. BPPC35140600060"	1
+INTRODUTOR FEMORAL RADIFOCUS INTRODUCER II 9F X 10CM REF. RS*R90N10MQ	1
+SISTEMA DE STENT PERIFÉRICO AUTO-EXPANSÍVEL DE NITINOL - IVASCULAR IVOLUTION - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA	1
+BAINHA INTRODUTORA DESTINATION TERUMO - TERUMO MEDICAL DO BRASIL LTDA.	1
+"CATETER BALÃO DE PRÉ-DILATAÇÃO PERIFÉRICO PARA FIO-GUIA DE 0.035"" - OCEANUS 35 - VR MEDICAL IMPORTADORA E DISTRIBUIDORA DE PRODUTOS MÉDICOS LTDA"	1
+DISPOSITIVO PARA SELAMENTO DE PUNÇÃO HEMOSTÁTICA ANGIO-SEAL VIP (6F) - TERUMO MEDICAL DO BRASIL LTDA.	1
+FIO GUIA SUSRAIL - HOMACC COMERCIO DE MATERIAL MEDICO HOSPITALAR LTDA	1
+KIT INTRODUTOR - ANGIOMED IMPORTAÇÃO E EXPORTAÇÃO LTDA	1
+INTRODUTOR ARAMADO - KCFW-6.0-38-90-RB-RAABE - E TAMUSSINO E CIA LTDA	1
+SISTEMA ENDOVASCULAR APOLO - ENDOPROTESE BIFURCADA - NANO ENDOLUMINAL S/A	1
+SISTEMA ENDOVASCULAR APOLO ENDOPROTESE RETA - NANO ENDOLUMINAL S/A	1
+APOLO - ENDOPROTESE OCLUSORA - NANO ENDOLUMINAL S/A	1
+KIT INTRODUTOR DE CATETER APT- GUIA J MR - SMT IMPORTADORA E DISTRIBUIDORA DE PRODUTOS HOSPITALARES LTDA.	1
+LAÇO DE CAPTURA CATETER ENDOVASCULAR 20MM X 120CM - REF: EN2006020	1
+CATETER DIAGNOSTICO ANGIOGRAFICO RADIOLOGICO - DIAGNOSTICO ANGIOGRAFICO RADIOLOGICO - 512535VER - BIOMEDICAL PRODUTOS CIENTIFICOS MEDICOS E HOSPITALARES S A	1
+Fechamento de colostomia ou enterostomia	1
+GRAMPEADORES COM TECNOLOGIA DST SERIES - GIA8038SBR ? GRAMPEADOR GIA COM 80MM DE COMPRIMENTO E GRAMPO COM 3,8MM DE COMPRIMENTO - POLYSUTURE INDUSTRIA E COMERCIO LTDA	1
+GRAMPOS PARA GRAMPEADOR LINEAR CORTANTE GIA - GIA8038LBR ? GIATM UNIDADE DE CARGA COM TECNOLOGIA DST SERIES PARA GRAMPEADOR GIA COM 80MM DE COMPRIMENTO E GRAMPO COM 3,8MM DE COMPRIMENTO - POLYSUTURE INDUSTRIA E COMERCIO LTDA	1
+Fator II, dosagem do inibidor	1
+SISTEMA PARA ARTROPLASTIA DE QUADRIL - HÍBRIDO - 04.01.34.00058 ? ACETÁBULO PHENOM POLY PS Ø 58 MM - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+HASTE SEM CIMENTO EM TITANIO - 04.30.96.34008 (PRÓTESE FEMORAL TAPER PS TI) - MDT INDUSTRIA COMERCIO IMPORTAÇÃO E EXPORTAÇÃO DE IMPLANTES SA	1
+US - Ecodoppler de carótidas	1
+SPRAVATO - 140 MG/ML SOL SPR NAS CT FR VD TRANS X 0,2 ML + DISP INAL (28 MG) - JANSSEN-CILAG FARMACÊUTICA LTDA	1
+TAXA DE ADMINISTRAÇÃO DE MEDICAÇÃO FORNECIDA PELO PACIENTE NÃO INTERNADO - CLORIDRATO DE ESCETAMINA	1
+TAXA DE SALA DE OBSERVAÇÃO, ATÉ 6 HORAS	1
+RX - Mãos e punhos para idade óssea	1
+TELA DE POLIPROPILENO MONOFILAMENTAR PARIETENE - PP1515 - AUTO SUTURE DO BRASIL LTDA.	1
+Tratamento cirúrgico de estenose cicatricial das vias biliares	1
+Anastomose biliodigestiva intra-hepática	1
+Ácido oxálico - pesquisa e/ou dosagem	1
+PAINEL DE GENES PARA CÂNCER DE MAMA E/OU OVÁRIO POR NGS	1
+SARS-CoV-2 (Coronavírus COVID-19), pesquisa de anticorpos totais (IgA, IgG, IgM)	1
+ANÁLISE MLPA DOS GENES BRCA1/BRCA2	1
+INSERTO ACETABULAR POLIMÉRICO - 04.13.24.32060 ? INSERTO ACETABULAR PHENOM POLY II TETO POSTERIOR CROSSLINKED Ø 32X58/60 MM - VINCULA INDUSTRIA, COMERCIO, IMPORTACAO E EXPORTACAO DE IMPLANTES S.A.	1
+CABEÇA FEMORAL INTERCAMBIAVEL 32MM COLO STANDARD CERAMICA DELTA - REF: 04.04.10.32002	1
+PARAFUSO ACETABULAR BAIXO PERFIL 6,5 X 25MM - REF: 04.43.19.65025	1
+FIO TIPO STEINMANN LISO PONTA TRIANGULAR 2,5MM X 300MM (ORTOBIO)	1
+Colocação de órtese traqueal, traqueobrônquica ou brônquica, por via endoscópica (tubo de silicone ou metálico)	1
+Traqueoplastia (qualquer via)	1
+Dilatação de estenose laringo-traqueo-brônquica	1
+Curva glicêmica (6 dosagens) - pesquisa e/ou dosagem	1
+CATETER PORT CATH 6,6FR MRI BAIXO PERFIL - REF: 0603880	1
+Salpingectomia uni ou bilateral laparoscópica	1
+Colpectomia	1
+CLIP GDE LT 400	1
+Ablação percutânea de tumor hepático (qualquer método) - metodo intervencionista/terapêutico por imagem	1
+KIT DE ELETRODO INDIVIDUAL DE ABLAÇÃO RF COOL TIP SERIE E 15CM - 3CM - 17G(1.4MM) - REF. RFA1530	1
+Pieloplastia laparoscópica unilateral	1
+CLIP HEM-O-LOK DOURADO REF. 544250 IMP.	1
+RX - Sacro-coccix	1
+RX - Avaliação de fraturas vertebrais por DXA	1
+Ferro urinário (urina 24h)	1
+Antibiograma automatizado	1
+CALÇO PARA PLACA T OSTEOTOMIA TIBIA 12,5MM (PUDU)	1
+POLIREUMIN - 10 MG/ML SOL INJ CT FA VD INC X 2 ML - TRB PHARMA INDÚSTRIA QUÍMICA E FARMACÊUTICA LTDA	1
+Terapia anti-reabsortiva óssea intravenosa - ambulatorial	1
+Tratamento ocular quimioterápico com anti-angiogênico (por sessão)	1
+Herpes zoster - IgM - pesquisa e/ou dosagem	1
+Herpes zoster - IgG - pesquisa e/ou dosagem	1
+CD... (antígeno de dif. Celular, cada determinação) - pesquisa e/ou dosagem	1
+Neouretra proximal (cistouretroplastia)	1
+TWISTER ¿ ÂNCORA DE SUTURA 5,0MM	1
+Vídeo-EEG contínua não invasiva - a cada 12 horas	1
+OCREVUS - 30 MG/ML SOL DIL INFUS IV CT FA VD TRANS X 10 ML - PRODUTOS ROCHE QUÍMICOS E FARMACÊUTICOS S.A.	1
+Rastreamento pré-natal ou pós-natal de todo o genoma para  identificar alterações cromossômicas submicroscópicas por CGH-array ou SNP-array ou outras técnicas, por clone ou oligo utilizado, por amostra	1
+Osteotomias ao nível do joelho - tratamento cirúrgico	1
+LAMINA SAGITAL ZO 100X25X12MM- REF: SZO.08.0176/1.2.2	1
+PARAFUSO NAO CANULADO PARA USO EM GRANDES FRAGMENTOS HEXAGON - PARAFUSO CORTICAL Ø 4,5 REF.102.3.46	1
+Anticorpos anti fosfatidilserina - IgA/IgG/IgM	1
+Cintilografia renal dinâmica com diurético	1
+MCA (antígeno cárcino-mamário) - pesquisa e/ou dosagem	1
+BTA qualitatitvo na urina (amostra isolada)	1
+CA-27-29 - pesquisa e/ou dosagem	1
+DISSECTOR RETO 52 X 3MM E - REF: PA.02.03.0007	1
+Anestesia para exames radiológicos de angiorradiologia	1
+STELARA - 90 MG SOL INJ CT 1 SER PREENC VD TRANS DISP SEGURANÇA X 1 ML  - JANSSEN-CILAG FARMACÊUTICA LTDA	1
+Hepatite C (qualitativo) por PCR - pesquisa	1
+Ato de coleta de PAAF de órgãos ou estruturas superficiais sem deslocamento do patologista	1
+Vitamina B5 (Pantofenato), dosagem	1
+Eletroforese de proteínas de alta resolução	1
+PTH - pesquisa e/ou dosagem	1
+TELA DE POLIPROPILENO MONOFILAMENTAR PARIETENE - PP3030 - AUTO SUTURE DO BRASIL LTDA.	1
+Interleucina 1B	1
+Interleucina 6	1
+Teste de estímulo com TSH recombinante	1

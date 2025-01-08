@@ -1,0 +1,3 @@
+ Amostra: cirurgicos_amostragem_100.csv
+                               Data: 2024-08-22 10:55:12
+                        

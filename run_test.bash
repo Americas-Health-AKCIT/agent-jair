@@ -1,0 +1,1 @@
+python ./test/main.py  --amostra "./test/sample_agosto_1000.csv"
