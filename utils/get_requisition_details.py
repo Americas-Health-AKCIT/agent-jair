@@ -2,7 +2,7 @@
 import dotenv,os
 import pandas as pd
 from datetime import datetime
-from utils.state import STATE_CLASS
+from state import STATE_CLASS
 dotenv.load_dotenv()
 
 
@@ -19,7 +19,8 @@ def calculate_age(birth_year_str, reference_date_str):
         reference_date = datetime.strptime(reference_date_str, "%d/%m/%y")
     # Calculate age using the year difference
     age = reference_date.year - birth_year
-    return age
+    dt_nascimento = reference_date.strftime("%Y-%m-%d")
+    return age, dt_nascimento
 
 
 # Função para checar a carência do paciente
@@ -29,6 +30,13 @@ def check_carencia(carencia):
         return "Não"
     else:
         return f"Sim (Termina na data {carencia} para o(s) procedimento(s) solicitado(s))"
+    
+def carencia_for_model(carencia):
+    """Versão que verifica a coluna carencia"""
+    if pd.isna(carencia) or carencia in ['nan', 'NaT']:
+        return "NULL"
+    else:
+        return carencia
 
 
 # Função para determinar a situação contratual do paciente
@@ -74,7 +82,7 @@ DADOS_CSV_LIST = [] # cache para os dados vindo do CSV
 
 def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     
-    
+    placeholder = "Nan"
     print(os.environ.get("REQUISICOES_ADRESS_OR_PATH",None))
     if os.path.exists(os.environ.get("REQUISICOES_ADRESS_OR_PATH",None)):
         # carregar os dados a partir do arquivo csv
@@ -86,8 +94,6 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     else:
         # carregar os dados a partir do banco de dados
         dados_requisicao, dados_item, dados_prestador, dados_beneficiario, dados_requisicao_item = get_data_by_adress(requisicao_id)
-    
-    
     
     
     # Pegando o ID da requisição
@@ -102,6 +108,11 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     dt_requisicao = requisicao['DT_REQUISICAO'].iloc[0]
     ds_tipo_guia = requisicao['DS_TIPO_GUIA'].iloc[0]
     ds_carater_atendimento = requisicao['DS_CARATER_ATENDIMENTO'].iloc[0]
+    ds_cbo_profissional = requisicao['DS_CBO_PROFISSIONAL'].iloc[0]
+    ds_tipo_internacao = requisicao['DS_TIPO_INTERNACAO'].iloc[0]
+    ds_regime_internacao = requisicao['DS_REGIME_INTERNACAO'].iloc[0]
+    ds_tipo_sadt = requisicao['DS_TIPO_SADT'].iloc[0]
+    ds_tipo_consulta = requisicao['DS_TIPO_CONSULTA'].iloc[0]
 
     # Pega o beneficiário no df de beneficiarios
     beneficiario = dados_beneficiario[dados_beneficiario['ID_BENEFICIARIO'] == id_beneficiario]
@@ -115,10 +126,12 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     data_cancelamento = beneficiario['DATA_CANCELAMENTO'].iloc[0]
     data_inicio_vigencia = beneficiario['DATA_INICIO_VIGENCIA'].iloc[0]
     carencia = beneficiario['DATA_FIM_CARENCIA'].iloc[0]
+    titularidade = beneficiario['TITULARIDADE'].iloc[0]
 
     # Calculando a idade, verificando a carência e a situação contratual
-    idade = calculate_age(data_nascimento, dt_requisicao)
+    idade, data_nascimento_modelo = calculate_age(data_nascimento, dt_requisicao)
     carencia = check_carencia(carencia)
+    carencia_modelo = carencia_for_model(carencia)
     situacao_contratual = determine_contrato(data_cancelamento)
 
     # Pegando o prestador atribuido a requisição
@@ -143,6 +156,7 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
 
     requisicao_items = requisicao_items.sort_values(by='DT_ATUALIZACAO')
 
+    # Extraindo informações dos itens 
     descriptions_dict = {}
     for idx, item in requisicao_items.iterrows():
         id_item = item['ID_ITEM']
@@ -185,23 +199,81 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
         else:
             raise ValueError("Critical Error: No item type found, please check the data")
 
+    # Creating id_requisicao_item_dict from dados_requisicao_item
+    id_requisicao_item_dict = {}
+    for idx, item in requisicao_items.iterrows():
+        id_item = item['ID_ITEM']
+    
+        item_info = dados_item[dados_item['ID_ITEM'] == id_item]
+        id_item_display = item_info['CD_ITEM'].iloc[0]
+        id_item_display = int(id_item_display)
+        
+        id_requisicao_item = item['ID_REQUISICAO_ITEM']
+        if not pd.isna(id_requisicao_item):
+            id_requisicao_item_dict[id_item_display] = id_requisicao_item
+        else:
+            raise ValueError(f"Critical Error: No requisition item ID found for item ID {id_item_display}, please check the data")
+    
+    # Creating data_atualizacao_reqitem_dict from dados_requisicao_item
+    data_atualizacao_reqitem_dict = {}
+    for idx, item in requisicao_items.iterrows():
+        id_item = item['ID_ITEM']
+    
+        item_info = dados_item[dados_item['ID_ITEM'] == id_item]
+        id_item_display = item_info['CD_ITEM'].iloc[0]
+        id_item_display = int(id_item_display)
+    
+        data_atualizacao_reqitem = item['DT_ATUALIZACAO']
+        if not pd.isna(data_atualizacao_reqitem):
+            data_atualizacao_reqitem_dict[id_item_display] = pd.to_datetime(data_atualizacao_reqitem)
+        else:
+            raise ValueError(f"Critical Error: No update date found in requisicao_items for item ID {id_item_display}, please check the data")
+    
+    # Creating data_atualizacao_item_dict from dados_item
+    data_atualizacao_item_dict = {}
+    for idx, item in requisicao_items.iterrows():
+        id_item = item['ID_ITEM']
+    
+        item_info = dados_item[dados_item['ID_ITEM'] == id_item]
+        if not item_info.empty:
+            id_item_display = item_info['CD_ITEM'].iloc[0]
+            id_item_display = int(id_item_display)
+    
+            data_atualizacao_item = item_info['DT_ATUALIZACAO'].iloc[0]
+            if not pd.isna(data_atualizacao_item):
+                data_atualizacao_item_dict[id_item_display] = pd.to_datetime(data_atualizacao_item)
+            else:
+                raise ValueError(f"Critical Error: No update date found in dados_item for item ID {id_item_display}, please check the data")
+        else:
+            raise ValueError(f"Critical Error: Item ID {id_item} not found in dados_item, please check the data")
 
-
-    # Dict final
+    # Dict final (Primeiro bloco para auditores, segundo é pro resto)
     result = {
-        "Número da requisição": requisicao_id,
-        "Nome do beneficiário": nome_beneficiario,
-        "Médico solicitante": nome_prestador,
-        "Data da abertura da requisição": dt_requisicao,
-        "Tipo Guia": ds_tipo_guia,
-        "Caráter de atendimento (Urgência ou eletiva)": ds_carater_atendimento,
-        "Idade do beneficiário": idade,
-        "Situação contratual": situacao_contratual,
-        "Período de carência?": carencia,
-        "Descrição dos procedimentos": descriptions_dict,
-        "Tipo dos itens (nivel 1)": item_type_dict,
-        "Tipo dos itens (nivel 2)": specific_item_type_dict
+        "Número da requisição": requisicao_id, # ID_REQUISICAO
+        "Nome do beneficiário": nome_beneficiario, # NM_BENEFICIARIO
+        "Médico solicitante": nome_prestador, # NM_PRESTADOR
+        "Data da abertura da requisição": dt_requisicao, # DT_REQUISICAO
+        "Tipo Guia": ds_tipo_guia, # DS_TIPO_GUIA
+        "Caráter de atendimento (Urgência ou eletiva)": ds_carater_atendimento, # DS_CARATER_ATENDIMENTO
+        "Idade do beneficiário": idade, # DATA_NASCIMENTO, DT_REQUISICAO
+        "Situação contratual": situacao_contratual, # DATA_CANCELAMENTO
+        "Período de carência?": carencia, # DATA_FIM_CARENCIA
+        "Descrição dos procedimentos": descriptions_dict, # DS_ITEM
+        "Tipo dos itens (nivel 1)": item_type_dict, # DS_TIPO_ITEM
+        "Tipo dos itens (nivel 2)": specific_item_type_dict, # DS_CLASSIFICACAO_1
+
+        "ID_REQUISICAO_ITEM": id_requisicao_item_dict,
+        "DT_ATUALIZACAO": data_atualizacao_item_dict, # Versão da tabela OMNI_DADOS_ITEM
+        "DT_ATUALIZACAO_REQ": data_atualizacao_reqitem_dict, # Versão da tabela OMNI_DADOS_REQUISICAO_ITEM
+        "DS_CBO_PROFISSIONAL": ds_cbo_profissional,
+        "DS_TIPO_INTERNACAO": ds_tipo_internacao,
+        "DS_REGIME_INTERNACAO": ds_regime_internacao,
+        "DS_TIPO_SADT": ds_tipo_sadt,
+        "DS_TIPO_CONSULTA": ds_tipo_consulta,
+        "TITULARIDADE": titularidade,
+        "DATA_CANCELAMENTO": data_cancelamento,
+        "DATA_FIM_CARENCIA": carencia_modelo,
+        "DATA_NASCIMENTO": data_nascimento_modelo
     }
     
     return result
-
