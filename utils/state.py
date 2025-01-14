@@ -20,6 +20,8 @@ class STATE_CLASS():
     def __init__(self):   
         # self._init_vector_store()
         # self.retriever = self.vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 1})
+        # self._init_vector_store()
+        # self.retriever = self.vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 1})
         self.DADOS_CSV_LIST = [] # buffer dos dados quando utilizar offline
 
         if os.path.exists(os.environ.get("REQUISICOES_ADRESS_OR_PATH",None)):
