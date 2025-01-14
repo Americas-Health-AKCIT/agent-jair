@@ -34,7 +34,7 @@ def check_carencia(carencia):
 def carencia_for_model(carencia):
     """Versão que verifica a coluna carencia"""
     if pd.isna(carencia) or carencia in ['nan', 'NaT']:
-        return "NULL"
+        return "nan"
     else:
         return carencia
 
@@ -125,13 +125,13 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     data_nascimento = str(beneficiario['DATA_NASCIMENTO'].iloc[0])
     data_cancelamento = beneficiario['DATA_CANCELAMENTO'].iloc[0]
     data_inicio_vigencia = beneficiario['DATA_INICIO_VIGENCIA'].iloc[0]
-    carencia = beneficiario['DATA_FIM_CARENCIA'].iloc[0]
+    carencia_raw = beneficiario['DATA_FIM_CARENCIA'].iloc[0]
     titularidade = beneficiario['TITULARIDADE'].iloc[0]
 
     # Calculando a idade, verificando a carência e a situação contratual
     idade, data_nascimento_modelo = calculate_age(data_nascimento, dt_requisicao)
-    carencia = check_carencia(carencia)
-    carencia_modelo = carencia_for_model(carencia)
+    carencia = check_carencia(carencia_raw)
+    carencia_modelo = carencia_for_model(carencia_raw)
     situacao_contratual = determine_contrato(data_cancelamento)
 
     # Pegando o prestador atribuido a requisição
