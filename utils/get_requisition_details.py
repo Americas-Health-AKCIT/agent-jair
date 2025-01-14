@@ -2,7 +2,9 @@
 import dotenv,os
 import pandas as pd
 from datetime import datetime
-from state import STATE_CLASS
+from .state import STATE_CLASS
+
+
 dotenv.load_dotenv()
 
 
@@ -83,12 +85,15 @@ DADOS_CSV_LIST = [] # cache para os dados vindo do CSV
 def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     
     placeholder = "Nan"
-    print(os.environ.get("REQUISICOES_ADRESS_OR_PATH",None))
-    if os.path.exists(os.environ.get("REQUISICOES_ADRESS_OR_PATH",None)):
+    caminho = r'D:\CEIA\agente-jair-autorizacao\data\Dados_Austa_07_2023_ate_10_2024'
+    print('Caminho hardcoded:', caminho)
+    print(os.environ.get('REQUISICOES_ADRESS_OR_PATH'))
+
+    if os.path.exists(caminho):
         # carregar os dados a partir do arquivo csv
         #if len(state.DADOS_CSV_LIST) == 0:
         #    state.load_offline_data()
-            
+
         dados_requisicao, dados_item, dados_prestador, dados_beneficiario, dados_requisicao_item = state.DADOS_CSV_LIST
 
     else:
