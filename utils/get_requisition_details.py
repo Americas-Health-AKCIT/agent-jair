@@ -1,6 +1,7 @@
 ## Arquivo para obter detalhes de requisição
 import dotenv,os
 import pandas as pd
+import numpy as np
 from datetime import datetime
 from .state import STATE_CLASS
 
@@ -36,7 +37,7 @@ def check_carencia(carencia):
 def carencia_for_model(carencia):
     """Versão que verifica a coluna carencia"""
     if pd.isna(carencia) or carencia in ['nan', 'NaT']:
-        return "nan"
+        return np.nan
     else:
         return carencia
 
