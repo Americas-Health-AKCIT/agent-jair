@@ -86,11 +86,11 @@ DADOS_CSV_LIST = [] # cache para os dados vindo do CSV
 def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     
     placeholder = "Nan"
-    caminho = r'D:\CEIA\agente-jair-autorizacao\data\Dados_Austa_07_2023_ate_10_2024'
-    print('Caminho hardcoded:', caminho)
+    # caminho = r'D:\CEIA\agente-jair-autorizacao\data\Dados_Austa_07_2023_ate_10_2024'
+    # print('Caminho hardcoded:', caminho)
     print(os.environ.get('REQUISICOES_ADRESS_OR_PATH'))
 
-    if os.path.exists(caminho):
+    if os.path.exists(os.environ.get('REQUISICOES_ADRESS_OR_PATH')):
         # carregar os dados a partir do arquivo csv
         #if len(state.DADOS_CSV_LIST) == 0:
         #    state.load_offline_data()
@@ -255,18 +255,18 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
 
     # Dict final (Primeiro bloco para auditores, segundo é pro resto)
     result = {
-        "Número da requisição": requisicao_id, # ID_REQUISICAO
+        "ID_REQUISICAO": requisicao_id, # ID_REQUISICAO
         "Nome do beneficiário": nome_beneficiario, # NM_BENEFICIARIO
         "Médico solicitante": nome_prestador, # NM_PRESTADOR
-        "Data da abertura da requisição": dt_requisicao, # DT_REQUISICAO
-        "Tipo Guia": ds_tipo_guia, # DS_TIPO_GUIA
-        "Caráter de atendimento (Urgência ou eletiva)": ds_carater_atendimento, # DS_CARATER_ATENDIMENTO
+        "DT_REQUISICAO": dt_requisicao, 
+        "DS_TIPO_GUIA": ds_tipo_guia, 
+        "DS_CARATER_ATENDIMENTO": ds_carater_atendimento, 
         "Idade do beneficiário": idade, # DATA_NASCIMENTO, DT_REQUISICAO
-        "Situação contratual": situacao_contratual, # DATA_CANCELAMENTO
-        "Período de carência?": carencia, # DATA_FIM_CARENCIA
-        "Descrição dos procedimentos": descriptions_dict, # DS_ITEM
-        "Tipo dos itens (nivel 1)": item_type_dict, # DS_TIPO_ITEM
-        "Tipo dos itens (nivel 2)": specific_item_type_dict, # DS_CLASSIFICACAO_1
+        "DATA_CANCELAMENTO": situacao_contratual, 
+        "DATA_FIM_CARENCIA": carencia, 
+        "DS_ITEM": descriptions_dict, 
+        "DS_TIPO_ITEM": item_type_dict, 
+        "DS_CLASSIFICACAO_1": specific_item_type_dict,
 
         "ID_REQUISICAO_ITEM": id_requisicao_item_dict,
         "DT_ATUALIZACAO": data_atualizacao_item_dict, # Versão da tabela OMNI_DADOS_ITEM

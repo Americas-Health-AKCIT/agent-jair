@@ -70,6 +70,7 @@ smmap
 sniffio
 SQLAlchemy
 streamlit
+scikit-learn
 tenacity
 tiktoken
 toml
