@@ -83,3 +83,10 @@ urllib3
 watchdog
 yarl
 langchain_google_genai
+langchain-qdrant
+langchain-openai
+python-dotenv
+pandas
+openpyxl
+fastembed
+python_version >= "3.10"
