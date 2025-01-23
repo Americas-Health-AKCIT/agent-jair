@@ -2,23 +2,16 @@ import streamlit as st
 # TODO: Add menu items
 st.set_page_config(page_title="Assistente de Auditoria", page_icon="🔍", layout="wide")
 import os
-import ast
 import argparse
+import traceback
 
 import dotenv
 dotenv.load_dotenv()
 from langchain_openai import ChatOpenAI
-from prompt import prompt, prompt_deicider_sim_ou_nao
-from agentLogic import ( ItemModel, process_requisition )
+from agentLogic import create_justificativa
 from utils.get_requisition_details import get_requisition_details
 
-from langchain_openai import OpenAIEmbeddings
-from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.prompts import PromptTemplate
-from langchain_core.pydantic_v1 import BaseModel, Field, ValidationError
-import pandas as pd
-from datetime import datetime
+from langchain_core.pydantic_v1 import ValidationError
 
 from utils.state import STATE_CLASS
 from openai import OpenAI
@@ -30,26 +23,7 @@ def get_state():
 
 state = get_state()
 
-#path_file = os.path.dirname(__file__)
-
-# Define the JsonOutputParser using the Pydantic model
-#json_output_parser = JsonOutputParser(pydantic_object=ItemModel)
-
-# Inicializa o modelo OpenAI
-llm = ChatOpenAI(model="gpt-4o")
-
-# Configura o RAG (Retriever-augmented generation)
-custom_rag_prompt = PromptTemplate(input_variables=["context", "question"], template=prompt)
-custom_yes_no_prompt = PromptTemplate(input_variables=["description", "analysis"], template=prompt_deicider_sim_ou_nao)
-
-# Chain 1: Rag chain
-#rag_chain = (
-#    {"context": state.retriever | format_docs, "question": RunnablePassthrough()}
-#    | custom_rag_prompt
-#    | llm
-#    | json_output_parser
-#)
-#    
+llm = ChatOpenAI(model="gpt-4o") 
 
 show_source = False
 
@@ -65,9 +39,6 @@ if 'resumo' not in st.session_state:
 
 if 'final_output' not in st.session_state:
     st.session_state.final_output = None
-
-if 'fontes_dict' not in st.session_state:
-    st.session_state.fontes_dict = None
 
 if 'feedback' not in st.session_state:
     st.session_state.feedback = {}
@@ -133,7 +104,7 @@ with inputcol1:
         if n_req_input == 0 or n_req_input == str or n_req_input == None:
             st.error('Digite o número da requisição dentro da caixa e aperte "Enviar" para continuar.')
         else:
-            print(f"Requisição ID type: {type(n_req_input)}")
+            # print(f"Requisição ID type: {type(n_req_input)}")
             resumo = get_requisition_details(int(n_req_input), state)
             if resumo == {"Error": "REQUISICAO_ID not found"}:
                 st.error("Número da requisição não encontrado. Por favor, confire o número da requisição e tente novamente")
@@ -142,7 +113,6 @@ with inputcol1:
                 st.session_state.resumo = resumo
                 st.session_state.n_req = n_req_input
                 st.session_state.final_output = None
-                st.session_state.fontes_dict = None
 
 ###############################################################################################
 #############################  Streamlit Display - Resumo Output  #############################
@@ -186,20 +156,29 @@ if st.session_state.resumo:
                 - **Descrição:** {descricao}  
                 """)
         # Debugging print statement (optional)
-        # print(f'{st.session_state.resumo}\n\n')
+        print(f'{st.session_state.resumo}\n\n')
 
     st.divider()
     if st.session_state.resumo and st.session_state.final_output is None:
         try:
-            st.toast('Carregando resposta do Jair, isso pode demorar até 20 segundos...', icon="⏳")
+            is_large = len(st.session_state.resumo['Descrição dos procedimentos'])
+            if is_large > 4:
+                st.toast('Carregando resposta do Jair, essa requisição pode demorar mais que o esperado...', icon="⏳")
+            else:
+                st.toast('Carregando resposta do Jair, isso pode demorar até 20 segundos...', icon="⏳")
             with st.spinner("O Jair está pensando... ⏳"):
-                final_output, fontes_dict = process_requisition(state,st.session_state.resumo, custom_rag_prompt, custom_yes_no_prompt, llm, client_openai)
+                final_output = create_justificativa(st.session_state.resumo)
                 st.session_state.final_output = final_output
-                st.session_state.fontes_dict = fontes_dict
+                print("passou")
+                print("final output: ", final_output)
+                print("\nstate 1: ", st.session_state)
+                print("state: ", st.session_state.final_output)
         except ValidationError as e:
             st.error(f"Erro de validação JSON: {e}")
+            st.error(traceback.format_exc())
         except Exception as e:
             st.error(f"Erro inesperado: {e}")
+            st.error(traceback.format_exc())
 
 ###############################################################################################
 #############################  Streamlit Display - Jair Output  ###############################
@@ -252,12 +231,9 @@ if st.session_state.final_output:
             st.markdown(f"##### **Analise do Assistente:**")
             st.markdown(item['analysis'])
             with st.expander("Fonte"):
-                doc = item["document"][0]
-                source_path = doc.metadata.get('filename', 'Unknown source')
-                filename = os.path.basename(source_path)
-                if st.session_state.show_source:
-                    st.write(f"**Arquivo:** {doc.metadata.get('filename', 'Unknown source')}")
-                st.write(f"**Conteudo:** {doc.page_content}")
+                source_raw = item.get('source', 'Jair não conseguiu processar esse item')
+                source = list(source_raw.items())[0][1]
+                st.markdown(f"**Conteudo:** {source}")
         
         st.write("")
         st.write("")
@@ -335,7 +311,7 @@ if st.session_state.final_output:
     
     # Reniciar app, limpa o state inteiro. Ver o que faremos sobre o session_id
     if st.button("Clique aqui para reniciar"):
-        for key in ['n_req', 'resumo', 'final_output', 'fontes_dict', 'feedback']:
+        for key in ['n_req', 'resumo', 'final_output', 'feedback']:
             st.session_state[key] = None
         st.rerun()
 
@@ -358,12 +334,4 @@ if __name__ == "__main__":
         st.rerun()
     
     print("App rodando")
-
-    # Toda vez que um state do streamlit for modificado, ou um botão for clicado, o main será executado
-    # Uma execução total do app faz o main rodar em torno de 5 vezes
-
-    # Portanto, é importante que o main seja commentado quando estiver em produção
-
-    # resumo = get_requisition_details(24110047)
-    # final_output , fontes_dict = process_requisition(resumo)
 
