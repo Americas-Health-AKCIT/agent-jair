@@ -49,7 +49,7 @@ paciente_info = {
 justificativas = []
 for id_item, item_desc in resumo["DS_ITEM"].items():
     classificacao = resumo["DS_CLASSIFICACAO_1"].get(id_item, "N/A")
-    
-    justificativas.append(justificador(id_item, {"DS_ITEM": item_desc, "DS_CLASSIFICACAO_1": classificacao}, paciente_info, status=response[id_item]))
+    justificativa, fonte = justificador(id_item, {"DS_ITEM": item_desc, "DS_CLASSIFICACAO_1": classificacao}, paciente_info, status=response[id_item])
+    justificativas.append(justificativa)
 
 # print("Resumo: ", resumo)
