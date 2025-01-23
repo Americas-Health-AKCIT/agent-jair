@@ -22,7 +22,7 @@ def calculate_age(birth_year_str, reference_date_str):
         reference_date = datetime.strptime(reference_date_str, "%d/%m/%y")
     # Calculate age using the year difference
     age = reference_date.year - birth_year
-    dt_nascimento = reference_date.strftime("%Y-%m-%d")
+    dt_nascimento = birth_year
     return age, dt_nascimento
 
 
@@ -129,6 +129,7 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     # Extraindo informações do beneficiarios
     nome_beneficiario = beneficiario['NM_BENEFICIARIO'].iloc[0]
     data_nascimento = str(beneficiario['DATA_NASCIMENTO'].iloc[0])
+    print("Data nascimento: ", data_nascimento)
     data_cancelamento = beneficiario['DATA_CANCELAMENTO'].iloc[0]
     data_inicio_vigencia = beneficiario['DATA_INICIO_VIGENCIA'].iloc[0]
     carencia_raw = beneficiario['DATA_FIM_CARENCIA'].iloc[0]
