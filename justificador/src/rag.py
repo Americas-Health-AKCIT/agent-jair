@@ -15,7 +15,7 @@ def initialize_qdrant_vector_store():
     embedding= OpenAIEmbeddings(model="text-embedding-3-large"),
     collection_name="documents_jair",
     api_key= QDRANT_API_KEY,
-    url="https://059372fd-0731-4343-a57e-e613adc7c768.us-west-2-0.aws.cloud.qdrant.io:6333/",)
+    url='https://f291ba98-2987-4d8d-bfa4-db2286d264c0.us-east-1-0.aws.cloud.qdrant.io:6333',)
     return qdrant
 
 
