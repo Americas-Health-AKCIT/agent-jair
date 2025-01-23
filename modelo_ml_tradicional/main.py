@@ -9,6 +9,22 @@ from transformers import (
     OneHotEncodingTransformer
 )
 
+import mlflow
+from xgboost import XGBClassifier
+from sklearn.metrics import accuracy_score
+from catboost import CatBoostClassifier
+import mlflow.catboost
+from sklearn.utils.class_weight import compute_sample_weight
+import joblib
+
+
+
+#mlflow.set_tracking_uri("http://44.211.164.41:5000")
+mlflow.set_experiment('Americas Health All Data')
+
+dataset_name = 'df_onehot_encoder_drop_agosto'
+
+
 # =============================================================================
 # Configurações
 # =============================================================================
@@ -134,6 +150,9 @@ def main(ano=2024, mes=8):
     # Aplica a pipeline
     df_final = pipeline.fit_transform(df_merged)
     
+    # Salva a pipeline treinada
+    joblib.dump(pipeline, 'modelo_ml_tradicional/pipeline_transformers.joblib')
+    
     # Remove valores nulos (se houver)
     df_final = df_final.dropna()
     
@@ -159,3 +178,32 @@ if __name__ == '__main__':
     print("y_train shape:", y_train.shape)
     print("X_test shape:", X_test.shape)
     print("y_test shape:", y_test.shape)
+
+
+
+    # Começando o MLflow para monitorar o experimento
+    with mlflow.start_run():
+
+        # Calculando sample weights com base na distribuição da variável target
+        sample_weights = compute_sample_weight(class_weight='balanced', y=y_train)
+
+        # Treinando o modelo XGBoost com sample weights
+        model = XGBClassifier(random_state=42)
+        model.fit(X_train, y_train, sample_weight=sample_weights)
+
+        # Salvando o modelo treinado localmente também
+        joblib.dump(model, 'modelo_ml_tradicional/xgboost_model.joblib')
+
+        # Fazendo previsões
+        y_pred = model.predict(X_test)
+
+        # Calculando a acurácia
+        accuracy = accuracy_score(y_test, y_pred)
+        accuracy_rounded = round(accuracy, 2)
+
+        # Registrando a acurácia como métrica
+        mlflow.log_metric('accuracy', accuracy_rounded)
+        mlflow.xgboost.log_model(model, 'xgboost_model')
+        mlflow.log_param('dataset', dataset_name)
+
+        print(f"Accuracy: {accuracy:.2f}")

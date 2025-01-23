@@ -16,7 +16,7 @@ def get_state():
 state = get_state()
 
 resumo = get_requisition_details(41971486, state) 
-
+print("Resumo: ", resumo)
 # model = None #enquanto não temos o modelo
 # response = model(resumo)
 

@@ -12,3 +12,6 @@ user_data_app/charts/
 models/catboost_info
 models/mlruns
 modelo_ml_tradicional/mlruns
+.venv
+/mlruns
+/modelo_ml_tradicional/Evah
