@@ -25,8 +25,6 @@ def create_justificativa(resumo, response=response_test):
 
     paciente_info = {
         'ID_REQUISICAO': resumo['Número da requisição'],
-        'Nome do beneficiário': resumo['Nome do beneficiário'],
-        'Médico solicitante': resumo['Médico solicitante'],
         'DT_REQUISICAO': resumo['Data da abertura da requisição'],
         'DS_TIPO_GUIA': resumo['Tipo Guia'],
         'DS_CARATER_ATENDIMENTO': resumo['Caráter de atendimento (Urgência ou eletiva)'],
