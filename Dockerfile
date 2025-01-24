@@ -1,4 +1,4 @@
-FROM python:3.12.8
+FROM python:3.12.8-slim
 
 # .pyc vai direto pro cache e aumenta eficiencia
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -27,3 +27,8 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "cu
 
 # Roda o streamlit 
 ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+#aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 207567764107.dkr.ecr.us-east-1.amazonaws.com
+#docker build -t mlops-mlflow-model-development .
+#docker tag mlops-mlflow-model-development:latest 207567764107.dkr.ecr.us-east-1.amazonaws.com/mlops-mlflow-model-development:latest
+#docker push 207567764107.dkr.ecr.us-east-1.amazonaws.com/mlops-mlflow-model-development:latest

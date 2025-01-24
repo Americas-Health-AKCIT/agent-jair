@@ -34,7 +34,7 @@ def load_model(model_name='jair-autorizacoes'):
     Returns:
         tuple: (modelo carregado, pipeline carregado)
     """
-#    mlflow.set_tracking_uri("http://3.236.36.170:5000")
+    mlflow.set_tracking_uri("http://3.236.36.170:5000")
 
     # Carrega o modelo do MLflow
     model_uri = f'models:/{model_name}@production'
