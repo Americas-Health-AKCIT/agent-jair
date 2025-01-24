@@ -1,6 +1,6 @@
 import pandas as pd
 import joblib
-from main import carregar_dados, preparar_merged
+from modelo_ml_tradicional.main import carregar_dados, preparar_merged
 
 import dotenv
 dotenv.load_dotenv()
@@ -96,6 +96,7 @@ def fazer_predicao_por_id(id_requisicao):
     
     # Faz a predição
     predicoes = model.predict(X_transform)
+    print("predicoes:", predicoes)
     probabilidades = model.predict_proba(X_transform)
     
     # Mapeia o resultado

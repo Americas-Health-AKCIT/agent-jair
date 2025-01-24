@@ -9,6 +9,7 @@ import dotenv
 dotenv.load_dotenv()
 from langchain_openai import ChatOpenAI
 from agentLogic import create_justificativa
+from model.inference import fazer_predicao_por_id
 from utils.get_requisition_details import get_requisition_details
 
 from langchain_core.pydantic_v1 import ValidationError
@@ -167,7 +168,10 @@ if st.session_state.resumo:
             else:
                 st.toast('Carregando resposta do Jair, isso pode demorar até 20 segundos...', icon="⏳")
             with st.spinner("O Jair está pensando... ⏳"):
-                final_output = create_justificativa(st.session_state.resumo)
+                resultado = fazer_predicao_por_id(st.session_state.resumo['Número da requisição'])
+                print("resultado: ", resultado['resultados_bool_dict'])
+
+                final_output = create_justificativa(st.session_state.resumo, resultado['resultados_bool_dict'])
                 st.session_state.final_output = final_output
                 print("passou")
                 print("final output: ", final_output)

@@ -11,17 +11,15 @@ from utils.get_requisition_details import get_requisition_details
 
 from justificador.justificador import justificador
 
+from modelo_ml_tradicional.inference import carregar_modelo_e_pipeline, fazer_predicao_por_id
 
-response_test = {40306798: False,
-            40308383: True,
-            40324192: True,
-            40304361: False,
-            40311210: True}
+
+response_test = {13692546: True, 13692559: True, 13692560: True, 13692561: True, 13692562: True, 13692563: True, 13692564: True, 13692576: True, 13692577: True, 13692578: True, 13692579: True, 13692580: True, 13692581: True, 13692582: True, 13692584: True, 13692607: True, 13692543: True, 13692549: True, 13692547: True, 13692552: False, 13692555: True, 13692556: True, 13692558: True, 13692565: True, 13692566: True, 13692567: True, 13692568: True, 13692569: True, 13692570: True, 13692571: True, 13692572: True, 13692573: True, 13692574: True, 13692586: True, 13692587: True, 13692588: True, 13692590: False, 13692591: False, 13692592: True, 13692593: True, 13692594: True, 13692595: True, 13692596: True, 13692597: True, 13692598: True, 13692599: True, 13692600: True, 13692601: True, 13692602: True, 13692603: False, 13692604: True, 13692605: True, 13692606: True}
 
 def process_requisition():
     raise NotImplementedError("Parte onde o input é o resumo, e o output é a resposta do modelo")
 
-def create_justificativa(resumo, response=response_test):
+def create_justificativa(resumo, response):
 
     paciente_info = {
         'ID_REQUISICAO': resumo['Número da requisição'],

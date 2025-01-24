@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.pipeline import Pipeline
-from transformers import (
+from modelo_ml_tradicional.transformers import (
     DateDifferenceTransformer,
     DropColumnsTransformer,
     BinaryNumericTransformer,

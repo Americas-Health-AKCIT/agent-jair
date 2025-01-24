@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/JoaoC/Nextcloud/Projetos/AmericasHealth/agente-jair-autorizacao/mlruns/606247561951303065/061d5d15b271456a9c211128efdee735/artifacts
+end_time: 1737736594961
+entry_point_name: ''
+experiment_id: '606247561951303065'
+lifecycle_stage: active
+run_id: 061d5d15b271456a9c211128efdee735
+run_name: bald-roo-276
+run_uuid: 061d5d15b271456a9c211128efdee735
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737736585763
+status: 3
+tags: []
+user_id: JoaoC

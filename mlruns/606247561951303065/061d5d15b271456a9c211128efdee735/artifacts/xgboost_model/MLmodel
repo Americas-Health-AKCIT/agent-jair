@@ -1,0 +1,165 @@
+artifact_path: xgboost_model
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.8
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.core.Booster
+    model_format: xgb
+    xgb_version: 2.1.3
+is_signature_from_type_hint: false
+mlflow_version: 2.20.0
+model_size_bytes: 484203
+model_uuid: b5723c8bf4d644309e72e2ac24c1a0f6
+run_id: 061d5d15b271456a9c211128efdee735
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "DATA_CANCELAMENTO", "required": true}, {"type":
+    "double", "name": "DATA_FIM_CARENCIA", "required": true}, {"type": "double", "name":
+    "DATA_NASCIMENTO", "required": true}, {"type": "double", "name": "TITULARIDADE",
+    "required": true}, {"type": "double", "name": "DIFERENCA_DIAS", "required": true},
+    {"type": "double", "name": "EMBEDDING_0", "required": true}, {"type": "double",
+    "name": "EMBEDDING_1", "required": true}, {"type": "double", "name": "EMBEDDING_2",
+    "required": true}, {"type": "double", "name": "EMBEDDING_3", "required": true},
+    {"type": "double", "name": "EMBEDDING_4", "required": true}, {"type": "double",
+    "name": "EMBEDDING_5", "required": true}, {"type": "double", "name": "EMBEDDING_6",
+    "required": true}, {"type": "double", "name": "EMBEDDING_7", "required": true},
+    {"type": "double", "name": "EMBEDDING_8", "required": true}, {"type": "double",
+    "name": "EMBEDDING_9", "required": true}, {"type": "double", "name": "EMBEDDING_10",
+    "required": true}, {"type": "double", "name": "EMBEDDING_11", "required": true},
+    {"type": "double", "name": "EMBEDDING_12", "required": true}, {"type": "double",
+    "name": "EMBEDDING_13", "required": true}, {"type": "double", "name": "EMBEDDING_14",
+    "required": true}, {"type": "double", "name": "EMBEDDING_15", "required": true},
+    {"type": "double", "name": "EMBEDDING_16", "required": true}, {"type": "double",
+    "name": "EMBEDDING_17", "required": true}, {"type": "double", "name": "EMBEDDING_18",
+    "required": true}, {"type": "double", "name": "EMBEDDING_19", "required": true},
+    {"type": "double", "name": "EMBEDDING_20", "required": true}, {"type": "double",
+    "name": "EMBEDDING_21", "required": true}, {"type": "double", "name": "EMBEDDING_22",
+    "required": true}, {"type": "double", "name": "EMBEDDING_23", "required": true},
+    {"type": "double", "name": "EMBEDDING_24", "required": true}, {"type": "double",
+    "name": "EMBEDDING_25", "required": true}, {"type": "double", "name": "EMBEDDING_26",
+    "required": true}, {"type": "double", "name": "EMBEDDING_27", "required": true},
+    {"type": "double", "name": "EMBEDDING_28", "required": true}, {"type": "double",
+    "name": "EMBEDDING_29", "required": true}, {"type": "double", "name": "EMBEDDING_30",
+    "required": true}, {"type": "double", "name": "EMBEDDING_31", "required": true},
+    {"type": "double", "name": "EMBEDDING_32", "required": true}, {"type": "double",
+    "name": "EMBEDDING_33", "required": true}, {"type": "double", "name": "EMBEDDING_34",
+    "required": true}, {"type": "double", "name": "EMBEDDING_35", "required": true},
+    {"type": "double", "name": "EMBEDDING_36", "required": true}, {"type": "double",
+    "name": "EMBEDDING_37", "required": true}, {"type": "double", "name": "EMBEDDING_38",
+    "required": true}, {"type": "double", "name": "EMBEDDING_39", "required": true},
+    {"type": "double", "name": "EMBEDDING_40", "required": true}, {"type": "double",
+    "name": "EMBEDDING_41", "required": true}, {"type": "double", "name": "EMBEDDING_42",
+    "required": true}, {"type": "double", "name": "EMBEDDING_43", "required": true},
+    {"type": "double", "name": "EMBEDDING_44", "required": true}, {"type": "double",
+    "name": "EMBEDDING_45", "required": true}, {"type": "double", "name": "EMBEDDING_46",
+    "required": true}, {"type": "double", "name": "EMBEDDING_47", "required": true},
+    {"type": "double", "name": "EMBEDDING_48", "required": true}, {"type": "double",
+    "name": "EMBEDDING_49", "required": true}, {"type": "double", "name": "EMBEDDING_50",
+    "required": true}, {"type": "double", "name": "EMBEDDING_51", "required": true},
+    {"type": "double", "name": "EMBEDDING_52", "required": true}, {"type": "double",
+    "name": "EMBEDDING_53", "required": true}, {"type": "double", "name": "EMBEDDING_54",
+    "required": true}, {"type": "double", "name": "EMBEDDING_55", "required": true},
+    {"type": "double", "name": "EMBEDDING_56", "required": true}, {"type": "double",
+    "name": "EMBEDDING_57", "required": true}, {"type": "double", "name": "EMBEDDING_58",
+    "required": true}, {"type": "double", "name": "EMBEDDING_59", "required": true},
+    {"type": "double", "name": "EMBEDDING_60", "required": true}, {"type": "double",
+    "name": "EMBEDDING_61", "required": true}, {"type": "double", "name": "EMBEDDING_62",
+    "required": true}, {"type": "double", "name": "EMBEDDING_63", "required": true},
+    {"type": "double", "name": "EMBEDDING_64", "required": true}, {"type": "double",
+    "name": "EMBEDDING_65", "required": true}, {"type": "double", "name": "EMBEDDING_66",
+    "required": true}, {"type": "double", "name": "EMBEDDING_67", "required": true},
+    {"type": "double", "name": "EMBEDDING_68", "required": true}, {"type": "double",
+    "name": "EMBEDDING_69", "required": true}, {"type": "double", "name": "EMBEDDING_70",
+    "required": true}, {"type": "double", "name": "EMBEDDING_71", "required": true},
+    {"type": "double", "name": "EMBEDDING_72", "required": true}, {"type": "double",
+    "name": "EMBEDDING_73", "required": true}, {"type": "double", "name": "EMBEDDING_74",
+    "required": true}, {"type": "double", "name": "EMBEDDING_75", "required": true},
+    {"type": "double", "name": "EMBEDDING_76", "required": true}, {"type": "double",
+    "name": "EMBEDDING_77", "required": true}, {"type": "double", "name": "EMBEDDING_78",
+    "required": true}, {"type": "double", "name": "EMBEDDING_79", "required": true},
+    {"type": "double", "name": "EMBEDDING_80", "required": true}, {"type": "double",
+    "name": "EMBEDDING_81", "required": true}, {"type": "double", "name": "EMBEDDING_82",
+    "required": true}, {"type": "double", "name": "EMBEDDING_83", "required": true},
+    {"type": "double", "name": "EMBEDDING_84", "required": true}, {"type": "double",
+    "name": "EMBEDDING_85", "required": true}, {"type": "double", "name": "EMBEDDING_86",
+    "required": true}, {"type": "double", "name": "EMBEDDING_87", "required": true},
+    {"type": "double", "name": "EMBEDDING_88", "required": true}, {"type": "double",
+    "name": "EMBEDDING_89", "required": true}, {"type": "double", "name": "EMBEDDING_90",
+    "required": true}, {"type": "double", "name": "EMBEDDING_91", "required": true},
+    {"type": "double", "name": "EMBEDDING_92", "required": true}, {"type": "double",
+    "name": "EMBEDDING_93", "required": true}, {"type": "double", "name": "EMBEDDING_94",
+    "required": true}, {"type": "double", "name": "EMBEDDING_95", "required": true},
+    {"type": "double", "name": "EMBEDDING_96", "required": true}, {"type": "double",
+    "name": "EMBEDDING_97", "required": true}, {"type": "double", "name": "EMBEDDING_98",
+    "required": true}, {"type": "double", "name": "EMBEDDING_99", "required": true},
+    {"type": "double", "name": "DS_TIPO_GUIA_Guia de solicita\u00e7\u00e3o de prorroga\u00e7\u00e3o
+    de interna\u00e7\u00e3o", "required": true}, {"type": "double", "name": "DS_TIPO_GUIA_Guia
+    de solicita\u00e7\u00e3o interna\u00e7\u00e3o", "required": true}, {"type": "double",
+    "name": "DS_TIPO_GUIA_infrequent_sklearn", "required": true}, {"type": "double",
+    "name": "DS_CARATER_ATENDIMENTO_Urg\u00eancia/Emerg\u00eancia", "required": true},
+    {"type": "double", "name": "DS_TIPO_INTERNACAO_Cl\u00ednica", "required": true},
+    {"type": "double", "name": "DS_TIPO_INTERNACAO_nan", "required": true}, {"type":
+    "double", "name": "DS_TIPO_INTERNACAO_infrequent_sklearn", "required": true},
+    {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico Hematologista", "required":
+    true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico angiologista
+    ", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    cancerologista cir\u00fargico", "required": true}, {"type": "double", "name":
+    "DS_CBO_PROFISSIONAL_M\u00e9dico cardiologista ", "required": true}, {"type":
+    "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico cirurgi\u00e3o do aparelho
+    digestivo ", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    cirurgi\u00e3o tor\u00e1cico ", "required": true}, {"type": "double", "name":
+    "DS_CBO_PROFISSIONAL_M\u00e9dico cl\u00ednico", "required": true}, {"type": "double",
+    "name": "DS_CBO_PROFISSIONAL_M\u00e9dico dermatologista ", "required": true},
+    {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico em endoscopia ", "required":
+    true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico em radiologia
+    e diagn\u00f3stico por imagem ", "required": true}, {"type": "double", "name":
+    "DS_CBO_PROFISSIONAL_M\u00e9dico endocrinologista e metabologista ", "required":
+    true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico geriatra ",
+    "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    ginecologista e obstetra ", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    neurologista ", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    oftalmologista", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    oncologista cl\u00ednico", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    ortopedista e traumatologista ", "required": true}, {"type": "double", "name":
+    "DS_CBO_PROFISSIONAL_M\u00e9dico otorrinolaringologista ", "required": true},
+    {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico pediatra", "required":
+    true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico reumatologista
+    ", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_M\u00e9dico
+    urologista ", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_Psic\u00f3logo
+    cl\u00ednico ", "required": true}, {"type": "double", "name": "DS_CBO_PROFISSIONAL_infrequent_sklearn",
+    "required": true}, {"type": "double", "name": "DS_REGIME_INTERNACAO_Hospitalar",
+    "required": true}, {"type": "double", "name": "DS_REGIME_INTERNACAO_nan", "required":
+    true}, {"type": "double", "name": "DS_REGIME_INTERNACAO_infrequent_sklearn", "required":
+    true}, {"type": "double", "name": "DS_TIPO_SADT_Exame", "required": true}, {"type":
+    "double", "name": "DS_TIPO_SADT_Outras terapias", "required": true}, {"type":
+    "double", "name": "DS_TIPO_SADT_Pequena cirurgia", "required": true}, {"type":
+    "double", "name": "DS_TIPO_SADT_Quimioterapia", "required": true}, {"type": "double",
+    "name": "DS_TIPO_SADT_nan", "required": true}, {"type": "double", "name": "DS_TIPO_SADT_infrequent_sklearn",
+    "required": true}, {"type": "double", "name": "DS_TIPO_CONSULTA_Retorno / Seguimento",
+    "required": true}, {"type": "double", "name": "DS_TIPO_CONSULTA_nan", "required":
+    true}, {"type": "double", "name": "DS_TIPO_CONSULTA_infrequent_sklearn", "required":
+    true}, {"type": "double", "name": "DS_TIPO_ITEM_PROCEDIMENTOS", "required": true},
+    {"type": "double", "name": "DS_CLASSIFICACAO_1_MATERIAL", "required": true}, {"type":
+    "double", "name": "DS_CLASSIFICACAO_1_MEDICAMENTO", "required": true}, {"type":
+    "double", "name": "DS_CLASSIFICACAO_1_OPME", "required": true}, {"type": "double",
+    "name": "DS_CLASSIFICACAO_1_PROCEDIMENTOS CIR\u00daRGICOS E INVASIVOS", "required":
+    true}, {"type": "double", "name": "DS_CLASSIFICACAO_1_PROCEDIMENTOS CL\u00cdNICOS",
+    "required": true}, {"type": "double", "name": "DS_CLASSIFICACAO_1_PROCEDIMENTOS
+    DIAGN\u00d3STICOS E TERAP\u00caUTICO", "required": true}, {"type": "double", "name":
+    "DS_CLASSIFICACAO_1_PROCEDIMENTOS GERAIS", "required": true}, {"type": "double",
+    "name": "DS_CLASSIFICACAO_1_infrequent_sklearn", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int32", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-01-24 16:36:30.305575'
