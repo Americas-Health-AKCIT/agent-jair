@@ -14,8 +14,10 @@ current_directory = os.path.dirname(os.path.abspath(__file__))
 save_charts_path = os.path.join(current_directory, "charts")
 os.makedirs(save_charts_path, exist_ok=True)
 from pandasai import SmartDataframe
+from config.config import settings
 
-llm = ChatOpenAI(model="gpt-4o-mini")
+
+llm = ChatOpenAI(model="gpt-4o-mini", api_key=settings.openai_api_key)
 
 # Load the CSV data
 req_df = pd.read_csv('./auditor_avaliacao.csv')

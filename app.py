@@ -5,18 +5,17 @@ import os
 import argparse
 import traceback
 
-import dotenv
-dotenv.load_dotenv()
 from langchain_openai import ChatOpenAI
 from agentLogic import create_justificativa
 from model.inference import fazer_predicao_por_id
 from utils.get_requisition_details import get_requisition_details
+from config.config import settings
 
 from langchain_core.pydantic_v1 import ValidationError
 
 from utils.state import STATE_CLASS
 from openai import OpenAI
-client_openai = OpenAI()
+client_openai = OpenAI(api_key=settings.openai_api_key)
 
 @st.cache_resource
 def get_state():
@@ -24,7 +23,11 @@ def get_state():
 
 state = get_state()
 
-llm = ChatOpenAI(model="gpt-4o") 
+llm = ChatOpenAI(
+    model="gpt-4o",
+    api_key=settings.openai_api_key
+    ) 
+
 
 show_source = False
 
@@ -106,7 +109,9 @@ with inputcol1:
             st.error('Digite o número da requisição dentro da caixa e aperte "Enviar" para continuar.')
         else:
             # print(f"Requisição ID type: {type(n_req_input)}")
+            print("starting to get requisition details")
             resumo = get_requisition_details(int(n_req_input), state)
+            
             if resumo == {"Error": "REQUISICAO_ID not found"}:
                 st.error("Número da requisição não encontrado. Por favor, confire o número da requisição e tente novamente")
                 st.session_state.resumo = None
@@ -167,9 +172,8 @@ if st.session_state.resumo:
                 st.toast('Carregando resposta do Jair, essa requisição pode demorar mais que o esperado...', icon="⏳")
             else:
                 st.toast('Carregando resposta do Jair, isso pode demorar até 20 segundos...', icon="⏳")
-            with st.spinner("O Jair está pensando... ⏳"):
+            with st.spinner(f"O Jair está pensando... ⏳"):
                 resultado = fazer_predicao_por_id(st.session_state.resumo['Número da requisição'])
-                print("resultado: ", resultado['resultados_bool_dict'])
 
                 final_output = create_justificativa(st.session_state.resumo, resultado['resultados_bool_dict'])
                 st.session_state.final_output = final_output

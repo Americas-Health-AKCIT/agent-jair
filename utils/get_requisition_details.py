@@ -4,9 +4,28 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from .state import STATE_CLASS
+import re
 
 
 dotenv.load_dotenv()
+
+
+def is_aws_endpoint(address: str) -> bool:
+    """
+    Check if the given address is an AWS endpoint.
+    Returns True if the address matches AWS endpoint patterns (e.g. s3://, amazonaws.com, etc.)
+    """
+    if not address:
+        return False
+        
+    aws_patterns = [
+        r'^s3://',  # S3 URI pattern
+        r'\.amazonaws\.com',  # AWS domain pattern
+        r'^https?://[^/]+\.aws\.',  # AWS HTTPS endpoint pattern
+        r'^[^/]+\.aws\.'  # AWS endpoint without protocol
+    ]
+    
+    return any(re.search(pattern, address, re.IGNORECASE) for pattern in aws_patterns)
 
 
 ### FUNCOES AUXILIARES DA REQUISICAO
@@ -55,28 +74,24 @@ def determine_contrato(data_cancelamento):
 
 
 def get_data_by_adress(requisicao_id:int)->dict:
-    adress = os.environ.get("REQUISICOES_ADRESS_OR_PATH", None)
-    port = os.environ.get("REQUISICOES_PORT", None)    
+    """
+    Load data from AWS S3 using pandas read_csv
+    """
+    # Get the base path from environment
+    base_path = os.environ.get("REQUISICOES_ADRESS_OR_PATH", None)
     
-    # transform em dataframe
-    
-    
-     
-    #OMNI_DADOS_REQUISICAO.DT_REQUISICAO,
-    #OMNI_DADOS_REQUISICAO.DS_TIPO_GUIA,
-    #OMNI_DADOS_REQUISICAO.DS_CARATER_ATENDIMENTO,
-    #
-    #OMNI_DADOS_BENEFICIARIO.NM_BENEFICIARIO,
-    #OMNI_DADOS_BENEFICIARIO.DATA_NASCIMENTO,
-    #OMNI_DADOS_BENEFICIARIO.DATA_CANCELAMENTO,
-    #OMNI_DADOS_BENEFICIARIO.DATA_INICIO_VIGENCIA,
-    #OMNI_DADOS_BENEFICIARIO.DATA_FIM_CARENCIA,
-    #
-    #OMNI_DADOS_PRESTADOR.NM_PRESTADOR
-    
-    raise NotImplementedError("Ainda não implementado")
-
-    return dados_requisicao, dados_item, dados_prestador, dados_beneficiario, dados_requisicao_item
+    try:
+        # Load all required CSV files
+        dados_requisicao = pd.read_csv(f"{base_path}/OMNI_DADOS_REQUISICAO.csv", encoding='latin1')
+        dados_item = pd.read_csv(f"{base_path}/OMNI_DADOS_ITEM.csv", encoding='latin1')
+        dados_prestador = pd.read_csv(f"{base_path}/OMNI_DADOS_PRESTADOR.csv", encoding='latin1')
+        dados_beneficiario = pd.read_csv(f"{base_path}/OMNI_DADOS_BENEFICIARIO.csv", encoding='latin1')
+        dados_requisicao_item = pd.read_csv(f"{base_path}/OMNI_DADOS_REQUISICAO_ITEM.csv", encoding='latin1')
+        
+        return dados_requisicao, dados_item, dados_prestador, dados_beneficiario, dados_requisicao_item
+        
+    except Exception as e:
+        raise ValueError(f"Erro ao carregar dados da AWS: {str(e)}")
 
 
 
@@ -90,18 +105,22 @@ def get_requisition_details(requisicao_id:int, state : STATE_CLASS)->dict:
     # print('Caminho hardcoded:', caminho)
     print(os.environ.get('REQUISICOES_ADRESS_OR_PATH'))
 
-    if os.path.exists(os.environ.get('REQUISICOES_ADRESS_OR_PATH')):
-        # carregar os dados a partir do arquivo csv
-        #if len(state.DADOS_CSV_LIST) == 0:
-        #    state.load_offline_data()
+    requisicoes_path = os.environ.get('REQUISICOES_ADRESS_OR_PATH')
+    print(f'Verificando endereço de requisições: {requisicoes_path}')
 
+    if os.path.exists(requisicoes_path):
+        # carregar os dados a partir do arquivo csv local
         dados_requisicao, dados_item, dados_prestador, dados_beneficiario, dados_requisicao_item = state.DADOS_CSV_LIST
-
+    elif is_aws_endpoint(requisicoes_path):
+        # carregar os dados a partir do endpoint AWS usando pandas
+        print("Carregando dados da AWS")
+        try:
+            dados_requisicao, dados_item, dados_prestador, dados_beneficiario, dados_requisicao_item = get_data_by_adress(requisicao_id)
+        except Exception as e:
+            raise ValueError(f"Erro ao carregar dados da AWS: {str(e)}")
     else:
-        # carregar os dados a partir do banco de dados
-        dados_requisicao, dados_item, dados_prestador, dados_beneficiario, dados_requisicao_item = get_data_by_adress(requisicao_id)
-    
-    
+        raise ValueError(f"Endereço de requisições inválido ou inacessível: {requisicoes_path}")
+
     # Pegando o ID da requisição
     requisicao = dados_requisicao[dados_requisicao['ID_REQUISICAO'] == requisicao_id]
     if requisicao.empty:

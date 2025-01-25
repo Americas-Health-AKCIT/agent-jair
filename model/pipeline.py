@@ -1,6 +1,6 @@
 """Pipeline definition for model training and inference."""
 from sklearn.pipeline import Pipeline
-from . import config
+from config import config
 from .transformers import (
     DateDifferenceTransformer,
     DropColumnsTransformer,

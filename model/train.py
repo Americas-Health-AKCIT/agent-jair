@@ -11,7 +11,7 @@ from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.utils.class_weight import compute_sample_weight
 
-from . import config
+from config import config
 from .data_loader import preparar_dados_treinamento
 from .pipeline import create_pipeline
 
@@ -31,7 +31,7 @@ def prepare_model_input(X):
 def train_model(ano=2024, mes=8):
     """Train the model and track with MLflow."""
     # Set up MLflow
-    mlflow.set_tracking_uri("http://3.236.36.170:5000")
+    mlflow.set_tracking_uri(config.settings.mlflow_track_uri)
     mlflow.set_experiment(config.settings.mlflow_experiment_name)
 
     # Prepare data

@@ -1,7 +1,6 @@
 import sys,os
 sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
-import dotenv
-dotenv.load_dotenv()
+from config.config import settings
 import pandas as pd
 from app import get_requisition_details, process_requisition, state
 import tqdm
@@ -13,7 +12,7 @@ from prompt import prompt, prompt_deicider_sim_ou_nao
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from openai import OpenAI
-client_openai = OpenAI()
+client_openai = OpenAI(api_key=settings.openai_api_key)
 
 
 def write_readme(acuracia_geral, percent_without_context,  qtd_itens, dashboard_path, modelo):
@@ -86,7 +85,7 @@ def run(amostra_path = 'sample_100.csv', modelo='', verbose=False, folder_to_sav
         df_result['y_hat'] =         list(df_tmp.y_hat.values)
     
     # Inicializa o modelo OpenAI
-    llm = ChatOpenAI(model="gpt-4o")
+    llm = ChatOpenAI(model="gpt-4o", api_key=settings.openai_api_key)
 
     # Configura o RAG (Retriever-augmented generation)
     custom_rag_prompt = PromptTemplate(input_variables=["context", "question"], template=prompt)

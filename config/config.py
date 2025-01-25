@@ -2,49 +2,51 @@
 from typing import List, Dict, Optional
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+import os
 
 class Settings(BaseSettings):
     """Main settings class."""
     model_config = SettingsConfigDict(
-        env_file='.env',
-        env_file_encoding='utf-8',
         case_sensitive=False,
         extra='allow'  # Permite campos extras do .env
     )
     
     # API Keys
-    openai_api_key: str = Field(default="")
-    mistral_api_key: str = Field(default="")
+    openai_api_key: str = Field(default=os.getenv("OPENAI_API_KEY"))
+    mistral_api_key: str = Field(default=os.getenv("MISTRAL_API_KEY"))
+    qdrant_api_key: str = Field(default=os.getenv("QDRANT_API_KEY"))
+
+    qdrant_url: str = Field(default=os.getenv("QDRANT_URL"))
     
     # Paths
-    data_path: str = Field(default="./data/embeddings_05_09_2024")
-    requisicoes_adress_or_path: str = Field(default="./data/Evah")
+    data_path: str = Field(default=os.getenv("DATA_PATH"))
+    requisicoes_adress_or_path: str = Field(default=os.getenv("REQUISICOES_ADRESS_OR_PATH"))
     
     # Service Configuration
-    judge_model: str = Field(default="GPT-4o-mini")
-    feedback_port: int = Field(default=80)
-    feedback_adress: Optional[str] = Field(default="")
-    requisicoes_port: int = Field(default=80)
+    judge_model: str = Field(default=os.getenv("JUDGE_MODEL"))
+    feedback_port: int = Field(default=os.getenv("FEEDBACK_PORT"))
+    feedback_adress: Optional[str] = Field(default=os.getenv("FEEDBACK_ADRESS"))
+    requisicoes_port: int = Field(default=os.getenv("REQUISICOES_PORT"))
     
     # Data paths
     path_requisicao: str = Field(
-        default='data/Evah/OMNI_DADOS_REQUISICAO.csv',
+        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_REQUISICAO.csv',
         description="Path to requisition data file"
     )
     path_itens: str = Field(
-        default='data/Evah/OMNI_DADOS_REQUISICAO_ITEM.csv',
+        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_REQUISICAO_ITEM.csv',
         description="Path to items data file"
     )
     path_itens_nome: str = Field(
-        default='data/Evah/OMNI_DADOS_ITEM.csv',
+        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_ITEM.csv',
         description="Path to item names data file"
     )
     path_beneficiario: str = Field(
-        default='data/Evah/OMNI_DADOS_BENEFICIARIO.csv',
+        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_BENEFICIARIO.csv',
         description="Path to beneficiary data file"
     )
     path_prestador: str = Field(
-        default='data/Evah/OMNI_DADOS_PRESTADOR.csv',
+        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_PRESTADOR.csv',
         description="Path to provider data file"
     )
     
@@ -68,7 +70,7 @@ class Settings(BaseSettings):
         description="Dataset name for tracking"
     )
     mlflow_track_uri: str = Field(
-        default='',
+        default=os.getenv("MLFLOW_TRACK_URI"),
         description="MLflow tracking URI"
     )
     

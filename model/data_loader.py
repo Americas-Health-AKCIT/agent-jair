@@ -1,6 +1,6 @@
 """Data loading and preprocessing functions."""
 import pandas as pd
-from . import config
+from config import config
 
 def carregar_dados():
     """Load raw data from CSV files."""
@@ -15,6 +15,7 @@ def carregar_dados():
         encoding='latin1',
         low_memory=False
     )
+    print(df_itens.head())
     df_itens_nome = pd.read_csv(
         config.settings.path_itens_nome, 
         encoding='latin1',
@@ -32,6 +33,7 @@ def carregar_dados():
         encoding='latin1',
         low_memory=False
     )
+    print(df_prestador.head())
     return df_requisicao, df_itens, df_itens_nome, df_beneficiario, df_prestador
 
 def preparar_merged(df_requisicao, df_itens, df_beneficiario, df_itens_nome):

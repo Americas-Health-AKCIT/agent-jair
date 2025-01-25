@@ -4,25 +4,10 @@ import mlflow.xgboost
 import pandas as pd
 import joblib
 import numpy as np
-import dotenv
-from . import config
+from config import config
 from .data_loader import carregar_dados, preparar_merged
 from .train import prepare_model_input
 
-dotenv.load_dotenv()
-
-import sys
-print(sys.executable)
-
-#from utils.state import STATE_CLASS
-#from utils.get_requisition_details import get_requisition_details
-
-#from justificador.justificador import justificador
-
-#def get_state():
-#    return STATE_CLASS()
-
-#state = get_state()
 
 def load_model(model_name='jair-autorizacoes'):
     """
@@ -34,7 +19,9 @@ def load_model(model_name='jair-autorizacoes'):
     Returns:
         tuple: (modelo carregado, pipeline carregado)
     """
-    mlflow.set_tracking_uri("http://3.236.36.170:5000")
+    print("Loading model...")
+    print(config.settings.mlflow_track_uri)
+    mlflow.set_tracking_uri(config.settings.mlflow_track_uri)
 
     # Carrega o modelo do MLflow
     model_uri = f'models:/{model_name}@production'

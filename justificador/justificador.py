@@ -3,10 +3,11 @@ import pandas as pd
 
 from justificador.src.rag import retrival_item
 from justificador.src.prompts import JUSTIFICATIVA_PROMPT
+from config.config import settings
 
 def justificador(id_item, item_info, paciente_info, status=False):
 
-    llm = ChatOpenAI(model="gpt-4o",  temperature=0.1)
+    llm = ChatOpenAI(model="gpt-4o",  temperature=0.1, api_key=settings.openai_api_key)
 
     rag_result = retrival_item(id_item, item_info)
     
