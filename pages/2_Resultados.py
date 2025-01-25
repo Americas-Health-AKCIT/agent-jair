@@ -206,4 +206,209 @@ if not filtered_df.empty:
         filtered_df[['requisicao', 'data', 'auditor', 'descricao', 'decisao_jair', 'decisao_auditor', 'avaliacao_qualidade']]
         .sort_values('data', ascending=False),
         use_container_width=True
-    ) 
+    )
+
+# Análise por Item
+st.subheader("Análise por Item")
+
+# Agrupar dados por item
+df_items = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).agg({
+    'requisicao': 'count',
+    'tem_avaliacao': 'sum'
+}).reset_index()
+
+# Calcular métricas por item
+df_items['taxa_concordancia'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    lambda x: (x['decisao_jair'] == x['decisao_auditor']).mean()
+).values
+
+df_items['taxa_aprovacao_jair'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    lambda x: (x['decisao_jair'] == 'AUTORIZADO').mean()
+).values
+
+df_items['taxa_aprovacao_auditor'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    lambda x: (x['decisao_auditor'] == 'AUTORIZADO').mean()
+).values
+
+df_items['avaliacao_qualidade'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    lambda x: (x['avaliacao_qualidade'] == 'BOA').mean()
+).values
+
+# Ordenar por quantidade de avaliações
+df_items = df_items.sort_values('requisicao', ascending=False)
+
+# Criar tabs para diferentes visualizações
+tab1, tab2 = st.tabs(["📊 Gráficos", "📋 Tabela Detalhada"])
+
+with tab1:
+    # Gráfico 1: Taxa de Concordância e Qualidade por Item
+    fig_item_metrics = go.Figure()
+    
+    fig_item_metrics.add_trace(go.Bar(
+        name='Taxa de Concordância',
+        x=df_items['descricao'],
+        y=df_items['taxa_concordancia'],
+        marker_color='#2ecc71'
+    ))
+    
+    fig_item_metrics.add_trace(go.Bar(
+        name='Avaliação de Qualidade',
+        x=df_items['descricao'],
+        y=df_items['avaliacao_qualidade'],
+        marker_color='#3498db'
+    ))
+    
+    fig_item_metrics.update_layout(
+        title='Taxa de Concordância e Qualidade por Item',
+        barmode='group',
+        xaxis_tickangle=-45,
+        yaxis_tickformat=',.0%',
+        height=500
+    )
+    
+    st.plotly_chart(fig_item_metrics, use_container_width=True)
+    
+    # Gráfico 2: Comparação de Taxas de Aprovação
+    fig_approval = go.Figure()
+    
+    fig_approval.add_trace(go.Bar(
+        name='Taxa de Aprovação (Jair)',
+        x=df_items['descricao'],
+        y=df_items['taxa_aprovacao_jair'],
+        marker_color='#e74c3c'
+    ))
+    
+    fig_approval.add_trace(go.Bar(
+        name='Taxa de Aprovação (Auditor)',
+        x=df_items['descricao'],
+        y=df_items['taxa_aprovacao_auditor'],
+        marker_color='#9b59b6'
+    ))
+    
+    fig_approval.update_layout(
+        title='Comparação de Taxas de Aprovação por Item',
+        barmode='group',
+        xaxis_tickangle=-45,
+        yaxis_tickformat=',.0%',
+        height=500
+    )
+    
+    st.plotly_chart(fig_approval, use_container_width=True)
+
+with tab2:
+    # Formatar colunas para exibição
+    df_display = df_items.copy()
+    df_display['Taxa de Concordância'] = df_display['taxa_concordancia'].map('{:.1%}'.format)
+    df_display['Taxa de Aprovação (Jair)'] = df_display['taxa_aprovacao_jair'].map('{:.1%}'.format)
+    df_display['Taxa de Aprovação (Auditor)'] = df_display['taxa_aprovacao_auditor'].map('{:.1%}'.format)
+    df_display['Avaliação de Qualidade'] = df_display['avaliacao_qualidade'].map('{:.1%}'.format)
+    df_display['Quantidade de Avaliações'] = df_display['requisicao']
+    
+    # Renomear colunas
+    df_display = df_display.rename(columns={
+        'descricao': 'Procedimento',
+        'codigo': 'Código'
+    })
+    
+    # Selecionar e ordenar colunas para exibição
+    cols_to_display = [
+        'Procedimento',
+        'Código',
+        'Quantidade de Avaliações',
+        'Taxa de Concordância',
+        'Taxa de Aprovação (Jair)',
+        'Taxa de Aprovação (Auditor)',
+        'Avaliação de Qualidade'
+    ]
+    
+    st.dataframe(
+        df_display[cols_to_display],
+        use_container_width=True,
+        hide_index=True
+    )
+
+# Adicionar filtro por item específico
+st.subheader("Análise Individual de Item")
+
+selected_item = st.selectbox(
+    "Selecione um item para análise detalhada:",
+    options=df_items['descricao'].unique()
+)
+
+if selected_item:
+    item_data = df[df['descricao'] == selected_item]
+    item_data = item_data[item_data['tem_avaliacao']]
+    
+    if not item_data.empty:
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            total_avaliacoes = len(item_data)
+            st.metric("Total de Avaliações", total_avaliacoes)
+            
+        with col2:
+            concordancia = (item_data['decisao_jair'] == item_data['decisao_auditor']).mean()
+            st.metric("Taxa de Concordância", f"{concordancia:.1%}")
+            
+        with col3:
+            qualidade = (item_data['avaliacao_qualidade'] == 'BOA').mean()
+            st.metric("Taxa de Qualidade", f"{qualidade:.1%}")
+            
+        with col4:
+            aprovacao_diff = (
+                (item_data['decisao_jair'] == 'AUTORIZADO').mean() -
+                (item_data['decisao_auditor'] == 'AUTORIZADO').mean()
+            )
+            st.metric(
+                "Diferença na Taxa de Aprovação",
+                f"{abs(aprovacao_diff):.1%}",
+                delta=f"{'Maior' if aprovacao_diff > 0 else 'Menor'} que o Auditor"
+            )
+        
+        # Matriz de confusão para o item específico
+        confusion_matrix = pd.crosstab(
+            item_data['decisao_jair'],
+            item_data['decisao_auditor'],
+            normalize='index'
+        )
+        
+        fig_matrix = px.imshow(
+            confusion_matrix,
+            title=f'Matriz de Confusão - {selected_item}',
+            labels=dict(x='Decisão do Auditor', y='Decisão do Jair'),
+            color_continuous_scale='RdYlBu'
+        )
+        
+        st.plotly_chart(fig_matrix, use_container_width=True)
+        
+        # Histórico de decisões ao longo do tempo
+        fig_history = go.Figure()
+        
+        fig_history.add_trace(go.Scatter(
+            x=item_data['data'],
+            y=item_data['decisao_jair'].map({'AUTORIZADO': 1, 'NEGADO': 0}),
+            name='Decisão do Jair',
+            mode='markers',
+            marker=dict(size=10)
+        ))
+        
+        fig_history.add_trace(go.Scatter(
+            x=item_data['data'],
+            y=item_data['decisao_auditor'].map({'AUTORIZADO': 1, 'NEGADO': 0}),
+            name='Decisão do Auditor',
+            mode='markers',
+            marker=dict(size=10)
+        ))
+        
+        fig_history.update_layout(
+            title='Histórico de Decisões ao Longo do Tempo',
+            yaxis=dict(
+                ticktext=['NEGADO', 'AUTORIZADO'],
+                tickvals=[0, 1],
+                title='Decisão'
+            ),
+            xaxis_title='Data',
+            height=400
+        )
+        
+        st.plotly_chart(fig_history, use_container_width=True) 
