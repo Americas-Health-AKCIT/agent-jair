@@ -67,6 +67,10 @@ class Settings(BaseSettings):
         default='df_onehot_encoder_drop_agosto',
         description="Dataset name for tracking"
     )
+    mlflow_track_uri: str = Field(
+        default='',
+        description="MLflow tracking URI"
+    )
     
     # Status configurations
     status_remover: List[str] = Field(
