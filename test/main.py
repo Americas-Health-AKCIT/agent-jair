@@ -2,7 +2,7 @@ import sys,os
 sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 from config.config import settings
 import pandas as pd
-from app import get_requisition_details, process_requisition, state
+from Jair import get_requisition_details, process_requisition, state
 import tqdm
 import datetime
 import json

@@ -30,23 +30,23 @@ class Settings(BaseSettings):
     
     # Data paths
     path_requisicao: str = Field(
-        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_REQUISICAO.csv',
+        default=os.path.join(os.getenv("REQUISICOES_ADRESS_OR_PATH", ""), "OMNI_DADOS_REQUISICAO.csv"),
         description="Path to requisition data file"
     )
     path_itens: str = Field(
-        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_REQUISICAO_ITEM.csv',
+        default=os.path.join(os.getenv("REQUISICOES_ADRESS_OR_PATH", ""), "OMNI_DADOS_REQUISICAO_ITEM.csv"),
         description="Path to items data file"
     )
     path_itens_nome: str = Field(
-        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_ITEM.csv',
+        default=os.path.join(os.getenv("REQUISICOES_ADRESS_OR_PATH", ""), "OMNI_DADOS_ITEM.csv"),
         description="Path to item names data file"
     )
     path_beneficiario: str = Field(
-        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_BENEFICIARIO.csv',
+        default=os.path.join(os.getenv("REQUISICOES_ADRESS_OR_PATH", ""), "OMNI_DADOS_BENEFICIARIO.csv"),
         description="Path to beneficiary data file"
     )
     path_prestador: str = Field(
-        default='s3://amh-mlops-datasets-development/2024/8/OMNI_DADOS_PRESTADOR.csv',
+        default=os.path.join(os.getenv("REQUISICOES_ADRESS_OR_PATH", ""), "OMNI_DADOS_PRESTADOR.csv"),
         description="Path to provider data file"
     )
     
