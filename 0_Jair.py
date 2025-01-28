@@ -407,11 +407,11 @@ if st.session_state.final_output:
             with col_apr:
                 approved = st.button("✅ Aprovar", key=f"approve_{idx}", 
                                    use_container_width=True,
-                                   type="primary" if not item.get("auditor", {}).get("authorized_item", None) else "secondary")
+                                   type="secondary" if not item.get("auditor", {}).get("authorized_item", None) else "primary")
             with col_rec:
                 rejected = st.button("❌ Recusar", key=f"reject_{idx}", 
                                    use_container_width=True,
-                                   type="primary" if item.get("auditor", {}).get("authorized_item", None) else "secondary")
+                                   type="secondary" if item.get("auditor", {}).get("authorized_item", None) else "primary")
         
         with col2:
             st.write("⭐ **Avaliação da Resposta**")
@@ -424,11 +424,11 @@ if st.session_state.final_output:
             with col_like:
                 liked = st.button("👍 Boa", key=f"like_{idx}", 
                                 use_container_width=True,
-                                type="primary" if not item.get("auditor", {}).get("quality_rating", None) else "secondary")
+                                type="secondary" if not item.get("auditor", {}).get("quality_rating", None) else "primary")
             with col_dislike:
                 disliked = st.button("👎 Ruim", key=f"dislike_{idx}", 
                                    use_container_width=True,
-                                   type="primary" if item.get("auditor", {}).get("quality_rating", None) else "secondary")
+                                   type="secondary" if item.get("auditor", {}).get("quality_rating", None) else "primary")
 
         # Campo de comentários
         st.write("💭 **Comentários**")
@@ -448,25 +448,28 @@ if st.session_state.final_output:
             item["auditor"]["authorized_item"] = True
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
             st.toast('Avaliação salva!', icon="✅")
+            st.rerun()
         elif rejected:
             if "auditor" not in item:
                 item["auditor"] = {}
             item["auditor"]["authorized_item"] = False
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
             st.toast('Avaliação salva!', icon="✅")
-
+            st.rerun()
         if liked:
             if "auditor" not in item:
                 item["auditor"] = {}
             item["auditor"]["quality_rating"] = True
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
             st.toast('Avaliação salva!', icon="✅")
+            st.rerun()
         elif disliked:
             if "auditor" not in item:
                 item["auditor"] = {}
             item["auditor"]["quality_rating"] = False
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
             st.toast('Avaliação salva!', icon="✅")
+            st.rerun()
 
         if comment != previous_comment:
             if "auditor" not in item:
@@ -496,6 +499,9 @@ if st.session_state.final_output:
             for key in ['n_req', 'resumo', 'final_output', 'feedback']:
                 st.session_state[key] = None
             st.rerun()
+    
+
+    st.json(st.session_state.final_output)
 
 if __name__ == "__main__":
 
