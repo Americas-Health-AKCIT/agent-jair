@@ -15,7 +15,9 @@ class Settings(BaseSettings):
     openai_api_key: str = Field(default=os.getenv("OPENAI_API_KEY"))
     mistral_api_key: str = Field(default=os.getenv("MISTRAL_API_KEY"))
     qdrant_api_key: str = Field(default=os.getenv("QDRANT_API_KEY"))
+    firebase_web_api_key: str = Field(default=os.getenv("FIREBASE_WEB_API_KEY"))
 
+    # URLs
     qdrant_url: str = Field(default=os.getenv("QDRANT_URL"))
     
     # Paths

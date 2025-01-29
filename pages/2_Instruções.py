@@ -1,4 +1,16 @@
 import streamlit as st
+from utils.firebase_admin_init import verify_token
+
+if 'user_info' not in st.session_state:
+    st.switch_page("Inicio.py")
+
+# Verify token on each request
+decoded_token = verify_token(st.session_state.id_token)
+if not decoded_token:
+    # Token is invalid or expired, clear session and force re-login
+    st.session_state.clear()
+    st.session_state.auth_warning = 'Session expired. Please sign in again.'
+    st.rerun()
 
 st.set_page_config(page_title="Instruções - Assistente de Auditoria", page_icon="📖", layout="wide")
 

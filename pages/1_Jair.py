@@ -1,5 +1,18 @@
 import streamlit as st
+from utils.firebase_admin_init import verify_token
 # TODO: Add menu items
+if 'user_info' not in st.session_state:
+    st.switch_page("Inicio.py")
+
+# Verify token on each request
+decoded_token = verify_token(st.session_state.id_token)
+if not decoded_token:
+    # Token is invalid or expired, clear session and force re-login
+    st.session_state.clear()
+    st.session_state.auth_warning = 'Session expired. Please sign in again.'
+    st.rerun()
+
+
 st.set_page_config(page_title="Assistente de Auditoria", page_icon="🔍", layout="wide")
 import os
 import argparse
@@ -199,6 +212,8 @@ if send_button:
 #############################  Streamlit Display - Resumo Output  #############################
 ###############################################################################################
 
+# is_dark_theme = st.get_option("theme.base") == "dark"
+
 if st.session_state.resumo:
     st.markdown("""
     <style>
@@ -331,6 +346,11 @@ if st.session_state.resumo:
 #############################  Streamlit Display - Jair Output  ###############################
 ###############################################################################################
 
+auditor_notification = st.empty()
+if 'auditor_success' in st.session_state:
+    st.toast(st.session_state.auditor_success, icon="✅")
+    del st.session_state.auditor_success
+
 if st.session_state.final_output:
     st.markdown("""
     <style>
@@ -447,28 +467,28 @@ if st.session_state.final_output:
                 item["auditor"] = {}
             item["auditor"]["authorized_item"] = True
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
-            st.toast('Avaliação salva!', icon="✅")
+            st.session_state.auditor_success = 'Avaliação salva!'
             st.rerun()
         elif rejected:
             if "auditor" not in item:
                 item["auditor"] = {}
             item["auditor"]["authorized_item"] = False
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
-            st.toast('Avaliação salva!', icon="✅")
+            st.session_state.auditor_success = 'Avaliação salva!'
             st.rerun()
         if liked:
             if "auditor" not in item:
                 item["auditor"] = {}
             item["auditor"]["quality_rating"] = True
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
-            st.toast('Avaliação salva!', icon="✅")
+            st.session_state.auditor_success = 'Avaliação salva!'
             st.rerun()
         elif disliked:
             if "auditor" not in item:
                 item["auditor"] = {}
             item["auditor"]["quality_rating"] = False
             history.save_complete_requisition(st.session_state.resumo, st.session_state.final_output, None, auditor=st.session_state.auditor)
-            st.toast('Avaliação salva!', icon="✅")
+            st.session_state.auditor_success = 'Avaliação salva!'
             st.rerun()
 
         if comment != previous_comment:
@@ -499,9 +519,15 @@ if st.session_state.final_output:
             for key in ['n_req', 'resumo', 'final_output', 'feedback']:
                 st.session_state[key] = None
             st.rerun()
-    
 
-    st.json(st.session_state.final_output)
+    col1, col2, col3 = st.columns([3, 2, 3])
+    with col2:
+        if st.button("🚪", help="Logout", use_container_width=True):
+            st.session_state.user_info = None
+            st.session_state.clear()
+            st.switch_page("Inicio.py")    
+
+    # st.json(st.session_state.final_output)
 
 if __name__ == "__main__":
 
