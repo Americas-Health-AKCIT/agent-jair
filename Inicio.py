@@ -19,24 +19,33 @@ if 'user_info' not in st.session_state:
         </style>
     """, unsafe_allow_html=True)
 
+    col4, col5, col6 = st.columns([5,1,5])
+    with col5:
+        st.subheader("Login - Jair")
+
     col1,col2,col3 = st.columns([1,2,1])
 
     # Authentication form layout
-    do_you_have_an_account = col2.selectbox(label='Do you have an account?',options=('Yes','No'))
+    # do_you_have_an_account = col2.selectbox(label='Do you have an account?',options=('Yes','No'))
     auth_form = col2.form(key='Authentication form',clear_on_submit=False)
     email = auth_form.text_input(label='Email').strip()
-    password = auth_form.text_input(label='Password',type='password') if do_you_have_an_account in {'Yes','No'} else auth_form.empty()
+    password = auth_form.text_input(label='Senha',type='password') # if do_you_have_an_account in {'Yes','No'} else auth_form.empty()
     auth_notification = col2.empty()
 
-    # Sign In
-    if do_you_have_an_account == 'Yes' and auth_form.form_submit_button(label='Sign In',use_container_width=True,type='primary'):
-        with auth_notification, st.spinner('Signing in'):
+    # Sign In - New
+    if auth_form.form_submit_button(label='Entrar',use_container_width=True,type='primary'):
+        with auth_notification, st.spinner('Entrando...'):
             auth_functions.sign_in(email,password)
 
+    # Sign In
+    # if do_you_have_an_account == 'Yes' and auth_form.form_submit_button(label='Sign In',use_container_width=True,type='primary'):
+    #     with auth_notification, st.spinner('Signing in'):
+    #         auth_functions.sign_in(email,password)
+
     # Create Account
-    elif do_you_have_an_account == 'No' and auth_form.form_submit_button(label='Create Account',use_container_width=True,type='primary'):
-        with auth_notification, st.spinner('Creating account'):
-            auth_functions.create_account(email, password)
+    # elif do_you_have_an_account == 'No' and auth_form.form_submit_button(label='Create Account',use_container_width=True,type='primary'):
+    #     with auth_notification, st.spinner('Creating account'):
+    #         auth_functions.create_account(email, password)
 
     # Password Reset
     # elif do_you_have_an_account == 'I forgot my password' and auth_form.form_submit_button(label='Send Password Reset Email',use_container_width=True,type='primary'):
@@ -56,7 +65,7 @@ else:
     if not decoded_token:
         # Token is invalid or expired, clear session and force re-login
         st.session_state.clear()
-        st.session_state.auth_warning = 'Session expired. Please sign in again.'
+        st.session_state.auth_warning = 'Sua sessão expirou. Por favor, faça login novamente.'
         st.rerun()
     
     # If token is valid, redirect to main page

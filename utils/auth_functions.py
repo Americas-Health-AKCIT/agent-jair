@@ -101,7 +101,7 @@ def sign_in(email:str, password:str) -> None:
         # If email is not verified, send verification email and do not sign in
         if not user_info["emailVerified"]:
             send_email_verification(id_token)
-            st.session_state.auth_warning = 'Check your email to verify your account'
+            st.session_state.auth_warning = 'Cheque seu email e clique no link de verificação. Ao verificar, clique no botão "Entrar" novamente.'
 
         # Save user info and token to session state and rerun
         else:
@@ -115,15 +115,15 @@ def sign_in(email:str, password:str) -> None:
     except requests.exceptions.HTTPError as error:
         error_message = json.loads(error.args[1])['error']['message']
         if error_message in {"INVALID_EMAIL","EMAIL_NOT_FOUND","INVALID_PASSWORD","MISSING_PASSWORD"}:
-            st.session_state.auth_warning = 'Error: Use a valid email and password.'
+            st.session_state.auth_warning = 'Erro: Use um email e senha válidos.'
             print(error_message)
         else:
-            st.session_state.auth_warning = 'Error: Please try again later'
+            st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
             print(error_message)
 
     except Exception as error:
         print(error)
-        st.session_state.auth_warning = 'Error: Please try again later'
+        st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
 
 
 def get_current_user_info(id_token: str) -> dict:
@@ -171,28 +171,28 @@ def create_account(email:str, password:str, role: str = "auditor") -> None:
 
         # Create account and send email verification
         send_email_verification(id_token)
-        st.session_state.auth_success = 'Check your inbox to verify your email'
+        st.session_state.auth_success = 'Cheque seu email e clique no link de verificação. Ao verificar, clique no botão "Entrar" novamente.'
     
     except requests.exceptions.HTTPError as error:
         error_message = json.loads(error.args[1])['error']['message']
         if error_message == "EMAIL_EXISTS":
-            st.session_state.auth_warning = 'Error: Email belongs to existing account'
+            st.session_state.auth_warning = 'Erro: Email já cadastrado.'
         elif error_message in {"INVALID_EMAIL","INVALID_PASSWORD","MISSING_PASSWORD","MISSING_EMAIL","WEAK_PASSWORD"}:
-            st.session_state.auth_warning = 'Error: Use a valid email and password'
+            st.session_state.auth_warning = 'Erro: Use um email e senha válidos.'
             print(error_message)
         else:
-            st.session_state.auth_warning = 'Error: Please try again later'
+            st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
             print(error_message)
     
     except Exception as error:
         print(error)
-        st.session_state.auth_warning = 'Error: Please try again later'
+        st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
 
 
 def create_account_adm(email, password, role: str = "auditor"):
     """Create a user account using admin privileges"""
     if role not in VALID_ROLES:
-        st.session_state.auth_warning = f"Invalid role. Must be one of: {', '.join(VALID_ROLES)}"
+        st.session_state.auth_warning = f"Role inválida. Deve ser um dos seguintes: {', '.join(VALID_ROLES)}"
         return
 
     try:
@@ -203,36 +203,36 @@ def create_account_adm(email, password, role: str = "auditor"):
         set_user_role(user.uid, role)
         st.session_state.auth_success = f'Conta criada com sucesso para {email}'
     except auth.EmailAlreadyExistsError:
-        st.session_state.auth_warning = 'Error: Email belongs to existing account'
+        st.session_state.auth_warning = 'Erro: Email já cadastrado.'
     except ValueError as e:
         if "Invalid email" in str(e):
-            st.session_state.auth_warning = 'Error: Use a valid email'
+            st.session_state.auth_warning = 'Erro: Use um email válido.'
         elif "Password must be at least 6 characters" in str(e):
-            st.session_state.auth_warning = 'Error: Password must be at least 6 characters'
+            st.session_state.auth_warning = 'Erro: A senha deve ter pelo menos 6 caracteres.'
         else:
-            st.session_state.auth_warning = 'Error: Use a valid email and password'
+            st.session_state.auth_warning = 'Erro: Use um email e senha válidos.'
             print(str(e))
     except Exception as e:
-        st.session_state.auth_warning = 'Error: Please try again later'
+        st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
         print(str(e))
 
 
 def reset_password(email:str) -> None:
     try:
         send_password_reset_email(email)
-        st.session_state.auth_success = 'Password reset link sent to your email'
+        st.session_state.auth_success = 'Link de redefinição de senha enviado para seu email'
     
     except requests.exceptions.HTTPError as error:
         error_message = json.loads(error.args[1])['error']['message']
         if error_message in {"MISSING_EMAIL","INVALID_EMAIL","EMAIL_NOT_FOUND"}:
-            st.session_state.auth_warning = 'Error: Use a valid email'
+            st.session_state.auth_warning = 'Erro: Use um email válido.'
             print(error_message)
         else:
-            st.session_state.auth_warning = 'Error: Please try again later'  
+            st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'  
             print(error_message)  
     
     except Exception:
-        st.session_state.auth_warning = 'Error: Please try again later'
+        st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
 
 
 def reset_password_adm(email, new_password):
@@ -253,7 +253,7 @@ def reset_password_adm(email, new_password):
 
 def sign_out() -> None:
     st.session_state.clear()
-    st.session_state.auth_success = 'You have successfully signed out'
+    st.session_state.auth_success = 'Você saiu da sua conta com sucesso'
 
 
 def delete_account(password:str) -> None:
@@ -265,25 +265,25 @@ def delete_account(password:str) -> None:
         # Verify token server-side
         decoded_token = verify_token(id_token)
         if not decoded_token:
-            st.session_state.auth_warning = 'Error: Invalid authentication'
+            st.session_state.auth_warning = 'Erro: Autenticação inválida'
             return
         
         # Attempt to delete account
         delete_user_account(id_token)
         st.session_state.clear()
-        st.session_state.auth_success = 'You have successfully deleted your account'
+        st.session_state.auth_success = 'Sua conta foi deletada com sucesso'
 
     except requests.exceptions.HTTPError as error:
         error_message = json.loads(error.args[1])['error']['message']
         if error_message in {"INVALID_PASSWORD", "MISSING_PASSWORD"}:
-            st.session_state.auth_warning = 'Error: Invalid password'
+            st.session_state.auth_warning = 'Erro: Senha inválida'
         else:
-            st.session_state.auth_warning = 'Error: Please try again later'
+            st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
         print(error_message)
 
     except Exception as error:
         print(error)
-        st.session_state.auth_warning = 'Error: Please try again later'
+        st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
 
 
 def delete_account_adm(email):

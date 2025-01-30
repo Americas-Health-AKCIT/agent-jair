@@ -17,11 +17,11 @@ st.set_page_config(page_title="Instruções - Assistente de Auditoria", page_ico
 st.markdown("""
 <style>
 .instruction-card {
-    background-color: #1E1E1E;
+    background-color: {('#1E1E1E' if is_dark_theme else '#FFFFFF')};
     border-radius: 10px;
     padding: 20px;
     margin: 10px 0;
-    border: 1px solid #333;
+    border: 1px solid {('#333' if is_dark_theme else '#E0E0E0')};
 }
 .big-number {
     font-size: 24px;
@@ -30,7 +30,7 @@ st.markdown("""
     margin-right: 10px;
 }
 .highlight {
-    background-color: #2A2A2A;
+    background-color: {('#2A2A2A' if is_dark_theme else '#F5F5F5')};
     padding: 2px 6px;
     border-radius: 4px;
 }

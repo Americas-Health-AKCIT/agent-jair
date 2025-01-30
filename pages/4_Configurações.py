@@ -168,8 +168,12 @@ if st.session_state.user_role == "adm":
                     st.rerun()
 
 st.divider()
-st.subheader("🔐 Sair")
-st.button(label='Sign Out',on_click=auth_functions.sign_out,type='primary')
+st.markdown("<div style='margin-top: 40px'></div>", unsafe_allow_html=True)
+col1, col2, col3, col4 = st.columns([3, 1, 1, 3])
+with col2:
+    st.subheader("🔐 Sair")
+with col3:
+    st.button(label='Clique aqui para sair',on_click=auth_functions.sign_out,type='primary')
 
-st.text("current user")
-st.text(auth_functions.get_current_user_info(st.session_state.id_token))
+# st.text("current user")
+# st.text(auth_functions.get_current_user_info(st.session_state.id_token))

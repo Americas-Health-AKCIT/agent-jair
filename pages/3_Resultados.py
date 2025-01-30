@@ -181,6 +181,11 @@ if current_user['role'] == 'adm':
     # Análise por Auditor
     st.subheader("Análise por Auditor")
 
+    # Convert lists to strings if they exist in the auditor column
+    if df['auditor'].apply(lambda x: isinstance(x, list)).any():
+        df['auditor'] = df['auditor'].apply(lambda x: x[0] if isinstance(x, list) else x)
+
+    # Now the groupby operation should work
     df_auditor = df[df['tem_avaliacao']].groupby('auditor').agg({
         'requisicao': 'count',
         'tem_avaliacao': 'sum'
@@ -399,16 +404,47 @@ else:
     # Show only the auditor-specific logic for non-admin users
     auditor_info = next((a for a in auditors_list if a['email'] == current_user['email']), None)
     if auditor_info:
-        selected_auditor = [auditor_info['name']]
-        st.text(f"Mostrando dados do auditor: {auditor_info['name']}")
+        selected_auditor = auditor_info['name']
+        print("auditor", selected_auditor)
+        print("auditor_info", auditor_info)
+        # st.text(f"Mostrando dados do auditor: {auditor_info['name']}")
     else:
         st.error("Erro: Auditor não encontrado na lista")
 
-    # Aplicar filtros no modo auditor (usando range completo como padrao)
-    selected_period = [df['data'].min().date(), df['data'].max().date()]
+    time_filter = st.radio(
+        "Filtrar por período",
+        ["Último dia", "Última semana", "Último mês"],
+        horizontal=True
+    )
+
+    # Calculate date filters
+    today = pd.Timestamp.now()
+    if time_filter == "Último dia":
+        start_date = today - pd.Timedelta(days=1)
+        end_date = today
+    elif time_filter == "Última semana":
+        start_date = today - pd.Timedelta(weeks=1)
+        end_date = today
+    elif time_filter == "Último mês":
+        start_date = today - pd.Timedelta(days=30)
+        end_date = today
+    else:  # Período personalizado
+        col1, col2 = st.columns(2)
+        with col1:
+            start_date = pd.Timestamp(st.date_input(
+                "Data inicial",
+                value=df[df['auditor'].isin(selected_auditor)]['data'].min().date()
+            ))
+        with col2:
+            end_date = pd.Timestamp(st.date_input(
+                "Data final",
+                value=df[df['auditor'].isin(selected_auditor)]['data'].max().date()
+            ))
+
+    # Apply both auditor and date filters
     mask = (
-        (df['data'].dt.date >= selected_period[0]) &
-        (df['data'].dt.date <= selected_period[1]) &
+        (df['data'].dt.date >= start_date.date()) &
+        (df['data'].dt.date <= end_date.date()) &
         (df['auditor'].isin(selected_auditor))
     )
     filtered_df = df[mask]
@@ -419,3 +455,55 @@ else:
             .sort_values('data', ascending=False),
             use_container_width=True
         )
+    
+        print('\n\nboth dfs')
+        print(df)
+        print(filtered_df)
+
+        # Display metrics
+        st.markdown("""
+            <style>
+            .requisition-box {
+                padding: 15px;
+                margin: 15px 0;
+                border-radius: 8px;
+                background-color: var(--background-color);
+                border: 1px solid var(--primary-color);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .requisition-header {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+            }
+            .requisition-details {
+                color: var(--text-color);
+                margin-bottom: 5px;
+            }
+            .requisition-footer {
+                color: var(--text-color);
+                opacity: 0.8;
+            }
+            </style>
+        """, unsafe_allow_html=True)
+
+        # Group by requisition and display
+        for req_num, group in filtered_df.groupby('requisicao'):
+            st.markdown(f"""
+                <div class="requisition-box">
+                    <div class="requisition-header">
+                        <strong>Requisição {req_num}</strong> - {group.iloc[0]['data'].strftime('%d/%m/%Y')} - {group.iloc[0]['data'].strftime('%H:%M')}
+                    </div>
+                    <div class="requisition-details">
+                        {group.iloc[0]['descricao']}
+                    </div>
+                    <div class="requisition-footer">
+                        <small>
+                            Código: {group.iloc[0]['codigo']} | 
+                            Decisão Jair: {group.iloc[0]['decisao_jair']} | 
+                            Decisão Auditor: {group.iloc[0]['decisao_auditor']}
+                        </small>
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)
+    else:
+        st.warning("Nenhum dado encontrado para o período selecionado.")

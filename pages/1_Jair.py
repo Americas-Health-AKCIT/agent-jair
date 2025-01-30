@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.firebase_admin_init import verify_token
+import utils.auth_functions as auth_functions
 # TODO: Add menu items
 if 'user_info' not in st.session_state:
     st.switch_page("Inicio.py")
@@ -80,12 +81,20 @@ if 'final_output' not in st.session_state:
 if 'feedback' not in st.session_state:
     st.session_state.feedback = {}
 
+# Carregar lista de auditores
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+auditors_data = load_auditors()
+auditors_list = auditors_data.get('auditors', [])
+auditor_names = [a['name'] for a in auditors_list]
+auditor_info = next((a for a in auditors_list if a['email'] == current_user['email']), None)
+
 ###############################################################################################
 #############################  Streamlit Display - Sidebar  ###################################
 ###############################################################################################
 
 with st.sidebar:
     st.title("Jair - Assistente de Auditoria")
+    # st.write(f"Auditor: {auditor_info['name']}")
     st.write("Digite o número da requisição para receber uma análise detalhada.")
     
     # Campo de entrada da requisição
@@ -96,21 +105,7 @@ with st.sidebar:
             placeholder="Digite aqui",
             key='n_req_input'
         )
-        
-        # Carregar lista de auditores
-        auditors_data = load_auditors()
-        auditors_list = auditors_data.get('auditors', [])
-        auditor_names = [a['name'] for a in auditors_list]
-        
-        if not auditor_names:
-            st.error("Nenhum auditor cadastrado. Por favor, cadastre um auditor na página de Configurações.")
-            auditor_input = None
-        else:
-            auditor_input = st.selectbox(
-                "Nome do Auditor:",
-                options=auditor_names,
-                key='auditor_input'
-            )
+
     else:
         n_req_input = st.text_input(
             "Número da requisição:",
@@ -119,22 +114,14 @@ with st.sidebar:
             key='n_req_input_existing'
         )
         
-        # Carregar lista de auditores
-        auditors_data = load_auditors()
-        auditors_list = auditors_data.get('auditors', [])
-        auditor_names = [a['name'] for a in auditors_list]
-        
-        if not auditor_names:
-            st.error("Nenhum auditor cadastrado. Por favor, cadastre um auditor na página de Configurações.")
-            auditor_input = None
-        else:
-            current_auditor = st.session_state.get('auditor', auditor_names[0])
-            auditor_input = st.selectbox(
-                "Nome do Auditor:",
-                options=auditor_names,
-                index=auditor_names.index(current_auditor) if current_auditor in auditor_names else 0,
-                key='auditor_input_existing'
-            )
+    if not auditor_names:
+        st.error("Nenhum auditor cadastrado. Por favor, cadastre um auditor na página de Configurações.")
+        auditor_input = None
+    elif not auditor_info:
+        st.error("Auditor atual não encontrado. Por favor, reporte o problema para o administrador.")
+        auditor_input = None
+    else:
+        auditor_input = auditor_info['name']
             
     send_button = st.button("Enviar", use_container_width=True)
     
@@ -212,9 +199,16 @@ if send_button:
 #############################  Streamlit Display - Resumo Output  #############################
 ###############################################################################################
 
-# is_dark_theme = st.get_option("theme.base") == "dark"
+is_dark_theme = st.get_option("theme.base") == "dark"
 
-if st.session_state.resumo:
+
+auditor_info = next((a for a in auditors_list if a['email'] == current_user['email']), None)
+
+if not st.session_state.resumo:
+    st.subheader(f"Seja Bem-Vindo/a, {auditor_info['name']}!")
+    st.info('📖 Precisa de ajuda? Consulte as [Instruções](Instruções).', icon="ℹ️")
+
+else:
     st.markdown("""
     <style>
     .summary-card {
@@ -277,7 +271,7 @@ if st.session_state.resumo:
                 st.markdown("🎂 **Idade:**")
                 st.markdown("📋 **Situação:**")
                 st.markdown("⏳ **Carência:**")
-                st.markdown("👨‍⚕️ **Auditor:**")
+                # st.markdown("👨‍⚕️ **Auditor:**")
             
             with col_values1:
                 st.write(st.session_state.resumo['Número da requisição'])
@@ -285,7 +279,7 @@ if st.session_state.resumo:
                 st.write(f"{st.session_state.resumo['Idade do beneficiário']} anos")
                 st.write(st.session_state.resumo['Situação contratual'])
                 st.write(st.session_state.resumo['Período de carência?'])
-                st.write(st.session_state.auditor)
+                # st.write(st.session_state.auditor)
     
     # Card do Atendimento
     with col2:
@@ -355,11 +349,11 @@ if st.session_state.final_output:
     st.markdown("""
     <style>
     .item-card {
-        background-color: #1E1E1E;
+        background-color: {('#1E1E1E' if is_dark_theme else '#FFFFFF')};
         border-radius: 10px;
         padding: 20px;
         margin: 10px 0;
-        border: 1px solid #333;
+        border: 1px solid {('#333' if is_dark_theme else '#E0E0E0')};
     }
     .item-header {
         display: flex;
@@ -368,7 +362,7 @@ if st.session_state.final_output:
         margin-bottom: 15px;
     }
     .evaluation-section {
-        background-color: #2A2A2A;
+        background-color: {('#2A2A2A' if is_dark_theme else '#F5F5F5')};
         border-radius: 8px;
         padding: 15px;
         margin: 10px 0;
@@ -519,13 +513,6 @@ if st.session_state.final_output:
             for key in ['n_req', 'resumo', 'final_output', 'feedback']:
                 st.session_state[key] = None
             st.rerun()
-
-    col1, col2, col3 = st.columns([3, 2, 3])
-    with col2:
-        if st.button("🚪", help="Logout", use_container_width=True):
-            st.session_state.user_info = None
-            st.session_state.clear()
-            st.switch_page("Inicio.py")    
 
     # st.json(st.session_state.final_output)
 
