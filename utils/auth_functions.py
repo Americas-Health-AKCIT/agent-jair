@@ -117,8 +117,11 @@ def sign_in(email:str, password:str) -> None:
         if error_message in {"INVALID_EMAIL","EMAIL_NOT_FOUND","INVALID_PASSWORD","MISSING_PASSWORD"}:
             st.session_state.auth_warning = 'Erro: Use um email e senha válidos.'
             print(error_message)
+        elif error_message in {"INVALID_LOGIN_CREDENTIALS"}:
+            st.session_state.auth_warning = 'Erro: O email ou senha não conferem. Coloque as credenciais corretas ou entre em contato com o administrador.'
+            print(error_message)
         else:
-            st.session_state.auth_warning = 'Erro: Por favor, tente novamente mais tarde.'
+            st.session_state.auth_warning = 'Erro: Por favor, tente novamente ou mais tarde.'
             print(error_message)
 
     except Exception as error:
