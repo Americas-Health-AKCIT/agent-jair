@@ -12,7 +12,7 @@ import json
 
 # Firebase Admin is already initialized in firebase_admin_init.py
 
-class DeletionTarget(Enum):
+class OperationTarget(Enum):
     FIREBASE = "firebase"
     AWS = "aws"
     BOTH = "both"
@@ -82,11 +82,94 @@ class UserManagement:
         return result
 
 
-    def delete_user(self, email: str, target: DeletionTarget = DeletionTarget.BOTH) -> Dict[str, str]:
+    def add_user(self, email: str, password: str, name: str, role: str = "auditor", 
+                target: OperationTarget = OperationTarget.BOTH) -> Dict[str, str]:
+        """Add user to specified targets (Firebase, AWS, or both)"""
+        result = {
+            "status": "success",
+            "message": "",
+            "firebase_uid": None
+        }
+
+        if role not in auth_functions.VALID_ROLES:
+            return {
+                "status": "error",
+                "message": f"Role inválida. Deve ser um dos seguintes: {', '.join(auth_functions.VALID_ROLES)}"
+            }
+
+        # Firebase Creation
+        if target in [OperationTarget.FIREBASE, OperationTarget.BOTH]:
+            try:
+                firebase_user = auth.create_user(
+                    email=email,
+                    password=password
+                )
+                auth.set_custom_user_claims(firebase_user.uid, {'role': role})
+                result["firebase_uid"] = firebase_user.uid
+                result["message"] += "Firebase: Usuário criado com sucesso. "
+            except auth.EmailAlreadyExistsError:
+                result["status"] = "error"
+                result["message"] += "Firebase: Email já cadastrado. "
+            except Exception as e:
+                result["status"] = "error"
+                result["message"] += f"Firebase error: {str(e)}. "
+                return result
+
+        # AWS Creation
+        if target in [OperationTarget.AWS, OperationTarget.BOTH]:
+            try:
+                aws_data = self._load_aws_auditors()
+                
+                if any(a['email'] == email for a in aws_data.get('auditors', [])):
+                    if result["firebase_uid"] and target == OperationTarget.BOTH:
+                        # Rollback Firebase creation if AWS fails in BOTH mode
+                        try:
+                            auth.delete_user(result["firebase_uid"])
+                            result["message"] += "Firebase: Usuário deletado após falha no AWS. "
+                        except:
+                            result["message"] += "Firebase: Erro ao deletar usuário após falha no AWS. "
+                    
+                    result["status"] = "error"
+                    result["message"] += "AWS: Email já existe. "
+                    return result
+
+                existing_ids = [int(a['id']) for a in aws_data.get('auditors', [])]
+                new_id = str(max(existing_ids + [0]) + 1)
+                
+                new_auditor = {
+                    'id': new_id,
+                    'name': name,
+                    'email': email,
+                    'role': role
+                }
+                
+                if 'auditors' not in aws_data:
+                    aws_data['auditors'] = []
+                
+                aws_data['auditors'].append(new_auditor)
+                self._save_aws_auditors(aws_data)
+                result["message"] += "AWS: Usuário criado com sucesso. "
+                
+            except Exception as e:
+                if result["firebase_uid"] and target == OperationTarget.BOTH:
+                    # Rollback Firebase creation if AWS fails in BOTH mode
+                    try:
+                        auth.delete_user(result["firebase_uid"])
+                        result["message"] += "Firebase: Usuário deletado após falha no AWS. "
+                    except:
+                        result["message"] += "Firebase: Erro ao deletar usuário após falha no AWS. "
+                
+                result["status"] = "error"
+                result["message"] += f"AWS error: {str(e)}. "
+
+        return result
+
+
+    def delete_user(self, email: str, target: OperationTarget = OperationTarget.BOTH) -> Dict[str, str]:
         """Delete user from specified targets (Firebase, AWS, or both)"""
         result = {"status": "success", "message": ""}
 
-        if target in [DeletionTarget.FIREBASE, DeletionTarget.BOTH]:
+        if target in [OperationTarget.FIREBASE, OperationTarget.BOTH]:
             try:
                 # Use existing function to delete from Firebase
                 auth_functions.delete_account_adm(email)
@@ -95,7 +178,7 @@ class UserManagement:
                 result["status"] = "error"
                 result["message"] += f"Firebase error: {str(e)}. "
 
-        if target in [DeletionTarget.AWS, DeletionTarget.BOTH]:
+        if target in [OperationTarget.AWS, OperationTarget.BOTH]:
             try:
                 aws_data = self._load_aws_auditors()
                 auditor = next((a for a in aws_data['auditors'] if a['email'] == email), None)
@@ -224,7 +307,7 @@ if __name__ == "__main__":
 
     # Pegar informações de todos os usuários
     all_users = user_manager.get_all_users_info()
-    print("\nAll Users Information:")
+    print("\nAll Users Information before:")
     print(all_users)
 
     # Pegar informações de todos os itens e requisições
@@ -236,4 +319,24 @@ if __name__ == "__main__":
     if data['message']:
         print(f"Messages: {data['message']}")
 
-    print(data)
+
+    # result = user_manager.add_user(
+    #     email="iamsecured.dex@gmail.com",
+    #     password="*******",
+    #     name="Edward Admin",
+    #     role="adm",
+    #     target=OperationTarget.BOTH
+    # )
+    # print(result)
+
+    # result = user_manager.delete_user(
+    #     email="iamsecured.dex@gmail.com",
+    #     target=OperationTarget.FIREBASE
+    # )
+    # print(result)
+
+    # print(data)
+
+    all_users = user_manager.get_all_users_info()
+    print("\nAll Users Information after:")
+    print(all_users)

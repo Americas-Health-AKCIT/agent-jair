@@ -73,7 +73,7 @@ if st.session_state.user_role == "adm":
 
         with col2:
             # Gerar próximo ID disponível
-            existing_ids = [a.get('id', 0) for a in st.session_state.auditors_data.get('auditors', [])]
+            existing_ids = [int(a.get('id', 0)) for a in st.session_state.auditors_data.get('auditors', [])]
             next_id = max(existing_ids, default=0) + 1
             new_id = st.number_input("ID", value=next_id, disabled=True)
             new_password = st.text_input("Senha", type="password", placeholder="Digite a senha do usuário")
