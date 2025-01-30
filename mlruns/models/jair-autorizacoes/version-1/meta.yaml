@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1737736623318
+current_stage: Production
+description: ''
+last_updated_timestamp: 1737736642527
+name: jair-autorizacoes
+run_id: 061d5d15b271456a9c211128efdee735
+run_link: ''
+source: file:///C:/Users/JoaoC/Nextcloud/Projetos/AmericasHealth/agente-jair-autorizacao/mlruns/606247561951303065/061d5d15b271456a9c211128efdee735/artifacts/xgboost_model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/JoaoC/Nextcloud/Projetos/AmericasHealth/agente-jair-autorizacao/mlruns/606247561951303065/061d5d15b271456a9c211128efdee735/artifacts/xgboost_model
+user_id: null
+version: 1

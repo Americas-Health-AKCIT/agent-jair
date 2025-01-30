@@ -1,213 +1,95 @@
-import streamlit as st
-import os,time
-import ast
 import dotenv
 dotenv.load_dotenv()
-from langchain_openai import ChatOpenAI
-from prompt import prompt, prompt_deicider_sim_ou_nao
-from langchain_openai import OpenAIEmbeddings
-from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.prompts import PromptTemplate
-from langchain_core.pydantic_v1 import BaseModel, Field, ValidationError
-import pandas as pd
-from datetime import datetime
+
+import sys
+print(sys.executable)
+
+import json
+
 from utils.state import STATE_CLASS
-from openai import OpenAI
-from models._models import run_prompt
+from utils.get_requisition_details import get_requisition_details
+
+from justificador.justificador import justificador
+
+from modelo_ml_tradicional.inference import carregar_modelo_e_pipeline, fazer_predicao_por_id
 
 
-# Classe que define o JSON dos dados dos CSVs
-class ItemModel(BaseModel):
-    nome_do_item: str = Field(..., alias="Nome do Item")
-    codigo_correspondente_ao_item: str = Field(..., alias="Código correspondente ao item")
-    situacao: str = Field(..., alias="Situação")
-    justificativa: str = Field(..., alias="Justificativa")
+response_test = {13692546: True, 13692559: True, 13692560: True, 13692561: True, 13692562: True, 13692563: True, 13692564: True, 13692576: True, 13692577: True, 13692578: True, 13692579: True, 13692580: True, 13692581: True, 13692582: True, 13692584: True, 13692607: True, 13692543: True, 13692549: True, 13692547: True, 13692552: False, 13692555: True, 13692556: True, 13692558: True, 13692565: True, 13692566: True, 13692567: True, 13692568: True, 13692569: True, 13692570: True, 13692571: True, 13692572: True, 13692573: True, 13692574: True, 13692586: True, 13692587: True, 13692588: True, 13692590: False, 13692591: False, 13692592: True, 13692593: True, 13692594: True, 13692595: True, 13692596: True, 13692597: True, 13692598: True, 13692599: True, 13692600: True, 13692601: True, 13692602: True, 13692603: False, 13692604: True, 13692605: True, 13692606: True}
 
+def process_requisition():
+    raise NotImplementedError("Parte onde o input é o resumo, e o output é a resposta do modelo")
 
-# Função que retorna os códigos dos itens da requisição
-def get_item_id_codes(verbose:bool = False):
+def create_justificativa(resumo, response):
 
-    source_files = os.path.join('data') 
-    source_files = os.listdir(source_files)
-    source_files = [file for file in source_files if file.endswith('_codes.txt')]
-    source_files = [os.path.join('data',file)  for file in source_files ]
+    paciente_info = {
+        'ID_REQUISICAO': resumo['Número da requisição'],
+        'DT_REQUISICAO': resumo['Data da abertura da requisição'],
+        'DS_TIPO_GUIA': resumo['Tipo Guia'],
+        'DS_CARATER_ATENDIMENTO': resumo['Caráter de atendimento (Urgência ou eletiva)'],
+        'Idade do beneficiário': resumo['Idade do beneficiário'],
+        'DATA_CANCELAMENTO': resumo['Situação contratual'],
+        'DATA_FIM_CARENCIA': resumo['Período de carência?'],
+        'DS_CBO_PROFISSIONAL': resumo['DS_CBO_PROFISSIONAL'],
+        'DS_TIPO_INTERNACAO': resumo['DS_TIPO_INTERNACAO'],
+        'DS_REGIME_INTERNACAO': resumo['DS_REGIME_INTERNACAO'],
+        'DS_TIPO_SADT': resumo['DS_TIPO_SADT'],
+        'DS_TIPO_CONSULTA': resumo['DS_TIPO_CONSULTA'],
+        'TITULARIDADE': resumo['TITULARIDADE'],
+        'DATA_NASCIMENTO': resumo['DATA_NASCIMENTO']
+    }
+
+    justificativas = []
+    id_itens = []
+    item_descs = []
+    classificacoes = []
+    fontes = []
+    responses = []
+
+    ds_item_map = resumo["Descrição dos procedimentos"]
+    ds_classificacao_map = resumo["Tipo dos itens (nivel 2)"]
     
-    # Read contents of each _codes.txt file and append to all_codes list
-    all_codes_set = set()
-    for txt_file_path in source_files:
-        #txt_file_name = os.path.splitext(file_name)[0] + '_codes.txt'  # Construct the txt file name
-        #txt_file_path = os.path.join('data', txt_file_name)  # Assuming files are in the 'data' directory
-        
-        if verbose:
-            print(f'Txt File Path: {txt_file_path}')
+    for id_item, item_desc in ds_item_map.items():
+        classificacao = ds_classificacao_map.get(id_item, "N/A")  # Lookup classification
+        justificativa, fonte = justificador(
+            id_item,
+            {"DS_ITEM": item_desc, "DS_CLASSIFICACAO_1": classificacao},
+            paciente_info,
+            status=response.get(id_item)
+        )
 
-        if os.path.exists(txt_file_path):
-            with open(txt_file_path, 'r') as file:
-                codes_list = ast.literal_eval(file.read().strip())
-                all_codes_set.update(codes_list)
-        else:
-            print("There are no codes in the file, therefore there is no txt.")
-            return [0]
+        justificativas.append(justificativa)
+        fontes.append(fonte)
+        id_itens.append(id_item)
+        item_descs.append(item_desc)
+        classificacoes.append(classificacao)
+        responses.append(response[id_item])
 
+    items = []
+    for id_item, item_desc, fonte, justificativa, response in zip(id_itens, item_descs, fontes, justificativas, responses):
+        situacao = "AUTORIZADO" if response else "NEGADO"
+        item = {
+            "Código correspondente ao item": id_item,
+            "description": item_desc,
+            "source": fonte,
+            "analysis": justificativa,
+            "Situação": situacao
+        }
+        items.append(item)
 
-    # Transformando elementos dentro da lista de string para int
-    all_codes = list(all_codes_set)
-    all_codes = [int(code) for code in all_codes]
+    data = {"items": items}
 
-    return all_codes
-
-
-# Função que retorna a decisão final do assistente
-def return_yes_no_decision(API_RESPONSE):
-    top_two_logprobs = API_RESPONSE.choices[0].logprobs.content[0].top_logprobs
-    for item in top_two_logprobs:
-        print(item.token)
-        if item.token in ['sim', 'Sim', 'Sí', 'SIM', ' Sim']:
-            return "AUTORIZADO"
-        if item.token in ['não', 'Não', 'No']:
-            return "RECUSADO"
-        if item.token in ['ins', 'Ins', 'In', 'Insuficiente', 'Insuficient', 'Insufficient', 'INSUFICIENTE']:
-            return "NÃO ENCONTRADO DOCUMENTOS QUE AUXILIEM A DECISÃO"
-    raise ValueError(f"Não foi possível encontrar um token representativo: {str([item.token for item in top_two_logprobs])}")
-
-
-# Função para o agente processar a requisição 
-def process_requisition(state: STATE_CLASS, resumo, custom_rag_prompt, custom_yes_no_prompt, llm, client_openai, verbose: bool = False):
-    items_results = []
-    fontes_dict = []
-    
-    all_codes = get_item_id_codes(verbose)
-    # print("Resumo Debug", resumo)
-
-    if resumo == {'Error': 'REQUISICAO_ID not found'}:
-        raise ValueError("Não existe requisição com esse ID")
-
-    for item_id, item_description in resumo['Descrição dos procedimentos'].items(): # para cada item
-        item_resumo = resumo.copy()
-        item_resumo['Descrição dos procedimentos'] = {item_id: item_description}
-        
-                
-        item = {'Código correspondente ao item':item_id, 
-                'description':item_description,
-                'document': [],
-                'justificativa': None,
-                
-                }
-        
-        ###############################################
-        ### RAG  - Gerando o contexto de cada item  ###
-        ###############################################
-        
-        rag_result = state.retriever.invoke(str(item_description))
-        rag_text = format_docs(rag_result)
-        
-        item['document'] = []  # Inicializa a lista de fontes para o item
-        for doc in rag_result:
-            fonte = {
-                #"Documento": doc.page_content,
-                #"Página":    doc.metadata["page"],
-                "Trecho":    doc.page_content,
-            }
-            item['document'].append(fonte)
-        
-        item['document'] = rag_result    
-        
-        if verbose:
-            print(f'Current Item ID: {item_id}')
-            print(f'All Codes: {all_codes}')
-            print(f'Item ID found') if item_id in all_codes else print(f'Item ID not found')
-        
-        if item_id in all_codes or all_codes == [0]:
-            ###############################################################################
-            ### PROMPT 1  - Gerando um motivo para decidir se o item é aprovado ou não  ###
-            ###############################################################################
-
-            #prompt customizado
-            prompt = custom_rag_prompt.invoke({"context":rag_text, "question": str(item_resumo)}).text
-
-            # passa o prompt para o LLM
-            ouput_llm_text = run_prompt(prompt)
-            item['analysis'] =  ouput_llm_text
-    
-    
-            ##########################################################################
-            ### PROMPT 2  - Dado o motivo, decidir se deve ser aceito ou recusado  ### 
-            ##########################################################################
-
-            prompt = custom_yes_no_prompt.invoke(item).text
-            
-            tentativas = 0
-            while True:
-                try:
-                    API_RESPONSE = client_openai.chat.completions.create(messages=[{"role": "user", "content": prompt}],
-                                                                    model="gpt-4o-mini",
-                                                                    logprobs=True,
-                                                                    top_logprobs=20,
-                                                                    max_tokens=1,
-                                                                    seed=0,
-                                                                    )
-                    break
-                except Exception as e:
-                    print(e)
-                    time.sleep(1)
-                    print("tentando nova chamada ....")
-                    tentativas += 1
-                    if tentativas == 10:
-                        raise Exception("Não foi possível chamar a API da OpenAi com o modelo GPT-4O-mini")
-                    
-            item['Situação'] = return_yes_no_decision(API_RESPONSE)
-        
-        else:
-            item['Situação'] = "NÃO ENCONTRADO DOCUMENTOS QUE AUXILIEM A DECISÃO"
-            item['analysis'] = 'Item não encontrado nos DOCUMENTOS, portanto não há como fazer uma análise. Porém, o assistente procurou sobre o assunto nos DOCUMENTOS e você pode conferir o que ele achou abaixo, na aba de "fontes".'
-                
-        items_results.append(item)  # Collect the result for each item
-        
-        
-        
-    # Combine all the individual item results into a single JSON list
-    for item in items_results:
-        fontes_dict.append({item_description: item['document']})
-
-    return {"items": items_results} , fontes_dict
-
-
-# Função para formatar documentos
-def format_docs(docs):
-    return "\n\n".join(doc.page_content for doc in docs)
+    return data
 
 if __name__ == "__main__":
-    # Execução do código simples para usar de referência
 
-    client_openai = OpenAI()
-    
-    path_file = os.path.dirname(__file__)
-    json_output_parser = JsonOutputParser(pydantic_object=ItemModel)
-    llm = ChatOpenAI(model="gpt-4o")
-
-    custom_rag_prompt = PromptTemplate(input_variables=["context", "question"], template=prompt)
-    custom_yes_no_prompt = PromptTemplate(input_variables=["description", "analysis"], template=prompt_deicider_sim_ou_nao)
-
-    
     def get_state():
         return STATE_CLASS()
 
     state = get_state()
 
-
-    rag_chain = (
-        {"context": state.retriever | format_docs, "question": RunnablePassthrough()}
-        | custom_rag_prompt
-        | llm
-        | json_output_parser
-    )
-    
-    from utils.get_requisition_details import get_requisition_details
-
-    # resumo = get_requisition_details(182541, state) # Req do sample antigo
-    resumo = get_requisition_details(41991240, state) # Req do sample de agosto
-    final_output , fontes_dict = process_requisition(state=state, resumo=resumo, custom_rag_prompt=custom_rag_prompt, custom_yes_no_prompt=custom_yes_no_prompt, llm=llm, client_openai=client_openai)
-
+    resumo = get_requisition_details(41971486, state) 
     print("Resumo: ", resumo)
-    print("\n\n\nFinal output: ", final_output)
+    # model = None #enquanto não temos o modelo
+    # response = model(resumo)
+
+    data = create_justificativa(resumo)

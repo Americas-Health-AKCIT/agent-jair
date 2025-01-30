@@ -1,0 +1,15 @@
+name: deploy na aws
+
+on:
+  push:
+    branches:
+      - development
+      - staging
+      - production
+
+jobs:
+  run_deploy:
+    uses: Americas-Health-AKCIT/infra-pipelines/.github/workflows/ecs.yml@production
+    with:
+      environment: ${{ github.ref_name }}
+    secrets: inherit
