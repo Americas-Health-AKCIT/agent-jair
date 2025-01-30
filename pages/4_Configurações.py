@@ -134,7 +134,7 @@ if st.session_state.user_role == "adm":
                 # Botão para remover auditor
                 if st.button("🗑️ Remover", key=f"remove_{auditor['id']}", use_container_width=True):
                     with auth_notification, st.spinner('Removendo conta...'):
-                        # auth_functions.delete_account_adm(auditor['email'])
+                        auth_functions.delete_account_adm(auditor['email'])
                         st.session_state.auditors_data['auditors'].remove(auditor)
                         save_auditors(st.session_state.auditors_data)
                         st.success(f"Auditor {auditor['name']} removido com sucesso!")
