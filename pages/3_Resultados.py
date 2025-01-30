@@ -433,19 +433,19 @@ else:
         with col1:
             start_date = pd.Timestamp(st.date_input(
                 "Data inicial",
-                value=df[df['auditor'].isin(selected_auditor)]['data'].min().date()
+                value=df[df['auditor'] == selected_auditor]['data'].min().date()  # Changed from .isin()
             ))
         with col2:
             end_date = pd.Timestamp(st.date_input(
                 "Data final",
-                value=df[df['auditor'].isin(selected_auditor)]['data'].max().date()
+                value=df[df['auditor'] == selected_auditor]['data'].max().date()  # Changed from .isin()
             ))
 
     # Apply both auditor and date filters
     mask = (
         (df['data'].dt.date >= start_date.date()) &
         (df['data'].dt.date <= end_date.date()) &
-        (df['auditor'].isin(selected_auditor))
+        (df['auditor'] == selected_auditor)  # Changed from .isin()
     )
     filtered_df = df[mask]
 
