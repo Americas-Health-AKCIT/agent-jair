@@ -5,11 +5,38 @@ from datetime import datetime
 import requests
 from config.config import settings
 import time
+import json
+import boto3
+import os
+
+# Initialize Firebase Admin with service account from AWS Secrets Manager
+def get_firebase_credentials():
+    """Busca as credenciais do Firebase do AWS Secrets Manager"""
+    try:
+        secret_arn = os.environ.get('FIREBASE_SERVICE_ACCOUNT_SECRET_ARN')
+        if not secret_arn:
+            raise ValueError("FIREBASE_SERVICE_ACCOUNT_SECRET_ARN não está definida")
+
+        session = boto3.session.Session()
+        client = session.client(
+            service_name='secretsmanager',
+            region_name='us-east-1'
+        )
+        
+        secret_value = client.get_secret_value(SecretId=secret_arn)
+        return json.loads(secret_value['SecretString'])
+    except Exception as e:
+        print(f"Erro ao buscar credenciais do Firebase: {e}")
+        raise
 
 # Initialize Firebase Admin with service account
 if not firebase_admin._apps:
-    cred = credentials.Certificate('service_account.json')
-    firebase_admin.initialize_app(cred)
+    try:
+        cred = credentials.Certificate(get_firebase_credentials())
+        firebase_admin.initialize_app(cred)
+    except Exception as e:
+        print(f"Erro ao inicializar Firebase Admin: {e}")
+        raise
 
 def verify_token(id_token):
     """Verify the Firebase ID token"""
