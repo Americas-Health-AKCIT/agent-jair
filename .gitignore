@@ -16,3 +16,5 @@ modelo_ml_tradicional/mlruns
 /modelo_ml_tradicional/Evah
 /data/Evah
 *.sh
+service_account.json
+service_account_evah.json
