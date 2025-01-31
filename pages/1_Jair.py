@@ -1,6 +1,7 @@
 import streamlit as st
 from utils.firebase_admin_init import verify_token
 import utils.auth_functions as auth_functions
+import streamlit.components.v1 as components
 # TODO: Add menu items
 if 'user_info' not in st.session_state:
     st.switch_page("0_Inicio.py")
@@ -47,6 +48,28 @@ def load_auditors():
         if e.response['Error']['Code'] == 'NoSuchKey':
             return {"auditors": []}
         raise
+
+
+def change_button_color(widget_label, font_color='white', background_color='rgb(80, 184, 255)'):
+    htmlstr = f"""
+        <script>
+            var elements = window.parent.document.querySelectorAll('button');
+            for (var i = 0; i < elements.length; ++i) {{ 
+                if (elements[i].innerText == '{widget_label}') {{ 
+                    elements[i].style.color = '{font_color}';
+                    elements[i].style.background = '{background_color}';
+                    elements[i].style.border = '1px solid {background_color}';
+                    elements[i].onmouseover = function() {{
+                        this.style.backgroundColor = 'rgb(100, 204, 255)';
+                    }};
+                    elements[i].onmouseout = function() {{
+                        this.style.backgroundColor = '{background_color}';
+                    }};
+                }}
+            }}
+        </script>
+        """
+    components.html(f"{htmlstr}", height=0, width=0)
 
 @st.cache_resource
 def get_state():
@@ -126,7 +149,10 @@ with st.sidebar:
     send_button = st.button("Enviar", use_container_width=True)
     
     # Link para instruções
-    st.info('📖 Precisa de ajuda? Consulte as [Instruções](Instruções).', icon="ℹ️")
+    button_label = "ℹ️ 📖 Precisa de ajuda? Consulte as Instruções"
+    if st.button(button_label, use_container_width=True, key='help_button_sidebar'):
+        st.switch_page("pages/2_Instruções.py")
+    change_button_color(button_label, 'blue', 'lightblue')
     
     st.divider()
     
@@ -206,7 +232,12 @@ auditor_info = next((a for a in auditors_list if a['email'] == current_user['ema
 
 if not st.session_state.resumo:
     st.subheader(f"Seja Bem-Vindo/a, {auditor_info['name']}!")
-    st.info('📖 Precisa de ajuda? Consulte as [Instruções](Instruções).', icon="ℹ️")
+    col1_help, col2_help = st.columns([1,1])
+    with col1_help:
+        button_label_2 = "ℹ️ 📖 Precisa de ajuda? Consulte as Instruções"
+        if st.button(button_label_2, use_container_width=True, key='help_button_main'):
+            st.switch_page("pages/2_Instruções.py")
+        change_button_color(button_label_2, 'blue', 'lightblue')
 
 else:
     st.markdown("""
