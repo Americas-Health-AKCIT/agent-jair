@@ -10,7 +10,7 @@ from datetime import datetime
 import utils.auth_functions as auth_functions
 
 if 'user_info' not in st.session_state:
-    st.switch_page("Inicio.py")
+    st.switch_page("0_Inicio.py")
 
 # Verify token on each request
 decoded_token = verify_token(st.session_state.id_token)

@@ -296,6 +296,51 @@ class UserManagement:
             result["message"] = f"Error listing objects: {str(e)}"
 
         return result
+
+
+    def change_user_role(self, email: str, new_role: str, target: OperationTarget = OperationTarget.BOTH) -> Dict[str, str]:
+        """Change user role in specified targets (Firebase, AWS, or both)"""
+        result = {
+            "status": "success",
+            "message": ""
+        }
+
+        if new_role not in auth_functions.VALID_ROLES:
+            return {
+                "status": "error",
+                "message": f"Invalid role. Must be one of: {', '.join(auth_functions.VALID_ROLES)}"
+            }
+
+        if target in [OperationTarget.FIREBASE, OperationTarget.BOTH]:
+            try:
+                firebase_user = auth.get_user_by_email(email)
+                auth.set_custom_user_claims(firebase_user.uid, {'role': new_role})
+                result["message"] += "Firebase: User role updated successfully. "
+            except auth.UserNotFoundError:
+                result["status"] = "error"
+                result["message"] += f"Firebase: User with email {email} not found. "
+            except Exception as e:
+                result["status"] = "error"
+                result["message"] += f"Firebase error: {str(e)}. "
+
+        if target in [OperationTarget.AWS, OperationTarget.BOTH]:
+            try:
+                aws_data = self._load_aws_auditors()
+                auditor = next((a for a in aws_data['auditors'] if a['email'] == email), None)
+
+                if auditor:
+                    auditor['role'] = new_role
+                    self._save_aws_auditors(aws_data)
+                    result["message"] += "AWS: User role updated successfully. "
+                else:
+                    if result["status"] == "success":
+                        result["status"] = "error"
+                    result["message"] += f"AWS: User with email {email} not found. "
+            except Exception as e:
+                result["status"] = "error"
+                result["message"] += f"AWS error: {str(e)}. "
+
+        return result
     
 
 if __name__ == "__main__":
@@ -321,16 +366,16 @@ if __name__ == "__main__":
 
 
     # result = user_manager.add_user(
-    #     email="iamsecured.dex@gmail.com",
-    #     password="*******",
-    #     name="Edward Admin",
-    #     role="adm",
+    #     email="example@mail.com",
+    #     password="****",
+    #     name="John Doe",
+    #     role="auditor",
     #     target=OperationTarget.BOTH
     # )
     # print(result)
 
     # result = user_manager.delete_user(
-    #     email="iamsecured.dex@gmail.com",
+    #     email="admamhceia@gmail.com",
     #     target=OperationTarget.FIREBASE
     # )
     # print(result)
