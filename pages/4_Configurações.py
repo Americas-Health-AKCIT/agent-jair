@@ -169,11 +169,24 @@ if st.session_state.user_role == "adm":
 
 st.divider()
 st.markdown("<div style='margin-top: 40px'></div>", unsafe_allow_html=True)
-col1, col2, col3, col4 = st.columns([3, 1, 1, 3])
+col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.subheader("🔐 Sair")
-with col3:
-    st.button(label='Clique aqui para sair',on_click=auth_functions.sign_out,type='primary')
+    st.markdown("<h3 style='text-align: center;'>🔐 Sair</h3>", unsafe_allow_html=True)
+    
+    # Create a centered container for the button
+    st.markdown("""
+        <div style='display: flex; justify-content: center;'>
+            <div style='width: 200px;'>  <!-- Adjust width as needed -->
+    """, unsafe_allow_html=True)
+    
+    st.button(
+        label='Clique aqui para sair',
+        on_click=auth_functions.sign_out,
+        type='primary',
+        use_container_width=True
+    )
+    
+    st.markdown("</div></div>", unsafe_allow_html=True)
 
 # st.text("current user")
 # st.text(auth_functions.get_current_user_info(st.session_state.id_token))
