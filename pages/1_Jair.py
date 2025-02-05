@@ -321,7 +321,7 @@ else:
             col_labels2, col_values2 = st.columns([1, 2])
             with col_labels2:
                 st.markdown("👨‍⚕️ **Médico:**")
-                st.markdown("📅 **Data:**")
+                st.markdown("📅 **Data da Requisição:**")
                 st.markdown("🚨 **Caráter:**")
                 st.markdown("📄 **Tipo Guia:**")
                 st.markdown("🔍 **Itens:**")
