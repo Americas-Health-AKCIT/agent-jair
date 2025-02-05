@@ -1,5 +1,6 @@
 import dotenv
 dotenv.load_dotenv()
+from concurrent.futures import ThreadPoolExecutor
 
 import sys
 print(sys.executable)
@@ -38,46 +39,52 @@ def create_justificativa(resumo, response):
         'DATA_NASCIMENTO': resumo['DATA_NASCIMENTO']
     }
 
-    justificativas = []
-    id_itens = []
-    item_descs = []
-    classificacoes = []
-    fontes = []
-    responses = []
-
     ds_item_map = resumo["Descrição dos procedimentos"]
     ds_classificacao_map = resumo["Tipo dos itens (nivel 2)"]
-    
-    for id_item, item_desc in ds_item_map.items():
-        classificacao = ds_classificacao_map.get(id_item, "N/A")  # Lookup classification
-        justificativa, fonte = justificador(
-            id_item,
-            {"DS_ITEM": item_desc, "DS_CLASSIFICACAO_1": classificacao},
-            paciente_info,
-            status=response.get(id_item)
-        )
 
-        justificativas.append(justificativa)
-        fontes.append(fonte)
-        id_itens.append(id_item)
-        item_descs.append(item_desc)
-        classificacoes.append(classificacao)
-        responses.append(response[id_item])
+    resultados = {}
+    
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        future_to_item = {}
+        for id_item, item_desc in ds_item_map.items():
+            classificacao = ds_classificacao_map.get(id_item, "N/A")
+            future = executor.submit(
+                justificador,
+                id_item,
+                {"DS_ITEM": item_desc, "DS_CLASSIFICACAO_1": classificacao},
+                paciente_info,
+                status=response.get(id_item)
+            )
+            future_to_item[future] = (id_item, item_desc)
+
+        for future in future_to_item:
+            id_item, item_desc = future_to_item[future]
+            try:
+                justificativa, fonte = future.result()
+            except Exception as e:
+                justificativa, fonte = f"Erro: {e}", ""
+            resultados[id_item] = {
+                "justificativa": justificativa,
+                "fonte": fonte,
+                "item_desc": item_desc,
+                "response": response.get(id_item)
+            }
 
     items = []
-    for id_item, item_desc, fonte, justificativa, response in zip(id_itens, item_descs, fontes, justificativas, responses):
-        situacao = "AUTORIZADO" if response else "NEGADO"
+    for id_item, item_desc in ds_item_map.items():
+        resultado = resultados.get(id_item, {})
+        situacao = "AUTORIZADO" if resultado.get("response") else "NEGADO"
         item = {
             "Código correspondente ao item": id_item,
-            "description": item_desc,
-            "source": fonte,
-            "analysis": justificativa,
+            "description": resultado.get("item_desc", item_desc),
+            "source": resultado.get("fonte", ""),
+            "analysis": resultado.get("justificativa", ""),
             "Situação": situacao
         }
         items.append(item)
 
     data = {"items": items}
-
+    
     return data
 
 if __name__ == "__main__":
