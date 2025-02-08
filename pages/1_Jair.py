@@ -321,7 +321,7 @@ else:
             col_labels2, col_values2 = st.columns([1, 2])
             with col_labels2:
                 st.markdown("👨‍⚕️ **Médico:**")
-                st.markdown("📅 **Data:**")
+                st.markdown("📅 **Data da Requisição:**")
                 st.markdown("🚨 **Caráter:**")
                 st.markdown("📄 **Tipo Guia:**")
                 st.markdown("🔍 **Itens:**")
@@ -442,24 +442,24 @@ if st.session_state.final_output:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.write("👨‍⚕️ **Decisão do Auditor**")
+            st.write("👨‍⚕️ **Você autoriza ou recusa esse item?**")
             # Mostrar status atual se existir
             if "auditor" in item and "authorized_item" in item["auditor"]:
-                current_status = "✅ Aprovado" if item["auditor"]["authorized_item"] else "❌ Recusado"
+                current_status = "✅ Autorizado" if item["auditor"]["authorized_item"] else "❌ Negado"
                 st.info(f"📌 Status atual: {current_status}")
             
             col_apr, col_rec = st.columns(2)
             with col_apr:
-                approved = st.button("✅ Aprovar", key=f"approve_{idx}", 
+                approved = st.button("✅ Autorizar", key=f"approve_{idx}", 
                                    use_container_width=True,
                                    type="secondary" if not item.get("auditor", {}).get("authorized_item", None) else "primary")
             with col_rec:
-                rejected = st.button("❌ Recusar", key=f"reject_{idx}", 
+                rejected = st.button("❌ Negar", key=f"reject_{idx}", 
                                    use_container_width=True,
                                    type="secondary" if item.get("auditor", {}).get("authorized_item", None) else "primary")
         
         with col2:
-            st.write("⭐ **Avaliação da Resposta**")
+            st.write("⭐ **O que você achou da qualidade da justificativa do Jair?**")
             # Mostrar avaliação atual se existir
             if "auditor" in item and "quality_rating" in item["auditor"]:
                 current_rating = "👍 Boa" if item["auditor"]["quality_rating"] else "👎 Ruim"
