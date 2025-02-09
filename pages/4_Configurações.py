@@ -4,6 +4,28 @@ import utils.auth_functions as auth_functions
 import boto3
 import json
 from botocore.exceptions import ClientError
+import streamlit.components.v1 as components
+
+def change_button_color(widget_label, font_color='white', background_color='rgb(80, 184, 255)', border_color=None):
+    htmlstr = f"""
+        <script>
+            var elements = window.parent.document.querySelectorAll('button');
+            for (var i = 0; i < elements.length; ++i) {{ 
+                if (elements[i].innerText == '{widget_label}') {{ 
+                    elements[i].style.color = '{font_color}';
+                    elements[i].style.background = '{background_color}';
+                    elements[i].style.border = '1px solid {border_color}';
+                    elements[i].onmouseover = function() {{
+                        this.style.backgroundColor = 'rgb(100, 204, 255)';
+                    }};
+                    elements[i].onmouseout = function() {{
+                        this.style.backgroundColor = '{background_color}';
+                    }};
+                }}
+            }}
+        </script>
+        """
+    components.html(f"{htmlstr}", height=0, width=0)
 
 if 'user_info' not in st.session_state:
     st.switch_page("0_Inicio.py")
@@ -132,7 +154,8 @@ if st.session_state.user_role == "adm":
                 st.markdown(f"**Role:** {auditor.get('role', 'Erro ao carregar role')}")
 
                 # Botão para remover auditor
-                if st.button("🗑️ Remover", key=f"remove_{auditor['id']}", use_container_width=True):
+                remover_pressed = st.button("🗑️ Remover", key=f"remove_{auditor['id']}", use_container_width=True)
+                if remover_pressed:
                     with auth_notification, st.spinner('Removendo conta...'):
                         auth_functions.delete_account_adm(auditor['email'])
                         st.session_state.auditors_data['auditors'].remove(auditor)
