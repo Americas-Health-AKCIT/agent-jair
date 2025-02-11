@@ -14,10 +14,14 @@ from model.inference import fazer_predicao_por_id
 from tenacity import retry, stop_after_attempt, wait_exponential
 import utils.auth_functions as auth_functions
 
-st.set_page_config(page_title="Processamento em Lote - Assistente de Auditoria", page_icon="🔄", layout="wide")
+st.set_page_config(
+    page_title="Processamento em Lote - Assistente de Auditoria",
+    page_icon="🔄",
+    layout="wide",
+)
 
 # Configuração do S3
-s3 = boto3.client('s3')
+s3 = boto3.client("s3")
 BUCKET = "amh-model-dataset"
 AUDITORS_KEY = "user_data_app/auditors/auditors.json"
 
@@ -26,42 +30,52 @@ MAX_RETRIES = 3
 INITIAL_WAIT = 1  # segundos
 MAX_WAIT = 10  # segundos
 
+
 def load_auditors():
     try:
         response = s3.get_object(Bucket=BUCKET, Key=AUDITORS_KEY)
-        return json.loads(response['Body'].read().decode('utf-8'))
+        return json.loads(response["Body"].read().decode("utf-8"))
     except ClientError as e:
-        if e.response['Error']['Code'] == 'NoSuchKey':
+        if e.response["Error"]["Code"] == "NoSuchKey":
             return {"auditors": []}
         raise
 
+
 current_user = auth_functions.get_current_user_info(st.session_state.id_token)
 auditors_data = load_auditors()
-auditors_list = auditors_data.get('auditors', [])
+auditors_list = auditors_data.get("auditors", [])
 
-if current_user['role'] != 'adm':
+if current_user["role"] != "adm":
     st.switch_page("pages/1_Jair.py")
 
-elif current_user['role'] == 'auditor':
-    @retry(stop=stop_after_attempt(MAX_RETRIES),
-           wait=wait_exponential(multiplier=INITIAL_WAIT, max=MAX_WAIT))
-    async def process_single_requisition(req_num: str, state: STATE_CLASS, history: RequisitionHistory, selected_auditor: str):
+elif current_user["role"] == "auditor":
+
+    @retry(
+        stop=stop_after_attempt(MAX_RETRIES),
+        wait=wait_exponential(multiplier=INITIAL_WAIT, max=MAX_WAIT),
+    )
+    async def process_single_requisition(
+        req_num: str,
+        state: STATE_CLASS,
+        history: RequisitionHistory,
+        selected_auditor: str,
+    ):
         """Processa uma única requisição com mecanismo de retry"""
         try:
             # Verificar se já existe
             if history.has_requisition(req_num):
                 return {
                     "status": "already_processed",
-                    "message": f"Requisição {req_num} já processada anteriormente."
+                    "message": f"Requisição {req_num} já processada anteriormente.",
                 }
 
             # Obter detalhes da requisição
-            resumo = get_requisition_details(int(req_num), state)
+            resumo = get_requisition_details(int(req_num))
 
             if resumo == {"Error": "REQUISICAO_ID not found"}:
                 return {
                     "status": "not_found",
-                    "message": f"Requisição {req_num} não encontrada"
+                    "message": f"Requisição {req_num} não encontrada",
                 }
 
             # Adicionar delay para evitar rate limits
@@ -78,31 +92,35 @@ elif current_user['role'] == 'auditor':
 
             # Salvar no S3
             history.save_complete_requisition(
-                resumo,
-                final_output,
-                None,
-                auditor=selected_auditor
+                resumo, final_output, None, auditor=selected_auditor
             )
 
             return {
                 "status": "success",
-                "message": f"Requisição {req_num} processada com sucesso"
+                "message": f"Requisição {req_num} processada com sucesso",
             }
 
         except Exception as e:
             return {
                 "status": "error",
-                "message": f"Erro ao processar requisição {req_num}: {str(e)}"
+                "message": f"Erro ao processar requisição {req_num}: {str(e)}",
             }
 
-    async def process_batch(req_numbers: list, state: STATE_CLASS, history: RequisitionHistory, selected_auditor: str):
+    async def process_batch(
+        req_numbers: list,
+        state: STATE_CLASS,
+        history: RequisitionHistory,
+        selected_auditor: str,
+    ):
         """Processa um lote de requisições de forma assíncrona"""
         # Criar semáforo para limitar o número de requisições simultâneas
         semaphore = asyncio.Semaphore(5)  # máximo de 5 requisições simultâneas
 
         async def process_with_semaphore(req_num):
             async with semaphore:
-                return await process_single_requisition(req_num, state, history, selected_auditor)
+                return await process_single_requisition(
+                    req_num, state, history, selected_auditor
+                )
 
         # Processar requisições em paralelo
         tasks = [process_with_semaphore(req_num) for req_num in req_numbers]
@@ -116,27 +134,30 @@ elif current_user['role'] == 'auditor':
 
     # Carregar lista de auditores
     auditors_data = load_auditors()
-    auditors_list = auditors_data.get('auditors', [])
-    auditor_names = [a['name'] for a in auditors_list]
+    auditors_list = auditors_data.get("auditors", [])
+    auditor_names = [a["name"] for a in auditors_list]
 
     if not auditor_names:
-        st.error("Nenhum auditor cadastrado. Por favor, cadastre um auditor na página de Configurações.")
+        st.error(
+            "Nenhum auditor cadastrado. Por favor, cadastre um auditor na página de Configurações."
+        )
         st.stop()
 
     # Interface principal
-    st.write("Digite os números das requisições (um por linha) para processamento em lote:")
+    st.write(
+        "Digite os números das requisições (um por linha) para processamento em lote:"
+    )
 
     # Área de texto para números de requisição
     requisition_numbers = st.text_area(
         "Números das Requisições",
         height=200,
-        placeholder="Digite um número de requisição por linha\nExemplo:\n12345678\n87654321\n..."
+        placeholder="Digite um número de requisição por linha\nExemplo:\n12345678\n87654321\n...",
     )
 
     # Seleção do auditor
     selected_auditor = st.selectbox(
-        "Selecione o Auditor Responsável:",
-        options=auditor_names
+        "Selecione o Auditor Responsável:", options=auditor_names
     )
 
     # Configurações avançadas
@@ -148,7 +169,7 @@ elif current_user['role'] == 'auditor':
                 min_value=1,
                 max_value=10,
                 value=5,
-                help="Limite de requisições processadas simultaneamente"
+                help="Limite de requisições processadas simultaneamente",
             )
         with col2:
             retry_count = st.number_input(
@@ -156,7 +177,7 @@ elif current_user['role'] == 'auditor':
                 min_value=1,
                 max_value=5,
                 value=3,
-                help="Número de tentativas em caso de falha"
+                help="Número de tentativas em caso de falha",
             )
 
     # Botão de processamento
@@ -166,7 +187,9 @@ elif current_user['role'] == 'auditor':
             st.stop()
 
         # Converter o texto em lista de números
-        req_numbers = [num.strip() for num in requisition_numbers.split('\n') if num.strip()]
+        req_numbers = [
+            num.strip() for num in requisition_numbers.split("\n") if num.strip()
+        ]
 
         # Criar barra de progresso
         progress_bar = st.progress(0)
@@ -177,21 +200,29 @@ elif current_user['role'] == 'auditor':
 
         # Processar requisições de forma assíncrona
         with st.spinner("Processando requisições..."):
-            results = asyncio.run(process_batch(req_numbers, state, history, selected_auditor))
+            results = asyncio.run(
+                process_batch(req_numbers, state, history, selected_auditor)
+            )
 
         # Contabilizar resultados
-        success = sum(1 for r in results if r['status'] == 'success')
-        already_processed = sum(1 for r in results if r['status'] == 'already_processed')
-        errors = [r['message'] for r in results if r['status'] in ['error', 'not_found']]
+        success = sum(1 for r in results if r["status"] == "success")
+        already_processed = sum(
+            1 for r in results if r["status"] == "already_processed"
+        )
+        errors = [
+            r["message"] for r in results if r["status"] in ["error", "not_found"]
+        ]
 
         # Relatório final
-        st.success(f"""
+        st.success(
+            f"""
         #### Processamento Concluído!
         - Total de requisições: {total}
         - Processadas com sucesso: {success}
         - Já processadas anteriormente: {already_processed}
         - Erros: {len(errors)}
-        """)
+        """
+        )
 
         if errors:
             st.error("#### Erros encontrados:")
@@ -200,7 +231,8 @@ elif current_user['role'] == 'auditor':
 
     # Adicionar instruções de uso
     with st.expander("ℹ️ Como usar"):
-        st.markdown("""
+        st.markdown(
+            """
         ### Instruções de Uso
 
         1. **Preparação**:
@@ -229,4 +261,5 @@ elif current_user['role'] == 'auditor':
         6. **Verificação**:
             - Após o processamento, você pode verificar cada requisição na página principal
             - As requisições estarão disponíveis no histórico
-        """) 
+        """
+        )
