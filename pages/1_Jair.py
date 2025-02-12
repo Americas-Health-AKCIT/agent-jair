@@ -363,19 +363,15 @@ else:
                 st.markdown("🚨 **Caráter:**")
                 st.markdown("📄 **Tipo Guia:**")
                 st.markdown("🔍 **Itens:**")
-
+                st.markdown("🩺 **OPME:**")
+            
             with col_values2:
-                st.write(st.session_state.resumo["Médico solicitante"])
-                st.write(st.session_state.resumo["Data da abertura da requisição"])
-                st.write(
-                    st.session_state.resumo[
-                        "Caráter de atendimento (Urgência ou eletiva)"
-                    ]
-                )
-                st.write(st.session_state.resumo["Tipo Guia"])
-                st.write(
-                    f"{len(st.session_state.resumo['Descrição dos procedimentos'])} item(s)"
-                )
+                st.write(st.session_state.resumo['Médico solicitante'])
+                st.write(st.session_state.resumo['Data da abertura da requisição'])
+                st.write(st.session_state.resumo['Caráter de atendimento (Urgência ou eletiva)'])
+                st.write(st.session_state.resumo['Tipo Guia'])
+                st.write(f"{len(st.session_state.resumo['Descrição dos procedimentos'])} item(s)")
+                st.write("Sim" if st.session_state.resumo["Tipo dos itens (nivel 2)"] == "OPME" else "Não")
 
     st.divider()
     if st.session_state.resumo and st.session_state.final_output is None:
