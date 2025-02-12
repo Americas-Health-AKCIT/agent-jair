@@ -19,3 +19,5 @@ modelo_ml_tradicional/mlruns
 service_account.json
 service_account_*.json
 extra_function_jair.py
+
+.vscode

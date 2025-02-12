@@ -129,7 +129,12 @@ def create_justificativa(resumo, response):
         id_itens.append(id_item)
         item_descs.append(item_desc)
         classificacoes.append(classificacao)
-        responses.append(response[id_item])
+        if response.get(id_item) is not None:
+            responses.append(response.get(id_item))
+        else:
+            print(f"Item {id_item} não encontrado na resposta")
+
+        # responses.append(response[id_item])
 
     items = []
     for id_item, item_desc, fonte, justificativa, response in zip(
