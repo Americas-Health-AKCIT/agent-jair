@@ -11,7 +11,7 @@ import utils.auth_functions as auth_functions
 from utils.requisition_history import RequisitionHistory
 from utils.get_user_info import load_auditors
 from utils.streamlit_utils import change_button_color
-from utils.streamlit_utils import render_requisition_search
+from utils.streamlit_utils import render_requisition_search, load_requisition_into_state
 
 if 'user_info' not in st.session_state:
     st.switch_page("0_Inicio.py")
@@ -468,11 +468,11 @@ else:
     filtered_df = df[mask]
 
     if not filtered_df.empty:
-        st.dataframe(
-            filtered_df[['requisicao', 'data', 'auditor', 'descricao', 'decisao_jair', 'decisao_auditor', 'avaliacao_qualidade']]\
-            .sort_values('data', ascending=False),
-            use_container_width=True
-        )
+        # st.dataframe(
+        #     filtered_df[['requisicao', 'data', 'auditor', 'descricao', 'decisao_jair', 'decisao_auditor', 'avaliacao_qualidade']]\
+        #     .sort_values('data', ascending=False),
+        #     use_container_width=True
+        # )
     
         print('\n\nboth dfs')
         print(df)
@@ -506,22 +506,38 @@ else:
 
         # Group by requisition and display
         for req_num, group in filtered_df.groupby('requisicao'):
-            st.markdown(f"""
-                <div class="requisition-box">
-                    <div class="requisition-header">
-                        <strong>Requisição {req_num}</strong> - {group.iloc[0]['data'].strftime('%d/%m/%Y')} - {group.iloc[0]['data'].strftime('%H:%M')}
+            col_box, col_button = st.columns([7, 3])
+
+            with col_box:
+                st.markdown(f"""
+                    <div class="requisition-box">
+                        <div class="requisition-header">
+                            <strong>Requisição {req_num}</strong> - {group.iloc[0]['data'].strftime('%d/%m/%Y')} - {group.iloc[0]['data'].strftime('%H:%M')}
+                        </div>
+                        <div class="requisition-details">
+                            {group.iloc[0]['descricao']}
+                        </div>
+                        <div class="requisition-footer">
+                            <small>
+                                Código: {group.iloc[0]['codigo']} | 
+                                Decisão Jair: {group.iloc[0]['decisao_jair']} | 
+                                Decisão Auditor: {group.iloc[0]['decisao_auditor']}
+                            </small>
+                        </div>
                     </div>
-                    <div class="requisition-details">
-                        {group.iloc[0]['descricao']}
-                    </div>
-                    <div class="requisition-footer">
-                        <small>
-                            Código: {group.iloc[0]['codigo']} | 
-                            Decisão Jair: {group.iloc[0]['decisao_jair']} | 
-                            Decisão Auditor: {group.iloc[0]['decisao_auditor']}
-                        </small>
-                    </div>
-                </div>
-            """, unsafe_allow_html=True)
+                """, unsafe_allow_html=True)
+            with col_button:
+                st.markdown("<div style='margin-top: 50px;'>", unsafe_allow_html=True)
+                if st.button("Ir para essa requisição", key=f"btn_{req_num}", use_container_width=True):
+                    load_requisition_into_state(req_num, auditor_names, auditor_info, history=None)
+                    st.switch_page("pages/1_Jair.py")
+                change_button_color(
+                    "Ir para essa requisição",
+                    font_color="black",
+                    background_color="rgb(255,255,255)",
+                    border_color="grey",
+                )
+                st.markdown("</div>", unsafe_allow_html=True)
+
     else:
         st.warning("Nenhum dado encontrado para o período selecionado.")

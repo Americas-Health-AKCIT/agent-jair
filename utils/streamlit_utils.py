@@ -50,9 +50,7 @@ def render_requisition_search(
         key_prefix: A string prefix for all the keys used inside the widget.
                     This helps avoid duplicate key errors when rendering the widget multiple times.
     """
-    # Instantiate history if not provided.
     if history is None:
-        from utils.requisition_history import RequisitionHistory
         history = RequisitionHistory()
 
     container.title("Jair - Assistente de Auditoria")
@@ -129,3 +127,59 @@ def render_requisition_search(
 
             if redirect_page:
                 st.switch_page("pages/1_Jair.py")
+
+
+def load_requisition_into_state(requisicao_id, auditor_names, auditor_info, history=None):
+    """
+    Load requisition details into memory (via st.session_state) using the given requisicao_id.
+    
+    Args:
+        requisicao_id: The ID of the requisition (numeric or numeric string).
+        auditor_names: A list of auditor names.
+        auditor_info: A dict containing details about the current auditor.
+        history: (Optional) An instance of RequisitionHistory. A new one is instantiated if None.
+         
+    """
+
+    if not requisicao_id or not str(requisicao_id).isdigit():
+        st.session_state.resumo = None
+        return
+
+    # Determine auditor input.
+    if not auditor_names:
+        st.error("Nenhum auditor cadastrado. Por favor, cadastre um auditor na página de Configurações.")
+        auditor_input = None
+    elif not auditor_info:
+        st.error("Auditor atual não encontrado. Por favor, reporte o problema para o administrador.")
+        auditor_input = None
+    else:
+        auditor_input = auditor_info["name"]
+
+    # Set auditor in session state if available.
+    if auditor_input:
+        st.session_state.auditor = auditor_input
+
+    requisicao_id_str = str(requisicao_id)
+
+    # Instantiate history if not provided.
+    if history is None:
+        from utils.requisition_history import RequisitionHistory
+        history = RequisitionHistory()
+
+    complete_req = history.get_complete_requisition(requisicao_id_str)
+    if complete_req and complete_req.get("model_output"):
+        st.session_state.resumo = complete_req["requisition"]
+        st.session_state.final_output = complete_req["model_output"]
+        if complete_req.get("feedback"):
+            st.session_state.feedback = complete_req["feedback"]
+        st.session_state.n_req = requisicao_id_str
+    else:
+        print("starting to get requisition details")
+        from utils.get_requisition_details import get_requisition_details
+        resumo = get_requisition_details(int(requisicao_id_str))
+        if resumo == {"Error": "REQUISICAO_ID not found"}:
+            st.session_state.resumo = None
+        else:
+            st.session_state.resumo = resumo
+            st.session_state.n_req = requisicao_id_str
+            st.session_state.final_output = None
