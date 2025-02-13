@@ -708,6 +708,26 @@ if st.session_state.final_output:
             st.session_state.auditor_success = "Avaliação salva!"
             st.rerun()
 
+        col_left, col_right = st.columns([5, 1])
+        with col_right:
+            if st.button("Salvar Comentário", key=f"backup_{idx}"):
+                if "auditor" not in item:
+                    item["auditor"] = {}
+                item["auditor"]["comments"] = comment
+                history.save_complete_requisition(
+                    st.session_state.resumo,
+                    st.session_state.final_output,
+                    None,
+                    auditor=st.session_state.auditor,
+                )
+                st.toast("Comentário salvo!", icon="✅")
+            change_button_color(
+                "Salvar Comentário",
+                font_color="black",
+                background_color="rgb(255,255,255)",
+                border_color="grey",
+            )
+
         if comment != previous_comment:
             if "auditor" not in item:
                 item["auditor"] = {}
@@ -718,7 +738,6 @@ if st.session_state.final_output:
                 None,
                 auditor=st.session_state.auditor,
             )
-            st.toast("Comentário salvo!", icon="✅")
 
         st.markdown("</div>", unsafe_allow_html=True)
 
