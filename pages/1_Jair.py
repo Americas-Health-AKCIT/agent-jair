@@ -314,16 +314,20 @@ else:
                 st.markdown("🔢 **Requisição:**")
                 st.markdown("📝 **Nome:**")
                 st.markdown("🎂 **Idade:**")
+                st.markdown("🚻 **Sexo:**")
                 st.markdown("📋 **Situação:**")
                 st.markdown("⏳ **Carência:**")
+                st.markdown("📅 **Início da vigência:**")
                 # st.markdown("👨‍⚕️ **Auditor:**")
 
             with col_values1:
                 st.write(st.session_state.resumo["Número da requisição"])
                 st.write(st.session_state.resumo["Nome do beneficiário"])
                 st.write(f"{st.session_state.resumo['Idade do beneficiário']} anos")
+                st.write(st.session_state.resumo["Sexo do beneficiário"])
                 st.write(st.session_state.resumo["Situação contratual"])
                 st.write(st.session_state.resumo["Período de carência?"])
+                st.write(st.session_state.resumo["Início da vigência"])
                 # st.write(st.session_state.auditor)
 
     # Card do Atendimento

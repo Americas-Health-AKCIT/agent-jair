@@ -212,6 +212,10 @@ def get_requisition_details(requisicao_id: int) -> dict:
 
             data_atualizacao_reqitem_dict[key] = dt_atualizacao
 
+        data_vigencia = first_item.get("DATA_INICIO_VIGENCIA", "N/A")
+        data_vigencia = datetime.fromisoformat(data_vigencia)
+        data_vigencia = data_vigencia.strftime("%d/%m/%Y")
+
         # Monta o dicionário final com os dados da requisição e dos itens
         result = {
             "Número da requisição": first_item["ID_REQUISICAO"],
@@ -224,7 +228,9 @@ def get_requisition_details(requisicao_id: int) -> dict:
             ],
             "Idade do beneficiário": idade,
             "Situação contratual": situacao_contratual,
+            "Sexo do beneficiário": first_item.get("SEXO", "N/A"),
             "Período de carência?": carencia,
+            "Início da vigência": data_vigencia,
             "Descrição dos procedimentos": descriptions_dict,
             "Tipo dos itens (nivel 1)": item_type_dict,
             "Tipo dos itens (nivel 2)": specific_item_type_dict,
