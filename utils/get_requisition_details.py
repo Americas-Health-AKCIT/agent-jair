@@ -52,6 +52,8 @@ def check_carencia(carencia):
     if pd.isna(carencia) or carencia in ["nan", "NaT"]:
         return "Não"
     else:
+        carencia = datetime.fromisoformat(carencia)
+        carencia = carencia.strftime("%d/%m/%Y")
         return (
             f"Sim (Termina na data {carencia} para o(s) procedimento(s) solicitado(s))"
         )
@@ -70,6 +72,8 @@ def determine_contrato(data_cancelamento):
     if pd.isna(data_cancelamento) or data_cancelamento in ["nan", "NaT"]:
         return "Contrato ativo"
     else:
+        data_cancelamento = datetime.fromisoformat(data_cancelamento)
+        data_cancelamento = data_cancelamento.strftime("%d/%m/%Y")
         return f"Contrato cancelado no dia {data_cancelamento}"
 
 
@@ -216,12 +220,16 @@ def get_requisition_details(requisicao_id: int) -> dict:
         data_vigencia = datetime.fromisoformat(data_vigencia)
         data_vigencia = data_vigencia.strftime("%d/%m/%Y")
 
+        data_requisicao = first_item.get("DT_REQUISICAO", "N/A")
+        data_requisicao = datetime.fromisoformat(data_requisicao)
+        data_requisicao = data_requisicao.strftime("%d/%m/%Y")
+
         # Monta o dicionário final com os dados da requisição e dos itens
         result = {
             "Número da requisição": first_item["ID_REQUISICAO"],
             "Nome do beneficiário": first_item["NM_BENEFICIARIO"],
             "Médico solicitante": first_item["NM_PRESTADOR"],
-            "Data da abertura da requisição": first_item["DT_REQUISICAO"],
+            "Data da abertura da requisição": data_requisicao,
             "Tipo Guia": first_item["DS_TIPO_GUIA"],
             "Caráter de atendimento (Urgência ou eletiva)": first_item[
                 "DS_CARATER_ATENDIMENTO"
