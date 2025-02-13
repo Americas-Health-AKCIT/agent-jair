@@ -5,6 +5,24 @@ import streamlit as st
 from utils.firebase_admin_init import verify_token
 import utils.auth_functions as auth_functions
 import streamlit.components.v1 as components
+from utils.get_user_info import load_auditors
+from utils.requisition_history import RequisitionHistory
+from utils.streamlit_utils import change_button_color
+import os
+import argparse
+import traceback
+import json
+from botocore.exceptions import ClientError
+from langchain_openai import ChatOpenAI
+from agentLogic import create_justificativa
+from model.inference import fazer_predicao_por_id
+from utils.get_requisition_details import get_requisition_details
+from config.config import settings
+from utils.requisition_history import RequisitionHistory
+from langchain_core.pydantic_v1 import ValidationError
+from utils.state import STATE_CLASS
+from openai import OpenAI
+from utils.streamlit_utils import render_requisition_search
 
 # TODO: Add menu items
 if "user_info" not in st.session_state:
@@ -19,69 +37,11 @@ if not decoded_token:
     st.rerun()
 
 
-st.set_page_config(page_title="Assistente de Auditoria", page_icon="🔍", layout="wide")
-import os
-import argparse
-import traceback
-import json
-from botocore.exceptions import ClientError
-
-from langchain_openai import ChatOpenAI
-from agentLogic import create_justificativa
-from model.inference import fazer_predicao_por_id
-from utils.get_requisition_details import get_requisition_details
-from config.config import settings
-from utils.requisition_history import RequisitionHistory
-
-from langchain_core.pydantic_v1 import ValidationError
-
-from utils.state import STATE_CLASS
-from openai import OpenAI
-
 client_openai = OpenAI(api_key=settings.openai_api_key)
 
 # Configuração do S3 para auditores
 BUCKET = "amh-model-dataset"
 AUDITORS_KEY = "user_data_app/auditors/auditors.json"
-
-
-def load_auditors():
-    """Load auditors from S3"""
-    try:
-        response = s3.get_object(Bucket=BUCKET, Key=AUDITORS_KEY)
-        return json.loads(response["Body"].read().decode("utf-8"))
-    except ClientError as e:
-        if e.response["Error"]["Code"] == "NoSuchKey":
-            return {"auditors": []}
-        raise
-
-
-def change_button_color(
-    widget_label,
-    font_color="white",
-    background_color="rgb(80, 184, 255)",
-    border_color=None,
-):
-    htmlstr = f"""
-        <script>
-            var elements = window.parent.document.querySelectorAll('button');
-            for (var i = 0; i < elements.length; ++i) {{ 
-                if (elements[i].innerText == '{widget_label}') {{ 
-                    elements[i].style.color = '{font_color}';
-                    elements[i].style.background = '{background_color}';
-                    elements[i].style.border = '1px solid {border_color}';
-                    elements[i].onmouseover = function() {{
-                        this.style.backgroundColor = 'rgb(100, 204, 255)';
-                    }};
-                    elements[i].onmouseout = function() {{
-                        this.style.backgroundColor = '{background_color}';
-                    }};
-                }}
-            }}
-        </script>
-        """
-    components.html(f"{htmlstr}", height=0, width=0)
-
 
 @st.cache_resource
 def get_state():
@@ -114,9 +74,15 @@ if "final_output" not in st.session_state:
 if "feedback" not in st.session_state:
     st.session_state.feedback = {}
 
+BUCKET = "amh-model-dataset"
+AUDITORS_KEY = "user_data_app/auditors/auditors.json"
+history = RequisitionHistory()
+s3 = history.s3
+auditors_data = load_auditors(s3, BUCKET, AUDITORS_KEY)
+
 # Carregar lista de auditores
 current_user = auth_functions.get_current_user_info(st.session_state.id_token)
-auditors_data = load_auditors()
+auditors_data = load_auditors(s3, BUCKET, AUDITORS_KEY)
 auditors_list = auditors_data.get("auditors", [])
 auditor_names = [a["name"] for a in auditors_list]
 auditor_info = next(
@@ -266,13 +232,23 @@ auditor_info = next(
 )
 
 if not st.session_state.resumo:
-    st.subheader(f"Seja Bem-Vindo/a, {auditor_info['name']}!")
-    col1_help, col2_help = st.columns([1, 1])
-    with col1_help:
+    col1_help, col2_help, col3_help = st.columns([1, 2, 1])
+    with col2_help:
+        st.markdown(f"<h2 style='text-align: center;'>Seja Bem-Vindo/a, {auditor_info['name']}!</h2>", unsafe_allow_html=True)
+    
+        st.markdown("""
+            <div style='display: flex; justify-content: center;'>
+                <div style='width: 200px; text-align: center;'>
+        """, unsafe_allow_html=True)
+    
         button_label_2 = "ℹ️ 📖 Precisa de ajuda? Consulte as Instruções"
         if st.button(button_label_2, use_container_width=True, key="help_button_main"):
             st.switch_page("pages/2_Instruções.py")
         change_button_color(button_label_2, "blue", "lightblue", "lightblue")
+
+        render_requisition_search(col2_help, auditor_names, auditor_info, history, redirect_page=False, key_prefix="center_")
+    
+        st.markdown("</div></div>", unsafe_allow_html=True)
 
 else:
     st.markdown(
@@ -508,60 +484,84 @@ if st.session_state.final_output:
                 )
                 st.info(f"📌 Status atual: {current_status}")
 
-            col_apr, col_rec = st.columns(2)
-            with col_apr:
-                # For "✅ Autorizar" the button is primary when authorized_item is True,
-                # otherwise it is secondary.
-                is_approved = item.get("auditor", {}).get("authorized_item", None)
-                approved = st.button(
-                    "✅ Autorizar",
-                    key=f"approve_{idx}",
-                    use_container_width=True,
-                    type="secondary" if not is_approved else "primary",
-                )
+            authorized_value = None
+            if "auditor" in item and "authorized_item" in item["auditor"]:
+                authorized_value = item["auditor"]["authorized_item"]
 
-                # Call change_button_color with the appropriate style
-                if is_approved:
-                    change_button_color(
+            col_apr, col_rec = st.columns(2)
+
+            with col_apr:
+                if authorized_value is None:
+                    approved = st.button(
                         "✅ Autorizar",
-                        font_color="white",
-                        background_color="rgb(0,195,247)",
-                        border_color="rgb(0,195,247)",
+                        key=f"approve_{idx}",
+                        use_container_width=True,
                     )
-                else:
                     change_button_color(
                         "✅ Autorizar",
                         font_color="black",
                         background_color="rgb(255,255,255)",
                         border_color="grey",
                     )
+                else:
+                    button_type = "primary" if authorized_value else "secondary"
+                    approved = st.button(
+                        "✅ Autorizar",
+                        key=f"approve_{idx}",
+                        use_container_width=True,
+                        type=button_type,
+                    )
+                    if authorized_value:
+                        change_button_color(
+                            "✅ Autorizar",
+                            font_color="white",
+                            background_color="rgb(0,195,247)",
+                            border_color="rgb(0,195,247)",
+                        )
+                    else:
+                        change_button_color(
+                            "✅ Autorizar",
+                            font_color="black",
+                            background_color="rgb(255,255,255)",
+                            border_color="grey",
+                        )
+
             with col_rec:
-                # For "❌ Negar", the button is primary when authorized_item is False.
-                is_rejected = not item.get("auditor", {}).get("authorized_item", None)
-                rejected = st.button(
-                    "❌ Negar",
-                    key=f"reject_{idx}",
-                    use_container_width=True,
-                    type=(
-                        "secondary"
-                        if item.get("auditor", {}).get("authorized_item", None)
-                        else "primary"
-                    ),
-                )
-                if is_rejected:
-                    change_button_color(
+                if authorized_value is None:
+                    rejected = st.button(
                         "❌ Negar",
-                        font_color="white",
-                        background_color="rgb(0,195,247)",
-                        border_color="rgb(0,195,247)",
+                        key=f"reject_{idx}",
+                        use_container_width=True,
                     )
-                else:
                     change_button_color(
                         "❌ Negar",
                         font_color="black",
                         background_color="rgb(255,255,255)",
                         border_color="grey",
                     )
+                else:
+                    button_type = "primary" if not authorized_value else "secondary"
+                    rejected = st.button(
+                        "❌ Negar",
+                        key=f"reject_{idx}",
+                        use_container_width=True,
+                        type=button_type,
+                    )
+                    if not authorized_value:
+                        change_button_color(
+                            "❌ Negar",
+                            font_color="white",
+                            background_color="rgb(0,195,247)",
+                            border_color="rgb(0,195,247)",
+                        )
+                    else:
+                        change_button_color(
+                            "❌ Negar",
+                            font_color="black",
+                            background_color="rgb(255,255,255)",
+                            border_color="grey",
+                        )
+                    
         with col2:
             st.write("⭐ **O que você achou da qualidade da justificativa do Jair?**")
             if "auditor" in item and "quality_rating" in item["auditor"]:
@@ -570,57 +570,82 @@ if st.session_state.final_output:
                 )
                 st.info(f"📌 Avaliação atual: {current_rating}")
 
+            quality_value = None
+            if "auditor" in item and "quality_rating" in item["auditor"]:
+                quality_value = item["auditor"]["quality_rating"]
+
             col_like, col_dislike = st.columns(2)
+
             with col_like:
-                # For "👍 Boa" the button is primary when quality_rating is True.
-                is_liked = item.get("auditor", {}).get("quality_rating", None)
-                liked = st.button(
-                    "👍 Boa",
-                    key=f"like_{idx}",
-                    use_container_width=True,
-                    type="secondary" if not is_liked else "primary",
-                )
-                if is_liked:
-                    change_button_color(
+                if quality_value is None:
+                    liked = st.button(
                         "👍 Boa",
-                        font_color="white",
-                        background_color="rgb(0,195,247)",
-                        border_color="rgb(0,195,247)",
+                        key=f"like_{idx}",
+                        use_container_width=True,
                     )
-                else:
                     change_button_color(
                         "👍 Boa",
                         font_color="black",
                         background_color="rgb(255,255,255)",
                         border_color="grey",
                     )
+                else:
+                    button_type = "primary" if quality_value else "secondary"
+                    liked = st.button(
+                        "👍 Boa",
+                        key=f"like_{idx}",
+                        use_container_width=True,
+                        type=button_type,
+                    )
+                    if quality_value:
+                        change_button_color(
+                            "👍 Boa",
+                            font_color="white",
+                            background_color="rgb(0,195,247)",
+                            border_color="rgb(0,195,247)",
+                        )
+                    else:
+                        change_button_color(
+                            "👍 Boa",
+                            font_color="black",
+                            background_color="rgb(255,255,255)",
+                            border_color="grey",
+                        )
             with col_dislike:
-                # For "👎 Ruim" the button is primary when quality_rating is False.
-                is_disliked = not item.get("auditor", {}).get("quality_rating", None)
-                disliked = st.button(
-                    "👎 Ruim",
-                    key=f"dislike_{idx}",
-                    use_container_width=True,
-                    type=(
-                        "secondary"
-                        if item.get("auditor", {}).get("quality_rating", None)
-                        else "primary"
-                    ),
-                )
-                if is_disliked:
-                    change_button_color(
+                if quality_value is None:
+                    disliked = st.button(
                         "👎 Ruim",
-                        font_color="white",
-                        background_color="rgb(0,195,247)",
-                        border_color="rgb(0,195,247)",
+                        key=f"dislike_{idx}",
+                        use_container_width=True,
                     )
-                else:
                     change_button_color(
                         "👎 Ruim",
                         font_color="black",
                         background_color="rgb(255,255,255)",
                         border_color="grey",
                     )
+                else:
+                    button_type = "primary" if not quality_value else "secondary"
+                    disliked = st.button(
+                        "👎 Ruim",
+                        key=f"dislike_{idx}",
+                        use_container_width=True,
+                        type=button_type,
+                    )
+                    if not quality_value:
+                        change_button_color(
+                            "👎 Ruim",
+                            font_color="white",
+                            background_color="rgb(0,195,247)",
+                            border_color="rgb(0,195,247)",
+                        )
+                    else:
+                        change_button_color(
+                            "👎 Ruim",
+                            font_color="black",
+                            background_color="rgb(255,255,255)",
+                            border_color="grey",
+                        )
 
         # Campo de comentários
         st.write("💭 **Comentários**")
@@ -718,6 +743,13 @@ if st.session_state.final_output:
             for key in ["n_req", "resumo", "final_output", "feedback"]:
                 st.session_state[key] = None
             st.rerun()
+
+        change_button_color(
+            "🔎 Nova Consulta",
+            font_color="black",
+            background_color="rgb(255,255,255)",
+            border_color="grey",
+        )
 
     # st.json(st.session_state.final_output)
 

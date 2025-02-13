@@ -5,6 +5,7 @@ import asyncio
 import aiohttp
 import time
 from botocore.exceptions import ClientError
+from utils.firebase_admin_init import verify_token
 import pandas as pd
 from utils.get_requisition_details import get_requisition_details
 from utils.requisition_history import RequisitionHistory
@@ -13,12 +14,26 @@ from utils.state import STATE_CLASS
 from model.inference import fazer_predicao_por_id
 from tenacity import retry, stop_after_attempt, wait_exponential
 import utils.auth_functions as auth_functions
+from utils.get_user_info import load_auditors
+from utils.streamlit_utils import change_button_color
+from utils.streamlit_utils import render_requisition_search
 
-st.set_page_config(
-    page_title="Processamento em Lote - Assistente de Auditoria",
-    page_icon="🔄",
-    layout="wide",
-)
+# st.set_page_config(
+#     page_title="Processamento em Lote - Assistente de Auditoria",
+#     page_icon="🔄",
+#     layout="wide",
+# )
+
+if 'user_info' not in st.session_state:
+    st.switch_page("0_Inicio.py")
+
+# Verify token on each request
+decoded_token = verify_token(st.session_state.id_token)
+if not decoded_token:
+    # Token is invalid or expired, clear session and force re-login
+    st.session_state.clear()
+    st.session_state.auth_warning = 'Session expired. Please sign in again.'
+    st.rerun()
 
 # Configuração do S3
 s3 = boto3.client("s3")

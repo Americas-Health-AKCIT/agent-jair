@@ -8,7 +8,7 @@ st.set_page_config(
     page_title="Login - Assistente de Auditoria",
     page_icon="🔐",
     layout="wide",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="expanded",
 )
 # Initialize authentication state
 if "user_info" not in st.session_state:
@@ -69,5 +69,36 @@ else:
         )
         st.rerun()
 
-    # If token is valid, redirect to main page
-    st.switch_page("pages/1_Jair.py")
+    # Pegando a role para definir as paginas que cada user pode acessar
+    current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+    if current_user is None:
+        st.session_state.clear()
+        st.session_state.auth_warning = (
+            "Sua sessão expirou. Por favor, faça login novamente."
+        )
+        st.rerun()
+    
+    role = current_user.get("role", "")
+
+    if role == "adm":
+        pages = [
+            st.Page("pages/1_Jair.py", title="Jair", icon="🔍", default=True),
+            st.Page("pages/2_Instruções.py", title="Instruções", icon="📖"),
+            st.Page("pages/3_Resultados.py", title="Resultados", icon="📊"),
+            st.Page("pages/4_Configurações.py", title="Configurações", icon="⚙️"),
+            st.Page("pages/5_Batch.py", title="Batch", icon="🔄"),
+        ]
+    elif role == "auditor":
+        pages = [
+            st.Page("pages/1_Jair.py", title="Jair", icon="🔍", default=True),
+            st.Page("pages/2_Instruções.py", title="Instruções", icon="📖"),
+            st.Page("pages/3_Resultados.py", title="Minhas Requisições", icon="📊"),
+            st.Page("pages/4_Configurações.py", title="Configurações", icon="⚙️"),
+        ]
+    else:
+        st.session_state.clear()
+        st.error("O usuário não deve conseguir chegar aqui.")
+        st.switch_page("0_Inicio.py")
+
+    navigation = st.navigation(pages)
+    navigation.run()

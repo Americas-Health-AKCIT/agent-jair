@@ -55,7 +55,7 @@ def verify_token(id_token):
             st.session_state.auth_warning = 'Session expired after 8 hours. Please sign in again.'
             st.rerun()
 
-        decoded_token = auth.verify_id_token(id_token, clock_skew_seconds=10) # Permitir 10 segundos de diferença
+        decoded_token = auth.verify_id_token(id_token, clock_skew_seconds=30) # Permitir 30 segundos de diferença
 
         return decoded_token
 

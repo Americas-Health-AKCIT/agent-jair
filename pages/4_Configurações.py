@@ -5,27 +5,10 @@ import boto3
 import json
 from botocore.exceptions import ClientError
 import streamlit.components.v1 as components
-
-def change_button_color(widget_label, font_color='white', background_color='rgb(80, 184, 255)', border_color=None):
-    htmlstr = f"""
-        <script>
-            var elements = window.parent.document.querySelectorAll('button');
-            for (var i = 0; i < elements.length; ++i) {{ 
-                if (elements[i].innerText == '{widget_label}') {{ 
-                    elements[i].style.color = '{font_color}';
-                    elements[i].style.background = '{background_color}';
-                    elements[i].style.border = '1px solid {border_color}';
-                    elements[i].onmouseover = function() {{
-                        this.style.backgroundColor = 'rgb(100, 204, 255)';
-                    }};
-                    elements[i].onmouseout = function() {{
-                        this.style.backgroundColor = '{background_color}';
-                    }};
-                }}
-            }}
-        </script>
-        """
-    components.html(f"{htmlstr}", height=0, width=0)
+from utils.requisition_history import RequisitionHistory
+from utils.get_user_info import load_auditors
+from utils.streamlit_utils import change_button_color
+from utils.streamlit_utils import render_requisition_search
 
 if 'user_info' not in st.session_state:
     st.switch_page("0_Inicio.py")
@@ -38,7 +21,21 @@ if not decoded_token:
     st.session_state.auth_warning = 'Session expired. Please sign in again.'
     st.rerun()
 
-st.set_page_config(page_title="Configurações - Assistente de Auditoria", page_icon="⚙️", layout="wide")
+BUCKET = "amh-model-dataset"
+AUDITORS_KEY = "user_data_app/auditors/auditors.json"
+history = RequisitionHistory()
+s3 = history.s3
+
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+auditors_data = load_auditors(s3, BUCKET, AUDITORS_KEY)
+auditors_list = auditors_data.get("auditors", [])
+auditor_names = [a["name"] for a in auditors_list]
+auditor_info = next(
+    (a for a in auditors_list if a["email"] == current_user["email"]), None
+)
+
+with st.sidebar:
+    render_requisition_search(st.sidebar, auditor_names, auditor_info, history)
 
 # Configuração do S3
 s3 = boto3.client('s3')
@@ -74,7 +71,8 @@ elif 'auth_warning' in st.session_state:
     auth_notification.warning(st.session_state.auth_warning)
     del st.session_state.auth_warning
 
-if st.session_state.user_role == "adm":
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+if current_user['role'] == 'adm':
 
     # Carregar auditores existentes
     if 'auditors_data' not in st.session_state:

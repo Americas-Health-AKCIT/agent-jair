@@ -9,6 +9,7 @@ from botocore.exceptions import ClientError
 import utils.auth_functions as auth_functions
 from firebase_admin import auth 
 import json
+from botocore.exceptions import ClientError
 
 # Firebase Admin is already initialized in firebase_admin_init.py
 
@@ -342,13 +343,22 @@ class UserManagement:
 
         return result
     
+def load_auditors(s3, BUCKET, AUDITORS_KEY):
+    """Load auditors from S3"""
+    try:
+        response = s3.get_object(Bucket=BUCKET, Key=AUDITORS_KEY)
+        return json.loads(response["Body"].read().decode("utf-8"))
+    except ClientError as e:
+        if e.response["Error"]["Code"] == "NoSuchKey":
+            return {"auditors": []}
+        raise
 
 if __name__ == "__main__":
     user_manager = UserManagement()
     
     # Pegar informações de um usuário específico
-    user_info = user_manager.get_user_info("edwardsj1020304050@gmail.com")
-    print(user_info)
+    # user_info = user_manager.get_user_info("edwardsj1020304050@gmail.com")
+    # print(user_info)
 
     # Pegar informações de todos os usuários
     all_users = user_manager.get_all_users_info()

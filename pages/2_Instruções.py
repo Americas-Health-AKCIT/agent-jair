@@ -1,5 +1,11 @@
 import streamlit as st
 from utils.firebase_admin_init import verify_token
+from utils.requisition_history import RequisitionHistory
+from utils.streamlit_utils import change_button_color
+from utils.get_user_info import load_auditors
+import utils.auth_functions as auth_functions
+from utils.get_requisition_details import get_requisition_details
+from utils.streamlit_utils import render_requisition_search
 
 if 'user_info' not in st.session_state:
     st.switch_page("0_Inicio.py")
@@ -12,7 +18,21 @@ if not decoded_token:
     st.session_state.auth_warning = 'Session expired. Please sign in again.'
     st.rerun()
 
-st.set_page_config(page_title="Instruções - Assistente de Auditoria", page_icon="📖", layout="wide")
+BUCKET = "amh-model-dataset"
+AUDITORS_KEY = "user_data_app/auditors/auditors.json"
+history = RequisitionHistory()
+s3 = history.s3
+
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+auditors_data = load_auditors(s3, BUCKET, AUDITORS_KEY)
+auditors_list = auditors_data.get("auditors", [])
+auditor_names = [a["name"] for a in auditors_list]
+auditor_info = next(
+    (a for a in auditors_list if a["email"] == current_user["email"]), None
+)
+
+with st.sidebar:
+    render_requisition_search(st.sidebar, auditor_names, auditor_info, history)
 
 st.markdown("""
 <style>

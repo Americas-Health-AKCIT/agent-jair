@@ -8,6 +8,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 import utils.auth_functions as auth_functions
+from utils.requisition_history import RequisitionHistory
+from utils.get_user_info import load_auditors
+from utils.streamlit_utils import change_button_color
+from utils.streamlit_utils import render_requisition_search
 
 if 'user_info' not in st.session_state:
     st.switch_page("0_Inicio.py")
@@ -26,7 +30,19 @@ BUCKET = "amh-model-dataset"
 BASE_PREFIX = "user_data_app/requisitions"
 AUDITORS_KEY = "user_data_app/auditors/auditors.json"
 
-st.set_page_config(page_title="Resultados - Assistente de Auditoria", page_icon="📊", layout="wide")
+history = RequisitionHistory()
+s3 = history.s3
+
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+auditors_data = load_auditors(s3, BUCKET, AUDITORS_KEY)
+auditors_list = auditors_data.get("auditors", [])
+auditor_names = [a["name"] for a in auditors_list]
+auditor_info = next(
+    (a for a in auditors_list if a["email"] == current_user["email"]), None
+)
+
+with st.sidebar:
+    render_requisition_search(st.sidebar, auditor_names, auditor_info, history)
 
 def load_all_requisitions():
     """Carrega todas as requisições do S3 para análise"""
@@ -400,6 +416,8 @@ if current_user['role'] == 'adm':
             st.plotly_chart(fig_history, use_container_width=True)
 
 else:
+
+    st.title("📊 Minhas Requisições")
 
     # Show only the auditor-specific logic for non-admin users
     auditor_info = next((a for a in auditors_list if a['email'] == current_user['email']), None)
