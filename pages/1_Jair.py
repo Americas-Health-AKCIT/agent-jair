@@ -142,54 +142,6 @@ with st.sidebar:
         st.switch_page("pages/2_Instruções.py")
     change_button_color(button_label, "blue", "lightblue", "lightblue")
 
-    st.divider()
-
-    # Histórico em formato dropdown
-    st.title("Histórico")
-    requisitions = history.get_all_requisitions()
-    if requisitions:
-        # Criar lista de opções para o dropdown
-        req_options = []
-        for req in requisitions:
-            req_num = req.get("Número da requisição")
-            if req_num:  # Skip invalid entries
-                status_icon = "✅" if req.get("has_evaluation") else "⏳"
-                req_options.append(f"Requisição {req_num} {status_icon}")
-
-        if req_options:
-            selected_req = st.selectbox(
-                "Requisições anteriores:", options=req_options, key="history_dropdown"
-            )
-
-            # Extrair número da requisição da opção selecionada
-            selected_req_num = selected_req.split()[1]
-
-            load_req_pressed = st.button(
-                "Carregar Requisição", use_container_width=True
-            )
-            change_button_color(
-                "Carregar Requisição",
-                font_color="black",
-                background_color="rgb(255,255,255)",
-                border_color="grey",
-            )
-
-            if load_req_pressed:
-                complete_req = history.get_complete_requisition(selected_req_num)
-                if complete_req:
-                    st.session_state.n_req = selected_req_num
-                    st.session_state.resumo = complete_req["requisition"]
-                    st.session_state.final_output = complete_req["model_output"]
-                    st.session_state.auditor = complete_req.get("auditor", "")
-                    if complete_req.get("feedback"):
-                        st.session_state.feedback = complete_req["feedback"]
-                    if complete_req.get("evaluation"):
-                        st.session_state.feedback = complete_req["evaluation"]
-                st.rerun()
-
-    else:
-        st.write("Nenhuma requisição processada ainda.")
-
 # Update session state when button is clicked
 if send_button:
     if not n_req_input or not n_req_input.isdigit():
@@ -456,27 +408,23 @@ if st.session_state.final_output:
             unsafe_allow_html=True,
         )
 
-        # Conteúdo do card
-        col_info, col_status = st.columns([3, 1])
+        situacao = item.get("Situação", "Jair não conseguiu processar esse item")
+        if "AUTORIZADO" in situacao:
+            st.success(f"🤖 **Avaliação do Jair:** {situacao}")
+        elif "NEGADO" in situacao or "RECUSADO" in situacao:
+            st.error(f"🤖 **Avaliação do Jair:** {situacao}")
+        else:
+            st.warning(f"🤖 **Avaliação do Jair:** {situacao}")
 
-        with col_info:
-            situacao = item.get("Situação", "Jair não conseguiu processar esse item")
-            if "AUTORIZADO" in situacao:
-                st.success(f"🤖 **Avaliação do Jair:** {situacao}")
-            elif "NEGADO" in situacao or "RECUSADO" in situacao:
-                st.error(f"🤖 **Avaliação do Jair:** {situacao}")
-            else:
-                st.warning(f"🤖 **Avaliação do Jair:** {situacao}")
-
-            # Análise detalhada (expandida)
-            with st.expander("Análise do Jair", expanded=False):
-                st.markdown(item["analysis"])
-                st.write("**Fonte:**")
-                source_raw = item.get(
-                    "source", "Jair não conseguiu processar esse item"
-                )
-                source = list(source_raw.items())[0][1]
-                st.info(source)
+        # Análise detalhada (expandida)
+        with st.expander("Análise do Jair", expanded=False):
+            st.markdown(item["analysis"])
+            st.write("**Fonte:**")
+            source_raw = item.get(
+                "source", "Jair não conseguiu processar esse item"
+            )
+            source = list(source_raw.items())[0][1]
+            st.info(source)
 
         # Seção de avaliação do auditor
         st.markdown('<div class="evaluation-section">', unsafe_allow_html=True)

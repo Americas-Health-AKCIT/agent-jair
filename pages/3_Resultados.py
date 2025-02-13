@@ -418,7 +418,7 @@ if current_user['role'] == 'adm':
 else:
 
     st.title("📊 Minhas Requisições")
-
+    
     # Show only the auditor-specific logic for non-admin users
     auditor_info = next((a for a in auditors_list if a['email'] == current_user['email']), None)
     if auditor_info:
@@ -429,6 +429,55 @@ else:
     else:
         st.error("Erro: Auditor não encontrado na lista")
 
+    st.subheader("Ver Histórico")
+    colhist1, colhist2, colhist3 = st.columns([2, 1, 1])
+    with colhist1:
+        requisitions = history.get_all_requisitions()
+        if requisitions:
+            # Criar lista de opções para o dropdown
+            req_options = []
+            for req in requisitions:
+                req_num = req.get("Número da requisição")
+                if req_num:  # Skip invalid entries
+                    status_icon = "✅" if req.get("has_evaluation") else "⏳"
+                    req_options.append(f"Requisição {req_num} {status_icon}")
+
+            if req_options:
+                selected_req = st.selectbox(
+                    "Requisições anteriores:", options=req_options, key="history_dropdown"
+                )
+
+                # Extrair número da requisição da opção selecionada
+                selected_req_num = selected_req.split()[1]
+
+                load_req_pressed = st.button(
+                    "Carregar Requisição", use_container_width=True
+                )
+                change_button_color(
+                    "Carregar Requisição",
+                    font_color="black",
+                    background_color="rgb(255,255,255)",
+                    border_color="grey",
+                )
+
+                if load_req_pressed:
+                    complete_req = history.get_complete_requisition(selected_req_num)
+                    if complete_req:
+                        st.session_state.n_req = selected_req_num
+                        st.session_state.resumo = complete_req["requisition"]
+                        st.session_state.final_output = complete_req["model_output"]
+                        st.session_state.auditor = complete_req.get("auditor", "")
+                        if complete_req.get("feedback"):
+                            st.session_state.feedback = complete_req["feedback"]
+                        if complete_req.get("evaluation"):
+                            st.session_state.feedback = complete_req["evaluation"]
+                    st.rerun()
+
+        else:
+            st.write("Nenhuma requisição processada ainda.")
+
+    st.divider()
+    st.subheader("Ver suas Requisições")
     time_filter = st.radio(
         "Filtrar por período",
         ["Último dia", "Última semana", "Último mês"],
@@ -528,11 +577,11 @@ else:
                 """, unsafe_allow_html=True)
             with col_button:
                 st.markdown("<div style='margin-top: 50px;'>", unsafe_allow_html=True)
-                if st.button("Ir para essa requisição", key=f"btn_{req_num}", use_container_width=True):
+                if st.button("Ver Requisição", key=f"btn_{req_num}", use_container_width=True):
                     load_requisition_into_state(req_num, auditor_names, auditor_info, history=None)
                     st.switch_page("pages/1_Jair.py")
                 change_button_color(
-                    "Ir para essa requisição",
+                    "Ver Requisição",
                     font_color="black",
                     background_color="rgb(255,255,255)",
                     border_color="grey",

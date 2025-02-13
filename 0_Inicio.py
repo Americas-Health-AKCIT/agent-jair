@@ -82,7 +82,7 @@ else:
 
     if role == "adm":
         pages = [
-            st.Page("pages/1_Jair.py", title="Jair", icon="🔍", default=True),
+            st.Page("pages/1_Jair.py", title="Consulta com Jair", icon="🔍", default=True),
             st.Page("pages/2_Instruções.py", title="Instruções", icon="📖"),
             st.Page("pages/3_Resultados.py", title="Resultados", icon="📊"),
             st.Page("pages/4_Configurações.py", title="Configurações", icon="⚙️"),
@@ -90,7 +90,7 @@ else:
         ]
     elif role == "auditor":
         pages = [
-            st.Page("pages/1_Jair.py", title="Jair", icon="🔍", default=True),
+            st.Page("pages/1_Jair.py", title="Consulta com Jair", icon="🔍", default=True),
             st.Page("pages/2_Instruções.py", title="Instruções", icon="📖"),
             st.Page("pages/3_Resultados.py", title="Minhas Requisições", icon="📊"),
             st.Page("pages/4_Configurações.py", title="Configurações", icon="⚙️"),
