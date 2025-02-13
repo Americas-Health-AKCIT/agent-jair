@@ -123,17 +123,16 @@ if current_user['role'] == 'adm':
     # Dashboard
     st.header("Visão Geral")
 
-    # Métricas principais
-    col1, col2, col3, col4 = st.columns(4)
+    total_reqs = len(requisitions)
+    evaluated_reqs = sum(1 for req in requisitions if req.get("model_output") and req["model_output"].get("items"))
+    total_items = len(df)
+    evaluated_items = df['tem_avaliacao'].sum()
+
+    col1, col2 = st.columns(2)
     with col1:
-        st.metric("Total de Requisições", len(requisitions))
+        st.metric("Requisições Avaliadas", f"{evaluated_reqs} / {total_reqs}")
     with col2:
-        st.metric("Total de Itens", len(df))
-    with col3:
-        st.metric("Itens Avaliados", df['tem_avaliacao'].sum())
-    with col4:
-        concordancia = (df[df['tem_avaliacao']]['decisao_jair'] == df[df['tem_avaliacao']]['decisao_auditor']).mean()
-        st.metric("Taxa de Concordância", f"{concordancia:.1%}")
+        st.metric("Itens Avaliados", f"{evaluated_items} / {total_items}")
 
     # Gráficos
     st.subheader("Análise Detalhada")
