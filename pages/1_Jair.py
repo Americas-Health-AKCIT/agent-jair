@@ -468,8 +468,15 @@ if st.session_state.final_output:
             else:
                 st.warning(f"🤖 **Avaliação do Jair:** {situacao}")
 
-        with col_status:
-            toggle_state = st.toggle("🔍 Ver análise completa", key=f"toggle_{idx}")
+            # Análise detalhada (expandida)
+            with st.expander("Análise do Jair", expanded=False):
+                st.markdown(item["analysis"])
+                st.write("**Fonte:**")
+                source_raw = item.get(
+                    "source", "Jair não conseguiu processar esse item"
+                )
+                source = list(source_raw.items())[0][1]
+                st.info(source)
 
         # Seção de avaliação do auditor
         st.markdown('<div class="evaluation-section">', unsafe_allow_html=True)
@@ -744,17 +751,6 @@ if st.session_state.final_output:
             )
 
         st.markdown("</div>", unsafe_allow_html=True)
-
-        # Análise detalhada (expandida)
-        if toggle_state:
-            with st.expander("Análise do Jair", expanded=True):
-                st.markdown(item["analysis"])
-                st.write("**Fonte:**")
-                source_raw = item.get(
-                    "source", "Jair não conseguiu processar esse item"
-                )
-                source = list(source_raw.items())[0][1]
-                st.info(source)
 
         st.write("")
         st.write("")
