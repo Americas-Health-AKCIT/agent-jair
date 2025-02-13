@@ -161,7 +161,7 @@ if current_user['role'] == 'adm':
             y='count',
             color='avaliacao_qualidade',
             title='Qualidade das Respostas ao Longo do Tempo',
-            labels={'data': 'Data', 'avaliacao_qualidade': 'Avaliação de Qualidade', 'count': 'Quantidade de Itens'}
+            labels={'data': 'Data', 'avaliacao_qualidade': 'Avaliação de Qualidade do Jair', 'count': 'Quantidade de Itens'}
         )
         st.plotly_chart(fig_quality, use_container_width=True)
 
