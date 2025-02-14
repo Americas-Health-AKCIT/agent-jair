@@ -704,7 +704,7 @@ if st.session_state.final_output:
         st.write("")
 
     # Botão de reiniciar
-    col1, col2, col3 = st.columns([3, 2, 3])
+    col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
     with col2:
         if st.button("🔎 Nova Consulta", use_container_width=True):
             for key in ["n_req", "resumo", "final_output", "feedback"]:
@@ -717,6 +717,29 @@ if st.session_state.final_output:
             background_color="rgb(255,255,255)",
             border_color="grey",
         )
+    
+    with col3:
+        if current_user['role'] == 'adm':
+            if st.button("🗑️ Deletar Requisição", use_container_width=True, type="secondary"):
+                from utils.get_user_info import UserManagement
+                user_manager = UserManagement()
+                result = user_manager.delete_requisition(st.session_state.n_req)
+                
+                if result["status"] == "success":
+                    st.success(result["message"])
+                    # Limpar o estado após deletar
+                    for key in ["n_req", "resumo", "final_output", "feedback"]:
+                        st.session_state[key] = None
+                    st.rerun()
+                else:
+                    st.error(f"Erro ao deletar requisição: {result['message']}")
+
+            change_button_color(
+                "🗑️ Deletar Requisição",
+                font_color="black",
+                background_color="rgb(255,255,255)",
+                border_color="grey",
+            )
 
     # st.json(st.session_state.final_output)
 
