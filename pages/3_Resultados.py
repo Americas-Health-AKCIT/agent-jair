@@ -477,11 +477,21 @@ else:
 
     st.divider()
     st.subheader("Ver suas Requisições")
-    time_filter = st.radio(
-        "Filtrar por período",
-        ["Último dia", "Última semana", "Último mês"],
-        horizontal=True
-    )
+    
+    col_filters1, col_filters2 = st.columns([1, 1])
+    with col_filters1:
+        time_filter = st.radio(
+            "Filtrar por período",
+            ["Último dia", "Última semana", "Último mês"],
+            horizontal=True
+        )
+    
+    with col_filters2:
+        evaluation_filter = st.radio(
+            "Filtrar por status",
+            ["Todas", "Pendentes"],
+            horizontal=True
+        )
 
     # Calculate date filters
     today = pd.Timestamp.now()
@@ -499,20 +509,25 @@ else:
         with col1:
             start_date = pd.Timestamp(st.date_input(
                 "Data inicial",
-                value=df[df['auditor'] == selected_auditor]['data'].min().date()  # Changed from .isin()
+                value=df[df['auditor'] == selected_auditor]['data'].min().date()
             ))
         with col2:
             end_date = pd.Timestamp(st.date_input(
                 "Data final",
-                value=df[df['auditor'] == selected_auditor]['data'].max().date()  # Changed from .isin()
+                value=df[df['auditor'] == selected_auditor]['data'].max().date()
             ))
 
-    # Apply both auditor and date filters
+    # Apply filters
     mask = (
         (df['data'].dt.date >= start_date.date()) &
         (df['data'].dt.date <= end_date.date()) &
-        (df['auditor'] == selected_auditor)  # Changed from .isin()
+        (df['auditor'] == selected_auditor)
     )
+    
+    # Add evaluation filter
+    if evaluation_filter == "Pendentes":
+        mask = mask & (~df['tem_avaliacao'])
+        
     filtered_df = df[mask]
 
     if not filtered_df.empty:
@@ -569,7 +584,7 @@ else:
                             <small>
                                 Código: {group.iloc[0]['codigo']} | 
                                 Decisão Jair: {group.iloc[0]['decisao_jair']} | 
-                                Decisão Auditor: {group.iloc[0]['decisao_auditor']}
+                                Decisão Auditor: {group.iloc[0]['decisao_auditor'] if group.iloc[0]['tem_avaliacao'] else 'NÃO AVALIADO PELO AUDITOR'}
                             </small>
                         </div>
                     </div>
