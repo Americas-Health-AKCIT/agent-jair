@@ -269,7 +269,7 @@ else:
                 st.markdown("🚻 **Sexo:**")
                 st.markdown("📋 **Situação:**")
                 st.markdown("⏳ **Carência:**")
-                st.markdown("📅 **Início da vigência:**")
+                st.markdown("📅 **Início do contrato:**")
                 # st.markdown("👨‍⚕️ **Auditor:**")
 
             with col_values1:
@@ -279,7 +279,7 @@ else:
                 st.write(st.session_state.resumo["Sexo do beneficiário"])
                 st.write(st.session_state.resumo["Situação contratual"])
                 st.write(st.session_state.resumo["Período de carência?"])
-                st.write(st.session_state.resumo["Início da vigência"])
+                st.write(st.session_state.resumo["Início da vigência"]) #inicio do contrato
                 # st.write(st.session_state.auditor)
 
     # Card do Atendimento
