@@ -174,9 +174,10 @@ if current_user['role'] == 'adm':
         
         fig_comp = px.bar(
             df_comp,
-            x='decisao_jair',
-            y='count',
+            y='decisao_jair',
+            x='count',
             color='decisao_auditor',
+            orientation='h',
             title='Comparação de Decisões: Jair vs Auditor',
             labels={'decisao_jair': 'Decisão do Jair', 'decisao_auditor': 'Decisão do Auditor', 'count': 'Quantidade de Itens'},
             color_discrete_map={
@@ -184,11 +185,23 @@ if current_user['role'] == 'adm':
                 'NÃO CONCORDOU': '#e74c3c'  # Vermelho
             }
         )
+        
+        # Ajustar escala do eixo X para mostrar apenas números inteiros
+        fig_comp.update_layout(
+            xaxis=dict(
+                dtick=1,  # Intervalo de 1 em 1
+                tick0=0,  # Começar do zero
+                tickmode='linear'  # Modo linear para garantir intervalos regulares
+            ),
+            bargap=0.2  # Ajustar espaçamento entre as barras
+        )
         st.plotly_chart(fig_comp, use_container_width=True)
 
     with col2:
         # Qualidade das respostas ao longo do tempo (em percentual)
-        df_quality = filtered_df[filtered_df['tem_avaliacao']].groupby('data').agg({
+        df_quality = filtered_df[filtered_df['tem_avaliacao']].copy()
+        df_quality['data'] = df_quality['data'].dt.date  # Converter para apenas data, removendo o horário
+        df_quality = df_quality.groupby('data').agg({
             'avaliacao_qualidade': lambda x: (x == 'BOA').mean() * 100
         }).reset_index()
         
@@ -200,10 +213,14 @@ if current_user['role'] == 'adm':
             labels={
                 'data': 'Data',
                 'avaliacao_qualidade': 'Percentual de Avaliações Boas (%)'
-            }
+            },
+            markers=True  # Adicionar marcadores nos pontos
         )
         # Configurar o range do eixo Y de 0 a 100%
-        fig_quality.update_layout(yaxis_range=[0, 100])
+        fig_quality.update_layout(
+            yaxis_range=[0, 100],
+            xaxis_tickformat='%d/%m/%Y'  # Formato da data em português
+        )
         st.plotly_chart(fig_quality, use_container_width=True)
 
     # Top 10 procedimentos mais frequentes (horizontal)
@@ -217,7 +234,12 @@ if current_user['role'] == 'adm':
     fig_top.update_layout(
         showlegend=False,
         yaxis={'title': ''},  # Remover título do eixo Y
-        xaxis={'title': 'Quantidade de Avaliações'},  # Título do eixo X
+        xaxis={
+            'title': 'Quantidade de Avaliações',  # Título do eixo X
+            'dtick': 1,  # Intervalo de 1 em 1
+            'tick0': 0,  # Começar do zero
+            'tickmode': 'linear'  # Modo linear para garantir intervalos regulares
+        },
         height=500  # Aumentar altura para melhor visualização
     )
     st.plotly_chart(fig_top, use_container_width=True)
@@ -490,9 +512,10 @@ else:
     
     with col_filters2:
         evaluation_filter = st.radio(
-            "Filtrar por status",
-            ["Todas", "Pendentes"],
-            horizontal=True
+            "Filtrar por avaliação do auditor",
+            ["Todas as Requisições", "Pendentes de Avaliação"],
+            horizontal=True,
+            help="Selecione 'Pendentes de Avaliação' para ver apenas as requisições que ainda não foram avaliadas por você"
         )
 
     # Calculate date filters
@@ -527,7 +550,7 @@ else:
     )
     
     # Add evaluation filter
-    if evaluation_filter == "Pendentes":
+    if evaluation_filter == "Pendentes de Avaliação":
         mask = mask & (~df['tem_avaliacao'])
         
     filtered_df = df[mask]
