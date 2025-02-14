@@ -123,10 +123,33 @@ if current_user['role'] == 'adm':
     # Dashboard
     st.header("Visão Geral")
 
-    total_reqs = len(requisitions)
-    evaluated_reqs = sum(1 for req in requisitions if req.get("model_output") and req["model_output"].get("items"))
-    total_items = len(df)
-    evaluated_items = df['tem_avaliacao'].sum()
+    # Adicionar filtros globais
+    col_filter1, col_filter2 = st.columns(2)
+    with col_filter1:
+        selected_period = st.date_input(
+            "Período de Análise",
+            [df['data'].min().date(), df['data'].max().date()]
+        )
+    with col_filter2:
+        selected_auditor = st.multiselect(
+            "Filtrar por Auditor",
+            options=df['auditor'].unique(),
+            default=df['auditor'].unique()
+        )
+
+    # Aplicar filtros globais
+    mask = (
+        (df['data'].dt.date >= selected_period[0]) &
+        (df['data'].dt.date <= selected_period[1]) &
+        (df['auditor'].isin(selected_auditor))
+    )
+    filtered_df = df[mask]
+
+    # Atualizar métricas com base nos filtros
+    total_reqs = len(filtered_df['requisicao'].unique())
+    evaluated_reqs = len(filtered_df[filtered_df['tem_avaliacao']]['requisicao'].unique())
+    total_items = len(filtered_df)
+    evaluated_items = filtered_df['tem_avaliacao'].sum()
 
     col1, col2 = st.columns(2)
     with col1:
@@ -141,72 +164,78 @@ if current_user['role'] == 'adm':
     col1, col2 = st.columns(2)
     with col1:
         # Comparação de decisões Jair vs Auditor
-        df_comp = df[df['tem_avaliacao']].groupby(['decisao_jair', 'decisao_auditor']).size().reset_index(name='count')
+        df_comp = filtered_df[filtered_df['tem_avaliacao']].groupby(['decisao_jair', 'decisao_auditor']).size().reset_index(name='count')
+        
+        # Mapeamento das decisões do auditor para o novo formato
+        df_comp['decisao_auditor'] = df_comp['decisao_auditor'].map({
+            'AUTORIZADO': 'CONCORDOU',
+            'NEGADO': 'NÃO CONCORDOU'
+        })
+        
         fig_comp = px.bar(
             df_comp,
             x='decisao_jair',
             y='count',
             color='decisao_auditor',
             title='Comparação de Decisões: Jair vs Auditor',
-            labels={'decisao_jair': 'Decisão do Jair', 'decisao_auditor': 'Decisão do Auditor', 'count': 'Quantidade de Itens'}
+            labels={'decisao_jair': 'Decisão do Jair', 'decisao_auditor': 'Decisão do Auditor', 'count': 'Quantidade de Itens'},
+            color_discrete_map={
+                'CONCORDOU': '#2ecc71',     # Verde
+                'NÃO CONCORDOU': '#e74c3c'  # Vermelho
+            }
         )
         st.plotly_chart(fig_comp, use_container_width=True)
 
     with col2:
-        # Qualidade das respostas ao longo do tempo
-        df_quality = df[df['tem_avaliacao']].groupby(['data', 'avaliacao_qualidade']).size().reset_index(name='count')
+        # Qualidade das respostas ao longo do tempo (em percentual)
+        df_quality = filtered_df[filtered_df['tem_avaliacao']].groupby('data').agg({
+            'avaliacao_qualidade': lambda x: (x == 'BOA').mean() * 100
+        }).reset_index()
+        
         fig_quality = px.line(
             df_quality,
             x='data',
-            y='count',
-            color='avaliacao_qualidade',
+            y='avaliacao_qualidade',
             title='Qualidade das Respostas ao Longo do Tempo',
-            labels={'data': 'Data', 'avaliacao_qualidade': 'Avaliação de Qualidade do Jair', 'count': 'Quantidade de Itens'}
+            labels={
+                'data': 'Data',
+                'avaliacao_qualidade': 'Percentual de Avaliações Boas (%)'
+            }
         )
+        # Configurar o range do eixo Y de 0 a 100%
+        fig_quality.update_layout(yaxis_range=[0, 100])
         st.plotly_chart(fig_quality, use_container_width=True)
 
-    # Linha 2 de gráficos
-    col1, col2 = st.columns(2)
-    with col1:
-        # Matriz de confusão
-        confusion_matrix = pd.crosstab(
-            df[df['tem_avaliacao']]['decisao_jair'],
-            df[df['tem_avaliacao']]['decisao_auditor'],
-            normalize='index'
-        )
-        fig_matrix = px.imshow(
-            confusion_matrix,
-            title='Matriz de Confusão Normalizada',
-            labels=dict(x='Decisão do Auditor', y='Decisão do Jair'),
-            color_continuous_scale='RdYlBu'
-        )
-        st.plotly_chart(fig_matrix, use_container_width=True)
-
-    with col2:
-        # Top 10 procedimentos mais frequentes
-        top_procedures = df.groupby('descricao').size().sort_values(ascending=False).head(10)
-        fig_top = px.bar(
-            top_procedures,
-            title='Top 10 Procedimentos Mais Frequentes',
-            labels={'index': 'Procedimento', 'value': 'Quantidade'}
-        )
-        fig_top.update_layout(showlegend=False)
-        st.plotly_chart(fig_top, use_container_width=True)
+    # Top 10 procedimentos mais frequentes (horizontal)
+    top_procedures = filtered_df.groupby('descricao').size().sort_values(ascending=True).tail(10)
+    fig_top = px.bar(
+        top_procedures,
+        orientation='h',  # Tornar horizontal
+        title='Top 10 Procedimentos Mais Frequentes',
+        labels={'index': 'Procedimento', 'value': 'Quantidade de Avaliações'}
+    )
+    fig_top.update_layout(
+        showlegend=False,
+        yaxis={'title': ''},  # Remover título do eixo Y
+        xaxis={'title': 'Quantidade de Avaliações'},  # Título do eixo X
+        height=500  # Aumentar altura para melhor visualização
+    )
+    st.plotly_chart(fig_top, use_container_width=True)
 
     # Análise por Auditor
     st.subheader("Análise por Auditor")
 
     # Convert lists to strings if they exist in the auditor column
-    if df['auditor'].apply(lambda x: isinstance(x, list)).any():
-        df['auditor'] = df['auditor'].apply(lambda x: x[0] if isinstance(x, list) else x)
+    if filtered_df['auditor'].apply(lambda x: isinstance(x, list)).any():
+        filtered_df['auditor'] = filtered_df['auditor'].apply(lambda x: x[0] if isinstance(x, list) else x)
 
     # Now the groupby operation should work
-    df_auditor = df[df['tem_avaliacao']].groupby('auditor').agg({
+    df_auditor = filtered_df[filtered_df['tem_avaliacao']].groupby('auditor').agg({
         'requisicao': 'count',
         'tem_avaliacao': 'sum'
     }).reset_index()
 
-    df_auditor['taxa_concordancia'] = df[df['tem_avaliacao']].groupby('auditor').apply(
+    df_auditor['taxa_concordancia'] = filtered_df[filtered_df['tem_avaliacao']].groupby('auditor').apply(
         lambda x: (x['decisao_jair'] == x['decisao_auditor']).mean()
     ).values
 
@@ -223,51 +252,23 @@ if current_user['role'] == 'adm':
     )
     st.plotly_chart(fig_auditor, use_container_width=True)
 
-    # Filtros e análise detalhada
-    st.subheader("Análise Detalhada")
-    col1, col2 = st.columns(2)
-    with col1:
-        selected_period = st.date_input(
-            "Período de Análise",
-            [df['data'].min().date(), df['data'].max().date()]
-        )
-    with col2:
-        selected_auditor = st.multiselect(
-            "Filtrar por Auditor",
-            options=df['auditor'].unique(),
-            default=df['auditor'].unique()
-        )
-
-    mask = (
-        (df['data'].dt.date >= selected_period[0]) &
-        (df['data'].dt.date <= selected_period[1]) &
-        (df['auditor'].isin(selected_auditor))
-    )
-    filtered_df = df[mask]
-
-    if not filtered_df.empty:
-        st.dataframe(
-            filtered_df[['requisicao', 'data', 'auditor', 'descricao', 'decisao_jair', 'decisao_auditor', 'avaliacao_qualidade']]\
-            .sort_values('data', ascending=False),
-            use_container_width=True
-        )
-
+    # Análise por Item
     st.subheader("Análise por Item")
-    df_items = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).agg({
+    df_items = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).agg({
         'requisicao': 'count',
         'tem_avaliacao': 'sum'
     }).reset_index()
 
-    df_items['taxa_concordancia'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['taxa_concordancia'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['decisao_jair'] == x['decisao_auditor']).mean()
     ).values
-    df_items['taxa_aprovacao_jair'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['taxa_aprovacao_jair'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['decisao_jair'] == 'AUTORIZADO').mean()
     ).values
-    df_items['taxa_aprovacao_auditor'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['taxa_aprovacao_auditor'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['decisao_auditor'] == 'AUTORIZADO').mean()
     ).values
-    df_items['avaliacao_qualidade'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['avaliacao_qualidade'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['avaliacao_qualidade'] == 'BOA').mean()
     ).values
 
@@ -344,13 +345,14 @@ if current_user['role'] == 'adm':
             hide_index=True
         )
 
+    # Análise Individual de Item
     st.subheader("Análise Individual de Item")
     selected_item = st.selectbox(
         "Selecione um item para análise detalhada:",
         options=df_items['descricao'].unique()
     )
     if selected_item:
-        item_data = df[df['descricao'] == selected_item]
+        item_data = filtered_df[filtered_df['descricao'] == selected_item]
         item_data = item_data[item_data['tem_avaliacao']]
         if not item_data.empty:
             col1, col2, col3, col4 = st.columns(4)
