@@ -377,7 +377,7 @@ if current_user['role'] == 'adm':
         item_data = filtered_df[filtered_df['descricao'] == selected_item]
         item_data = item_data[item_data['tem_avaliacao']]
         if not item_data.empty:
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3 = st.columns(3)
             with col1:
                 total_avaliacoes = len(item_data)
                 st.metric("Total de Avaliações", total_avaliacoes)
@@ -387,54 +387,68 @@ if current_user['role'] == 'adm':
             with col3:
                 qualidade = (item_data['avaliacao_qualidade'] == 'BOA').mean()
                 st.metric("Taxa de Qualidade", f"{qualidade:.1%}")
-            with col4:
-                aprovacao_diff = (
-                    (item_data['decisao_jair'] == 'AUTORIZADO').mean() -
-                    (item_data['decisao_auditor'] == 'AUTORIZADO').mean()
-                )
-                st.metric(
-                    "Diferença na Taxa de Aprovação",
-                    f"{abs(aprovacao_diff):.1%}",
-                    delta=f"{'Maior' if aprovacao_diff > 0 else 'Menor'} que o Auditor"
-                )
 
-            confusion_matrix = pd.crosstab(
-                item_data['decisao_jair'],
-                item_data['decisao_auditor'],
-                normalize='index'
-            )
-            fig_matrix = px.imshow(
-                confusion_matrix,
-                title=f'Matriz de Confusão - {selected_item}',
-                labels=dict(x='Decisão do Auditor', y='Decisão do Jair'),
-                color_continuous_scale='RdYlBu'
-            )
-            st.plotly_chart(fig_matrix, use_container_width=True)
-
+            # Histórico de decisões ao longo do tempo
             fig_history = go.Figure()
+            
+            # Agrupar dados por dia e calcular taxa de aprovação
+            item_data['data'] = item_data['data'].dt.date
+            
+            # Calcular taxa de aprovação diária para Jair
+            jair_daily = item_data.groupby('data').agg({
+                'decisao_jair': lambda x: (x == 'AUTORIZADO').mean() * 100
+            }).reset_index()
+            
+            # Calcular taxa de aprovação diária para Auditor
+            auditor_daily = item_data.groupby('data').agg({
+                'decisao_auditor': lambda x: (x == 'AUTORIZADO').mean() * 100
+            }).reset_index()
+            
             fig_history.add_trace(go.Scatter(
-                x=item_data['data'],
-                y=item_data['decisao_jair'].map({'AUTORIZADO': 1, 'NEGADO': 0}),
-                name='Decisão do Jair',
-                mode='markers',
-                marker=dict(size=10)
+                x=jair_daily['data'],
+                y=jair_daily['decisao_jair'],
+                name='Taxa de Aprovação do Jair',
+                mode='lines+markers',
+                line=dict(color='#2ecc71')
             ))
+            
             fig_history.add_trace(go.Scatter(
-                x=item_data['data'],
-                y=item_data['decisao_auditor'].map({'AUTORIZADO': 1, 'NEGADO': 0}),
-                name='Decisão do Auditor',
-                mode='markers',
-                marker=dict(size=10)
+                x=auditor_daily['data'],
+                y=auditor_daily['decisao_auditor'],
+                name='Taxa de Aprovação do Auditor',
+                mode='lines+markers',
+                line=dict(color='#e74c3c')
             ))
+            
             fig_history.update_layout(
-                title='Histórico de Decisões ao Longo do Tempo',
+                title='Taxa de Aprovação ao Longo do Tempo',
                 yaxis=dict(
-                    ticktext=['NEGADO', 'AUTORIZADO'],
-                    tickvals=[0, 1],
-                    title='Decisão'
+                    title='Taxa de Aprovação (%)',
+                    range=[0, 100],
+                    dtick=20,  # Marcações a cada 20%
+                    tickformat='.0f',  # Formato sem decimais
+                    gridcolor='lightgrey',  # Cor da grade
+                    showgrid=True,  # Mostrar linhas de grade
+                    zeroline=True,  # Mostrar linha do zero
+                    zerolinecolor='grey',  # Cor da linha do zero
+                    zerolinewidth=1  # Espessura da linha do zero
                 ),
-                xaxis_title='Data',
-                height=400
+                xaxis=dict(
+                    title='Data',
+                    tickformat='%d/%m/%Y',
+                    showgrid=True,
+                    gridcolor='lightgrey'
+                ),
+                height=400,
+                showlegend=True,
+                legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                ),
+                plot_bgcolor='white'  # Fundo branco para melhor contraste
             )
             st.plotly_chart(fig_history, use_container_width=True)
 
