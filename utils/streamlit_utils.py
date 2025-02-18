@@ -127,6 +127,8 @@ def render_requisition_search(
 
             if redirect_page:
                 st.switch_page("pages/1_Jair.py")
+            
+            st.rerun()
 
 
 def load_requisition_into_state(requisicao_id, auditor_names, auditor_info, history=None):

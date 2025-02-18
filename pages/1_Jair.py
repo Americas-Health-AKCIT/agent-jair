@@ -94,41 +94,16 @@ auditor_info = next(
 ###############################################################################################
 
 with st.sidebar:
-    st.title("Jair - Assistente de Auditoria")
-    # st.write(f"Auditor: {auditor_info['name']}")
-    st.write("Digite o número da requisição para receber uma análise detalhada.")
-
-    # Campo de entrada da requisição
-    if st.session_state.n_req is None:
-        n_req_input = st.text_input(
-            "Número da requisição:",
-            value="",
-            placeholder="Digite aqui",
-            key="n_req_input",
-        )
-
-    else:
-        n_req_input = st.text_input(
-            "Número da requisição:",
-            value=str(st.session_state.n_req),
-            placeholder="Digite aqui",
-            key="n_req_input_existing",
-        )
-
-    if not auditor_names:
-        st.error(
-            "Nenhum auditor cadastrado. Por favor, cadastre um auditor na página de Configurações."
-        )
-        auditor_input = None
-    elif not auditor_info:
-        st.error(
-            "Auditor atual não encontrado. Por favor, reporte o problema para o administrador."
-        )
-        auditor_input = None
-    else:
-        auditor_input = auditor_info["name"]
-
-    send_button = st.button("Enviar", use_container_width=True)
+    # Render the requisition search widget in the sidebar.
+    render_requisition_search(
+        st.sidebar,      # Use st.sidebar as the container.
+        auditor_names,
+        auditor_info,
+        history,
+        redirect_page=False,   # Set redirect_page as needed.
+        key_prefix="sidebar_" # Use a key_prefix to avoid key collisions.
+    )
+    
     change_button_color(
         "Enviar",
         font_color="black",
@@ -142,35 +117,6 @@ with st.sidebar:
         st.switch_page("pages/2_Instruções.py")
     change_button_color(button_label, "blue", "lightblue", "lightblue")
 
-# Update session state when button is clicked
-if send_button:
-    if not n_req_input or not n_req_input.isdigit():
-        st.error("Digite um número de requisição válido.")
-    elif not auditor_input:
-        st.error("O nome do auditor é obrigatório.")
-    else:
-        st.session_state.auditor = auditor_input
-        # Check if we already have this requisition processed
-        complete_req = history.get_complete_requisition(n_req_input)
-        if complete_req and complete_req.get("model_output"):
-            st.session_state.resumo = complete_req["requisition"]
-            st.session_state.final_output = complete_req["model_output"]
-            if complete_req.get("feedback"):
-                st.session_state.feedback = complete_req["feedback"]
-            st.session_state.n_req = n_req_input
-        else:
-            print("starting to get requisition details")
-            resumo = get_requisition_details(int(n_req_input))
-
-            if resumo == {"Error": "REQUISICAO_ID not found"}:
-                st.error(
-                    "Número da requisição não encontrado. Por favor, confire o número da requisição e tente novamente"
-                )
-                st.session_state.resumo = None
-            else:
-                st.session_state.resumo = resumo
-                st.session_state.n_req = n_req_input
-                st.session_state.final_output = None
 
 ###############################################################################################
 #############################  Streamlit Display - Resumo Output  #############################
