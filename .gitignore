@@ -17,4 +17,7 @@ modelo_ml_tradicional/mlruns
 /data/Evah
 *.sh
 service_account.json
-service_account_evah.json
+service_account_*.json
+extra_function_jair.py
+
+.vscode

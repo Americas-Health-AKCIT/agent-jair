@@ -8,9 +8,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 import utils.auth_functions as auth_functions
+from utils.requisition_history import RequisitionHistory
+from utils.get_user_info import load_auditors
+from utils.streamlit_utils import change_button_color
+from utils.streamlit_utils import render_requisition_search, load_requisition_into_state
 
 if 'user_info' not in st.session_state:
-    st.switch_page("Inicio.py")
+    st.switch_page("0_Inicio.py")
 
 # Verify token on each request
 decoded_token = verify_token(st.session_state.id_token)
@@ -26,7 +30,19 @@ BUCKET = "amh-model-dataset"
 BASE_PREFIX = "user_data_app/requisitions"
 AUDITORS_KEY = "user_data_app/auditors/auditors.json"
 
-st.set_page_config(page_title="Resultados - Assistente de Auditoria", page_icon="📊", layout="wide")
+history = RequisitionHistory()
+s3 = history.s3
+
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+auditors_data = load_auditors(s3, BUCKET, AUDITORS_KEY)
+auditors_list = auditors_data.get("auditors", [])
+auditor_names = [a["name"] for a in auditors_list]
+auditor_info = next(
+    (a for a in auditors_list if a["email"] == current_user["email"]), None
+)
+
+with st.sidebar:
+    render_requisition_search(st.sidebar, auditor_names, auditor_info, history)
 
 def load_all_requisitions():
     """Carrega todas as requisições do S3 para análise"""
@@ -107,17 +123,39 @@ if current_user['role'] == 'adm':
     # Dashboard
     st.header("Visão Geral")
 
-    # Métricas principais
-    col1, col2, col3, col4 = st.columns(4)
+    # Adicionar filtros globais
+    col_filter1, col_filter2 = st.columns(2)
+    with col_filter1:
+        selected_period = st.date_input(
+            "Período de Análise",
+            [df['data'].min().date(), df['data'].max().date()]
+        )
+    with col_filter2:
+        selected_auditor = st.multiselect(
+            "Filtrar por Auditor",
+            options=df['auditor'].unique(),
+            default=df['auditor'].unique()
+        )
+
+    # Aplicar filtros globais
+    mask = (
+        (df['data'].dt.date >= selected_period[0]) &
+        (df['data'].dt.date <= selected_period[1]) &
+        (df['auditor'].isin(selected_auditor))
+    )
+    filtered_df = df[mask]
+
+    # Atualizar métricas com base nos filtros
+    total_reqs = len(filtered_df['requisicao'].unique())
+    evaluated_reqs = len(filtered_df[filtered_df['tem_avaliacao']]['requisicao'].unique())
+    total_items = len(filtered_df)
+    evaluated_items = filtered_df['tem_avaliacao'].sum()
+
+    col1, col2 = st.columns(2)
     with col1:
-        st.metric("Total de Requisições", len(requisitions))
+        st.metric("Requisições Avaliadas", f"{evaluated_reqs} / {total_reqs}")
     with col2:
-        st.metric("Total de Itens", len(df))
-    with col3:
-        st.metric("Itens Avaliados", df['tem_avaliacao'].sum())
-    with col4:
-        concordancia = (df[df['tem_avaliacao']]['decisao_jair'] == df[df['tem_avaliacao']]['decisao_auditor']).mean()
-        st.metric("Taxa de Concordância", f"{concordancia:.1%}")
+        st.metric("Itens Avaliados", f"{evaluated_items} / {total_items}")
 
     # Gráficos
     st.subheader("Análise Detalhada")
@@ -126,72 +164,100 @@ if current_user['role'] == 'adm':
     col1, col2 = st.columns(2)
     with col1:
         # Comparação de decisões Jair vs Auditor
-        df_comp = df[df['tem_avaliacao']].groupby(['decisao_jair', 'decisao_auditor']).size().reset_index(name='count')
+        df_comp = filtered_df[filtered_df['tem_avaliacao']].groupby(['decisao_jair', 'decisao_auditor']).size().reset_index(name='count')
+        
+        # Mapeamento das decisões do auditor para o novo formato
+        df_comp['decisao_auditor'] = df_comp['decisao_auditor'].map({
+            'AUTORIZADO': 'CONCORDOU',
+            'NEGADO': 'NÃO CONCORDOU'
+        })
+        
         fig_comp = px.bar(
             df_comp,
-            x='decisao_jair',
-            y='count',
+            y='decisao_jair',
+            x='count',
             color='decisao_auditor',
+            orientation='h',
             title='Comparação de Decisões: Jair vs Auditor',
-            labels={'decisao_jair': 'Decisão do Jair', 'decisao_auditor': 'Decisão do Auditor', 'count': 'Quantidade de Itens'}
+            labels={'decisao_jair': 'Decisão do Jair', 'decisao_auditor': 'Decisão do Auditor', 'count': 'Quantidade de Itens'},
+            color_discrete_map={
+                'CONCORDOU': '#2ecc71',     # Verde
+                'NÃO CONCORDOU': '#e74c3c'  # Vermelho
+            }
+        )
+        
+        # Ajustar escala do eixo X para mostrar apenas números inteiros
+        fig_comp.update_layout(
+            xaxis=dict(
+                dtick=1,  # Intervalo de 1 em 1
+                tick0=0,  # Começar do zero
+                tickmode='linear'  # Modo linear para garantir intervalos regulares
+            ),
+            bargap=0.2  # Ajustar espaçamento entre as barras
         )
         st.plotly_chart(fig_comp, use_container_width=True)
 
     with col2:
-        # Qualidade das respostas ao longo do tempo
-        df_quality = df[df['tem_avaliacao']].groupby(['data', 'avaliacao_qualidade']).size().reset_index(name='count')
+        # Qualidade das respostas ao longo do tempo (em percentual)
+        df_quality = filtered_df[filtered_df['tem_avaliacao']].copy()
+        df_quality['data'] = df_quality['data'].dt.date  # Converter para apenas data, removendo o horário
+        df_quality = df_quality.groupby('data').agg({
+            'avaliacao_qualidade': lambda x: (x == 'BOA').mean() * 100
+        }).reset_index()
+        
         fig_quality = px.line(
             df_quality,
             x='data',
-            y='count',
-            color='avaliacao_qualidade',
+            y='avaliacao_qualidade',
             title='Qualidade das Respostas ao Longo do Tempo',
-            labels={'data': 'Data', 'avaliacao_qualidade': 'Avaliação de Qualidade', 'count': 'Quantidade de Itens'}
+            labels={
+                'data': 'Data',
+                'avaliacao_qualidade': 'Percentual de Avaliações Boas (%)'
+            },
+            markers=True  # Adicionar marcadores nos pontos
+        )
+        # Configurar o range do eixo Y de 0 a 100%
+        fig_quality.update_layout(
+            yaxis_range=[0, 100],
+            xaxis_tickformat='%d/%m/%Y'  # Formato da data em português
         )
         st.plotly_chart(fig_quality, use_container_width=True)
 
-    # Linha 2 de gráficos
-    col1, col2 = st.columns(2)
-    with col1:
-        # Matriz de confusão
-        confusion_matrix = pd.crosstab(
-            df[df['tem_avaliacao']]['decisao_jair'],
-            df[df['tem_avaliacao']]['decisao_auditor'],
-            normalize='index'
-        )
-        fig_matrix = px.imshow(
-            confusion_matrix,
-            title='Matriz de Confusão Normalizada',
-            labels=dict(x='Decisão do Auditor', y='Decisão do Jair'),
-            color_continuous_scale='RdYlBu'
-        )
-        st.plotly_chart(fig_matrix, use_container_width=True)
-
-    with col2:
-        # Top 10 procedimentos mais frequentes
-        top_procedures = df.groupby('descricao').size().sort_values(ascending=False).head(10)
-        fig_top = px.bar(
-            top_procedures,
-            title='Top 10 Procedimentos Mais Frequentes',
-            labels={'index': 'Procedimento', 'value': 'Quantidade'}
-        )
-        fig_top.update_layout(showlegend=False)
-        st.plotly_chart(fig_top, use_container_width=True)
+    # Top 10 procedimentos mais frequentes (horizontal)
+    top_procedures = filtered_df.groupby('descricao').size().sort_values(ascending=True).tail(10)
+    fig_top = px.bar(
+        top_procedures,
+        orientation='h',  # Tornar horizontal
+        title='Top 10 Procedimentos Mais Frequentes',
+        labels={'index': 'Procedimento', 'value': 'Quantidade de Avaliações'}
+    )
+    fig_top.update_layout(
+        showlegend=False,
+        yaxis={'title': ''},  # Remover título do eixo Y
+        xaxis={
+            'title': 'Quantidade de Avaliações',  # Título do eixo X
+            'dtick': 1,  # Intervalo de 1 em 1
+            'tick0': 0,  # Começar do zero
+            'tickmode': 'linear'  # Modo linear para garantir intervalos regulares
+        },
+        height=500  # Aumentar altura para melhor visualização
+    )
+    st.plotly_chart(fig_top, use_container_width=True)
 
     # Análise por Auditor
     st.subheader("Análise por Auditor")
 
     # Convert lists to strings if they exist in the auditor column
-    if df['auditor'].apply(lambda x: isinstance(x, list)).any():
-        df['auditor'] = df['auditor'].apply(lambda x: x[0] if isinstance(x, list) else x)
+    if filtered_df['auditor'].apply(lambda x: isinstance(x, list)).any():
+        filtered_df['auditor'] = filtered_df['auditor'].apply(lambda x: x[0] if isinstance(x, list) else x)
 
     # Now the groupby operation should work
-    df_auditor = df[df['tem_avaliacao']].groupby('auditor').agg({
+    df_auditor = filtered_df[filtered_df['tem_avaliacao']].groupby('auditor').agg({
         'requisicao': 'count',
         'tem_avaliacao': 'sum'
     }).reset_index()
 
-    df_auditor['taxa_concordancia'] = df[df['tem_avaliacao']].groupby('auditor').apply(
+    df_auditor['taxa_concordancia'] = filtered_df[filtered_df['tem_avaliacao']].groupby('auditor').apply(
         lambda x: (x['decisao_jair'] == x['decisao_auditor']).mean()
     ).values
 
@@ -208,51 +274,23 @@ if current_user['role'] == 'adm':
     )
     st.plotly_chart(fig_auditor, use_container_width=True)
 
-    # Filtros e análise detalhada
-    st.subheader("Análise Detalhada")
-    col1, col2 = st.columns(2)
-    with col1:
-        selected_period = st.date_input(
-            "Período de Análise",
-            [df['data'].min().date(), df['data'].max().date()]
-        )
-    with col2:
-        selected_auditor = st.multiselect(
-            "Filtrar por Auditor",
-            options=df['auditor'].unique(),
-            default=df['auditor'].unique()
-        )
-
-    mask = (
-        (df['data'].dt.date >= selected_period[0]) &
-        (df['data'].dt.date <= selected_period[1]) &
-        (df['auditor'].isin(selected_auditor))
-    )
-    filtered_df = df[mask]
-
-    if not filtered_df.empty:
-        st.dataframe(
-            filtered_df[['requisicao', 'data', 'auditor', 'descricao', 'decisao_jair', 'decisao_auditor', 'avaliacao_qualidade']]\
-            .sort_values('data', ascending=False),
-            use_container_width=True
-        )
-
+    # Análise por Item
     st.subheader("Análise por Item")
-    df_items = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).agg({
+    df_items = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).agg({
         'requisicao': 'count',
         'tem_avaliacao': 'sum'
     }).reset_index()
 
-    df_items['taxa_concordancia'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['taxa_concordancia'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['decisao_jair'] == x['decisao_auditor']).mean()
     ).values
-    df_items['taxa_aprovacao_jair'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['taxa_aprovacao_jair'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['decisao_jair'] == 'AUTORIZADO').mean()
     ).values
-    df_items['taxa_aprovacao_auditor'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['taxa_aprovacao_auditor'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['decisao_auditor'] == 'AUTORIZADO').mean()
     ).values
-    df_items['avaliacao_qualidade'] = df[df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
+    df_items['avaliacao_qualidade'] = filtered_df[filtered_df['tem_avaliacao']].groupby(['descricao', 'codigo']).apply(
         lambda x: (x['avaliacao_qualidade'] == 'BOA').mean()
     ).values
 
@@ -329,16 +367,17 @@ if current_user['role'] == 'adm':
             hide_index=True
         )
 
+    # Análise Individual de Item
     st.subheader("Análise Individual de Item")
     selected_item = st.selectbox(
         "Selecione um item para análise detalhada:",
         options=df_items['descricao'].unique()
     )
     if selected_item:
-        item_data = df[df['descricao'] == selected_item]
+        item_data = filtered_df[filtered_df['descricao'] == selected_item]
         item_data = item_data[item_data['tem_avaliacao']]
         if not item_data.empty:
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3 = st.columns(3)
             with col1:
                 total_avaliacoes = len(item_data)
                 st.metric("Total de Avaliações", total_avaliacoes)
@@ -348,59 +387,75 @@ if current_user['role'] == 'adm':
             with col3:
                 qualidade = (item_data['avaliacao_qualidade'] == 'BOA').mean()
                 st.metric("Taxa de Qualidade", f"{qualidade:.1%}")
-            with col4:
-                aprovacao_diff = (
-                    (item_data['decisao_jair'] == 'AUTORIZADO').mean() -
-                    (item_data['decisao_auditor'] == 'AUTORIZADO').mean()
-                )
-                st.metric(
-                    "Diferença na Taxa de Aprovação",
-                    f"{abs(aprovacao_diff):.1%}",
-                    delta=f"{'Maior' if aprovacao_diff > 0 else 'Menor'} que o Auditor"
-                )
 
-            confusion_matrix = pd.crosstab(
-                item_data['decisao_jair'],
-                item_data['decisao_auditor'],
-                normalize='index'
-            )
-            fig_matrix = px.imshow(
-                confusion_matrix,
-                title=f'Matriz de Confusão - {selected_item}',
-                labels=dict(x='Decisão do Auditor', y='Decisão do Jair'),
-                color_continuous_scale='RdYlBu'
-            )
-            st.plotly_chart(fig_matrix, use_container_width=True)
-
+            # Histórico de decisões ao longo do tempo
             fig_history = go.Figure()
+            
+            # Agrupar dados por dia e calcular taxa de aprovação
+            item_data['data'] = item_data['data'].dt.date
+            
+            # Calcular taxa de aprovação diária para Jair
+            jair_daily = item_data.groupby('data').agg({
+                'decisao_jair': lambda x: (x == 'AUTORIZADO').mean() * 100
+            }).reset_index()
+            
+            # Calcular taxa de aprovação diária para Auditor
+            auditor_daily = item_data.groupby('data').agg({
+                'decisao_auditor': lambda x: (x == 'AUTORIZADO').mean() * 100
+            }).reset_index()
+            
             fig_history.add_trace(go.Scatter(
-                x=item_data['data'],
-                y=item_data['decisao_jair'].map({'AUTORIZADO': 1, 'NEGADO': 0}),
-                name='Decisão do Jair',
-                mode='markers',
-                marker=dict(size=10)
+                x=jair_daily['data'],
+                y=jair_daily['decisao_jair'],
+                name='Taxa de Aprovação do Jair',
+                mode='lines+markers',
+                line=dict(color='#2ecc71')
             ))
+            
             fig_history.add_trace(go.Scatter(
-                x=item_data['data'],
-                y=item_data['decisao_auditor'].map({'AUTORIZADO': 1, 'NEGADO': 0}),
-                name='Decisão do Auditor',
-                mode='markers',
-                marker=dict(size=10)
+                x=auditor_daily['data'],
+                y=auditor_daily['decisao_auditor'],
+                name='Taxa de Aprovação do Auditor',
+                mode='lines+markers',
+                line=dict(color='#e74c3c')
             ))
+            
             fig_history.update_layout(
-                title='Histórico de Decisões ao Longo do Tempo',
+                title='Taxa de Aprovação ao Longo do Tempo',
                 yaxis=dict(
-                    ticktext=['NEGADO', 'AUTORIZADO'],
-                    tickvals=[0, 1],
-                    title='Decisão'
+                    title='Taxa de Aprovação (%)',
+                    range=[0, 100],
+                    dtick=20,  # Marcações a cada 20%
+                    tickformat='.0f',  # Formato sem decimais
+                    gridcolor='lightgrey',  # Cor da grade
+                    showgrid=True,  # Mostrar linhas de grade
+                    zeroline=True,  # Mostrar linha do zero
+                    zerolinecolor='grey',  # Cor da linha do zero
+                    zerolinewidth=1  # Espessura da linha do zero
                 ),
-                xaxis_title='Data',
-                height=400
+                xaxis=dict(
+                    title='Data',
+                    tickformat='%d/%m/%Y',
+                    showgrid=True,
+                    gridcolor='lightgrey'
+                ),
+                height=400,
+                showlegend=True,
+                legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                ),
+                plot_bgcolor='white'  # Fundo branco para melhor contraste
             )
             st.plotly_chart(fig_history, use_container_width=True)
 
 else:
 
+    st.title("📊 Minhas Requisições")
+    
     # Show only the auditor-specific logic for non-admin users
     auditor_info = next((a for a in auditors_list if a['email'] == current_user['email']), None)
     if auditor_info:
@@ -411,11 +466,71 @@ else:
     else:
         st.error("Erro: Auditor não encontrado na lista")
 
-    time_filter = st.radio(
-        "Filtrar por período",
-        ["Último dia", "Última semana", "Último mês"],
-        horizontal=True
-    )
+    st.subheader("Ver Histórico")
+    colhist1, colhist2, colhist3 = st.columns([2, 1, 1])
+    with colhist1:
+        requisitions = history.get_all_requisitions()
+        if requisitions:
+            # Criar lista de opções para o dropdown
+            req_options = []
+            for req in requisitions:
+                req_num = req.get("Número da requisição")
+                if req_num:  # Skip invalid entries
+                    status_icon = "✅" if req.get("has_evaluation") else "⏳"
+                    req_options.append(f"Requisição {req_num} {status_icon}")
+
+            if req_options:
+                selected_req = st.selectbox(
+                    "Requisições anteriores:", options=req_options, key="history_dropdown"
+                )
+
+                # Extrair número da requisição da opção selecionada
+                selected_req_num = selected_req.split()[1]
+
+                load_req_pressed = st.button(
+                    "Carregar Requisição", use_container_width=True
+                )
+                change_button_color(
+                    "Carregar Requisição",
+                    font_color="black",
+                    background_color="rgb(255,255,255)",
+                    border_color="grey",
+                )
+
+                if load_req_pressed:
+                    complete_req = history.get_complete_requisition(selected_req_num)
+                    if complete_req:
+                        st.session_state.n_req = selected_req_num
+                        st.session_state.resumo = complete_req["requisition"]
+                        st.session_state.final_output = complete_req["model_output"]
+                        st.session_state.auditor = complete_req.get("auditor", "")
+                        if complete_req.get("feedback"):
+                            st.session_state.feedback = complete_req["feedback"]
+                        if complete_req.get("evaluation"):
+                            st.session_state.feedback = complete_req["evaluation"]
+                    st.rerun()
+
+        else:
+            st.write("Nenhuma requisição processada ainda.")
+
+    st.divider()
+    st.subheader("Ver suas Requisições")
+    
+    col_filters1, col_filters2 = st.columns([1, 1])
+    with col_filters1:
+        time_filter = st.radio(
+            "Filtrar por período",
+            ["Último dia", "Última semana", "Último mês"],
+            horizontal=True
+        )
+    
+    with col_filters2:
+        evaluation_filter = st.radio(
+            "Filtrar por avaliação do auditor",
+            ["Todas as Requisições", "Pendentes de Avaliação"],
+            horizontal=True,
+            help="Selecione 'Pendentes de Avaliação' para ver apenas as requisições que ainda não foram avaliadas por você"
+        )
 
     # Calculate date filters
     today = pd.Timestamp.now()
@@ -433,28 +548,33 @@ else:
         with col1:
             start_date = pd.Timestamp(st.date_input(
                 "Data inicial",
-                value=df[df['auditor'] == selected_auditor]['data'].min().date()  # Changed from .isin()
+                value=df[df['auditor'] == selected_auditor]['data'].min().date()
             ))
         with col2:
             end_date = pd.Timestamp(st.date_input(
                 "Data final",
-                value=df[df['auditor'] == selected_auditor]['data'].max().date()  # Changed from .isin()
+                value=df[df['auditor'] == selected_auditor]['data'].max().date()
             ))
 
-    # Apply both auditor and date filters
+    # Apply filters
     mask = (
         (df['data'].dt.date >= start_date.date()) &
         (df['data'].dt.date <= end_date.date()) &
-        (df['auditor'] == selected_auditor)  # Changed from .isin()
+        (df['auditor'] == selected_auditor)
     )
+    
+    # Add evaluation filter
+    if evaluation_filter == "Pendentes de Avaliação":
+        mask = mask & (~df['tem_avaliacao'])
+        
     filtered_df = df[mask]
 
     if not filtered_df.empty:
-        st.dataframe(
-            filtered_df[['requisicao', 'data', 'auditor', 'descricao', 'decisao_jair', 'decisao_auditor', 'avaliacao_qualidade']]\
-            .sort_values('data', ascending=False),
-            use_container_width=True
-        )
+        # st.dataframe(
+        #     filtered_df[['requisicao', 'data', 'auditor', 'descricao', 'decisao_jair', 'decisao_auditor', 'avaliacao_qualidade']]\
+        #     .sort_values('data', ascending=False),
+        #     use_container_width=True
+        # )
     
         print('\n\nboth dfs')
         print(df)
@@ -488,22 +608,38 @@ else:
 
         # Group by requisition and display
         for req_num, group in filtered_df.groupby('requisicao'):
-            st.markdown(f"""
-                <div class="requisition-box">
-                    <div class="requisition-header">
-                        <strong>Requisição {req_num}</strong> - {group.iloc[0]['data'].strftime('%d/%m/%Y')} - {group.iloc[0]['data'].strftime('%H:%M')}
+            col_box, col_button = st.columns([7, 3])
+
+            with col_box:
+                st.markdown(f"""
+                    <div class="requisition-box">
+                        <div class="requisition-header">
+                            <strong>Requisição {req_num}</strong> - {group.iloc[0]['data'].strftime('%d/%m/%Y')} - {group.iloc[0]['data'].strftime('%H:%M')}
+                        </div>
+                        <div class="requisition-details">
+                            {group.iloc[0]['descricao']}
+                        </div>
+                        <div class="requisition-footer">
+                            <small>
+                                Código: {group.iloc[0]['codigo']} | 
+                                Decisão Jair: {group.iloc[0]['decisao_jair']} | 
+                                Decisão Auditor: {group.iloc[0]['decisao_auditor'] if group.iloc[0]['tem_avaliacao'] else 'NÃO AVALIADO PELO AUDITOR'}
+                            </small>
+                        </div>
                     </div>
-                    <div class="requisition-details">
-                        {group.iloc[0]['descricao']}
-                    </div>
-                    <div class="requisition-footer">
-                        <small>
-                            Código: {group.iloc[0]['codigo']} | 
-                            Decisão Jair: {group.iloc[0]['decisao_jair']} | 
-                            Decisão Auditor: {group.iloc[0]['decisao_auditor']}
-                        </small>
-                    </div>
-                </div>
-            """, unsafe_allow_html=True)
+                """, unsafe_allow_html=True)
+            with col_button:
+                st.markdown("<div style='margin-top: 50px;'>", unsafe_allow_html=True)
+                if st.button("Ver Requisição", key=f"btn_{req_num}", use_container_width=True):
+                    load_requisition_into_state(req_num, auditor_names, auditor_info, history=None)
+                    st.switch_page("pages/1_Jair.py")
+                change_button_color(
+                    "Ver Requisição",
+                    font_color="black",
+                    background_color="rgb(255,255,255)",
+                    border_color="grey",
+                )
+                st.markdown("</div>", unsafe_allow_html=True)
+
     else:
         st.warning("Nenhum dado encontrado para o período selecionado.")

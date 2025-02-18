@@ -4,9 +4,15 @@ import utils.auth_functions as auth_functions
 import boto3
 import json
 from botocore.exceptions import ClientError
+import streamlit.components.v1 as components
+from utils.requisition_history import RequisitionHistory
+from utils.get_user_info import load_auditors
+from utils.streamlit_utils import change_button_color
+from utils.streamlit_utils import render_requisition_search
+import pandas as pd
 
 if 'user_info' not in st.session_state:
-    st.switch_page("Inicio.py")
+    st.switch_page("0_Inicio.py")
 
 # Verify token on each request
 decoded_token = verify_token(st.session_state.id_token)
@@ -16,7 +22,21 @@ if not decoded_token:
     st.session_state.auth_warning = 'Session expired. Please sign in again.'
     st.rerun()
 
-st.set_page_config(page_title="Configurações - Assistente de Auditoria", page_icon="⚙️", layout="wide")
+BUCKET = "amh-model-dataset"
+AUDITORS_KEY = "user_data_app/auditors/auditors.json"
+history = RequisitionHistory()
+s3 = history.s3
+
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+auditors_data = load_auditors(s3, BUCKET, AUDITORS_KEY)
+auditors_list = auditors_data.get("auditors", [])
+auditor_names = [a["name"] for a in auditors_list]
+auditor_info = next(
+    (a for a in auditors_list if a["email"] == current_user["email"]), None
+)
+
+with st.sidebar:
+    render_requisition_search(st.sidebar, auditor_names, auditor_info, history)
 
 # Configuração do S3
 s3 = boto3.client('s3')
@@ -52,7 +72,8 @@ elif 'auth_warning' in st.session_state:
     auth_notification.warning(st.session_state.auth_warning)
     del st.session_state.auth_warning
 
-if st.session_state.user_role == "adm":
+current_user = auth_functions.get_current_user_info(st.session_state.id_token)
+if current_user['role'] == 'adm':
 
     # Carregar auditores existentes
     if 'auditors_data' not in st.session_state:
@@ -73,7 +94,7 @@ if st.session_state.user_role == "adm":
 
         with col2:
             # Gerar próximo ID disponível
-            existing_ids = [a.get('id', 0) for a in st.session_state.auditors_data.get('auditors', [])]
+            existing_ids = [int(a.get('id', 0)) for a in st.session_state.auditors_data.get('auditors', [])]
             next_id = max(existing_ids, default=0) + 1
             new_id = st.number_input("ID", value=next_id, disabled=True)
             new_password = st.text_input("Senha", type="password", placeholder="Digite a senha do usuário")
@@ -115,30 +136,90 @@ if st.session_state.user_role == "adm":
     if not st.session_state.auditors_data.get('auditors'):
         st.info("Nenhum auditor cadastrado ainda.")
     else:
+        # Inicializar estado de edição se não existir
+        if 'editing_mode' not in st.session_state:
+            st.session_state.editing_mode = False
+        
+        # Botão para alternar modo de edição
+        col1, col2 = st.columns([6, 1])
+        with col2:
+            if not st.session_state.editing_mode:
+                edit_button = st.button("✏️ Editar", use_container_width=True)
+                if edit_button:
+                    st.session_state.editing_mode = True
+                    st.rerun()
+            else:
+                save_button = st.button("💾 Salvar", type="primary", use_container_width=True)
+                if save_button:
+                    st.session_state.editing_mode = False
+                    # Atualizar dados no S3
+                    save_auditors(st.session_state.auditors_data)
+                    st.success("Alterações salvas com sucesso!")
+                    st.rerun()
+
         # Criar uma tabela para exibir os auditores
         auditors_list = st.session_state.auditors_data['auditors']
-
         # Ordenar por ID
         auditors_list = sorted(auditors_list, key=lambda x: x['id'])
 
-        # Criar colunas para cada auditor
-        cols = st.columns(len(auditors_list))
-
-        for idx, auditor in enumerate(auditors_list):
-            with cols[idx]:
-                st.markdown(f"**ID:** {auditor['id']}")
-                st.markdown(f"**Nome:** {auditor['name']}")
-                st.markdown(f"**Email:** {auditor['email']}")
-                st.markdown(f"**Role:** {auditor.get('role', 'Erro ao carregar role')}")
-
-                # Botão para remover auditor
-                if st.button("🗑️ Remover", key=f"remove_{auditor['id']}", use_container_width=True):
-                    with auth_notification, st.spinner('Removendo conta...'):
-                        auth_functions.delete_account_adm(auditor['email'])
-                        st.session_state.auditors_data['auditors'].remove(auditor)
-                        save_auditors(st.session_state.auditors_data)
-                        st.success(f"Auditor {auditor['name']} removido com sucesso!")
-                        st.rerun()
+        if st.session_state.editing_mode:
+            # Modo de edição usando st.data_editor
+            edited_df = pd.DataFrame(auditors_list)
+            edited_df['role'] = edited_df['role'].map({'adm': 'Administrador', 'auditor': 'Auditor'})
+            edited_df = edited_df.rename(columns={
+                'id': 'ID do Auditor',
+                'name': 'Nome',
+                'email': 'Email',
+                'role': 'Cargo'
+            })
+            
+            edited_df = st.data_editor(
+                edited_df,
+                hide_index=True,
+                use_container_width=True,
+                num_rows="fixed",
+                column_config={
+                    "ID do Auditor": st.column_config.NumberColumn(
+                        "ID do Auditor",
+                        help="Identificador único do auditor",
+                        disabled=True
+                    ),
+                    "Cargo": st.column_config.SelectboxColumn(
+                        "Cargo",
+                        help="Cargo do usuário no sistema",
+                        options=["Administrador", "Auditor"]
+                    )
+                }
+            )
+            
+            # Converter de volta para o formato original
+            edited_df['role'] = edited_df['Cargo'].map({'Administrador': 'adm', 'Auditor': 'auditor'})
+            edited_df = edited_df.rename(columns={
+                'ID do Auditor': 'id',
+                'Nome': 'name',
+                'Email': 'email',
+                'Cargo': 'role'
+            })
+            
+            # Atualizar dados na sessão
+            st.session_state.auditors_data['auditors'] = edited_df.to_dict('records')
+            
+        else:
+            # Modo de visualização
+            auditors_df = pd.DataFrame(auditors_list)
+            auditors_df['role'] = auditors_df['role'].map({'adm': 'Administrador', 'auditor': 'Auditor'})
+            auditors_df = auditors_df.rename(columns={
+                'id': 'ID do Auditor',
+                'name': 'Nome',
+                'email': 'Email',
+                'role': 'Cargo'
+            })
+            
+            st.dataframe(
+                auditors_df,
+                hide_index=True,
+                use_container_width=True
+            )
 
     st.divider()
     with st.form(key="change_password_form"):
@@ -149,31 +230,45 @@ if st.session_state.user_role == "adm":
             new_altered_password = st.text_input("Nova Senha", type="password", placeholder="Digite a nova senha do auditor")
 
         with col2:
-            existing_ids = [a.get('id', 0) for a in st.session_state.auditors_data.get('auditors', [])]
-            user_id = st.number_input("ID", step=1, min_value=1)
+            # Criar lista de nomes dos auditores
+            auditor_names = [a['name'] for a in st.session_state.auditors_data.get('auditors', [])]
+            selected_auditor = st.selectbox("Selecione o Auditor", options=auditor_names)
 
         submit_button = st.form_submit_button("Mudar Senha", use_container_width=True)
 
         if submit_button:
-            if not user_id in existing_ids:
-                st.error("Por favor, use um ID válido.")
+            if not selected_auditor:
+                st.error("Por favor, selecione um auditor.")
             elif not new_altered_password:
                 st.error("Por favor, digite a nova senha.")
             elif len(new_altered_password) < 6:  # Firebase requires minimum 6 characters
                 st.error("A senha deve ter pelo menos 6 caracteres.")
             else:
-                auditor = next((a for a in st.session_state.auditors_data['auditors'] if a['id'] == user_id), None)
+                auditor = next((a for a in st.session_state.auditors_data['auditors'] if a['name'] == selected_auditor), None)
                 with auth_notification, st.spinner('Alterando senha...'):
                     auth_functions.reset_password_adm(auditor['email'], new_altered_password)
                     st.rerun()
 
 st.divider()
 st.markdown("<div style='margin-top: 40px'></div>", unsafe_allow_html=True)
-col1, col2, col3, col4 = st.columns([3, 1, 1, 3])
+col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.subheader("🔐 Sair")
-with col3:
-    st.button(label='Clique aqui para sair',on_click=auth_functions.sign_out,type='primary')
+    st.markdown("<h3 style='text-align: center;'>🔐 Sair</h3>", unsafe_allow_html=True)
+    
+    # Create a centered container for the button
+    st.markdown("""
+        <div style='display: flex; justify-content: center;'>
+            <div style='width: 200px;'>  <!-- Adjust width as needed -->
+    """, unsafe_allow_html=True)
+    
+    st.button(
+        label='Clique aqui para sair',
+        on_click=auth_functions.sign_out,
+        type='primary',
+        use_container_width=True
+    )
+    
+    st.markdown("</div></div>", unsafe_allow_html=True)
 
 # st.text("current user")
 # st.text(auth_functions.get_current_user_info(st.session_state.id_token))

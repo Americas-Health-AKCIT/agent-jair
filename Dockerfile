@@ -26,7 +26,7 @@ EXPOSE 8501
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl", "-f", "http://0.0.0.0:8501/_stcore/health" ]
 
 # Roda o streamlit 
-ENTRYPOINT ["streamlit", "run", "0_Jair.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "0_Inicio.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
 #aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 207567764107.dkr.ecr.us-east-1.amazonaws.com
 #docker build -t mlops-mlflow-model-development .
