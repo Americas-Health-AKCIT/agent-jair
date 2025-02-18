@@ -108,7 +108,7 @@ if current_user['role'] == 'adm':
                 st.error("Por favor, insira um email válido.")
             elif len(new_password) < 6:  # Firebase requires minimum 6 characters
                 st.error("A senha deve ter pelo menos 6 caracteres.")
-            elif new_id in existing_ids:
+            elif str(new_id) in [str(id) for id in existing_ids]:  # Comparar como strings
                 st.error(f"ID {new_id} já está em uso. Por favor, use um ID diferente.")
             else:
                 with auth_notification, st.spinner('Criando conta...'):
@@ -116,7 +116,7 @@ if current_user['role'] == 'adm':
 
                     if 'auth_success' in st.session_state:
                         new_auditor = {
-                            "id": new_id,
+                            "id": str(new_id),
                             "name": new_name,
                             "email": new_email,
                             "role": new_role
