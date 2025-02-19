@@ -365,12 +365,12 @@ if st.session_state.final_output:
         # Análise detalhada (expandida)
         with st.expander("Análise do Jair", expanded=False):
             st.markdown(item["analysis"])
-            st.write("**Fonte:**")
-            source_raw = item.get(
-                "source", "Jair não conseguiu processar esse item"
-            )
-            source = list(source_raw.items())[0][1]
-            st.info(source)
+            # st.write("**Fonte:**")
+            # source_raw = item.get(
+            #     "source", "Jair não conseguiu processar esse item"
+            # )
+            # source = list(source_raw.items())[0][1]
+            # st.info(source)
 
         # Seção de avaliação do auditor
         st.markdown('<div class="evaluation-section">', unsafe_allow_html=True)
