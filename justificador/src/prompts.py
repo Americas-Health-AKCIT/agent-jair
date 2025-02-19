@@ -99,7 +99,7 @@ JUSTIFICATIVA_PROMPT = """
    - SEMPRE use linguagem formal, técnica e coerente para construir suas justificativas.
    - SEMPRE prime pela objetividade e clareza.
    - SEMPRE considere os dados de <exemplo></exemplo> como dados fictícios usados somente para te mostrar a estrutura dos dados que você receberá.
-   - SEMPRE retorne APENAS o texto da justificativa final, sem incluir as respostas ao script de perguntas ou qualquer outro texto adicional.
+   - SEMPRE retorne APENAS o texto da justificativa final em BULLET POINTS, sem incluir as respostas ao script de perguntas ou qualquer outro texto adicional.
    </obrigações
 
    <proibições>
