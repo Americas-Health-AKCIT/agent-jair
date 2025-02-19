@@ -1,5 +1,6 @@
 import dotenv
-
+import concurrent.futures
+import time
 dotenv.load_dotenv()
 
 import sys
@@ -83,7 +84,6 @@ def process_requisition():
 
 
 def create_justificativa(resumo, response):
-
     paciente_info = {
         "ID_REQUISICAO": resumo["Número da requisição"],
         "DT_REQUISICAO": resumo["Data da abertura da requisição"],
@@ -103,49 +103,68 @@ def create_justificativa(resumo, response):
         "DATA_NASCIMENTO": resumo["DATA_NASCIMENTO"],
     }
 
-    justificativas = []
     id_itens = []
     item_descs = []
     classificacoes = []
+    responses_list = []  # manter a correspondência com o 'Zip' abaixo
+    justificativas = []
     fontes = []
-    responses = []
 
     ds_item_map = resumo["Descrição dos procedimentos"]
     ds_classificacao_map = resumo["Tipo dos itens (nivel 2)"]
 
+    parametros = []
     for id_item, item_desc in ds_item_map.items():
-        classificacao = ds_classificacao_map.get(
-            id_item, "N/A"
-        )  # Lookup classification
-        justificativa, fonte = justificador(
-            id_item,
-            {"DS_ITEM": item_desc, "DS_CLASSIFICACAO_1": classificacao},
-            paciente_info,
-            status=response.get(id_item),
-        )
-
-        justificativas.append(justificativa)
-        fontes.append(fonte)
-        id_itens.append(id_item)
-        item_descs.append(item_desc)
-        classificacoes.append(classificacao)
-        if response.get(id_item) is not None:
-            responses.append(response.get(id_item))
-        else:
+        classificacao = ds_classificacao_map.get(id_item, "N/A")
+        status_item = response.get(id_item)
+        if status_item is None:
             print(f"Item {id_item} não encontrado na resposta")
+        parametros.append((id_item, item_desc, classificacao, status_item))
 
-        # responses.append(response[id_item])
+    # Limita a quantidade de requisições paralelas para não sobrecarregar as APIs externas
+    max_workers = 5
+
+    # Executa as chamadas ao justificador em paralelo mantendo a ordem
+    resultados = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = []
+        for id_item, item_desc, classificacao, status_item in parametros:
+            futures.append(
+                (
+                    (id_item, item_desc, classificacao, status_item),
+                    executor.submit(
+                        justificador,
+                        id_item,
+                        {"DS_ITEM": item_desc, "DS_CLASSIFICACAO_1": classificacao},
+                        paciente_info,
+                        status=status_item,
+                    ),
+                )
+            )
+        for param, future in futures:
+            id_item, item_desc, classificacao, status_item = param
+            try:
+                justif, fonte = future.result()
+            except Exception as exc:
+                print(f"Item {id_item} gerou uma exceção: {exc}")
+                justif, fonte = None, None
+            id_itens.append(id_item)
+            item_descs.append(item_desc)
+            classificacoes.append(classificacao)
+            justificativas.append(justif)
+            fontes.append(fonte)
+            responses_list.append(status_item)
 
     items = []
-    for id_item, item_desc, fonte, justificativa, response in zip(
-        id_itens, item_descs, fontes, justificativas, responses
+    for id_item, item_desc, fonte, justif, status_item in zip(
+        id_itens, item_descs, fontes, justificativas, responses_list
     ):
-        situacao = "AUTORIZADO" if response else "NEGADO"
+        situacao = "AUTORIZADO" if status_item else "NEGADO"
         item = {
             "Código correspondente ao item": id_item,
             "description": item_desc,
             "source": fonte,
-            "analysis": justificativa,
+            "analysis": justif,
             "Situação": situacao,
         }
         items.append(item)
@@ -153,7 +172,6 @@ def create_justificativa(resumo, response):
     data = {"items": items}
 
     return data
-
 
 if __name__ == "__main__":
 
